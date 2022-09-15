@@ -11,34 +11,30 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator Start()
         {
-            //BattleSystem.Interface.SetDialogText("Choose an action.");
+            BattleSystem.Interface.ShowAction(); //Show action UI and enable input
             yield break;
         }
 
-        public override IEnumerator Attack()
+        public override IEnumerator UseInput_A()
         {
-            //var isDead = BattleSystem.Enemy.Damage(BattleSystem.Player.Attack);
-
-            yield return new WaitForSeconds(1f);
-
-            /*if (isDead)
-            {
-                BattleSystem.SetState(new Won(BattleSystem));
-            }
-            else
-            {
-                BattleSystem.SetState(new EnemyTurn(BattleSystem));
-            }*/
+            //Launch attack
+            yield break;
         }
 
-        public override IEnumerator Heal()
+        public override IEnumerator UseInput_B()
         {
-            //BattleSystem.Interface.SetDialogText($"{BattleSystem.Player.Name} feels renewed strength!");
+            //Launch attack
+            yield break;
+        }
 
-            //BattleSystem.Player.Heal(5);
-
-            yield return new WaitForSeconds(1f);
-
+        public override IEnumerator UseInput_Arrow()
+        {
+            //Update show action
+            yield break;
+        }
+        
+        public void EndOfAnim()
+        {
             BattleSystem.SetState(new EnemyTurn(BattleSystem));
         }
     }

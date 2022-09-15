@@ -1,0 +1,5150 @@
+fileFormatVersion: 2
+guid: 265cb7e9d22f0e84e877c96193041b99
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 2537
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5370cbb4c3bfdaa4aa445aa61145f55b
+      internalID: 1150049590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 2537
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a38ce6b2321ef0d40871f9e991389182
+      internalID: -1689024160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 2537
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 749cb8014dcc9ae41a33fd87c9b0b741
+      internalID: 324496806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 2537
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b24ff903680cd44dbd9df82be6ffccf
+      internalID: -1410109601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 2537
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ed383a73ca487c4aacc29bcbcf31860
+      internalID: 307244330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 2537
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04fc979a6891802409efb1129d8b7260
+      internalID: 1825396191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 2537
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3dedaa92e2bf80428e500c9a54aa120
+      internalID: 777714505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 2464
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50eed38232155f14ca1e963fc29ec17a
+      internalID: -1536752654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 2398
+        width: 40
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee36c4dba08c714587188cc8df60e0c
+      internalID: -1973008047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 2398
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52fadcb6df0465644ba0cb4f61cb1029
+      internalID: -210399378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 2398
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08e9ee6d69a2fd94498b64a65b7e4c98
+      internalID: -973276745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 2398
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d717f5ab17cb2a345b86d194d36db2a0
+      internalID: -720516444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 2329
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 260f721fb38b702449f9ca891a26a2fb
+      internalID: 313081636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 2258
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94b17339f74a355409e7c2341ff460ea
+      internalID: -1702934309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 2258
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c74c6b049979bee468c7fb7c49b8fad5
+      internalID: -1281073665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 2258
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f7294368afff74eb2252ea72dc7634
+      internalID: -575457534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 2258
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 920be798245040e4e81f2dd587d76e83
+      internalID: 1839404121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 2258
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aa066f8088c2e04d9012030a7015ab5
+      internalID: -1299788226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 2258
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6236b86ac16355041b3dbd26f71e2a05
+      internalID: 1908130624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 2188
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94ed3ac609a18854fbf244d92a861bd3
+      internalID: 1516053604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 2119
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c179a36c097b484a8370062b583ff7b
+      internalID: -1664750691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 2119
+        width: 41
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61962a98e36615c4088ca3c6d780fa0c
+      internalID: 1636579293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 2119
+        width: 41
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305e9a35b5f6f3c40af795f4ef6c0612
+      internalID: 1985164418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 2119
+        width: 47
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 423859421c4966942bfaa29e2602fe79
+      internalID: -190562523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 2049
+        width: 51
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aec291228c335641861edb37f7e3281
+      internalID: 210850724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 2049
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f51b856a2557f24d85698f7c98958cb
+      internalID: 1058976553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 2049
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 401c073f27090ec48a7a2a1cc121fad0
+      internalID: -1437070094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 2049
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba5d6788e475bb64386c05e728580811
+      internalID: 619942804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 2049
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b65cacd19c9de41a07403d0d406f28
+      internalID: -169742865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 2049
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e30cfd55cd25ec4883a8c99d86d0b99
+      internalID: -1934243615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 2049
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd1aff4356d13a4abc394b9f3a971a2
+      internalID: -1716687188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 2049
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43c78bc94e667b34da7f6ea7bfb239c2
+      internalID: -1719680398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 2049
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61caa98235039574cafdc2da5e37550f
+      internalID: 802367588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 2049
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dba76cc2ea0f7b34a98b864804e29631
+      internalID: -296452643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 2049
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6139f5348ec70c4e85de680303550f5
+      internalID: 1909763698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 2049
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3ef8a027187a234daa1cc4693a3bfea
+      internalID: -355346651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 2049
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6daf74848734c47accab8fa3dc2c63
+      internalID: -1742133841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1980
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d10be7407f9b6f41a6526d3d76dca15
+      internalID: 1460556897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1980
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d9a5b189a4957d418411d9fb73ee156
+      internalID: -478424988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 1980
+        width: 40
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 206c5b97ed3b2ea4f9a08109ea48c7cd
+      internalID: -1179080639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1980
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32a709c2c21c4da44ab72aa85837be71
+      internalID: -1238650166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 1980
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f628ed4efc382774d9c2d127f7c80b91
+      internalID: -1684341742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 1980
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 393690778067ea349a49fe7742a63e99
+      internalID: 1027322678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1908
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2335d84cdbcb7774fb8cfb0215225d4e
+      internalID: -1977206475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1908
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d9431402b4e8e48bdacaef14571117
+      internalID: 1724996423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 1908
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e10677c6f1e262458a67792149dd36b
+      internalID: 957887236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 1908
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ee37b637786b3542a2a0e5b0c75a7bf
+      internalID: 1878643643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 1908
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fa6442cd0f8afb4b8c90f014272b86d
+      internalID: -1621017592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 1908
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a674078f6bf0957459a5999eb4167b66
+      internalID: -838134058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1838
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f802767731aca54a943617380a4082b
+      internalID: -1576042356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1769
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01da5e6a0b3b49d48bb6f4c9845b4753
+      internalID: 1273818160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 1769
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a21e0f00cf64b024b8f062fe86f3bb1e
+      internalID: 198549377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 1769
+        width: 41
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5e90701155bc4b40a3b2ef4b7ad1bb7
+      internalID: -1924658594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 1769
+        width: 49
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 201fe61765cc38d488a7b33767c1f11d
+      internalID: 712600882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1699
+        width: 52
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c86d5e102cf924a95ce6d8a01b6e87
+      internalID: -269531504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 1699
+        width: 50
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f9f0399e1c08454fb27e9c02f17906a
+      internalID: 190053031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 1699
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d31c71d1782d9c4aabc02617be19e7a
+      internalID: 1145635777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1699
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e993db0f229e65418c6ce82ce31aa35
+      internalID: 659082122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 1699
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5fd313de2df9eb49b8245c337f94794
+      internalID: -11619518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 1699
+        width: 44
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc0a99faae72a54b89232693b8c334b
+      internalID: -1599334051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 1699
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca5c3daa76f943349bffb031f4663d91
+      internalID: -1476549471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 1699
+        width: 44
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c56391a88c653e438b6b866da0e13cd
+      internalID: 1099870153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 1699
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc3735eca0b2b454e809ef8aaee66121
+      internalID: -1484077702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 1699
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd66c6ceb6d2faa4883aaf38d73e6c72
+      internalID: -1488323190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 1699
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e4c4378a9c631439bc4eb80de1cc3b
+      internalID: 599109392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 1699
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 278ac65b930eb6a428a5cfee70abf0f8
+      internalID: -407363626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 1699
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5fc03e33d6838e4ea9693d9af904404
+      internalID: 594597827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 1629
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aecc7a3e6daad4e498455192ecc04886
+      internalID: 1938878727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1629
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b474aba6edc0af42a965ba07080e1a5
+      internalID: 509424011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 1629
+        width: 40
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bf308b9556976b458c8f097aa5135f4
+      internalID: 460496370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 1629
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fd5d1d203c4b0143b09d83503929eca
+      internalID: 221893967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1629
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62275104bad389d4a83c011490aeb24c
+      internalID: 75211910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 1629
+        width: 40
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 089eb11d4db839b47aaf85a01c6d9f9c
+      internalID: 346930886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_73
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1556
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faee0ad809ea7dd4990ce76f82af83ec
+      internalID: 1504831966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1556
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc5c305dfff93c14099b80d11ba0a54a
+      internalID: -456893231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_75
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 1556
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef1d3a14906ef244a9e7a96b2ddba68
+      internalID: -342741318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_76
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1556
+        width: 41
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc6e5078e09dc7a479843face51d721b
+      internalID: 2103753287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_77
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 1556
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16c53286b403392488040cfeca8ebb9f
+      internalID: -1869612414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_78
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 1556
+        width: 41
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cff8c8f5b7967304b9ced3db98329e1d
+      internalID: 116868249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_79
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1556
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4855e393f1ce4640b47e4cd5794e9f7
+      internalID: -2005836679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_80
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1483
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d487e80bd132c124d886d155b0666636
+      internalID: 993729502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_81
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1483
+        width: 41
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1863a7a5613cca8408a17ad609ee348d
+      internalID: -1506873917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_82
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1407
+        width: 41
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b265d6d99281dbf41ae81ee6376bfc07
+      internalID: -469403824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_83
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 1407
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e4686198efa24c428381fc143a1df66
+      internalID: -1028294957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_84
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 1407
+        width: 39
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d4e7fb225da922458d44eee8dc6a20b
+      internalID: 2001169803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_85
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 1407
+        width: 39
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae56ddc984e84224593c4d79ba590c0b
+      internalID: 1407283680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_86
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 1407
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2e13afd5d452e44cbc880dac3f5e8b5
+      internalID: 855525158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_87
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1407
+        width: 49
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff74f0ffb0f2aa46b9ee6c97d89bece
+      internalID: 778704535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_88
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 1335
+        width: 49
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e7b0fbc6f3f4842afa944d2e795b08
+      internalID: 270823410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_89
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 1335
+        width: 43
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ac1c4856e7b402489ac3d06379a778e
+      internalID: 2094797849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_90
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 1335
+        width: 41
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59ed1a73f1fcc6f4dbc8fae5b839edf8
+      internalID: 804858756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_91
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 1335
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd698054ca83c574dadf49dd64526253
+      internalID: -1655545804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_92
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 1335
+        width: 41
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5959a68aeec63d46a93d27c0a4926d1
+      internalID: -227174325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_93
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 1335
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 832823473a3e84e458c09fe29687c34a
+      internalID: -2119121253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_94
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 1335
+        width: 41
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f494b4cb6ac7f542b6944d57dbbc894
+      internalID: -194781372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_95
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 1335
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42ca5ca24d3d1874c8bd35a56bb9fc54
+      internalID: -842005590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_96
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 1335
+        width: 41
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cba7c16cfc155c84eb22bb6b441f6261
+      internalID: 154115649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_97
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 1335
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d02b8c7c8b1f01d458d30a5b15d47847
+      internalID: 1441620777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_98
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 1335
+        width: 41
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e97aef353d29cbc4a99c40add1c32312
+      internalID: 390324178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_99
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 1335
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e63afb10f2bbfdf4b8a43d15a0a13273
+      internalID: -36383076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_100
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1267
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9bd40bd77d378b45b31f3a87f9f14d2
+      internalID: 1146035418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_101
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1267
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c757f39376493174591258909030593d
+      internalID: -1252298501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_102
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 1267
+        width: 40
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd6b7999b955ac84da74a548cdd340d9
+      internalID: -1322775433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_103
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1267
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d66265ed1f88d16409069864fff3d1b9
+      internalID: 619306135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_104
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 1267
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa9bb489ca2740d4289dc301cc8291b8
+      internalID: 855966312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_105
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 1267
+        width: 40
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 137298d9bd54e864a86a5a596616fb0f
+      internalID: 409687922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_106
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1209
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 375b3f4964f0a0249a2eb7a3f9e82c20
+      internalID: -592588549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_107
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1209
+        width: 24
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7d1db4c90ece384ca4563e08ca69966
+      internalID: 4761855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_108
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1059
+        width: 24
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8236b48d0c2699f4380e7d16f1a8de7a
+      internalID: 537832496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_109
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1059
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bb11532926c99849a9b91113fefc3ac
+      internalID: 1490911428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_110
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 1059
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddc25cc06ba56f24cadf4c9e40ca23d6
+      internalID: -1189420889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_111
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1059
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1316be18022c1047a68a7cd5972e57f
+      internalID: 576748104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_112
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 1059
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15fad17870cbc5843915fe19e7f4c0e5
+      internalID: 2051767475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_113
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 1059
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bfc6550e33f86649ab013ac54ffd514
+      internalID: 193801979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_114
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 1059
+        width: 24
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d5a3eb133e9e3b45aa653997a359949
+      internalID: -1588194530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_115
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 1059
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5229259ae8d59748abb5040423b7105
+      internalID: -2076072246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_116
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 1059
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc1ddf3f028ad5445bc261df3b876c3b
+      internalID: -1836554346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_117
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1059
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f9f420734bed9947bacf7dfac9d8df3
+      internalID: -1117335079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_118
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1059
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7cd856a58263674cad2ba8a00dfad7e
+      internalID: -2045185850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_119
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 1059
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ff98779e80ee6543ba434c9634fb96c
+      internalID: 1663374810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_120
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 1060
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b1b0c5524b196488755bd2c1468da4
+      internalID: -1707700316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_121
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 1059
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fff71b3d61adc30489cff0f06d865f9b
+      internalID: -2012373837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_122
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 1059
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362aecd6be9077348944b82ab9b10fb1
+      internalID: -2117558001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_123
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 1059
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b3e00e95d942cc4996c9e6e017bbe7a
+      internalID: 94911161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_124
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 983
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0db76ca82817d6458cc3fbf8886265e
+      internalID: -1115841824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_125
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 983
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef576d9c27f215347ad2c77cb1d9736a
+      internalID: -970094500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_126
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 983
+        width: 24
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad65842cdd304674ea4b2cac417a9a4d
+      internalID: 1381183325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_127
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 983
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71db754625168694394d6789aa56324f
+      internalID: -1516021612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_128
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 983
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b41f0e2a5d8a145a6d33e4df5ebee8
+      internalID: 1880332913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_129
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 983
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adb93ecd153d99743a1d24a4773a5f8c
+      internalID: 1675229699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_130
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 983
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8072f43ae65cd24db98a5951a2cc1b3
+      internalID: 1163277436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_131
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 983
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d24c420474948b6438e9e9bdb2bc906f
+      internalID: 1819855258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_132
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 983
+        width: 24
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ec03027984cef4d90bbb07d5eb1cc9
+      internalID: -340543935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_133
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 983
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b12bd4e19dbe392499e9ee2937fb5ec5
+      internalID: 140730136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_134
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 983
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9fc8bd9ae5ddad42acc281a2e56f62f
+      internalID: 349235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_135
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 983
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c9693c92684d3469037ffc1c4ce965
+      internalID: 2049857924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_136
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 983
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5057db38b6a6c644683dff8678809297
+      internalID: 1818294611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_137
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 983
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a016ce9059dfdbc45a2d60802af3128f
+      internalID: 428257300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_138
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 984
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5455ceb62b3025f41b55e2653fca893d
+      internalID: -1338695907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_139
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 983
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c6b4c56a2701b04380750f0ef778262
+      internalID: -1336706885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_140
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 907
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b7457a2a00eb59418fb604e74590b97
+      internalID: 627961627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_141
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 907
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de48d9af9fcb3744387acce8e1a58935
+      internalID: -624308215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_142
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 911
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a4356b5a304b484d8dd53c604b5ab4f
+      internalID: -410180988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_143
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 913
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e33c6d03d7a0de4d808b1f3a00d7734
+      internalID: -2009826835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_144
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 916
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cf7946bfe5cdfa498ceb296e973b8a3
+      internalID: 363209737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_145
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 914
+        width: 39
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 249a5e81cb5f841488014bb7da0b12f8
+      internalID: -1613001661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_146
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 913
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdbddfda735070d49aa639fb2cc9dc6c
+      internalID: -1663809297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_147
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 907
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e346fb839914a149af49c2cd09c645c
+      internalID: 1534448065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_148
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 907
+        width: 28
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3fd100b91534f4eb1aa8d4f35362f1
+      internalID: -621292553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_149
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 907
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff246dcca788c79429675f42d7c1b732
+      internalID: 1554998214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_150
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 907
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96ed5373502810c4ba29f7c9eae28a41
+      internalID: 1882601425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_151
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 907
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed23af640d872d94dbaa7878bcf7ef3f
+      internalID: 1533114764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_152
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 907
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b03745629e3cd047aadb4f2434c3163
+      internalID: -1945228274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_153
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 907
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f98f00e912c617f4c8349a2c6ab53abe
+      internalID: -460332184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_154
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 907
+        width: 24
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09c4023ab5f43654e87ba78181686e29
+      internalID: -420731883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_155
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 907
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2747314ce20ebe408934b610cb6c7d7
+      internalID: 1376576190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_156
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 831
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2afd13895f3ce24458890cc1b43974c8
+      internalID: -823293307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_157
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 831
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf8680dfaf70374b94d71c42a371ec6
+      internalID: -343024589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_158
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 831
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43b21a80e2eb2a343944cf5057869d0e
+      internalID: 304640936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_159
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 831
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab47a69609ac7854bb85dfa954a189f2
+      internalID: -1317315320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_160
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 831
+        width: 24
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9baa8bdeddf7e741a9d31725a6f39b2
+      internalID: -348545255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_161
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 831
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09d5085bd3c10254d8de58fa89fc04b9
+      internalID: 156889900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_162
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 831
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 213924e81f8b0d046b6c92bb1e164827
+      internalID: -767776204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_163
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 831
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f38f0519442c93a4687ab56200f93098
+      internalID: -122732375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_164
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 831
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b45fbaa30883d96408470b820946ebbd
+      internalID: 2050483639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_165
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 831
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8770d68c5cd3234b9862d51b6af8860
+      internalID: -1871277998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_166
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 831
+        width: 24
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 658027ee0cac1554e8d0e458832db854
+      internalID: 1613461968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_167
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 831
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 941091bc46a682742920954a271b8329
+      internalID: 1088229169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_168
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 831
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35204061788b93f49924944cd6873efd
+      internalID: 1682214712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_169
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 831
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f833ba04297965346a377f49ac89ae2b
+      internalID: 2053340853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_170
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 831
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd465f674285f2c4d9a7db285ac3e4f2
+      internalID: -1670033057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_171
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 831
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c3d083e6da2a24bbc942dc95fc96ac
+      internalID: 1019383179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_172
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 761
+        width: 44
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9033a207f4bbea4e8234e56a7d9b31b
+      internalID: -2011260199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_173
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 690
+        width: 40
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b438396fb02b1f4cb67f64fe3d6bfe5
+      internalID: 171831063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_174
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 689
+        width: 36
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b82eef86bafa415488628817d392ff7d
+      internalID: 1547707537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_175
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 691
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3050ec3fc1676545a5c9260fe753ca2
+      internalID: 1820087267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_176
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 689
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be451fac31d45543b8d1d0fcd75fd76
+      internalID: -1133175769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_177
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 691
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6454c8f61e487504bb507d4888f300a9
+      internalID: 248520752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_178
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 689
+        width: 36
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6c2ed4dbbcbb1541b80513543c61629
+      internalID: -28410171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_179
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 616
+        width: 24
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c26c7e6e6ec318e459897ce2eb0ee90f
+      internalID: -1849859611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_180
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 545
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 060d4285021d3c84a98e0c43f5af7066
+      internalID: -1904005171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_181
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 475
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43111e29eda394d42a9cd4b6014fbc96
+      internalID: -1246300096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_182
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 475
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29bb041ce002c994184281bef4364012
+      internalID: 372645982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_183
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 475
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 321cd46b448d46e468e7b3a87143242d
+      internalID: 1276926010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_184
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 475
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6231d0e9f7cb53e4aaa0904de65b9646
+      internalID: 852486885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_185
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 475
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d615c4179f14c5e4aba343f05fb3208e
+      internalID: 1548647671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_186
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 404
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e92a845c6ac06884fb57c256d22073d5
+      internalID: -31737154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_187
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 404
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5f6af43d7360134cb22cd500b043b0d
+      internalID: 182986814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_188
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 404
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f06e36c22bccd4cb8efcd54da85148
+      internalID: -2004234711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_189
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 404
+        width: 29
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54429031e12f5d9478c6debc33846aff
+      internalID: -2053955913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_190
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 335
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fd88405a66852348ae2e7a51c2e0d19
+      internalID: 1060249787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_191
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 335
+        width: 29
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b91c84ef64de24f418ad4d2b57cb906d
+      internalID: 1799510273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_192
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 266
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f581e423a0393248bd5c9520b46c32c
+      internalID: -1274390281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_193
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 266
+        width: 29
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2abe5f9a4be1fb34eababf04758d93c0
+      internalID: 1912668911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_194
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 266
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 905c3d3e75a5d5845b0eb21bae0cecea
+      internalID: -1073745879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_195
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 266
+        width: 29
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbcb97846569149479e176e3446bd78c
+      internalID: -1186619682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_196
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 266
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7245656987677294a9cde30a4a71cc07
+      internalID: 1665938237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_197
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 266
+        width: 29
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ecb00b6371d2243baf6218bf4ebe91
+      internalID: 1530304824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_198
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 266
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aa9b32e55147bd40b63d17711614510
+      internalID: 1422038165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_199
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 266
+        width: 29
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3a0ef29af5aa9a45a5d3893b772ef35
+      internalID: -257715698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_200
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 266
+        width: 30
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a2a8379726ab1e4face47ef63b36fec
+      internalID: -1368784978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_201
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 188
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ce73c2edf7940540bfa47d11ffcdf7d
+      internalID: 44180681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_202
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 191
+        width: 24
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a81f56a88b2493f4f8046aaec29d822a
+      internalID: 1316272245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_203
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 194
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f93151b4ded5c2d4a8ba70c9eb4aed21
+      internalID: 1770029378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_204
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 192
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 396d8c86112cca84daf79f43cba7043f
+      internalID: -1479634405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_205
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 188
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4424c00d64888f0429bcbfa3f232306c
+      internalID: 306393879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_206
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 184
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47a3cb2813deea84fb189793940a6934
+      internalID: 1287022687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_207
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 184
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36c8a28d8a68424469bc0ee69de298da
+      internalID: -884402264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_208
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 184
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23816c6836759b2409e6a7dda8fc791a
+      internalID: 2001585419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_209
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 115
+        width: 42
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74e38c58c6cad5a46bb4599c92b74037
+      internalID: -219642192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_210
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 91
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d857fbc5af71bbf48890639d3752acd3
+      internalID: -2059999296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_211
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 78
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 314dd85ad70d8934aabdf84d8952c470
+      internalID: -294679408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_212
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 42
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab4a176acf428b41b396b0d00e5df65
+      internalID: 1874735610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_213
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 42
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cd25374438fb5b4bb8d45739a93397f
+      internalID: 999802933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_214
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 42
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eafebf8d50b7a244a8e330865c73df3
+      internalID: 1598030213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_215
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 42
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab724819938e26542bea996684517bf9
+      internalID: -2034680815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_216
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 42
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d6d43738104584cb7908e8b6b23bdc
+      internalID: -778027963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_217
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 42
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 344a8b2d0054836448494d4a4a799748
+      internalID: -1892108393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_218
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 42
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 119c3ae67e71dd64794066daec362f75
+      internalID: -2128892689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_219
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 42
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9553d7edceb552e4bbda7c4ca5498e00
+      internalID: -1224404660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_220
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 42
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba3a9ad4695628c4d8ddb507d3958fd7
+      internalID: 1147064949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_221
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 42
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd9c9310d70df145aefa0530b23670e
+      internalID: 808226446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_222
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 42
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a793ad3040ea5b842a959cc56c532178
+      internalID: -920396630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_223
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 42
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfa8481f6e474724e863b0fe2c8fc567
+      internalID: -317454885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_224
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 42
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 216f454317bc38940a4718254c462085
+      internalID: 1003046327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_225
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 42
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f77946500ecea634c816554eedca7d0c
+      internalID: 57527009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_226
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 42
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc53ecab462415d4fb6395935888a64d
+      internalID: -455544875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirCanonBoss_Sheet_227
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 8
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c029021ac96b8de458ebd588274cdf55
+      internalID: -2099749325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      AirCanonBoss_Sheet_131: 1819855258
+      AirCanonBoss_Sheet_179: -1849859611
+      AirCanonBoss_Sheet_142: -410180988
+      AirCanonBoss_Sheet_67: 1938878727
+      AirCanonBoss_Sheet_155: 1376576190
+      AirCanonBoss_Sheet_139: -1336706885
+      AirCanonBoss_Sheet_227: -2099749325
+      AirCanonBoss_Sheet_120: -1707700316
+      AirCanonBoss_Sheet_169: 2053340853
+      AirCanonBoss_Sheet_20: -1664750691
+      AirCanonBoss_Sheet_134: 349235
+      AirCanonBoss_Sheet_117: -1117335079
+      AirCanonBoss_Sheet_94: -194781372
+      AirCanonBoss_Sheet_160: -348545255
+      AirCanonBoss_Sheet_194: -1073745879
+      AirCanonBoss_Sheet_87: 778704535
+      AirCanonBoss_Sheet_61: 1099870153
+      AirCanonBoss_Sheet_84: 2001169803
+      AirCanonBoss_Sheet_196: 1665938237
+      AirCanonBoss_Sheet_14: -1281073665
+      AirCanonBoss_Sheet_159: -1317315320
+      AirCanonBoss_Sheet_125: -970094500
+      AirCanonBoss_Sheet_75: -342741318
+      AirCanonBoss_Sheet_18: 1908130624
+      AirCanonBoss_Sheet_210: -2059999296
+      AirCanonBoss_Sheet_78: 116868249
+      AirCanonBoss_Sheet_0: 1150049590
+      AirCanonBoss_Sheet_206: 1287022687
+      AirCanonBoss_Sheet_88: 270823410
+      AirCanonBoss_Sheet_211: -294679408
+      AirCanonBoss_Sheet_11: -720516444
+      AirCanonBoss_Sheet_204: -1479634405
+      AirCanonBoss_Sheet_62: -1484077702
+      AirCanonBoss_Sheet_174: 1547707537
+      AirCanonBoss_Sheet_222: -920396630
+      AirCanonBoss_Sheet_212: 1874735610
+      AirCanonBoss_Sheet_147: 1534448065
+      AirCanonBoss_Sheet_137: 428257300
+      AirCanonBoss_Sheet_213: 999802933
+      AirCanonBoss_Sheet_95: -842005590
+      AirCanonBoss_Sheet_170: -1670033057
+      AirCanonBoss_Sheet_55: 190053031
+      AirCanonBoss_Sheet_183: 1276926010
+      AirCanonBoss_Sheet_39: -1179080639
+      AirCanonBoss_Sheet_126: 1381183325
+      AirCanonBoss_Sheet_110: -1189420889
+      AirCanonBoss_Sheet_221: 808226446
+      AirCanonBoss_Sheet_224: 1003046327
+      AirCanonBoss_Sheet_23: -190562523
+      AirCanonBoss_Sheet_52: -1924658594
+      AirCanonBoss_Sheet_42: 1027322678
+      AirCanonBoss_Sheet_166: 1613461968
+      AirCanonBoss_Sheet_143: -2009826835
+      AirCanonBoss_Sheet_118: -2045185850
+      AirCanonBoss_Sheet_135: 2049857924
+      AirCanonBoss_Sheet_223: -317454885
+      AirCanonBoss_Sheet_98: 390324178
+      AirCanonBoss_Sheet_5: 1825396191
+      AirCanonBoss_Sheet_33: -296452643
+      AirCanonBoss_Sheet_112: 2051767475
+      AirCanonBoss_Sheet_141: -624308215
+      AirCanonBoss_Sheet_171: 1019383179
+      AirCanonBoss_Sheet_150: 1882601425
+      AirCanonBoss_Sheet_198: 1422038165
+      AirCanonBoss_Sheet_29: -1934243615
+      AirCanonBoss_Sheet_49: -1576042356
+      AirCanonBoss_Sheet_26: -1437070094
+      AirCanonBoss_Sheet_190: 1060249787
+      AirCanonBoss_Sheet_215: -2034680815
+      AirCanonBoss_Sheet_209: -219642192
+      AirCanonBoss_Sheet_149: 1554998214
+      AirCanonBoss_Sheet_76: 2103753287
+      AirCanonBoss_Sheet_207: -884402264
+      AirCanonBoss_Sheet_128: 1880332913
+      AirCanonBoss_Sheet_6: 777714505
+      AirCanonBoss_Sheet_9: -210399378
+      AirCanonBoss_Sheet_21: 1636579293
+      AirCanonBoss_Sheet_73: 1504831966
+      AirCanonBoss_Sheet_1: -1689024160
+      AirCanonBoss_Sheet_202: 1316272245
+      AirCanonBoss_Sheet_22: 1985164418
+      AirCanonBoss_Sheet_192: -1274390281
+      AirCanonBoss_Sheet_101: -1252298501
+      AirCanonBoss_Sheet_99: -36383076
+      AirCanonBoss_Sheet_16: 1839404121
+      AirCanonBoss_Sheet_220: 1147064949
+      AirCanonBoss_Sheet_32: 802367588
+      AirCanonBoss_Sheet_162: -767776204
+      AirCanonBoss_Sheet_191: 1799510273
+      AirCanonBoss_Sheet_15: -575457534
+      AirCanonBoss_Sheet_127: -1516021612
+      AirCanonBoss_Sheet_103: 619306135
+      AirCanonBoss_Sheet_178: -28410171
+      AirCanonBoss_Sheet_122: -2117558001
+      AirCanonBoss_Sheet_136: 1818294611
+      AirCanonBoss_Sheet_225: 57527009
+      AirCanonBoss_Sheet_173: 171831063
+      AirCanonBoss_Sheet_93: -2119121253
+      AirCanonBoss_Sheet_107: 4761855
+      AirCanonBoss_Sheet_69: 460496370
+      AirCanonBoss_Sheet_102: -1322775433
+      AirCanonBoss_Sheet_140: 627961627
+      AirCanonBoss_Sheet_161: 156889900
+      AirCanonBoss_Sheet_58: -11619518
+      AirCanonBoss_Sheet_91: -1655545804
+      AirCanonBoss_Sheet_108: 537832496
+      AirCanonBoss_Sheet_168: 1682214712
+      AirCanonBoss_Sheet_219: -1224404660
+      AirCanonBoss_Sheet_47: -1621017592
+      AirCanonBoss_Sheet_34: 1909763698
+      AirCanonBoss_Sheet_164: 2050483639
+      AirCanonBoss_Sheet_24: 210850724
+      AirCanonBoss_Sheet_176: -1133175769
+      AirCanonBoss_Sheet_167: 1088229169
+      AirCanonBoss_Sheet_189: -2053955913
+      AirCanonBoss_Sheet_48: -838134058
+      AirCanonBoss_Sheet_185: 1548647671
+      AirCanonBoss_Sheet_28: -169742865
+      AirCanonBoss_Sheet_4: 307244330
+      AirCanonBoss_Sheet_86: 855525158
+      AirCanonBoss_Sheet_8: -1973008047
+      AirCanonBoss_Sheet_90: 804858756
+      AirCanonBoss_Sheet_113: 193801979
+      AirCanonBoss_Sheet_100: 1146035418
+      AirCanonBoss_Sheet_208: 2001585419
+      AirCanonBoss_Sheet_138: -1338695907
+      AirCanonBoss_Sheet_172: -2011260199
+      AirCanonBoss_Sheet_182: 372645982
+      AirCanonBoss_Sheet_36: -1742133841
+      AirCanonBoss_Sheet_200: -1368784978
+      AirCanonBoss_Sheet_180: -1904005171
+      AirCanonBoss_Sheet_195: -1186619682
+      AirCanonBoss_Sheet_35: -355346651
+      AirCanonBoss_Sheet_177: 248520752
+      AirCanonBoss_Sheet_121: -2012373837
+      AirCanonBoss_Sheet_80: 993729502
+      AirCanonBoss_Sheet_41: -1684341742
+      AirCanonBoss_Sheet_30: -1716687188
+      AirCanonBoss_Sheet_7: -1536752654
+      AirCanonBoss_Sheet_59: -1599334051
+      AirCanonBoss_Sheet_81: -1506873917
+      AirCanonBoss_Sheet_163: -122732375
+      AirCanonBoss_Sheet_37: 1460556897
+      AirCanonBoss_Sheet_197: 1530304824
+      AirCanonBoss_Sheet_132: -340543935
+      AirCanonBoss_Sheet_151: 1533114764
+      AirCanonBoss_Sheet_111: 576748104
+      AirCanonBoss_Sheet_187: 182986814
+      AirCanonBoss_Sheet_130: 1163277436
+      AirCanonBoss_Sheet_193: 1912668911
+      AirCanonBoss_Sheet_218: -2128892689
+      AirCanonBoss_Sheet_53: 712600882
+      AirCanonBoss_Sheet_165: -1871277998
+      AirCanonBoss_Sheet_109: 1490911428
+      AirCanonBoss_Sheet_57: 659082122
+      AirCanonBoss_Sheet_74: -456893231
+      AirCanonBoss_Sheet_12: 313081636
+      AirCanonBoss_Sheet_27: 619942804
+      AirCanonBoss_Sheet_83: -1028294957
+      AirCanonBoss_Sheet_217: -1892108393
+      AirCanonBoss_Sheet_19: 1516053604
+      AirCanonBoss_Sheet_71: 75211910
+      AirCanonBoss_Sheet_43: -1977206475
+      AirCanonBoss_Sheet_77: -1869612414
+      AirCanonBoss_Sheet_92: -227174325
+      AirCanonBoss_Sheet_56: 1145635777
+      AirCanonBoss_Sheet_46: 1878643643
+      AirCanonBoss_Sheet_145: -1613001661
+      AirCanonBoss_Sheet_17: -1299788226
+      AirCanonBoss_Sheet_60: -1476549471
+      AirCanonBoss_Sheet_105: 409687922
+      AirCanonBoss_Sheet_96: 154115649
+      AirCanonBoss_Sheet_51: 198549377
+      AirCanonBoss_Sheet_104: 855966312
+      AirCanonBoss_Sheet_72: 346930886
+      AirCanonBoss_Sheet_148: -621292553
+      AirCanonBoss_Sheet_199: -257715698
+      AirCanonBoss_Sheet_50: 1273818160
+      AirCanonBoss_Sheet_70: 221893967
+      AirCanonBoss_Sheet_65: -407363626
+      AirCanonBoss_Sheet_157: -343024589
+      AirCanonBoss_Sheet_31: -1719680398
+      AirCanonBoss_Sheet_10: -973276745
+      AirCanonBoss_Sheet_116: -1836554346
+      AirCanonBoss_Sheet_54: -269531504
+      AirCanonBoss_Sheet_85: 1407283680
+      AirCanonBoss_Sheet_133: 140730136
+      AirCanonBoss_Sheet_114: -1588194530
+      AirCanonBoss_Sheet_214: 1598030213
+      AirCanonBoss_Sheet_68: 509424011
+      AirCanonBoss_Sheet_97: 1441620777
+      AirCanonBoss_Sheet_154: -420731883
+      AirCanonBoss_Sheet_226: -455544875
+      AirCanonBoss_Sheet_124: -1115841824
+      AirCanonBoss_Sheet_40: -1238650166
+      AirCanonBoss_Sheet_203: 1770029378
+      AirCanonBoss_Sheet_45: 957887236
+      AirCanonBoss_Sheet_2: 324496806
+      AirCanonBoss_Sheet_3: -1410109601
+      AirCanonBoss_Sheet_152: -1945228274
+      AirCanonBoss_Sheet_38: -478424988
+      AirCanonBoss_Sheet_66: 594597827
+      AirCanonBoss_Sheet_146: -1663809297
+      AirCanonBoss_Sheet_44: 1724996423
+      AirCanonBoss_Sheet_201: 44180681
+      AirCanonBoss_Sheet_115: -2076072246
+      AirCanonBoss_Sheet_175: 1820087267
+      AirCanonBoss_Sheet_153: -460332184
+      AirCanonBoss_Sheet_106: -592588549
+      AirCanonBoss_Sheet_89: 2094797849
+      AirCanonBoss_Sheet_13: -1702934309
+      AirCanonBoss_Sheet_64: 599109392
+      AirCanonBoss_Sheet_119: 1663374810
+      AirCanonBoss_Sheet_82: -469403824
+      AirCanonBoss_Sheet_216: -778027963
+      AirCanonBoss_Sheet_144: 363209737
+      AirCanonBoss_Sheet_158: 304640936
+      AirCanonBoss_Sheet_188: -2004234711
+      AirCanonBoss_Sheet_79: -2005836679
+      AirCanonBoss_Sheet_205: 306393879
+      AirCanonBoss_Sheet_181: -1246300096
+      AirCanonBoss_Sheet_186: -31737154
+      AirCanonBoss_Sheet_25: 1058976553
+      AirCanonBoss_Sheet_184: 852486885
+      AirCanonBoss_Sheet_63: -1488323190
+      AirCanonBoss_Sheet_129: 1675229699
+      AirCanonBoss_Sheet_156: -823293307
+      AirCanonBoss_Sheet_123: 94911161
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

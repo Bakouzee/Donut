@@ -15,12 +15,17 @@ namespace Com.Donut.BattleSystem
             yield break;
         }
         
-        public virtual IEnumerator Attack() //Input A Mario
+        public virtual IEnumerator UseInput_A() 
         {
             yield break;
         }
 
-        public virtual IEnumerator Heal() //Input B Luigi
+        public virtual IEnumerator UseInput_B() 
+        {
+            yield break;
+        }
+        
+        public virtual IEnumerator UseInput_Arrow() 
         {
             yield break;
         }

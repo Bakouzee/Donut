@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b21781f22e8f3d43b8dd1c27fce39ff, type: 3}
+  m_Name: Opponent
+  m_EditorClassIdentifier: 
+  _name: AirCanon
+  _level: 1
+  _sprite: {fileID: 537832496, guid: 265cb7e9d22f0e84e877c96193041b99, type: 3}
+  _animatorController: {fileID: 0}
+  _currentHealth: 500
+  _totalHealth: 500
+  _minDamage: 20
+  _maxDamage: 40
+  _power: 500
+  _healing: 10
+  attacks: []

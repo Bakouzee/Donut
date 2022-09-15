@@ -11,7 +11,7 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator Start()
         {
-            //BattleSystem.Interface.SetDialogText($"A wild {BattleSystem.Enemy.Name} appeared!");
+            //anim delay monster appeared
 
             yield return new WaitForSeconds(2f);
 

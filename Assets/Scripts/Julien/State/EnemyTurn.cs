@@ -11,9 +11,8 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator Start()
         {
-            //BattleSystem.Interface.SetDialogText($"{BattleSystem.Enemy.Name} attacks!");
-
-            //var isDead = BattleSystem.Player.Damage(BattleSystem.Enemy.Attack);
+            //Initialize choose action UI
+            //Choose attack
 
             yield return new WaitForSeconds(1f);
 
@@ -25,6 +24,12 @@ namespace Com.Donut.BattleSystem
             {
                 BattleSystem.SetState(new PlayerTurn(BattleSystem));
             }*/
+        }
+
+        public void EndOfAnim()
+        {
+            //Update data interface
+            BattleSystem.SetState(new PlayerTurn(BattleSystem));
         }
 
     }
