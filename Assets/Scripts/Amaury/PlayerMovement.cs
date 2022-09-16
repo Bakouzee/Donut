@@ -15,14 +15,16 @@ public class PlayerMovement : MonoBehaviour  {
     }
 
     private void Update() {
-        rb.velocity = movement * speed;
-        Debug.Log("vel: " + rb.velocity);
+        transform.Translate(movement * speed * Time.deltaTime);
+        //Debug.Log("vel: " + rb.velocity);
     }
 
 
     public void OnMove(InputAction.CallbackContext e) {
         if (e.performed)
             movement = e.ReadValue<Vector2>();
+        if(e.canceled)
+            movement = Vector2.zero;
     }
    
 }
