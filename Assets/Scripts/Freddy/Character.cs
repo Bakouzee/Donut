@@ -11,6 +11,16 @@ public abstract class Character : MonoBehaviour
     }
 
     protected Position position;
+    protected Animator animController;
+    protected string currentState;
+
+    public virtual void Start() {
+        animController = GetComponent<Animator>();
+    }
+
+    public virtual void Update() {
+        Move();
+    }
 
     protected abstract void Move();
 
@@ -30,5 +40,13 @@ public abstract class Character : MonoBehaviour
             newPos.y = pos.position.y; 
         }
         return newPos;
+    }
+
+    protected void SwitchAnimState(string newState) {
+        if (currentState == newState) return;
+        
+        animController.Play(newState);
+
+        currentState = newState;
     }
 }
