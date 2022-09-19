@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CharacterType", menuName = "Player", order = 1)]
 public class PlayerType : ScriptableObject
 { 
-    public CharacterData Player;
+    public PlayerData Player;
 }
