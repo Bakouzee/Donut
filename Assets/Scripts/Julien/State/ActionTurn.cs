@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Com.Donut.BattleSystem
@@ -12,6 +13,7 @@ namespace Com.Donut.BattleSystem
         public override IEnumerator UseInput_A()
         {
             //Launch attack
+            BattleSystem.Player0.GetComponent<Animator>().SetTrigger("ChooseAbility");
             BattleSystem.Interface.HideAction();
             BattleSystem.Interface.HideInputPlayers();
             yield break;
@@ -20,6 +22,7 @@ namespace Com.Donut.BattleSystem
         public override IEnumerator UseInput_B()
         {
             //Launch attack
+            BattleSystem.Player1.GetComponent<Animator>().SetTrigger("ChooseAbility");
             BattleSystem.Interface.HideAction();
             BattleSystem.Interface.HideInputPlayers();
             yield break;

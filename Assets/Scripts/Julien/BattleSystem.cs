@@ -19,30 +19,20 @@ namespace Com.Donut.BattleSystem
         public Fighter Player1 => player1;
         public Fighter Enemy => enemy;
         public BattleUI Interface => ui;
-
         public Sprite Sprite => sprite;
 
-        // maybe initialize in Intro/Begin state
         private void Start()
+        {
+            SetState(new Init(this));
+        }
+
+        public void InitializeBattle()
         {
             Interface.Initialize(player0, player1, enemy, sprite);
             FighterTurn = player0;
-
-            SetState(new Begin(this));
         }
-
-
-        void Update()
-        {
-            if(Input.GetKeyDown(KeyCode.A))
-                useInput_A();
-            
-            if(Input.GetKeyDown(KeyCode.B))
-                useInput_B();
-            
-            if(Input.GetKeyDown(KeyCode.RightArrow))
-                UseInput_Arrow();
-        }
+        
+        
         public void useInput_A()
         {
             if(CanUseInput)
@@ -57,7 +47,7 @@ namespace Com.Donut.BattleSystem
 
         public void UseInput_Arrow()
         {
-            if(CanUseInput)
+            //if(CanUseInput)
                 StartCoroutine(State.UseInput_Arrow());
         }
     }

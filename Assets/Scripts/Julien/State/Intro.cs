@@ -3,15 +3,15 @@ using UnityEngine;
 
 namespace Com.Donut.BattleSystem
 {
-    public class Begin : State
+    public class Intro : State //Starting battle anim
     {
-        public Begin(BattleSystem battleSystem) : base(battleSystem)
+        public Intro(BattleSystem battleSystem) : base(battleSystem)
         {
         }
 
         public override IEnumerator Start()
         {
-            //anim delay monster appeared
+            //Launch all anim or let time for anim
 
             yield return new WaitForSeconds(2f);
 

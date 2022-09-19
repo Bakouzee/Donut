@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Com.Donut.BattleSystem
 {
-    public class PlayerTurn : State
+    public class PlayerTurn : State //Choose next fighter
     {
         
         public PlayerTurn(BattleSystem battleSystem) : base(battleSystem)
@@ -23,9 +23,9 @@ namespace Com.Donut.BattleSystem
                 BattleSystem.Interface.ShowInputPlayer1();
             }
             
-            
-            yield return new WaitForSeconds(1f);
             BattleSystem.SetState(new ActionTurn(BattleSystem));
+            
+            yield break;
         }
     }
 }

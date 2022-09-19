@@ -66,7 +66,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -841,14 +841,13 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       MarioBattle_AnimSheet_2_5: 558999318
-      MarioBattle_AnimSheet_2_18: 1830755156
-      MarioBattle_AnimSheet_2_24: -129104001
+      MarioBattle_AnimSheet_2_27: 772563370
+      MarioBattle_AnimSheet_2_30: 1972091380
       MarioBattle_AnimSheet_2_9: 168017343
       MarioBattle_AnimSheet_2_29: 68174575
-      MarioBattle_AnimSheet_2_27: 772563370
-      MarioBattle_AnimSheet_2_32: -1277353650
+      MarioBattle_AnimSheet_2_33: 1805794776
       MarioBattle_AnimSheet_2_8: 527969830
-      MarioBattle_AnimSheet_2_30: 1972091380
+      MarioBattle_AnimSheet_2_0: -83306652
       MarioBattle_AnimSheet_2_7: -1046469235
       MarioBattle_AnimSheet_2_22: 1076143804
       MarioBattle_AnimSheet_2_28: -1693188065
@@ -861,17 +860,18 @@ TextureImporter:
       MarioBattle_AnimSheet_2_12: -625605418
       MarioBattle_AnimSheet_2_20: -242075390
       MarioBattle_AnimSheet_2_14: 1842106076
-      MarioBattle_AnimSheet_2_33: 1805794776
+      MarioBattle_AnimSheet_2_17: -863283387
       MarioBattle_AnimSheet_2_16: 259875105
       MarioBattle_AnimSheet_2_3: 1703367544
       MarioBattle_AnimSheet_2_25: -2117388139
       MarioBattle_AnimSheet_2_19: 622313971
       MarioBattle_AnimSheet_2_31: -1586630430
       MarioBattle_AnimSheet_2_4: -44808676
-      MarioBattle_AnimSheet_2_17: -863283387
-      MarioBattle_AnimSheet_2_10: -1486644803
-      MarioBattle_AnimSheet_2_0: -83306652
+      MarioBattle_AnimSheet_2_24: -129104001
+      MarioBattle_AnimSheet_2_32: -1277353650
+      MarioBattle_AnimSheet_2_18: 1830755156
       MarioBattle_AnimSheet_2_13: 1167963940
+      MarioBattle_AnimSheet_2_10: -1486644803
       MarioBattle_AnimSheet_2_1: -1357411410
       MarioBattle_AnimSheet_2_21: -708177647
   spritePackingTag: 
