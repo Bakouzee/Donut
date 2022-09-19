@@ -25,6 +25,8 @@ namespace Com.Donut.BattleSystem
             InitializePlayer(player0, player1);
             InitializeEnemy(enemy);
             InitializeBattleField(sprite);
+            
+            actionController.InitializeActionUI(player0.Abilities); //Uniquement avec les attaque du joueur 0
         }
 
         public void UpdateUI()
@@ -94,13 +96,33 @@ namespace Com.Donut.BattleSystem
         public void ShowAction()
         {
             actionController.ShowActionUI();
-            BattleSystem.canUseInput = true;
+            BattleSystem.CanUseInput = true;
         }
         
         public void HideAction()
         {
             actionController.HideActionUI();
-            BattleSystem.canUseInput = false;
+            BattleSystem.CanUseInput = false;
+        }
+
+        public void ShowInputPlayer0()
+        {
+            inputControllerUI.ShowInputPlayer0();
+        }
+        
+        public void ShowInputPlayer1()
+        {
+            inputControllerUI.ShowInputPlayer1();
+        }
+
+        public void HideInputPlayers()
+        {
+            inputControllerUI.HideInputPlayers();
+        }
+
+        public void ShiftAction()
+        {
+            actionController.UpdateUI();
         }
     }
 }

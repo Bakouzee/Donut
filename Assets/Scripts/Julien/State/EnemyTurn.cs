@@ -13,23 +13,16 @@ namespace Com.Donut.BattleSystem
         {
             //Initialize choose action UI
             //Choose attack
-
-            yield return new WaitForSeconds(1f);
-
-            /*if (isDead)
-            {
-                BattleSystem.SetState(new Lost(BattleSystem));
-            }
-            else
-            {
-                BattleSystem.SetState(new PlayerTurn(BattleSystem));
-            }*/
+            yield break;
         }
 
         public void EndOfAnim()
         {
             //Update data interface
+            //Update fighter turn if one is dead
+            
             BattleSystem.SetState(new PlayerTurn(BattleSystem));
+            //Or loose
         }
 
     }

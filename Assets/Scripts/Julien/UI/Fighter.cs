@@ -20,7 +20,7 @@ namespace Com.Donut.BattleSystem
         [SerializeField] private int _power;
         [SerializeField] private int _healing;
         
-        [SerializeField] private List<Attack> attacks = new List<Attack>();
+        [SerializeField] private List<Abilities> abilities = new List<Abilities>();
 
         public string Name => _name;
         public string Level => _level;
@@ -33,7 +33,7 @@ namespace Com.Donut.BattleSystem
         public int Power => _power;
         public int Healing => _healing;
 
-        public List<Attack> Attacks => attacks;
+        public List<Abilities> Abilities => abilities;
 
         public bool Damage(int amount)
         {

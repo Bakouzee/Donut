@@ -12,4 +12,18 @@ public class InputControllerUI : MonoBehaviour
     [SerializeField] private Animator animInput0;
     [SerializeField] private Animator animInput1;
 
+    public void ShowInputPlayer0()
+    {
+        input0.gameObject.SetActive(true);
+    }
+    public void ShowInputPlayer1()
+    {
+        input1.gameObject.SetActive(true);
+    }
+    
+    public void HideInputPlayers()
+    {
+        input0.gameObject.SetActive(false);
+        input1.gameObject.SetActive(false);
+    }
 }

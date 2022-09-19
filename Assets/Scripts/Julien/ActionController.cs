@@ -2,27 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using Com.Donut.BattleSystem;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class ActionController : MonoBehaviour
 {
     [SerializeField] private List<Image> actionsImage= new List<Image>();
-    [SerializeField] private Text attackText;
+    [SerializeField] private Text abilityText;
     
-    private List<Attack> _attacks = new List<Attack>();
-    private int _attackIndex = 0;
+    [SerializeField] List<Abilities> abilities = new List<Abilities>();
+    private Abilities _abilityIndex;
 
-    public void InitializeActionUI(List<Attack> attacks)
+    public void InitializeActionUI(List<Abilities> abilitiesRef)
     {
-        _attacks = attacks;
+        abilities = abilitiesRef;
         
-        if(attacks.Count > 6)
+        if(abilities.Count > 6)
             Debug.LogError("More than 6 attack");
 
-        for (int x = 0; x < attacks.Count; x++)
-            actionsImage[x].sprite = attacks[x].iconSprite;
+        for (int x = 0; x < abilities.Count; x++)
+            actionsImage[x].sprite = abilities[x].iconSprite;
 
-        attackText.text = attacks[0].attackDesc;
+        _abilityIndex = abilities[0];
+        abilityText.text = _abilityIndex.attackDesc;
+        
+        Debug.Log("End of Initialize");
     }
     
     public void ShowActionUI()
@@ -43,6 +47,16 @@ public class ActionController : MonoBehaviour
 
     public void UpdateUI()
     {
+        if (abilities.Count <= 1) return;
+
+        var attackRef = abilities[0];
+        abilities.Remove(abilities[0]);
+        abilities.Add(attackRef);
         
+        for (int x = 0; x < abilities.Count; x++)
+            actionsImage[x].sprite = abilities[x].iconSprite;
+        
+        _abilityIndex = abilities[0];
+        abilityText.text = _abilityIndex.attackDesc;
     }
 }

@@ -12,7 +12,8 @@ namespace Com.Donut.BattleSystem
         [SerializeField] private Fighter player1;
         [SerializeField] private Fighter enemy;
 
-        [HideInInspector] public static bool canUseInput = false;
+        [HideInInspector] public static Fighter FighterTurn;
+        [HideInInspector] public static bool CanUseInput = false;
 
         public Fighter Player0 => player0;
         public Fighter Player1 => player1;
@@ -21,9 +22,11 @@ namespace Com.Donut.BattleSystem
 
         public Sprite Sprite => sprite;
 
+        // maybe initialize in Intro/Begin state
         private void Start()
         {
             Interface.Initialize(player0, player1, enemy, sprite);
+            FighterTurn = player0;
 
             SetState(new Begin(this));
         }
@@ -42,19 +45,19 @@ namespace Com.Donut.BattleSystem
         }
         public void useInput_A()
         {
-            if(canUseInput)
+            if(CanUseInput)
                 StartCoroutine(State.UseInput_A());
         }
 
         public void useInput_B()
         {
-            if(canUseInput)
+            if(CanUseInput)
                 StartCoroutine(State.UseInput_B());
         }
 
         public void UseInput_Arrow()
         {
-            if(canUseInput)
+            if(CanUseInput)
                 StartCoroutine(State.UseInput_Arrow());
         }
     }

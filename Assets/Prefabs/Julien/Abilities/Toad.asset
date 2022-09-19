@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 630b3ff6543b2d142b3abcdfe9f1bd71, type: 3}
-  m_Name: Hammer
+  m_Name: Toad
   m_EditorClassIdentifier: 
-  attackName: Hammer
-  iconSprite: {fileID: 400991213, guid: 385e44a01c85a8b43b2fab330a309126, type: 3}
-  attackId: 1
+  attackId: 4
+  attackName: Toad
+  iconSprite: {fileID: 610712029, guid: 385e44a01c85a8b43b2fab330a309126, type: 3}
+  attackDesc: Toad attack
