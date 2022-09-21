@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public abstract class Character : MonoBehaviour
 {
     protected struct Position
@@ -12,9 +13,9 @@ public abstract class Character : MonoBehaviour
 
     protected Position position;
     protected Animator animController;
-    protected string currentState;
+    public string currentState;
 
-    public virtual void Start() {
+    public virtual void Awake() {
         animController = GetComponent<Animator>();
     }
 
