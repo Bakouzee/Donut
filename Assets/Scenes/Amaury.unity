@@ -341,7 +341,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11f7b4cb1ad3564cb83bdf64e88a6ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
   currentState: 
+  name: L
 --- !u!1 &1299702090
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +460,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c75acb7045cf71741b36bd1540fe7de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
   currentState: 
+  name: M
   movement: {x: 0, y: 0}
   speed: 5
 --- !u!212 &1397198710

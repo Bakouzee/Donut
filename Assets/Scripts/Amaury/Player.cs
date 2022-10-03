@@ -8,33 +8,31 @@ public class Player : Character  {
 
     public Vector2 movement;
     private Rigidbody2D rb;
-    private SpriteRenderer spriteRenderer;
     public float speed;
     public List<IFollowable> followers;
 
     private int lastFollowersSize = -1;
     
-    // Animations 
-    private static string[] IDLES = new string[] {"M_I_Front", "M_I_Right" };
-    private static string[] WALKS = new string[] { "M_W_Front","M_W_Back","M_W_Side" }; 
     
     
 
     public override void Awake() {
+        base.Awake();
+        
         rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         followers = new List<IFollowable>();
+
     }
 
     public override void Update() {
-
+        base.Update();
+        
         if(lastFollowersSize != followers.Count)
             ManageFollowers(followers.Count > lastFollowersSize); // To Modify : probably doesn't work with follower remove
 
         lastFollowersSize = followers.Count;
     }
-
-
+    
     protected override void Move() {
         if (movement == Vector2.zero)
             SwitchAnimState(IDLES[0]);
@@ -44,6 +42,7 @@ public class Player : Character  {
         }
 
         rb.velocity = movement * speed;
+        
         
         spriteRenderer.flipX = movement.x < 0 && movement.y == 0;
     }

@@ -13,10 +13,19 @@ public abstract class Character : MonoBehaviour
 
     protected Position position;
     protected Animator animController;
+    public SpriteRenderer spriteRenderer;
+    
     public string currentState;
 
+    public string name;
+    
+    protected static string[] IDLES = new string[] {"I_Front", "I_Right" };
+    protected static string[] WALKS = new string[] { "W_Front","W_Back","W_Side" }; 
+    
+    
     public virtual void Awake() {
         animController = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public virtual void Update() {
@@ -42,12 +51,14 @@ public abstract class Character : MonoBehaviour
         }
         return newPos;
     }
+    
+    
 
     protected void SwitchAnimState(string newState) {
         if (currentState == newState) return;
         
-        animController.Play(newState);
+        animController.Play(name + "_" +  newState);
 
-        currentState = newState;
+        currentState = newState.Replace(name,"");
     }
 }
