@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public abstract class Character : MonoBehaviour
 {
     protected struct Position
@@ -11,6 +12,25 @@ public abstract class Character : MonoBehaviour
     }
 
     protected Position position;
+    protected Animator animController;
+    public SpriteRenderer spriteRenderer;
+    
+    public string currentState;
+
+    public string name;
+    
+    protected static string[] IDLES = new string[] {"I_Front", "I_Right" };
+    protected static string[] WALKS = new string[] { "W_Front","W_Back","W_Side" }; 
+    
+    
+    public virtual void Awake() {
+        animController = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    public virtual void Update() {
+        Move();
+    }
 
     protected abstract void Move();
 
@@ -30,5 +50,15 @@ public abstract class Character : MonoBehaviour
             newPos.y = pos.position.y; 
         }
         return newPos;
+    }
+    
+    
+
+    protected void SwitchAnimState(string newState) {
+        if (currentState == newState) return;
+        
+        animController.Play(name + "_" +  newState);
+
+        currentState = newState.Replace(name,"");
     }
 }
