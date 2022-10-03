@@ -7,4 +7,5 @@ public class Abilities : ScriptableObject
     public string attackName;
     public Sprite iconSprite;
     public string attackDesc;
+    public float damage;
 }

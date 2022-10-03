@@ -12,17 +12,9 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator Start()
         {
-            if (BattleSystem.FighterTurn == BattleSystem.Player0)
-            {
-                BattleSystem.Interface.ShowAction();
-                BattleSystem.Interface.ShowInputPlayer0();
-            }
-            else
-            {
-                BattleSystem.Interface.ShowAction();
-                BattleSystem.Interface.ShowInputPlayer1();
-            }
-            
+            BattleSystem.Interface.SetActiveAbility(BattleSystem.FighterTurn, true);
+            BattleSystem.Interface.SetActivePlayerInput(BattleSystem.FighterTurn, true);
+
             BattleSystem.SetState(new ActionTurn(BattleSystem));
             
             yield break;

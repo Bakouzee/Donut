@@ -26,8 +26,8 @@ namespace Com.Donut.BattleSystem
         public string Level => _level;
         public Sprite Sprite => _sprite;
         public AnimatorController AnimatorController => _animatorController;
-        public int CurrentHealth => _currentHealth;
         public int TotalHealth => _totalHealth;
+        public int CurrentHealth => _currentHealth;
         public int MinDamage => _minDamage;
         public int MaxDamage => _maxDamage; 
         public int Power => _power;

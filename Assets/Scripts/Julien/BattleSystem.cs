@@ -1,6 +1,6 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Com.Donut.BattleSystem
 {
@@ -21,6 +21,7 @@ namespace Com.Donut.BattleSystem
         public BattleUI Interface => ui;
         public Sprite Sprite => sprite;
 
+
         private void Start()
         {
             SetState(new Init(this));
@@ -28,26 +29,26 @@ namespace Com.Donut.BattleSystem
 
         public void InitializeBattle()
         {
-            Interface.Initialize(player0, player1, enemy, sprite);
+            Interface.Initialize(this,player0, player1, enemy, sprite);
             FighterTurn = player0;
         }
         
         
-        public void useInput_A()
+        public void OnUseInput_A()
         {
             if(CanUseInput)
                 StartCoroutine(State.UseInput_A());
         }
 
-        public void useInput_B()
+        public void OnUseInput_B()
         {
             if(CanUseInput)
                 StartCoroutine(State.UseInput_B());
         }
 
-        public void UseInput_Arrow()
+        public void OnUseInput_Arrow()
         {
-            //if(CanUseInput)
+            if(CanUseInput)
                 StartCoroutine(State.UseInput_Arrow());
         }
     }

@@ -16,3 +16,4 @@ MonoBehaviour:
   attackName: Hammer
   iconSprite: {fileID: 400991213, guid: 385e44a01c85a8b43b2fab330a309126, type: 3}
   attackDesc: Hit the enemy with a Hammer
+  damage: 20

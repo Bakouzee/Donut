@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Com.Donut.BattleSystem
@@ -12,31 +11,32 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator UseInput_A()
         {
-            //Launch attack
-            BattleSystem.Player0.GetComponent<Animator>().SetTrigger("ChooseAbility");
-            BattleSystem.Interface.HideAction();
-            BattleSystem.Interface.HideInputPlayers();
+            BattleSystem.Interface.SetAnimTrigger(BattleSystem.Player0, "ChooseAbility");
+            BattleSystem.Interface.SetActiveAbility(BattleSystem.Player0, false);
+            BattleSystem.Interface.SetActivePlayerInput(BattleSystem.Player0, false);
+            BattleSystem.Interface.LaunchAbility(BattleSystem.FighterTurn);
+            
             yield break;
         }
 
         public override IEnumerator UseInput_B()
         {
-            //Launch attack
-            BattleSystem.Player1.GetComponent<Animator>().SetTrigger("ChooseAbility");
-            BattleSystem.Interface.HideAction();
-            BattleSystem.Interface.HideInputPlayers();
+            BattleSystem.Interface.SetAnimTrigger(BattleSystem.Player1, "ChooseAbility");
+            BattleSystem.Interface.SetActiveAbility(BattleSystem.Player1, false);
+            BattleSystem.Interface.SetActivePlayerInput(BattleSystem.Player1, false);
+            BattleSystem.Interface.LaunchAbility(BattleSystem.FighterTurn);
             yield break;
         }
 
         public override IEnumerator UseInput_Arrow()
         {
-            BattleSystem.Interface.ShiftAction();
+            BattleSystem.Interface.ShiftAction(BattleSystem.FighterTurn);
             yield break;
         }
         
         public void EndOfAnim()
         {
-            
+            //Damage
             BattleSystem.SetState(new EnemyTurn(BattleSystem));
             //Or Win
         }

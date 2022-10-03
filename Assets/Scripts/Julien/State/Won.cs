@@ -11,7 +11,6 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator Start()
         {
-            //BattleSystem.Interface.SetDialogText("You won the battle!");
             yield break;
         }
 

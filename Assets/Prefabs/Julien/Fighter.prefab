@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6322394363482325587}
   - component: {fileID: 1032350741797291420}
   - component: {fileID: -7598060477769656191}
+  - component: {fileID: 6652195025553619830}
   m_Layer: 5
   m_Name: Fighter
   m_TagString: Untagged
@@ -97,3 +98,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6652195025553619830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2258237836305513565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97db5e74e89d9124da69af3b7fa7ed8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
