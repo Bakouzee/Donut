@@ -31,8 +31,6 @@ public class FollowerEntity : Character,IFollowable {
     public override void Update() {
         base.Update();
         
-        Debug.Log("update entity");
-        
         if(isFollowing && !lastFollow)
             OnFollowBegin();
         

@@ -12,8 +12,9 @@ public class Player : Character  {
     public List<IFollowable> followers;
 
     private int lastFollowersSize = -1;
-    
-    
+
+    public bool hasCarapace;
+    public bool isTransformed;
     
 
     public override void Awake() {
@@ -34,13 +35,25 @@ public class Player : Character  {
     }
     
     protected override void Move() {
-        if (movement == Vector2.zero)
-            SwitchAnimState(IDLES[0]);
-        else {
-            string anim_id = movement.x != 0 && movement.y == 0 ? WALKS[2] : movement.y > 0 && movement.x == 0 ? WALKS[1] : WALKS[0];
-            SwitchAnimState(anim_id);
+        if (!hasCarapace)
+        {
+            if (movement == Vector2.zero)
+                SwitchAnimState(IDLES[0]);
+            else {
+                string anim_id = movement.x != 0 && movement.y == 0 ? WALKS[2] : movement.y > 0 && movement.x == 0 ? WALKS[1] : WALKS[0];
+                SwitchAnimState(anim_id);
+            }
         }
-
+        else if(!isTransformed)
+        {
+            Debug.Log("switch state");
+            if (movement == Vector2.zero)
+                SwitchAnimState(IDLES[0]);
+            else {
+                string anim_id = movement.x != 0 && movement.y == 0 ? WALKS_CARAPACE[2] : movement.y > 0 && movement.x == 0 ? WALKS_CARAPACE[1] : WALKS_CARAPACE[0];
+                SwitchAnimState(anim_id);
+            }
+        }
         rb.velocity = movement * speed;
         
         
@@ -49,16 +62,8 @@ public class Player : Character  {
 
     private void ManageFollowers(bool add) {
         int followerIndex = add ? followers.Count - 1 : 0; // To Modify with remove
-        
-        Debug.Log("in list " + followers[followerIndex]);
-        
-        Debug.Log("value before " + followers[followerIndex].target);
-        
+
         followers[followerIndex].target = this;
-        
-        Debug.Log("value after " + followers[followerIndex].target);
-        
-        
     }
 
     public void OnMove(InputAction.CallbackContext e) {
@@ -66,6 +71,15 @@ public class Player : Character  {
             movement = e.ReadValue<Vector2>();
         if(e.canceled)
             movement = Vector2.zero;
+    }
+
+    public void OnTransformation(InputAction.CallbackContext e) {
+        if (e.performed) {
+            Debug.Log("on transformation");
+            SwitchAnimState("WC_Run");
+            isTransformed = true;
+
+        }
     }
    
 }
