@@ -9,13 +9,18 @@ public class Player : Character  {
     public Vector2 movement;
     private Rigidbody2D rb;
     public float speed;
+    private float initialSpeed;
     public List<IFollowable> followers;
 
     private int lastFollowersSize = -1;
 
     public bool hasCarapace;
     public bool isTransformed;
-    
+
+    public GameObject arrow;
+
+    private Vector3 direction;
+    private Vector3 lastVelocity;
 
     public override void Awake() {
         base.Awake();
@@ -23,13 +28,14 @@ public class Player : Character  {
         rb = GetComponent<Rigidbody2D>();
         followers = new List<IFollowable>();
 
+        initialSpeed = speed;
     }
 
     public override void Update() {
         base.Update();
         
-        if(lastFollowersSize != followers.Count)
-            ManageFollowers(followers.Count > lastFollowersSize); // To Modify : probably doesn't work with follower remove
+      //  if(lastFollowersSize != followers.Count)
+        //    ManageFollowers(followers.Count > lastFollowersSize); // To Modify : probably doesn't work with follower remove
 
         lastFollowersSize = followers.Count;
     }
@@ -46,7 +52,6 @@ public class Player : Character  {
         }
         else if(!isTransformed)
         {
-            Debug.Log("switch state");
             if (movement == Vector2.zero)
                 SwitchAnimState(IDLES[0]);
             else {
@@ -54,10 +59,15 @@ public class Player : Character  {
                 SwitchAnimState(anim_id);
             }
         }
+
         rb.velocity = movement * speed;
+        
+        if (isTransformed)
+            rb.velocity = direction * speed;
         
         
         spriteRenderer.flipX = movement.x < 0 && movement.y == 0;
+        lastVelocity = rb.velocity;
     }
 
     private void ManageFollowers(bool add) {
@@ -75,11 +85,21 @@ public class Player : Character  {
 
     public void OnTransformation(InputAction.CallbackContext e) {
         if (e.performed) {
-            Debug.Log("on transformation");
             SwitchAnimState("WC_Run");
             isTransformed = true;
 
         }
     }
-   
+
+    public void OnThrow(InputAction.CallbackContext e) {
+        if (e.performed) {
+            direction = (arrow.transform.position - transform.position).normalized;
+            
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D col) {
+        Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
+        direction = reflectVec;
+    }
 }
