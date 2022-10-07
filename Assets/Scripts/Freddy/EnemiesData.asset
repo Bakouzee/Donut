@@ -33,4 +33,4 @@ MonoBehaviour:
     defense: 0
     speed: 0
     luck: 0
-    type: 0
+    type: 1

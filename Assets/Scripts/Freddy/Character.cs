@@ -21,7 +21,8 @@ public abstract class Character : MonoBehaviour
     
     protected static string[] IDLES = new string[] {"I_Front", "I_Right" };
     protected static string[] WALKS = new string[] { "W_Front","W_Back","W_Side" }; 
-    
+    protected static string[] WALKS_CARAPACE = new string[] { "WC_Front","WC_Back","WC_Side" };
+
     
     public virtual void Awake() {
         animController = GetComponent<Animator>();
