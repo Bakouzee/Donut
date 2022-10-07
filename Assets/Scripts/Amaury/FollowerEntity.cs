@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class FollowerEntity : Character,IFollowable {
     
@@ -10,6 +12,7 @@ public class FollowerEntity : Character,IFollowable {
     public bool isFollowing { get; set; }
     public bool lastFollow { get; set; }
 
+    private NavMeshAgent agent;
     public void Start() {
         target = FindObjectOfType<Player>();
 
@@ -19,13 +22,14 @@ public class FollowerEntity : Character,IFollowable {
         isFollowing = true;
 
         range = 2;
+
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
 
-    public override void Update()
-    {
+    public override void Update() {
         base.Update();
-        
-        Debug.Log("update entity");
         
         if(isFollowing && !lastFollow)
             OnFollowBegin();
@@ -47,14 +51,28 @@ public class FollowerEntity : Character,IFollowable {
     }
 
     public void Follow() {
-        SwitchAnimState(target.currentState);
+        if (target is Player) {
+            Player player = (Player)target;
 
-        transform.position = target.transform.position - transform.right * range;
+            Vector3 pMove = player.movement;
+
+            Vector3 direction = pMove.x > 0 && pMove.y == 0 ? transform.right :
+                pMove.x < 0 && pMove.y == 0 ? transform.right * -1 : pMove.x == 0 && pMove.y > 0 ? transform.up : transform.up * -1;
+            
+            agent.SetDestination(target.transform.position - direction * range);
+                
+            if(player.movement != Vector2.zero)
+                SwitchAnimState(target.currentState);
+            else {
+                if(agent.remainingDistance < 0.5f)
+                    SwitchAnimState(target.currentState);
+            }
+        }
+        
         spriteRenderer.flipX = target.spriteRenderer.flipX;
     }
 
-    public void OnFollowEnd()
-    {
+    public void OnFollowEnd() {
         Debug.Log("follow end");
     }    
 }

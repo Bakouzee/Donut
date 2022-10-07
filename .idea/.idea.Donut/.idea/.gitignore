@@ -1,11 +1,11 @@
-﻿# Default ignored files
+# Default ignored files
 /shelf/
 /workspace.xml
 # Rider ignored files
-/.idea.Donut.iml
+/projectSettingsUpdater.xml
 /contentModel.xml
 /modules.xml
-/projectSettingsUpdater.xml
+/.idea.Donut.iml
 # Editor-based HTTP Client requests
 /httpRequests/
 # Datasource local storage ignored files
