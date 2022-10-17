@@ -52,13 +52,11 @@ public abstract class Character : MonoBehaviour
         }
         return newPos;
     }
-    
-    
 
     protected void SwitchAnimState(string newState) {
         if (currentState == newState) return;
         
-        animController.Play(/*name + "_" +  newState*/ "Test_Anim");
+        animController.Play(name + "_" +  newState);
 
         currentState = newState.Replace(name,"");
     }
