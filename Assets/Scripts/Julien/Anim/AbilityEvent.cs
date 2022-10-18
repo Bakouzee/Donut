@@ -1,85 +1,133 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Com.Donut.BattleSystem;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class AbilityEvent : MonoBehaviour
+namespace Com.Donut.BattleSystem
 {
-    private BattleSystem _battleSystem;
-    
-    //Move forward
-    private bool _startMoving = false;
-    private float _offsetX = 50f;
+    public class AbilityEvent : MonoBehaviour
+    {
+        private BattleSystem _battleSystem;
 
-    private Vector3 _startInit;
-    private float _cooldownMoveDuration;
-    private float _currentCooldown;
-    
-    //Move Backward
-    private bool _startMovingBackward = false;
-    private Vector3 _startInitBackward;
-    private float _cooldownMoveDurationBackward;
-    private float _currentCooldownBackward;
-    private void Awake()
-    {
-        _battleSystem = FindObjectOfType<BattleSystem>();
-    }
-    
-    public void EndOfAnim()
-    {
-        _battleSystem.Animation_End();
-    }
+        private bool _isAnEnemy = false;
 
-    public void Move() 
-    {
-        _startInit = transform.position;
-        var animator = gameObject.GetComponent<Animator>();
-        var currentClipInfo = animator.GetCurrentAnimatorClipInfo(0);
-        var currentClipLength = currentClipInfo[0].clip.length;   //Access the current length of the clip
-        _cooldownMoveDuration = currentClipLength;  
-        _startMoving = true;
-    }
+        //Move forward
+        private bool _startMoving = false;
+        private float _offsetX = 50f;
 
-    public void MoveBack()
-    {
-        _startInitBackward = transform.position;
-        var animator = gameObject.GetComponent<Animator>();
-        var currentClipInfo = animator.GetCurrentAnimatorClipInfo(0);
-        var currentClipLength = currentClipInfo[0].clip.length;   //Access the current length of the clip
-        _cooldownMoveDurationBackward = currentClipLength;  
-        _startMovingBackward = true;
-    }
+        private Vector3 _startInit;
+        private float _cooldownMoveDuration;
+        private float _currentCooldown;
 
-    private void Update()
-    {
-        if (_startMoving)
+        //Move Backward
+        private bool _startMovingBackward = false;
+        private Vector3 _startInitBackward;
+        private float _cooldownMoveDurationBackward;
+        private float _currentCooldownBackward;
+
+        private void Awake()
         {
-            if (_currentCooldown <= _cooldownMoveDuration)
-            {
-                _currentCooldown += Time.deltaTime;
-                transform.position = Vector3.Lerp(_startInit, new Vector3(_battleSystem.PlayerTargetTransform.position.x - _offsetX, _battleSystem.PlayerTargetTransform.position.y, 0), _currentCooldown / _cooldownMoveDuration);
+            _battleSystem = FindObjectOfType<BattleSystem>();
+        }
 
-            }
-            else 
+        public void EndOfAnim()
+        {
+            _battleSystem.Animation_End();
+        }
+
+        public void Move()
+        {
+            CheckObjectToMove();
+            _startInit = transform.position;
+            var animator = gameObject.GetComponent<Animator>();
+            var currentClipInfo = animator.GetCurrentAnimatorClipInfo(0);
+            var currentClipLength = currentClipInfo[0].clip.length; //Access the current length of the clip
+            _cooldownMoveDuration = currentClipLength;
+            _startMoving = true;
+        }
+
+        private void CheckObjectToMove()
+        {
+            if (gameObject == _battleSystem.enemy1Go)
             {
-                transform.position = new Vector3(_battleSystem.PlayerTargetTransform.position.x - _offsetX, _battleSystem.PlayerTargetTransform.position.y, 0);
-                _startMoving = false;
+                _isAnEnemy = true;
             }
         }
-        
-        else if (_startMovingBackward)
+
+        public void MoveBack()
         {
-            if (_currentCooldownBackward <= _cooldownMoveDurationBackward)
+            _startInitBackward = transform.position;
+            var animator = gameObject.GetComponent<Animator>();
+            var currentClipInfo = animator.GetCurrentAnimatorClipInfo(0);
+            var currentClipLength = currentClipInfo[0].clip.length; //Access the current length of the clip
+            _cooldownMoveDurationBackward = currentClipLength;
+            _startMovingBackward = true;
+        }
+
+        private void Update()
+        {
+            if (_startMoving && !_isAnEnemy)
             {
-                _currentCooldownBackward += Time.deltaTime;
-                transform.position = Vector3.Lerp(_startInitBackward, _startInit, _currentCooldownBackward / _cooldownMoveDurationBackward);
+                if (_currentCooldown <= _cooldownMoveDuration)
+                {
+                    _currentCooldown += Time.deltaTime;
+                    transform.position = Vector3.Lerp(_startInit,
+                        new Vector3(_battleSystem.playerTargetTransform.position.x - _offsetX,
+                            _battleSystem.playerTargetTransform.position.y, 0),
+                        _currentCooldown / _cooldownMoveDuration);
+
+                }
+                else
+                {
+                    transform.position = new Vector3(_battleSystem.playerTargetTransform.position.x - _offsetX, 
+                        _battleSystem.playerTargetTransform.position.y, 0);
+                    _startMoving = false;
+                }
             }
-            else
+            else if (_startMoving && _isAnEnemy)
             {
-                transform.position = new Vector3(_startInit.x, _startInit.y, 0);
-                _startMovingBackward = false;
+                if (_currentCooldown <= _cooldownMoveDuration)
+                {
+                    _currentCooldown += Time.deltaTime;
+                    transform.position = Vector3.Lerp(_startInit,
+                        new Vector3(_battleSystem.enemyTargetTransform.position.x - _offsetX,
+                            _battleSystem.playerTargetTransform.position.y, 0),
+                        _currentCooldown / _cooldownMoveDuration);
+
+                }
+                else
+                {
+                    transform.position = new Vector3(_battleSystem.enemyTargetTransform.position.x - _offsetX, 
+                        _battleSystem.playerTargetTransform.position.y, 0);
+                    _startMoving = false;
+                }
+            }
+
+            else if (_startMovingBackward && !_isAnEnemy)
+            {
+                if (_currentCooldownBackward <= _cooldownMoveDurationBackward)
+                {
+                    _currentCooldownBackward += Time.deltaTime;
+                    transform.position = Vector3.Lerp(_startInitBackward, _startInit,
+                        _currentCooldownBackward / _cooldownMoveDurationBackward);
+                }
+                else
+                {
+                    transform.position = new Vector3(_startInit.x, _startInit.y, 0);
+                    _startMovingBackward = false;
+                }
+            }
+            
+            else if (_startMovingBackward && _isAnEnemy)
+            {
+                if (_currentCooldownBackward <= _cooldownMoveDurationBackward)
+                {
+                    _currentCooldownBackward += Time.deltaTime;
+                    transform.position = Vector3.Lerp(_startInitBackward, _startInit,
+                        _currentCooldownBackward / _cooldownMoveDurationBackward);
+                }
+                else
+                {
+                    transform.position = new Vector3(_startInit.x, _startInit.y, 0);
+                    _startMovingBackward = false;
+                }
             }
         }
     }

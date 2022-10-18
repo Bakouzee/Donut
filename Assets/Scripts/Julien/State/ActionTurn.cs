@@ -19,20 +19,27 @@ namespace Com.Donut.BattleSystem
         }
         public override IEnumerator UseInput_A()
         {
-            BattleSystem.Interface.SetAnimTrigger(BattleSystem.Player0, "ChooseAbility");
-            BattleSystem.Interface.SetActiveAbility(BattleSystem.Player0, false);
-            BattleSystem.Interface.SetActivePlayerInput(BattleSystem.Player0, false);
-            BattleSystem.Interface.LaunchAbility(BattleSystem.FighterTurn);
+            if (BattleSystem.FighterTurn == BattleSystem.Player0)
+            {
+                BattleSystem.Interface.SetAnimTrigger(BattleSystem.Player0, "ChooseAbility");
+                BattleSystem.Interface.SetActiveAbility(BattleSystem.Player0, false);
+                BattleSystem.Interface.SetActivePlayerInput(BattleSystem.Player0, false);
+                BattleSystem.Interface.LaunchAbility(BattleSystem.FighterTurn);
+            }
             
             yield break;
         }
 
         public override IEnumerator UseInput_B()
         {
-            BattleSystem.Interface.SetAnimTrigger(BattleSystem.Player1, "ChooseAbility");
-            BattleSystem.Interface.SetActiveAbility(BattleSystem.Player1, false);
-            BattleSystem.Interface.SetActivePlayerInput(BattleSystem.Player1, false);
-            BattleSystem.Interface.LaunchAbility(BattleSystem.FighterTurn);
+            if (BattleSystem.FighterTurn == BattleSystem.Player1)
+            {
+                BattleSystem.Interface.SetAnimTrigger(BattleSystem.Player1, "ChooseAbility");
+                BattleSystem.Interface.SetActiveAbility(BattleSystem.Player1, false);
+                BattleSystem.Interface.SetActivePlayerInput(BattleSystem.Player1, false);
+                BattleSystem.Interface.LaunchAbility(BattleSystem.FighterTurn);
+            }
+
             yield break;
         }
 
@@ -45,9 +52,14 @@ namespace Com.Donut.BattleSystem
         public override IEnumerator AnimationEnded()
         {
             Debug.Log("AnimationEnded");
+            
             BattleSystem.Interface.ResetAnimator();
-            //Damage
-            if (BattleSystem.Enemy.Damage(_currentAbility.damage))
+            BattleSystem.Enemy.Damage(_currentAbility.damage);
+
+            UpdateFighterTurn();
+            BattleSystem.Interface.UpdateUI();
+            
+            if (BattleSystem.Enemy.IsDead)
             {
                 Debug.Log("Enemy Dead");
                 BattleSystem.SetState(new Won(BattleSystem));
@@ -58,8 +70,14 @@ namespace Com.Donut.BattleSystem
                 yield return new WaitForSeconds(1);
                 BattleSystem.SetState(new EnemyTurn(BattleSystem));
             }
-            
-            yield break;
+        }
+
+        public void UpdateFighterTurn()
+        {
+            if(BattleSystem.FighterTurn == BattleSystem.Player0 && !BattleSystem.Player1.IsDead)
+                BattleSystem.FighterTurn = BattleSystem.Player1;
+            else if(BattleSystem.FighterTurn == BattleSystem.Player1 && !BattleSystem.Player0.IsDead)
+                BattleSystem.FighterTurn = BattleSystem.Player0;
         }
     }
 }

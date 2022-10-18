@@ -1,11 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using Com.Donut.BattleSystem;
-using Unity.Collections.LowLevel.Unsafe;
-using Unity.VisualScripting;
-using UnityEditor.Animations;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class ActionController : MonoBehaviour
@@ -123,7 +118,7 @@ public class ActionController : MonoBehaviour
             var triggerName = _abilityIndexPlayer0.attackName;
             _battleSystem.Interface.SetAnimTrigger(fighter, triggerName);
         }
-        else
+        else if (fighter == _battleSystem.Player1)
         {
             _animPlayer1.runtimeAnimatorController = _abilityIndexPlayer1._animatorController;
             var triggerName = _abilityIndexPlayer1.attackName;
@@ -135,5 +130,13 @@ public class ActionController : MonoBehaviour
     {
         _animPlayer0.runtimeAnimatorController = _battleSystem.Player0.AnimatorController;
         _animPlayer1.runtimeAnimatorController = _battleSystem.Player1.AnimatorController;
+    }
+
+    public Abilities LaunchEnemyAbility(Fighter fighter)
+    {
+        int rand = Random.Range(0, fighter.Abilities.Count);
+        var triggerName = fighter.Abilities[rand].attackName;
+        _battleSystem.Interface.SetAnimTrigger(fighter, triggerName);
+        return fighter.Abilities[rand];
     }
 }

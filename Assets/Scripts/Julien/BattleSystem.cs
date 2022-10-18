@@ -1,6 +1,4 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Com.Donut.BattleSystem
 {
@@ -14,10 +12,11 @@ namespace Com.Donut.BattleSystem
 
         public GameObject player0Go;
         public GameObject player1Go;
+        public GameObject enemy1Go;
 
-        [HideInInspector] public static Fighter FighterTurn; 
-        public Fighter playerTarget;
-        public Transform PlayerTargetTransform;
+        [HideInInspector] public static Fighter FighterTurn;
+        public Transform playerTargetTransform;
+        public Transform enemyTargetTransform;
         [HideInInspector] public static bool CanUseInput = false;
 
         public Fighter Player0 => player0;
@@ -36,7 +35,6 @@ namespace Com.Donut.BattleSystem
         {
             Interface.Initialize(this, player0, player1, enemy, sprite);
             FighterTurn = player0;
-            playerTarget = Enemy;
         }
         
         

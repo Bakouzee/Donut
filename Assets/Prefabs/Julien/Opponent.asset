@@ -22,4 +22,5 @@ MonoBehaviour:
   _maxDamage: 40
   _power: 500
   _healing: 10
-  abilities: []
+  abilities:
+  - {fileID: 11400000, guid: 966d9332fb497f445b9144a473a8deb4, type: 2}

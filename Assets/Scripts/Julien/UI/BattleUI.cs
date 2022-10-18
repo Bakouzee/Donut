@@ -1,6 +1,4 @@
-﻿﻿using System;
- using UnityEditor.Animations;
- using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace Com.Donut.BattleSystem
@@ -21,17 +19,20 @@ namespace Com.Donut.BattleSystem
         [SerializeField] private ActionController actionController;
         [SerializeField] private Text dialogText;
         [SerializeField] private GameObject pauseScreen;
+        [SerializeField] private GameObject winScreen;
+        [SerializeField] private GameObject looseScreen;
         
         //To have ref of players animator
         private Animator _animPlayer0;
         private Animator _animPlayer1;
+        private Animator _animEnemy0;
 
         [Header("DisplayInput_UI")]
         [SerializeField] private Image input0;
         [SerializeField] private Image input1;
         [SerializeField] private Animator animInput0;
         [SerializeField] private Animator animInput1;
-        
+
 
         public void Initialize(BattleSystem battleSystem, Fighter player0, Fighter player1, Fighter enemy, Sprite sprite)
         {
@@ -67,14 +68,14 @@ namespace Com.Donut.BattleSystem
         {
             enemyNameplate0.Initialize(fighter);
                 
-            var go = Instantiate(fighterPrefab, enemyParent, false);
-            go.transform.localScale = Vector3.one * 0.8f;
-            _battleSystem.PlayerTargetTransform = go.transform;
-            var image = go.GetComponent<Image>();
+            _battleSystem.enemy1Go = Instantiate(fighterPrefab, enemyParent, false);
+            _battleSystem.enemy1Go.transform.localScale = Vector3.one * 0.8f;
+            _battleSystem.playerTargetTransform = _battleSystem.enemy1Go.transform;
+            var image = _battleSystem.enemy1Go.GetComponent<Image>();
             image.sprite = fighter.Sprite;
             
-            var anim = image.GetComponent<Animator>();
-            anim.runtimeAnimatorController = fighter.AnimatorController;
+            _animEnemy0 = image.GetComponent<Animator>();
+            _animEnemy0.runtimeAnimatorController = fighter.AnimatorController;
 
         }
 
@@ -97,6 +98,16 @@ namespace Com.Donut.BattleSystem
         public void ShowPauseMenu()
         {
             pauseScreen.SetActive(true);
+        }
+
+        public void ShowWinMenu()
+        {
+            winScreen.SetActive(true);
+        }
+
+        public void ShowLooseMenu()
+        {
+            looseScreen.SetActive(true);
         }
         
         public void HidePauseMenu()
@@ -125,13 +136,21 @@ namespace Com.Donut.BattleSystem
         {
             if(fighter == _battleSystem.Player0)
                 _animPlayer0.SetTrigger(triggerName);
-            else
+            else if(fighter == _battleSystem.Player1)
                 _animPlayer1.SetTrigger(triggerName);
+            else
+                _animEnemy0.SetTrigger(triggerName);
         }
+    
 
         public void LaunchAbility(Fighter fighter)
         {
             actionController.LaunchAbility(fighter);
+        }
+        
+        public Abilities LaunchEnemyAbility(Fighter fighter)
+        {
+            return actionController.LaunchEnemyAbility(fighter);
         }
 
         public void ResetAnimator()
