@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "DebugState",
+                    "name": "DebugBattle",
                     "type": "Button",
                     "id": "b4bb836b-c698-40a5-a52c-e21f76d1795a",
                     "expectedControlType": "Button",
@@ -127,7 +127,115 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "DebugState",
+                    "action": "DebugBattle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "BattlePhase",
+            "id": "90817b38-2e7a-4e1a-8539-7d69e469ee68",
+            "actions": [
+                {
+                    "name": "DebugLog",
+                    "type": "Button",
+                    "id": "959a39f4-749e-4bff-90d0-f8ffb40dc0f8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DebugExploState",
+                    "type": "Button",
+                    "id": "b7018f86-7cdf-421b-a802-2c013b28fcd9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "UseInput_A",
+                    "type": "Button",
+                    "id": "7a72f52f-6649-403d-a0bd-d32b61d614e3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "UseInput_B",
+                    "type": "Button",
+                    "id": "3ba521d9-0d29-4757-87d1-a36c1514e792",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "UseInput_Arrow",
+                    "type": "Button",
+                    "id": "d519d0c2-afe8-44f3-9264-23de75c04474",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b6ed92cd-6a82-4540-ae06-9a90018db0c1",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DebugLog",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "00823442-c912-4682-b757-c18ef6c18b4e",
+                    "path": "<Keyboard>/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DebugExploState",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6c6eb517-38b2-498d-a34d-7e48be22e17f",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UseInput_A",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "04df5d8d-2308-4c2e-87f0-825b1790619d",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UseInput_B",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "78a8696d-1bee-4c72-906d-5fe1767d897a",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UseInput_Arrow",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -36,21 +36,21 @@ namespace Com.Donut.BattleSystem
         }
         
         
-        public void OnUseInput_A()
+        public void OnUseInput_A(InputAction.CallbackContext ctx)
         {
-            if(CanUseInput)
+            if(CanUseInput && ctx.performed)
                 StartCoroutine(State.UseInput_A());
         }
 
-        public void OnUseInput_B()
+        public void OnUseInput_B(InputAction.CallbackContext ctx)
         {
-            if(CanUseInput)
+            if(CanUseInput && ctx.performed)
                 StartCoroutine(State.UseInput_B());
         }
 
-        public void OnUseInput_Arrow()
+        public void OnUseInput_Arrow(InputAction.CallbackContext ctx)
         {
-            if(CanUseInput)
+            if(CanUseInput && ctx.performed)
                 StartCoroutine(State.UseInput_Arrow());
         }
     }

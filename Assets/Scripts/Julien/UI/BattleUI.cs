@@ -128,5 +128,10 @@ namespace Com.Donut.BattleSystem
         {
             actionController.LaunchAbility(fighter);
         }
+
+        public void HideBattleScene()
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

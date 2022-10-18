@@ -20,7 +20,7 @@ namespace Com.Donut.BattleSystem
 
         private void StopPlayerControls()
         {
-            //BattleSystem.P.;
+            BattleSystem.P.playerInput.SwitchCurrentActionMap("BattlePhase");
         }
     }
 }
