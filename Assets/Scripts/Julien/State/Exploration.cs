@@ -19,7 +19,7 @@ namespace Com.Donut.BattleSystem
 
         private void RestoreControls()
         {
-            
+
         }
 
         public void SetBattlePhase()
