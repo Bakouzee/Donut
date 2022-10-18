@@ -1,0 +1,2554 @@
+fileFormatVersion: 2
+guid: 10fe712d33573e84b900566d69c99f33
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a88d06c7e55454a8900863e3c02f24
+      internalID: -553502068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 155a098287233ab47bc1f23b08541b25
+      internalID: 109971998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_2
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e16f877087abe040a49b4083b0ea5ad
+      internalID: 2043270875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_3
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01ede7e711d8e4443b150969991f2af1
+      internalID: -21343873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_4
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36a2d0cabd7effb46a284f71f1a4ae10
+      internalID: 562769309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_5
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 041737bb0178c94428dffa6cd8ae163b
+      internalID: -1680044313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_6
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 987ce0c99c9bd5444be471bcb8469be5
+      internalID: -1293959853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_7
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103e47908a004e946bb1b87b86479528
+      internalID: 776325891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_8
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc9d62e5e14aa6e4996303e7616807e9
+      internalID: -2040287887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_9
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48e85261efd379240a21b063356a39fc
+      internalID: -1724758871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_10
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6629dc34a0d4cbb418691cf641765993
+      internalID: 1001733829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_11
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4adbab4745778fe40ae40b513ab2b87c
+      internalID: 696903043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_12
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c146de6911aa14185c3f3f1f69e32b
+      internalID: 1652060888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_13
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db86a4bc56613fe47820622627d5afc9
+      internalID: 1306873533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_14
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f5a3a31bb905941973a19b28ed4690
+      internalID: 1008480454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_15
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb36de4158ad2e54ba0938722bf27812
+      internalID: -1479924402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_16
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be1ce11bd4408143bac839e82073236
+      internalID: 1228406959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_17
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 009cf1ea75cfb904daa496e89cbce48a
+      internalID: 754967111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_18
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50ac4cd905e22bf42ad2da7837df8e0e
+      internalID: 1774845824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_19
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9d78e9be9036704780eb4f5cc2c2086
+      internalID: 794496832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_20
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5082fe869de270a4483ad6cefc0cc900
+      internalID: -233955261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_21
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 160
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 332285513aa269f4992b146d90ffdb62
+      internalID: -2050499056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def5b9f73902ce6419fd4e9e76419c2f
+      internalID: -736292096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_23
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 229ab8deed3929043b6db9755945c16f
+      internalID: 1189188974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_24
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3691b1fe2374ce44ba8851e6762e7d19
+      internalID: -264758475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_25
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c2cb8ae05e3c924e8f1293852e89aed
+      internalID: 264262318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_26
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d65df0d2f13a234fa6540c7c038e483
+      internalID: -1855474728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_27
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e1516864e41850409e0abd6b55ceafa
+      internalID: 2077659642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_28
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa1af37de852c14ba7c87bcce6d79d1
+      internalID: -587439364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_29
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b4fc467dfc12444851836919b215b8
+      internalID: 2043519810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_30
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3c04c77ed473e4d8b4499dfa2d75f1
+      internalID: -1125615650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_31
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42256566ac17fed408e6d513beb71deb
+      internalID: 411247269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_32
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 066c9097b08df3d4894287d0a78203f6
+      internalID: -531703439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_33
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04f0b8d21b7da0842ac88c78896c6606
+      internalID: 584224907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_34
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c69f083bf6611e4294987e09ab59512
+      internalID: 1681241955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_35
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 946375e285a7f8b45b802a4fcfeb2a48
+      internalID: -282242192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_36
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27dd90e457ed2247afee4418fa4ddff
+      internalID: -325895872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_37
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a58aadad418e2d41aac55acfec28826
+      internalID: 428343143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_38
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 858c75d4bc1ca1846a91a304ffb5f525
+      internalID: -61161214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_39
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb78a6291366cd4798c86777d9b9ff6
+      internalID: -1357501511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_40
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9777b56a8522ac4d91056cd19d24d5a
+      internalID: 216034025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_41
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3098a10bbdc2cff45877a8fe6ae8165f
+      internalID: -1968149741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_42
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 729a1bae639ff144396ccc0c95cc06dd
+      internalID: 486876395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_43
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 120
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7dcba2fa0366e149ad9dcd8821b970c
+      internalID: 1473170228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 032e2edf8295f424abe28491ac349f2d
+      internalID: -372487152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_45
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f641945896e054582bde8f90508991
+      internalID: -1681878963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_46
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a9b86286d35944a83c84810e51f52f
+      internalID: 1183553254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_47
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c6e83fcf186314a987c28602861fda
+      internalID: 1778943714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_48
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 533a25b8f7ff10f46a17c03efec4a22a
+      internalID: -2064634881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_49
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02d4ac4c82615fe48a1e87cd05e52c7e
+      internalID: -1933379568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_50
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f47ce19ef384524aacd7c1b53c307a5
+      internalID: 1966007812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_51
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8128be2d9f43c1240b723eabeabef911
+      internalID: 65530615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_52
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f29061ac49077f043a194603c7b32cec
+      internalID: 631903604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_53
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ac6dbddc0c579747a0749d412f92e11
+      internalID: 1982292862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_54
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c353f855efa1544bfeee7e865f693b
+      internalID: -862260612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_55
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ea4a24fbaee4c42bdb2a5e86f7e69f
+      internalID: 1821319165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_56
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ae3f4ba200f1e947925cda705afefd2
+      internalID: -364487213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_57
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f38b00067fc3c140b88798426b185dc
+      internalID: -1009114469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_58
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 981df1484eb06dd45a20c1354f256f0f
+      internalID: 92231916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_59
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e6a6ba2bf7f1864bad382eebb03b958
+      internalID: -1410021538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_60
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2e8474b15fb6d24aaa0b5fd4c9ef9ce
+      internalID: -1354463954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_61
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56cd74c29ce24754ca4aa66f0cbdd4d5
+      internalID: -1274475692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_62
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f130c169657aa4e9ef14f41159b0a4
+      internalID: -562651468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_63
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bb8d40dd7e900248af7e9170cd37ae1
+      internalID: 1854561608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_64
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b8a333bdf7f6c541994a17fc4b0b8e7
+      internalID: -1332660408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_65
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 80
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d7a2deb8ae107647be430e3a03dbc69
+      internalID: -1419922365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 202d3f7efd5a62d41b740ca003d625cd
+      internalID: 2119826752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_67
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 968f3beaefd333e4994aa2dda4a7679a
+      internalID: 219759348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_68
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 198dd6ebc44b4854496d5513718688a1
+      internalID: 694885154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_69
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea5a7bb9ad0a814895c3ba4e84c02fc
+      internalID: 1001420261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_70
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08decf5cd64816e4b90fad6a183d6ff2
+      internalID: -1118551445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_71
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d54285fadcd5c4fbd79cbef03183ae
+      internalID: 1234278930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_72
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1d5b62706d43574d846b2ca628b8e7b
+      internalID: -467734144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_73
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a043884e40cd83d459683bc3ff9b7387
+      internalID: -823080736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_74
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c045d008076e81e4ca36bf6b89c963f4
+      internalID: -893632888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_75
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e03105340abf04a8982937b9cd6051
+      internalID: -1760025744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_76
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 883f1474ebc42dd47900d07bc5eaf7c2
+      internalID: 1889209321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_77
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5abf715a22a4abc4aad56eabc8c385eb
+      internalID: 636353637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_78
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b85a043d82341f5469de575e225cbad1
+      internalID: -157114325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_79
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01c7060df3ee3f945a812a027468c06a
+      internalID: 1542390537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_80
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cc8e8275b8d3fb45830cd57252b0da7
+      internalID: -1878829574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_81
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 875025be2e330e440981430143b1b905
+      internalID: -1314303858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_82
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a18e1e18af62f8f4cafaf61004e1b5d5
+      internalID: 1064353428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_83
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750c16a4aadb0da4bab301cd0624594c
+      internalID: -951511986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_84
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aa2c9ef9b02add499be0a1c25ea91cd
+      internalID: -619458509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_85
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43e298b08490f094aa390369b4903e08
+      internalID: -1066375915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_86
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36ff91c938bb45b4aa537438b9765235
+      internalID: -1159401827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_87
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 40
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8dc2b2a3f37e5b4b86401e79ba43c9e
+      internalID: 552606129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 324a677bca2e23d4aa95fe546b4b267b
+      internalID: 2031685175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_89
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23e6ee0b27e9cca469bb54e6cd55bfd2
+      internalID: -934552982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_90
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31517066233ac9046a623d32ec28f237
+      internalID: -1011970507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_91
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 591230f4cafd79e48a39263a35f3ae69
+      internalID: -268701138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_92
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6ef75c8a03ecbc45b4d3465f37143b2
+      internalID: -1544563354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_93
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07c069fc5961b4e4da192cdc4c7c6fc8
+      internalID: -713035112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_94
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd6e9eb8190b1f34981066479d202ac5
+      internalID: 1483340425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_95
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c72a12245538db34cb5fb58c596a82c5
+      internalID: 2124629808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_96
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d434c97ee7aef942a93c6291f8d0047
+      internalID: 2141430063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_97
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af2e35f6ffa5bc54d8ea0bc57d0aa615
+      internalID: -745001661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_98
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8392e139a7565a4bb97f69c03a3343b
+      internalID: -1165860683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_99
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0638473289d498d40a839730660028a2
+      internalID: -284156610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_100
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1537db013f859bc438eb7b7cee4a26b5
+      internalID: -404972417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_101
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46e666921fefa9c42bec119878e5a26f
+      internalID: 1593259376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_102
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e15cae0d35ce264a95fb5fc345a041c
+      internalID: -771059634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_103
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa2ad7037b8d92742a3893b2097c4f96
+      internalID: -1760544121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_104
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5942771d8d0e164c979e3baf05f7d70
+      internalID: -2146124515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_105
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d157b32698c4db40a3d22e1d5bcd27b
+      internalID: -1234150090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_106
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa48d8ccf8a350846bbb18f6d348bf6a
+      internalID: 227253710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_107
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9871f537d94493f4a8bfb86e38d78ab1
+      internalID: -954588455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_108
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 722ab0e7780888042b9396fb387fddde
+      internalID: -137188379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoombaBattle_AnimSheet_0_109
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 0
+        width: 43
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f732bf491500cd14ca7f6a818a295bc6
+      internalID: -2067344586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      GoombaBattle_AnimSheet_0_102: -771059634
+      GoombaBattle_AnimSheet_0_45: -1681878963
+      GoombaBattle_AnimSheet_0_64: -1332660408
+      GoombaBattle_AnimSheet_0_80: -1878829574
+      GoombaBattle_AnimSheet_0_56: -364487213
+      GoombaBattle_AnimSheet_0_52: 631903604
+      GoombaBattle_AnimSheet_0_54: -862260612
+      GoombaBattle_AnimSheet_0_33: 584224907
+      GoombaBattle_AnimSheet_0_28: -587439364
+      GoombaBattle_AnimSheet_0_20: -233955261
+      GoombaBattle_AnimSheet_0_63: 1854561608
+      GoombaBattle_AnimSheet_0_22: -736292096
+      GoombaBattle_AnimSheet_0_13: 1306873533
+      GoombaBattle_AnimSheet_0_2: 2043270875
+      GoombaBattle_AnimSheet_0_21: -2050499056
+      GoombaBattle_AnimSheet_0_68: 694885154
+      GoombaBattle_AnimSheet_0_66: 2119826752
+      GoombaBattle_AnimSheet_0_58: 92231916
+      GoombaBattle_AnimSheet_0_59: -1410021538
+      GoombaBattle_AnimSheet_0_69: 1001420261
+      GoombaBattle_AnimSheet_0_47: 1778943714
+      GoombaBattle_AnimSheet_0_23: 1189188974
+      GoombaBattle_AnimSheet_0_74: -893632888
+      GoombaBattle_AnimSheet_0_27: 2077659642
+      GoombaBattle_AnimSheet_0_19: 794496832
+      GoombaBattle_AnimSheet_0_36: -325895872
+      GoombaBattle_AnimSheet_0_11: 696903043
+      GoombaBattle_AnimSheet_0_87: 552606129
+      GoombaBattle_AnimSheet_0_90: -1011970507
+      GoombaBattle_AnimSheet_0_48: -2064634881
+      GoombaBattle_AnimSheet_0_71: 1234278930
+      GoombaBattle_AnimSheet_0_57: -1009114469
+      GoombaBattle_AnimSheet_0_104: -2146124515
+      GoombaBattle_AnimSheet_0_105: -1234150090
+      GoombaBattle_AnimSheet_0_29: 2043519810
+      GoombaBattle_AnimSheet_0_12: 1652060888
+      GoombaBattle_AnimSheet_0_95: 2124629808
+      GoombaBattle_AnimSheet_0_81: -1314303858
+      GoombaBattle_AnimSheet_0_34: 1681241955
+      GoombaBattle_AnimSheet_0_16: 1228406959
+      GoombaBattle_AnimSheet_0_92: -1544563354
+      GoombaBattle_AnimSheet_0_60: -1354463954
+      GoombaBattle_AnimSheet_0_4: 562769309
+      GoombaBattle_AnimSheet_0_86: -1159401827
+      GoombaBattle_AnimSheet_0_108: -137188379
+      GoombaBattle_AnimSheet_0_67: 219759348
+      GoombaBattle_AnimSheet_0_32: -531703439
+      GoombaBattle_AnimSheet_0_42: 486876395
+      GoombaBattle_AnimSheet_0_37: 428343143
+      GoombaBattle_AnimSheet_0_1: 109971998
+      GoombaBattle_AnimSheet_0_55: 1821319165
+      GoombaBattle_AnimSheet_0_88: 2031685175
+      GoombaBattle_AnimSheet_0_65: -1419922365
+      GoombaBattle_AnimSheet_0_62: -562651468
+      GoombaBattle_AnimSheet_0_40: 216034025
+      GoombaBattle_AnimSheet_0_46: 1183553254
+      GoombaBattle_AnimSheet_0_72: -467734144
+      GoombaBattle_AnimSheet_0_14: 1008480454
+      GoombaBattle_AnimSheet_0_44: -372487152
+      GoombaBattle_AnimSheet_0_25: 264262318
+      GoombaBattle_AnimSheet_0_77: 636353637
+      GoombaBattle_AnimSheet_0_24: -264758475
+      GoombaBattle_AnimSheet_0_50: 1966007812
+      GoombaBattle_AnimSheet_0_76: 1889209321
+      GoombaBattle_AnimSheet_0_79: 1542390537
+      GoombaBattle_AnimSheet_0_3: -21343873
+      GoombaBattle_AnimSheet_0_70: -1118551445
+      GoombaBattle_AnimSheet_0_103: -1760544121
+      GoombaBattle_AnimSheet_0_39: -1357501511
+      GoombaBattle_AnimSheet_0_5: -1680044313
+      GoombaBattle_AnimSheet_0_43: 1473170228
+      GoombaBattle_AnimSheet_0_51: 65530615
+      GoombaBattle_AnimSheet_0_9: -1724758871
+      GoombaBattle_AnimSheet_0_85: -1066375915
+      GoombaBattle_AnimSheet_0_96: 2141430063
+      GoombaBattle_AnimSheet_0_99: -284156610
+      GoombaBattle_AnimSheet_0_84: -619458509
+      GoombaBattle_AnimSheet_0_78: -157114325
+      GoombaBattle_AnimSheet_0_49: -1933379568
+      GoombaBattle_AnimSheet_0_18: 1774845824
+      GoombaBattle_AnimSheet_0_8: -2040287887
+      GoombaBattle_AnimSheet_0_82: 1064353428
+      GoombaBattle_AnimSheet_0_0: -553502068
+      GoombaBattle_AnimSheet_0_89: -934552982
+      GoombaBattle_AnimSheet_0_53: 1982292862
+      GoombaBattle_AnimSheet_0_6: -1293959853
+      GoombaBattle_AnimSheet_0_30: -1125615650
+      GoombaBattle_AnimSheet_0_15: -1479924402
+      GoombaBattle_AnimSheet_0_101: 1593259376
+      GoombaBattle_AnimSheet_0_97: -745001661
+      GoombaBattle_AnimSheet_0_106: 227253710
+      GoombaBattle_AnimSheet_0_91: -268701138
+      GoombaBattle_AnimSheet_0_7: 776325891
+      GoombaBattle_AnimSheet_0_61: -1274475692
+      GoombaBattle_AnimSheet_0_107: -954588455
+      GoombaBattle_AnimSheet_0_109: -2067344586
+      GoombaBattle_AnimSheet_0_93: -713035112
+      GoombaBattle_AnimSheet_0_83: -951511986
+      GoombaBattle_AnimSheet_0_94: 1483340425
+      GoombaBattle_AnimSheet_0_35: -282242192
+      GoombaBattle_AnimSheet_0_17: 754967111
+      GoombaBattle_AnimSheet_0_98: -1165860683
+      GoombaBattle_AnimSheet_0_75: -1760025744
+      GoombaBattle_AnimSheet_0_41: -1968149741
+      GoombaBattle_AnimSheet_0_26: -1855474728
+      GoombaBattle_AnimSheet_0_100: -404972417
+      GoombaBattle_AnimSheet_0_73: -823080736
+      GoombaBattle_AnimSheet_0_31: 411247269
+      GoombaBattle_AnimSheet_0_10: 1001733829
+      GoombaBattle_AnimSheet_0_38: -61161214
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

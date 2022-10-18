@@ -1,14 +1,22 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 namespace Com.Donut.BattleSystem
 {
     public class ActionTurn : State
     {
+        private Abilities _currentAbility;
         public ActionTurn(BattleSystem battleSystem) : base(battleSystem)
         {
         }
 
+        public override IEnumerator Start()
+        {
+            _currentAbility = BattleSystem.FighterTurn.Abilities[0];
+            yield break;
+        }
         public override IEnumerator UseInput_A()
         {
             BattleSystem.Interface.SetAnimTrigger(BattleSystem.Player0, "ChooseAbility");
@@ -30,15 +38,28 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator UseInput_Arrow()
         {
-            BattleSystem.Interface.ShiftAction(BattleSystem.FighterTurn);
+            _currentAbility = BattleSystem.Interface.ShiftAction(BattleSystem.FighterTurn);
             yield break;
         }
         
-        public void EndOfAnim()
+        public override IEnumerator AnimationEnded()
         {
+            Debug.Log("AnimationEnded");
+            BattleSystem.Interface.ResetAnimator();
             //Damage
-            BattleSystem.SetState(new EnemyTurn(BattleSystem));
-            //Or Win
+            if (BattleSystem.Enemy.Damage(_currentAbility.damage))
+            {
+                Debug.Log("Enemy Dead");
+                BattleSystem.SetState(new Won(BattleSystem));
+            }
+            else
+            {
+                Debug.Log("Enemy alive with" + BattleSystem.Enemy.CurrentHealth);
+                yield return new WaitForSeconds(1);
+                BattleSystem.SetState(new EnemyTurn(BattleSystem));
+            }
+            
+            yield break;
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Com.Donut.BattleSystem
         //To have ref of players animator
         private Animator _animPlayer0;
         private Animator _animPlayer1;
-        
+
         [Header("DisplayInput_UI")]
         [SerializeField] private Image input0;
         [SerializeField] private Image input1;
@@ -48,17 +48,19 @@ namespace Com.Donut.BattleSystem
             playerNameplate0.Initialize(fighter0);
             playerNameplate1.Initialize(fighter1);
 
-            var go0 = Instantiate(fighterPrefab, playerParent0, false);
-            var image0 = go0.GetComponent<Image>();
+            _battleSystem.player0Go = Instantiate(fighterPrefab, playerParent0, false);
+            var image0 = _battleSystem.player0Go.GetComponent<Image>();
             image0.sprite = fighter0.Sprite;
             _animPlayer0 = image0.GetComponent<Animator>();
             _animPlayer0.runtimeAnimatorController = fighter0.AnimatorController;
             
-            var go1 = Instantiate(fighterPrefab, playerParent1, false);
-            var image1 = go1.GetComponent<Image>();
+            _battleSystem.player1Go = Instantiate(fighterPrefab, playerParent1, false);
+            var image1 = _battleSystem.player1Go .GetComponent<Image>();
             image1.sprite = fighter1.Sprite;
             _animPlayer1 = image1.GetComponent<Animator>();
             _animPlayer1.runtimeAnimatorController = fighter1.AnimatorController;
+
+            actionController.InitializeAnimator(_animPlayer0, _animPlayer1);
         }
         
         private void InitializeEnemy(Fighter fighter)
@@ -67,8 +69,13 @@ namespace Com.Donut.BattleSystem
                 
             var go = Instantiate(fighterPrefab, enemyParent, false);
             go.transform.localScale = Vector3.one * 0.8f;
+            _battleSystem.PlayerTargetTransform = go.transform;
             var image = go.GetComponent<Image>();
             image.sprite = fighter.Sprite;
+            
+            var anim = image.GetComponent<Animator>();
+            anim.runtimeAnimatorController = fighter.AnimatorController;
+
         }
 
         private void InitializeBattleField(Sprite sprite)
@@ -99,7 +106,6 @@ namespace Com.Donut.BattleSystem
         public void SetActiveAbility(Fighter fighter, bool result)
         {
             actionController.SetActiveAbility_UI(fighter, result);
-            
         }
 
         public void SetActivePlayerInput(Fighter fighter, bool result)
@@ -110,9 +116,9 @@ namespace Com.Donut.BattleSystem
                 input1.gameObject.SetActive(result);
         }
 
-        public void ShiftAction(Fighter fighter)
+        public Abilities ShiftAction(Fighter fighter)
         {
-            actionController.UpdateCurrentAbility(fighter);
+            return actionController.UpdateCurrentAbility(fighter);
         }
 
         public void SetAnimTrigger(Fighter fighter, string triggerName)
@@ -126,6 +132,11 @@ namespace Com.Donut.BattleSystem
         public void LaunchAbility(Fighter fighter)
         {
             actionController.LaunchAbility(fighter);
+        }
+
+        public void ResetAnimator()
+        {
+            actionController.ResetAnimator();
         }
     }
 }

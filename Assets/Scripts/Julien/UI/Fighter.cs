@@ -50,5 +50,10 @@ namespace Com.Donut.BattleSystem
         {
             _currentHealth = Math.Min(_currentHealth, _totalHealth);
         }
+
+        public void ChangeAnimator(AnimatorController _animatorController)
+        {
+
+        }
     }
 }

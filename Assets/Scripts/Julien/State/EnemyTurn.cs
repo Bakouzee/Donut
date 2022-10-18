@@ -16,13 +16,14 @@ namespace Com.Donut.BattleSystem
             yield break;
         }
 
-        public void EndOfAnim()
+        public override IEnumerator AnimationEnded()
         {
             //Update data interface
             //Update fighter turn if one is dead
             
             BattleSystem.SetState(new PlayerTurn(BattleSystem));
             //Or loose
+            yield break;
         }
 
     }

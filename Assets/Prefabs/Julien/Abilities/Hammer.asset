@@ -17,3 +17,4 @@ MonoBehaviour:
   iconSprite: {fileID: 400991213, guid: 385e44a01c85a8b43b2fab330a309126, type: 3}
   attackDesc: Hit the enemy with a Hammer
   damage: 20
+  _animatorController: {fileID: 9100000, guid: d6235a85b7f25eb47a5cab793b01a6fb, type: 2}
