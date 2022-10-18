@@ -63,11 +63,11 @@ public class Player : Character  {
         }
 
         rb.velocity = movement * speed;
-        
-        if (isTransformed)
+
+        if (isTransformed) {
             rb.velocity = direction * speed;
-        
-        
+        }
+
         spriteRenderer.flipX = movement.x < 0 && movement.y == 0;
         lastVelocity = rb.velocity;
     }
@@ -89,7 +89,7 @@ public class Player : Character  {
         if (e.performed) {
             SwitchAnimState("WC_Run");
             isTransformed = !isTransformed;
-
+            direction = Vector3.zero;
         }
     }
 
@@ -109,7 +109,9 @@ public class Player : Character  {
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
-        Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
-        direction = reflectVec;
+        if (isTransformed) {
+            Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
+            direction = reflectVec;
+        }
     }
 }
