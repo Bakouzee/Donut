@@ -11,6 +11,7 @@ namespace Com.Donut.BattleSystem
         [SerializeField] private Fighter player0;
         [SerializeField] private Fighter player1;
         [SerializeField] private Fighter enemy;
+        [SerializeField] private Player p;
 
         [HideInInspector] public static Fighter FighterTurn;
         [HideInInspector] public static bool CanUseInput = false;
@@ -18,13 +19,14 @@ namespace Com.Donut.BattleSystem
         public Fighter Player0 => player0;
         public Fighter Player1 => player1;
         public Fighter Enemy => enemy;
+        public Player P => p;
         public BattleUI Interface => ui;
         public Sprite Sprite => sprite;
 
 
         private void Start()
         {
-            SetState(new Init(this));
+            //SetState(new Exploration(this));
         }
 
         public void InitializeBattle()

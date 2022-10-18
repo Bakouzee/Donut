@@ -35,6 +35,7 @@ namespace Com.Donut.BattleSystem
 
         public void Initialize(BattleSystem battleSystem, Fighter player0, Fighter player1, Fighter enemy, Sprite sprite)
         {
+            gameObject.SetActive(true);
             _battleSystem = battleSystem;
             InitializePlayer(player0, player1);
             InitializeEnemy(enemy);

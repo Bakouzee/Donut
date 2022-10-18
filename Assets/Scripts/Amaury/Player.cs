@@ -1,3 +1,4 @@
+using Com.Donut.BattleSystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using UnityEngine.InputSystem;
 
 public class Player : Character  {
 
+    [SerializeField] private BattleSystem battleSystem;
     public Vector2 movement;
     private Rigidbody2D rb;
     public float speed;
@@ -33,8 +35,8 @@ public class Player : Character  {
 
     public override void Update() {
         base.Update();
-        
-      //  if(lastFollowersSize != followers.Count)
+
+        //  if(lastFollowersSize != followers.Count)
         //    ManageFollowers(followers.Count > lastFollowersSize); // To Modify : probably doesn't work with follower remove
 
         lastFollowersSize = followers.Count;
@@ -95,6 +97,14 @@ public class Player : Character  {
         if (e.performed) {
             direction = (arrow.transform.position - transform.position).normalized;
             
+        }
+    }
+
+    public void OnSetBattlePhaseDebug(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            battleSystem.SetState(new Init(battleSystem));
         }
     }
 
