@@ -4622,6 +4622,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 519420031, guid: 0d137fe33eb8cac48a4f783022b983e4, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7781719692143225483, guid: 0d137fe33eb8cac48a4f783022b983e4,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1018811705}
+    - target: {fileID: 7781719692143225483, guid: 0d137fe33eb8cac48a4f783022b983e4,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1018811705}
+    - target: {fileID: 7781719692143225483, guid: 0d137fe33eb8cac48a4f783022b983e4,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1018811705}
     - target: {fileID: 7781719693136930268, guid: 0d137fe33eb8cac48a4f783022b983e4,
         type: 3}
       propertyPath: m_RootOrder
@@ -4686,6 +4705,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7781719693136930271, guid: 0d137fe33eb8cac48a4f783022b983e4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d137fe33eb8cac48a4f783022b983e4, type: 3}
@@ -18122,6 +18146,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3530234917479878016, guid: 83e2f5267c4c58b45aa1286ae34bedcb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3530234917479878021, guid: 83e2f5267c4c58b45aa1286ae34bedcb,
         type: 3}
       propertyPath: m_Name

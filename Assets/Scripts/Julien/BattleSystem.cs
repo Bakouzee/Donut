@@ -12,6 +12,7 @@ namespace Com.Donut.BattleSystem
         [SerializeField] private Fighter player1;
         [SerializeField] private Fighter enemy;
         [SerializeField] private Player p;
+        [SerializeField] private LayerMask layersToKeep;
 
         [HideInInspector] public static Fighter FighterTurn;
         [HideInInspector] public static bool CanUseInput = false;
@@ -22,6 +23,7 @@ namespace Com.Donut.BattleSystem
         public Player P => p;
         public BattleUI Interface => ui;
         public Sprite Sprite => sprite;
+        public LayerMask LayersToKeep => layersToKeep;
 
 
         private void Start()
