@@ -1,9 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using Com.Donut.BattleSystem;
-using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class ActionController : MonoBehaviour
@@ -18,6 +15,8 @@ public class ActionController : MonoBehaviour
     private Abilities _abilityIndexPlayer0;
     [SerializeField] private Transform abilityParentPlayer0;
 
+    private Animator _animPlayer0;
+
     [Header("Ability Player1")] [SerializeField]
     private List<Image> actionsImagePlayer1 = new List<Image>();
 
@@ -25,9 +24,10 @@ public class ActionController : MonoBehaviour
     [SerializeField] List<Abilities> listAbilitiesPlayer1 = new List<Abilities>();
     private Abilities _abilityIndexPlayer1;
     [SerializeField] private Transform abilityParentPlayer1;
+    
+    private Animator _animPlayer1;
 
-    public void InitializeActionUI(List<Abilities> abilitiesPlayer0, List<Abilities> abilitiesPlayer1,
-        BattleSystem battleSystem)
+    public void InitializeActionUI(List<Abilities> abilitiesPlayer0, List<Abilities> abilitiesPlayer1, BattleSystem battleSystem)
     {
         _battleSystem = battleSystem;
 
@@ -45,9 +45,15 @@ public class ActionController : MonoBehaviour
 
         for (int y = 0; y < listAbilitiesPlayer1.Count; y++)
             actionsImagePlayer1[y].sprite = listAbilitiesPlayer1[y].iconSprite;
-
+        
         _abilityIndexPlayer1 = listAbilitiesPlayer1[0];
         abilityTextPlayer1.text = _abilityIndexPlayer1.attackDesc;
+    }
+
+    public void InitializeAnimator(Animator anim0, Animator anim1)
+    {
+        _animPlayer0 = anim0;
+        _animPlayer1 = anim1;
     }
 
     public void SetActiveAbility_UI(Fighter fighter, bool result)
@@ -70,11 +76,11 @@ public class ActionController : MonoBehaviour
         }
     }
 
-    public void UpdateCurrentAbility(Fighter fighter)
+    public Abilities UpdateCurrentAbility(Fighter fighter)
     {
         if (fighter == _battleSystem.Player0)
         {
-            if (listAbilitiesPlayer0.Count <= 1) return;
+            if (listAbilitiesPlayer0.Count <= 1) Debug.LogError("Error actioncontroller");
 
             var attackRef = listAbilitiesPlayer0[0];
             listAbilitiesPlayer0.Remove(listAbilitiesPlayer0[0]);
@@ -85,10 +91,11 @@ public class ActionController : MonoBehaviour
 
             _abilityIndexPlayer0 = listAbilitiesPlayer0[0];
             abilityTextPlayer0.text = _abilityIndexPlayer0.attackDesc;
+            return _abilityIndexPlayer0;
         }
         else
         {
-            if (listAbilitiesPlayer1.Count <= 1) return;
+            if (listAbilitiesPlayer1.Count <= 1) Debug.LogError("Error actioncontroller");;
 
             var attackRef = listAbilitiesPlayer1[0];
             listAbilitiesPlayer1.Remove(listAbilitiesPlayer1[0]);
@@ -99,6 +106,7 @@ public class ActionController : MonoBehaviour
 
             _abilityIndexPlayer1 = listAbilitiesPlayer1[0];
             abilityTextPlayer1.text = _abilityIndexPlayer1.attackDesc;
+            return _abilityIndexPlayer1;
         }
     }
 
@@ -106,13 +114,29 @@ public class ActionController : MonoBehaviour
     {
         if (fighter == _battleSystem.Player0)
         {
+            _animPlayer0.runtimeAnimatorController = _abilityIndexPlayer0._animatorController;
             var triggerName = _abilityIndexPlayer0.attackName;
             _battleSystem.Interface.SetAnimTrigger(fighter, triggerName);
         }
-        else
+        else if (fighter == _battleSystem.Player1)
         {
+            _animPlayer1.runtimeAnimatorController = _abilityIndexPlayer1._animatorController;
             var triggerName = _abilityIndexPlayer1.attackName;
             _battleSystem.Interface.SetAnimTrigger(fighter, triggerName);
         }
+    }
+
+    public void ResetAnimator()
+    {
+        _animPlayer0.runtimeAnimatorController = _battleSystem.Player0.AnimatorController;
+        _animPlayer1.runtimeAnimatorController = _battleSystem.Player1.AnimatorController;
+    }
+
+    public Abilities LaunchEnemyAbility(Fighter fighter)
+    {
+        int rand = Random.Range(0, fighter.Abilities.Count);
+        var triggerName = fighter.Abilities[rand].attackName;
+        _battleSystem.Interface.SetAnimTrigger(fighter, triggerName);
+        return fighter.Abilities[rand];
     }
 }

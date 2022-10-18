@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b21781f22e8f3d43b8dd1c27fce39ff, type: 3}
   m_Name: Opponent
   m_EditorClassIdentifier: 
-  _name: AirCanon
+  _name: Goomba
   _level: 1
-  _sprite: {fileID: 537832496, guid: 265cb7e9d22f0e84e877c96193041b99, type: 3}
-  _animatorController: {fileID: 0}
-  _currentHealth: 500
+  _sprite: {fileID: -553502068, guid: 10fe712d33573e84b900566d69c99f33, type: 3}
+  _animatorController: {fileID: 9100000, guid: 0f4f7788e2b8c5b4cbf203ec7e95737c, type: 2}
+  _currentHealth: 480
   _totalHealth: 500
   _minDamage: 20
   _maxDamage: 40
   _power: 500
   _healing: 10
-  attacks: []
+  abilities:
+  - {fileID: 11400000, guid: 966d9332fb497f445b9144a473a8deb4, type: 2}

@@ -1,3 +1,4 @@
+using UnityEditor.Animations;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -7,5 +8,6 @@ public class Abilities : ScriptableObject
     public string attackName;
     public Sprite iconSprite;
     public string attackDesc;
-    public float damage;
+    public int damage;
+    public AnimatorController _animatorController;
 }
