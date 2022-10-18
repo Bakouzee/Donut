@@ -1,3 +1,4 @@
+using Com.Donut.BattleSystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using UnityEngine.InputSystem;
 
 public class Player : Character  {
 
+    [SerializeField] private BattleSystem battleSystem;
     public Vector2 movement;
     private Rigidbody2D rb;
     public float speed;
@@ -18,6 +20,7 @@ public class Player : Character  {
     public bool isTransformed;
 
     public GameObject arrow;
+    [SerializeField] public PlayerInput playerInput;
 
     private Vector3 direction;
     private Vector3 lastVelocity;
@@ -33,8 +36,8 @@ public class Player : Character  {
 
     public override void Update() {
         base.Update();
-        
-      //  if(lastFollowersSize != followers.Count)
+
+        //  if(lastFollowersSize != followers.Count)
         //    ManageFollowers(followers.Count > lastFollowersSize); // To Modify : probably doesn't work with follower remove
 
         lastFollowersSize = followers.Count;
@@ -72,7 +75,7 @@ public class Player : Character  {
 
     private void ManageFollowers(bool add) {
         int followerIndex = add ? followers.Count - 1 : 0; // To Modify with remove
-
+        
         followers[followerIndex].target = this;
     }
 
@@ -86,7 +89,7 @@ public class Player : Character  {
     public void OnTransformation(InputAction.CallbackContext e) {
         if (e.performed) {
             SwitchAnimState("WC_Run");
-            isTransformed = true;
+            isTransformed = !isTransformed;
 
         }
     }
@@ -95,6 +98,30 @@ public class Player : Character  {
         if (e.performed) {
             direction = (arrow.transform.position - transform.position).normalized;
             
+        }
+    }
+
+    public void OnSetBattlePhaseDebug(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            battleSystem.SetState(new Init(battleSystem));
+        }
+    }
+
+    public void OnSetExplorationPhaseDebug(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            battleSystem.SetState(new Exploration(battleSystem));
+        }
+    }
+
+    public void OnChangedMap(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            Debug.Log("The Default map has been changed !!");
         }
     }
 

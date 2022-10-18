@@ -52,8 +52,6 @@ public abstract class Character : MonoBehaviour
         }
         return newPos;
     }
-    
-    
 
     protected void SwitchAnimState(string newState) {
         if (currentState == newState) return;

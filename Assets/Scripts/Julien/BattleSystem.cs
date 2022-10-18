@@ -9,6 +9,8 @@ namespace Com.Donut.BattleSystem
         [SerializeField] private Fighter player0;
         [SerializeField] private Fighter player1;
         [SerializeField] private Fighter enemy;
+        [SerializeField] private Player p;
+        [SerializeField] private LayerMask layersToKeep;
 
         public GameObject player0Go;
         public GameObject player1Go;
@@ -22,13 +24,15 @@ namespace Com.Donut.BattleSystem
         public Fighter Player0 => player0;
         public Fighter Player1 => player1;
         public Fighter Enemy => enemy;
+        public Player P => p;
         public BattleUI Interface => ui;
         public Sprite Sprite => sprite;
+        public LayerMask LayersToKeep => layersToKeep;
 
 
         private void Start()
         {
-            SetState(new Init(this));
+            //SetState(new Exploration(this));
         }
 
         public void InitializeBattle()
@@ -38,21 +42,21 @@ namespace Com.Donut.BattleSystem
         }
         
         
-        public void OnUseInput_A()
+        public void OnUseInput_A(InputAction.CallbackContext ctx)
         {
-            if(CanUseInput)
+            if(CanUseInput && ctx.performed)
                 StartCoroutine(State.UseInput_A());
         }
 
-        public void OnUseInput_B()
+        public void OnUseInput_B(InputAction.CallbackContext ctx)
         {
-            if(CanUseInput)
+            if(CanUseInput && ctx.performed)
                 StartCoroutine(State.UseInput_B());
         }
 
-        public void OnUseInput_Arrow()
+        public void OnUseInput_Arrow(InputAction.CallbackContext ctx)
         {
-            if(CanUseInput)
+            if(CanUseInput && ctx.performed)
                 StartCoroutine(State.UseInput_Arrow());
         }
 
