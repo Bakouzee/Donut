@@ -75,7 +75,7 @@ public class Player : Character  {
 
     private void ManageFollowers(bool add) {
         int followerIndex = add ? followers.Count - 1 : 0; // To Modify with remove
-
+        
         followers[followerIndex].target = this;
     }
 
@@ -89,7 +89,7 @@ public class Player : Character  {
     public void OnTransformation(InputAction.CallbackContext e) {
         if (e.performed) {
             SwitchAnimState("WC_Run");
-            isTransformed = true;
+            isTransformed = !isTransformed;
 
         }
     }
