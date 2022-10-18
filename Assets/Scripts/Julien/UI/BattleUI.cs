@@ -31,12 +31,16 @@ namespace Com.Donut.BattleSystem
         [SerializeField] private Image input1;
         [SerializeField] private Animator animInput0;
         [SerializeField] private Animator animInput1;
-        
+
+        private LayerMask everything;
+        public LayerMask Everything { get { return everything; } private set { everything = value; } }
 
         public void Initialize(BattleSystem battleSystem, Fighter player0, Fighter player1, Fighter enemy, Sprite sprite)
         {
             gameObject.SetActive(true);
             _battleSystem = battleSystem;
+            Everything = Camera.main.cullingMask;
+            Camera.main.cullingMask = _battleSystem.LayersToKeep;
             InitializePlayer(player0, player1);
             InitializeEnemy(enemy);
             InitializeBattleField(sprite);
@@ -127,6 +131,12 @@ namespace Com.Donut.BattleSystem
         public void LaunchAbility(Fighter fighter)
         {
             actionController.LaunchAbility(fighter);
+        }
+
+        public void HideBattleScene()
+        {
+            Camera.main.cullingMask = Everything;
+            gameObject.SetActive(false);
         }
     }
 }

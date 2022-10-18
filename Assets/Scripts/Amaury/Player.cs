@@ -20,6 +20,7 @@ public class Player : Character  {
     public bool isTransformed;
 
     public GameObject arrow;
+    [SerializeField] public PlayerInput playerInput;
 
     private Vector3 direction;
     private Vector3 lastVelocity;
@@ -105,6 +106,22 @@ public class Player : Character  {
         if (ctx.performed)
         {
             battleSystem.SetState(new Init(battleSystem));
+        }
+    }
+
+    public void OnSetExplorationPhaseDebug(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            battleSystem.SetState(new Exploration(battleSystem));
+        }
+    }
+
+    public void OnChangedMap(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            Debug.Log("The Default map has been changed !!");
         }
     }
 

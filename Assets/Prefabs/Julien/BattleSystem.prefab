@@ -50,6 +50,7 @@ MonoBehaviour:
   player0: {fileID: 11400000, guid: 4f7f21c9567d2ad4e96611fbacbdd464, type: 2}
   player1: {fileID: 11400000, guid: 0cf74ced79ad3c3459575d883fc68d95, type: 2}
   enemy: {fileID: 11400000, guid: 40ecd8aa74ee7cc44b7bfdd49ac417a7, type: 2}
+  p: {fileID: 0}
 --- !u!114 &3530234917479878016
 MonoBehaviour:
   m_ObjectHideFlags: 0
