@@ -126,6 +126,10 @@ public class Player : Character  {
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
+        if (col.gameObject.CompareTag("Destructible") && isTransformed)
+        {
+            Destroy(col.gameObject);
+        }
         Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
         direction = reflectVec;
     }

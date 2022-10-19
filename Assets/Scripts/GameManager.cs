@@ -6,21 +6,26 @@ using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
+    #region Instance
     public static GameManager Instance { get; private set; }
 
     private void Awake()
     {
         Instance = this;
     }
+    #endregion
 
+    [Header("Battle State")]
     public bool isBattle;
     [SerializeField] private BattleSystem battleSystem;
     [SerializeField] private LayerMask layersToKeep;
 
+    #region Getter/Setter
     public LayerMask LayersToKeep => layersToKeep;
 
     private LayerMask everything;
     public LayerMask Everything { get { return everything; } private set { everything = value; } }
+    #endregion
 
     public void OnChangePhase(InputAction.CallbackContext ctx)
     {
