@@ -54,11 +54,11 @@ namespace Com.Donut.BattleSystem
             Debug.Log("AnimationEnded");
             
             BattleSystem.Interface.ResetAnimator();
+            Debug.Log(BattleSystem.Enemy.CurrentHealth);
             BattleSystem.Enemy.Damage(_currentAbility.damage);
 
             UpdateFighterTurn();
-            BattleSystem.Interface.UpdateUI();
-            
+
             if (BattleSystem.Enemy.IsDead)
             {
                 Debug.Log("Enemy Dead");
@@ -72,7 +72,7 @@ namespace Com.Donut.BattleSystem
             }
         }
 
-        public void UpdateFighterTurn()
+        public void UpdateFighterTurn() //If both player are alive, change fighter turn, else let same fighter
         {
             if(BattleSystem.FighterTurn == BattleSystem.Player0 && !BattleSystem.Player1.IsDead)
                 BattleSystem.FighterTurn = BattleSystem.Player1;

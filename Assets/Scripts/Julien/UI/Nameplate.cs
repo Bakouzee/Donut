@@ -13,7 +13,7 @@ namespace Com.Donut.BattleSystem
         public void Initialize(Fighter fighter)
         {
             _fighter = fighter;
-            life.text = fighter.ToString();
+            life.text = _fighter.CurrentHealth.ToString();
             power.text = fighter.Power.ToString();
         }
 

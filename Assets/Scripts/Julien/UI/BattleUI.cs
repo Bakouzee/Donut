@@ -34,12 +34,15 @@ namespace Com.Donut.BattleSystem
         [SerializeField] private Animator animInput1;
 
 
-        public void Initialize(BattleSystem battleSystem, Fighter player0, Fighter player1, Fighter enemy, Sprite sprite)
+        public void Initialize(BattleSystem battleSystem, Fighter player0, Fighter player1, Fighter enemy, Sprite arenaSprite)
         {
             _battleSystem = battleSystem;
+            player0.ResetFighter();
+            player1.ResetFighter();
+            enemy.ResetFighter();
             InitializePlayer(player0, player1);
             InitializeEnemy(enemy);
-            InitializeBattleField(sprite);
+            InitializeBattleField(arenaSprite);
             
             actionController.InitializeActionUI(player0.Abilities, player1.Abilities, _battleSystem);
         }
@@ -103,11 +106,13 @@ namespace Com.Donut.BattleSystem
         public void ShowWinMenu()
         {
             winScreen.SetActive(true);
+            //Maybe put anim rendered with another cam
         }
 
         public void ShowLooseMenu()
         {
             looseScreen.SetActive(true);
+            //Maybe put anim rendered with another cam
         }
         
         public void HidePauseMenu()

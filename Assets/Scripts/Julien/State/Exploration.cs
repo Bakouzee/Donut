@@ -13,7 +13,7 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator Start()
         {
-            BattleSystem.Interface.HideBattleScene();
+            //.Interface.HideBattleScene();
             Debug.Log("Exploration State");
             RestoreControls();
             yield break;
@@ -21,7 +21,7 @@ namespace Com.Donut.BattleSystem
 
         private void RestoreControls()
         {
-            BattleSystem.P.playerInput.SwitchCurrentActionMap("Player");
+            //BattleSystem.P.playerInput.SwitchCurrentActionMap("Player");
         }
 
         public void SetBattlePhase()

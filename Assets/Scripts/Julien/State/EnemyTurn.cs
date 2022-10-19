@@ -20,8 +20,8 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator AnimationEnded()
         {
-            Debug.Log("AnimationEnded");
             _target.Damage(_currentAbility.damage);
+            BattleSystem.Interface.UpdateUI();
             if (_target.IsDead)
             {
                 if (BattleSystem.Player0.IsDead && BattleSystem.Player1.IsDead)
@@ -38,7 +38,7 @@ namespace Com.Donut.BattleSystem
             }
             else
             {
-                Debug.Log("Enemy alive with" + _target.CurrentHealth);
+                Debug.Log(_target.name  + " is alive with" + _target.CurrentHealth);
                 yield return new WaitForSeconds(1);
                 BattleSystem.SetState(new PlayerTurn(BattleSystem));
             }
