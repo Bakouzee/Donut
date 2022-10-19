@@ -44,6 +44,9 @@ public class Player : Character  {
     }
     
     protected override void Move() {
+        if (MinimapController.instance.isInMap)
+            return;
+        
         if (!hasCarapace)
         {
             if (movement == Vector2.zero)

@@ -109,6 +109,17 @@
                 },
                 {
                     "name": "",
+                    "id": "c06cb2ff-c25e-4bba-bf57-d2d3ce4dde29",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "5767a38a-fe97-4ff4-837d-9bab0298928c",
                     "path": "<Keyboard>/r",
                     "interactions": "",
