@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,36 +10,43 @@ namespace Com.Donut.BattleSystem
         [SerializeField] private Sprite arenaSprite;
         [SerializeField] private Fighter player0;
         [SerializeField] private Fighter player1;
-        [SerializeField] private Fighter enemy;
+        [SerializeField] private List<Fighter> ListEnemyFighters = new List<Fighter>();
 
-        public GameObject player0Go;
-        public GameObject player1Go;
-        public GameObject enemy1Go;
-
-        [HideInInspector] public static Fighter FighterTurn;
+        [HideInInspector] public static FighterData CurrentFighterData;
+        [HideInInspector] public static bool CanUseInput = false;
         public Transform playerTargetTransform;
         public Transform enemyTargetTransform;
-        [HideInInspector] public static bool CanUseInput = false;
-
-        public Fighter Player0 => player0;
-        public Fighter Player1 => player1;
-        public Fighter Enemy => enemy;
         public BattleUI Interface => ui;
-        public Sprite SpriteArena => arenaSprite;
 
-
+        public readonly List<FighterData> ListPlayersData = new List<FighterData>();
+        public readonly List<FighterData> ListEnemiesData = new List<FighterData>();
+        
         private void Start()
         {
             SetState((new Init(this)));
         }
-
+        
         public void InitializeBattle()
         {
-            Interface.Initialize(this, player0, player1, enemy, arenaSprite);
-            FighterTurn = player0;
+            ListPlayersData.Add(new FighterData(player0, 0));
+            ListPlayersData.Add(new FighterData(player1, 1));
+            AddEnemiesToList();
+            Interface.Initialize(this, ListPlayersData[0], ListPlayersData[1], ListEnemiesData, arenaSprite);
+            CurrentFighterData = ListPlayersData[0];
         }
-        
-        
+
+        private void AddEnemiesToList()
+        {
+            for (int x = 0; x < ListEnemyFighters.Count; x++)
+            {
+                ListEnemiesData.Add(new FighterData(ListEnemyFighters[x], (byte)x));
+            }
+            
+            if(ListEnemyFighters.Count > 3)
+                Debug.LogError("More than 3 enemies --- Impossible");
+        }
+
+        #region Inputs
         public void OnUseInput_A()
         {
             if(CanUseInput)
@@ -57,9 +65,15 @@ namespace Com.Donut.BattleSystem
                 StartCoroutine(State.UseInput_Arrow());
         }
 
+        public void HitEffect()
+        {
+            StartCoroutine(State.HitEffect());
+        }
+
         public void Animation_End()
         {
             StartCoroutine(State.AnimationEnded());
         }
+        #endregion Inputs
     }
 }

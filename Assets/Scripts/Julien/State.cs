@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Com.Donut.BattleSystem
 {
@@ -27,6 +28,11 @@ namespace Com.Donut.BattleSystem
         }
         
         public virtual IEnumerator UseInput_Arrow() 
+        {
+            yield break;
+        }
+
+        public virtual IEnumerator HitEffect()
         {
             yield break;
         }

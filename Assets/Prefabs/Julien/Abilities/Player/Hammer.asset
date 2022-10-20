@@ -18,3 +18,4 @@ MonoBehaviour:
   attackDesc: Hit the enemy with a Hammer
   damage: 20
   _animatorController: {fileID: 9100000, guid: d6235a85b7f25eb47a5cab793b01a6fb, type: 2}
+  hitColor: {r: 1, g: 1, b: 1, a: 1}

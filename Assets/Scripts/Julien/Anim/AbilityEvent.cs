@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 namespace Com.Donut.BattleSystem
@@ -31,34 +33,52 @@ namespace Com.Donut.BattleSystem
             _battleSystem.Animation_End();
         }
 
-        public void Move()
+        public void LaunchHitEffect()
+        {
+            _battleSystem.HitEffect();
+        }
+
+        public void Move(string animationName)
         {
             CheckIfEnemy();
+            _cooldownMoveDuration = FindAnim(animationName);
+            
             _startInit = transform.position;
-            var animator = gameObject.GetComponent<Animator>();
-            var currentClipInfo = animator.GetCurrentAnimatorClipInfo(0);
-            var currentClipLength = currentClipInfo[0].clip.length; //Access the current length of the clip
-            _cooldownMoveDuration = currentClipLength;
             _startMoving = true;
+        }
+        
+        public void MoveBack(string animationName)
+        {
+            _cooldownMoveDurationBackward = FindAnim(animationName);
+            _startInitBackward = transform.position;
+            _startMovingBackward = true;
+        }
+
+        private float FindAnim(string animationName)
+        {
+            var animator = gameObject.GetComponent<Animator>();
+            foreach (AnimationClip clip in animator.runtimeAnimatorController.animationClips)
+            {
+                if (clip.name == animationName)
+                {
+                    Debug.Log("name: " + clip.name + "length: " + clip.length);
+                    return clip.length;
+                }
+            }
+
+            Debug.LogError("Anim clip not found --- Script ABILITY EVENT");
+            return 0f;
         }
 
         private void CheckIfEnemy()
         {
-            if (gameObject == _battleSystem.enemy1Go)
+            if (_battleSystem.ListEnemiesData.Any(p => p.FighterGo == gameObject))
             {
                 _isAnEnemy = true;
             }
         }
 
-        public void MoveBack()
-        {
-            _startInitBackward = transform.position;
-            var animator = gameObject.GetComponent<Animator>();
-            var currentClipInfo = animator.GetCurrentAnimatorClipInfo(0);
-            var currentClipLength = currentClipInfo[0].clip.length; //Access the current length of the clip
-            _cooldownMoveDurationBackward = currentClipLength;
-            _startMovingBackward = true;
-        }
+
 
         private void Update()
         {

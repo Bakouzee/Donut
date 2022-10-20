@@ -5,7 +5,7 @@ namespace Com.Donut.BattleSystem
 {
     public class EnemyTurn : State
     {
-        private Fighter _target;
+        private FighterData _targetData;
         private Abilities _currentAbility;
         
         public EnemyTurn(BattleSystem battleSystem) : base(battleSystem)
@@ -20,11 +20,11 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator AnimationEnded()
         {
-            _target.Damage(_currentAbility.damage);
+            _targetData.fighter.Damage(_currentAbility.damage);
             BattleSystem.Interface.UpdateUI();
-            if (_target.IsDead)
+            if (_targetData.fighter.IsDead)
             {
-                if (BattleSystem.Player0.IsDead && BattleSystem.Player1.IsDead)
+                if (CheckIfBothPlayersAreDead())
                 {
                     Debug.Log("All PLayers dead");
                     BattleSystem.SetState(new Lost(BattleSystem));
@@ -38,40 +38,53 @@ namespace Com.Donut.BattleSystem
             }
             else
             {
-                Debug.Log(_target.name  + " is alive with" + _target.CurrentHealth);
+                Debug.Log(_targetData.fighter.name  + " is alive with" + _targetData.fighter.CurrentHealth);
                 yield return new WaitForSeconds(1);
                 BattleSystem.SetState(new PlayerTurn(BattleSystem));
             }
         }
         
+        public override IEnumerator HitEffect()
+        {
+            BattleSystem.Interface.LaunchFlashEffect(_targetData, _currentAbility.hitColor);
+            yield break;
+        }
+        
         private void AttackTarget()
         {
-            if (!BattleSystem.Player1.IsDead && !BattleSystem.Player0.IsDead)
+            if (CheckIfBothPlayersAreDead())
             {
                 int rand = UnityEngine.Random.Range(0, 2);
 
                 if (rand == 0)
                 {
-                    _target = BattleSystem.Player0;
-                    BattleSystem.enemyTargetTransform = BattleSystem.player0Go.transform;
+                    _targetData = BattleSystem.ListPlayersData[0];
+                    BattleSystem.enemyTargetTransform = BattleSystem.ListPlayersData[0].FighterGo.transform;
                 }
                 else
                 {
-                    _target = BattleSystem.Player1;
-                    BattleSystem.enemyTargetTransform = BattleSystem.player1Go.transform;
+                    _targetData = BattleSystem.ListPlayersData[1];
+                    BattleSystem.enemyTargetTransform = BattleSystem.ListPlayersData[1].FighterGo.transform;
                 }
             }
             else
             {
-                _target = BattleSystem.FighterTurn;
+                _targetData = BattleSystem.CurrentFighterData;
 
-                BattleSystem.enemyTargetTransform = BattleSystem.FighterTurn == BattleSystem.Player0 ? BattleSystem.player0Go.transform : BattleSystem.player1Go.transform;
+                BattleSystem.enemyTargetTransform = BattleSystem.CurrentFighterData == BattleSystem.ListPlayersData[0] ? BattleSystem.ListPlayersData[0].FighterGo.transform : BattleSystem.ListPlayersData[1].FighterGo.transform;
             }
                 
 
-            _currentAbility = BattleSystem.Interface.LaunchEnemyAbility(BattleSystem.Enemy);
-            BattleSystem.Interface.LaunchAbility(BattleSystem.Enemy); //Random attack of enemy
+            _currentAbility = BattleSystem.Interface.LaunchEnemyAbility(BattleSystem.ListEnemiesData[0]); //Update to random enemy if multiple enemy
+            BattleSystem.Interface.LaunchAbility(BattleSystem.ListEnemiesData[0]); //Random attack of enemy
         }
+
+        private bool CheckIfBothPlayersAreDead()
+        {
+            return !BattleSystem.ListPlayersData[0].fighter.IsDead && !BattleSystem.ListPlayersData[1].fighter.IsDead;
+        }
+        
+        
 
     }
 }

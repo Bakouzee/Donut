@@ -11,8 +11,8 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator Start()
         {
-            BattleSystem.Interface.SetActiveAbility(BattleSystem.FighterTurn, true);
-            BattleSystem.Interface.SetActivePlayerInput(BattleSystem.FighterTurn, true);
+            BattleSystem.Interface.SetActiveAbility(BattleSystem.CurrentFighterData, true);
+            BattleSystem.Interface.SetActivePlayerInput(BattleSystem.CurrentFighterData, true);
 
             BattleSystem.SetState(new ActionTurn(BattleSystem));
             

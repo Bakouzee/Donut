@@ -10,4 +10,5 @@ public class Abilities : ScriptableObject
     public string attackDesc;
     public int damage;
     public AnimatorController _animatorController;
+    public Color hitColor;
 }

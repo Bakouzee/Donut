@@ -14,30 +14,27 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator Start()
         {
-            _currentAbility = BattleSystem.FighterTurn.Abilities[0];
+            _currentAbility = BattleSystem.CurrentFighterData.fighter.Abilities[0];
             yield break;
         }
         public override IEnumerator UseInput_A()
         {
-            if (BattleSystem.FighterTurn == BattleSystem.Player0)
+            if (BattleSystem.CurrentFighterData == BattleSystem.ListPlayersData[0])
             {
-                BattleSystem.Interface.SetAnimTrigger(BattleSystem.Player0, "ChooseAbility");
-                BattleSystem.Interface.SetActiveAbility(BattleSystem.Player0, false);
-                BattleSystem.Interface.SetActivePlayerInput(BattleSystem.Player0, false);
-                BattleSystem.Interface.LaunchAbility(BattleSystem.FighterTurn);
+                LaunchAttack();
+                DisableInputUI();
             }
             
             yield break;
         }
 
+
         public override IEnumerator UseInput_B()
         {
-            if (BattleSystem.FighterTurn == BattleSystem.Player1)
+            if (BattleSystem.CurrentFighterData == BattleSystem.ListPlayersData[1])
             {
-                BattleSystem.Interface.SetAnimTrigger(BattleSystem.Player1, "ChooseAbility");
-                BattleSystem.Interface.SetActiveAbility(BattleSystem.Player1, false);
-                BattleSystem.Interface.SetActivePlayerInput(BattleSystem.Player1, false);
-                BattleSystem.Interface.LaunchAbility(BattleSystem.FighterTurn);
+                LaunchAttack();
+                DisableInputUI();
             }
 
             yield break;
@@ -45,7 +42,7 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator UseInput_Arrow()
         {
-            _currentAbility = BattleSystem.Interface.ShiftAction(BattleSystem.FighterTurn);
+            _currentAbility = BattleSystem.Interface.ShiftAction(BattleSystem.CurrentFighterData);
             yield break;
         }
         
@@ -54,30 +51,50 @@ namespace Com.Donut.BattleSystem
             Debug.Log("AnimationEnded");
             
             BattleSystem.Interface.ResetAnimator();
-            Debug.Log(BattleSystem.Enemy.CurrentHealth);
-            BattleSystem.Enemy.Damage(_currentAbility.damage);
+            var enemy = BattleSystem.ListEnemiesData[0]; //1st enemy for the moment, after we will implement target enemy state
+            Debug.Log(enemy.fighter.CurrentHealth);
+            enemy.fighter.Damage(_currentAbility.damage);
 
             UpdateFighterTurn();
 
-            if (BattleSystem.Enemy.IsDead)
+            if (enemy.fighter.IsDead)
             {
                 Debug.Log("Enemy Dead");
                 BattleSystem.SetState(new Won(BattleSystem));
             }
             else
             {
-                Debug.Log("Enemy alive with" + BattleSystem.Enemy.CurrentHealth);
+                Debug.Log("Enemy alive with" + enemy.fighter.CurrentHealth);
                 yield return new WaitForSeconds(1);
                 BattleSystem.SetState(new EnemyTurn(BattleSystem));
             }
         }
+        
+        private void DisableInputUI()
+        {
+            BattleSystem.Interface.SetActivePlayerInput(BattleSystem.CurrentFighterData, false);
+        }
+
+        private void LaunchAttack()
+        {
+            BattleSystem.Interface.SetAnimTrigger(BattleSystem.CurrentFighterData, "ChooseAbility");
+            BattleSystem.Interface.SetActiveAbility(BattleSystem.CurrentFighterData, false);
+            BattleSystem.Interface.LaunchAbility(BattleSystem.CurrentFighterData);
+        }
+
+
+        public override IEnumerator HitEffect()
+        {
+            BattleSystem.Interface.LaunchFlashEffect(BattleSystem.ListEnemiesData[0], _currentAbility.hitColor); //1st enemy for the moment, after we will implement target enemy state
+            yield break;
+        }
 
         public void UpdateFighterTurn() //If both player are alive, change fighter turn, else let same fighter
         {
-            if(BattleSystem.FighterTurn == BattleSystem.Player0 && !BattleSystem.Player1.IsDead)
-                BattleSystem.FighterTurn = BattleSystem.Player1;
-            else if(BattleSystem.FighterTurn == BattleSystem.Player1 && !BattleSystem.Player0.IsDead)
-                BattleSystem.FighterTurn = BattleSystem.Player0;
+            if(BattleSystem.CurrentFighterData == BattleSystem.ListPlayersData[0] && !BattleSystem.ListPlayersData[1].fighter.IsDead)
+                BattleSystem.CurrentFighterData = BattleSystem.ListPlayersData[1];
+            else if(BattleSystem.CurrentFighterData == BattleSystem.ListPlayersData[1] && !BattleSystem.ListPlayersData[0].fighter.IsDead)
+                BattleSystem.CurrentFighterData = BattleSystem.ListPlayersData[0];
         }
     }
 }

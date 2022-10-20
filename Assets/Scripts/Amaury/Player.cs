@@ -113,7 +113,7 @@ public class Player : Character  {
     {
         if (ctx.performed)
         {
-            battleSystem.SetState(new Exploration(battleSystem));
+            //battleSystem.SetState(new Exploration(battleSystem));
         }
     }
 
