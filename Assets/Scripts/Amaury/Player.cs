@@ -90,7 +90,8 @@ public class Player : Character  {
         if (e.performed) {
             SwitchAnimState("WC_Run");
             isTransformed = !isTransformed;
-
+            if(isTransformed == true)
+                direction = Vector3.zero;
         }
     }
 
