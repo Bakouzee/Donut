@@ -10,7 +10,7 @@ namespace Com.Donut.BattleSystem
         [SerializeField] private Sprite arenaSprite;
         [SerializeField] private Fighter player0;
         [SerializeField] private Fighter player1;
-        [SerializeField] private List<Fighter> ListEnemyFighters = new List<Fighter>();
+        [SerializeField] private List<Fighter> listEnemyFighters = new List<Fighter>();
 
         [HideInInspector] public static FighterData CurrentFighterData;
         [HideInInspector] public static bool CanUseInput = false;
@@ -37,12 +37,12 @@ namespace Com.Donut.BattleSystem
 
         private void AddEnemiesToList()
         {
-            for (int x = 0; x < ListEnemyFighters.Count; x++)
+            for (int x = 0; x < listEnemyFighters.Count; x++)
             {
-                ListEnemiesData.Add(new FighterData(ListEnemyFighters[x], (byte)x));
+                ListEnemiesData.Add(new FighterData(listEnemyFighters[x], (byte)x));
             }
             
-            if(ListEnemyFighters.Count > 3)
+            if(listEnemyFighters.Count > 3)
                 Debug.LogError("More than 3 enemies --- Impossible");
         }
 

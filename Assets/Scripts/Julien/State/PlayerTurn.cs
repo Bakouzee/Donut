@@ -14,8 +14,8 @@ namespace Com.Donut.BattleSystem
             BattleSystem.Interface.SetActiveAbility(BattleSystem.CurrentFighterData, true);
             BattleSystem.Interface.SetActivePlayerInput(BattleSystem.CurrentFighterData, true);
 
-            BattleSystem.SetState(new ActionTurn(BattleSystem));
-            
+            BattleSystem.SetState(new PlayerAction(BattleSystem));
+
             yield break;
         }
     }

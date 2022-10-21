@@ -51,8 +51,23 @@ namespace Com.Donut.BattleSystem
             InitializePlayer(fighterData0, fighterData1);
             InitializeEnemy(enemyData);
             InitializeBattleField(arenaSprite);
+            InitializeUI();
             
             actionController.InitializeActionUI(fighterData0.fighter.Abilities, fighterData1.fighter.Abilities, _battleSystem);
+        }
+
+        private void InitializeUI()
+        {
+            switch (_battleSystem.ListEnemiesData.Count)
+            {
+                case 1:
+                    listEnemyNameplate[1].gameObject.SetActive(false);
+                    listEnemyNameplate[2].gameObject.SetActive(false);
+                    break;
+                case 2:
+                    listEnemyNameplate[2].gameObject.SetActive(false);
+                    break;
+            }
         }
 
         private void InitializePlayer(FighterData fighterData0, FighterData fighterData1)
@@ -72,7 +87,8 @@ namespace Com.Donut.BattleSystem
         {
             if (fighterData.ID == 0)
             {   
-                fighterData.FighterGo  = Instantiate(fighterPrefab, playerParent0, false);
+                var fighterGo =Instantiate(fighterPrefab, playerParent0, false);
+                fighterData.SetFighterGameObject(fighterGo);
                 var image = fighterData.FighterGo.GetComponent<Image>();
                 image.sprite = fighterData.fighter.Sprite;
                 _animPlayer0 = image.GetComponent<Animator>();
@@ -80,7 +96,8 @@ namespace Com.Donut.BattleSystem
             }
             else
             {   
-                fighterData.FighterGo  = Instantiate(fighterPrefab, playerParent1, false);
+                var fighterGo = Instantiate(fighterPrefab, playerParent1, false);
+                fighterData.SetFighterGameObject(fighterGo);
                 var image = fighterData.FighterGo.GetComponent<Image>();
                 image.sprite = fighterData.fighter.Sprite;
                 _animPlayer1 = image.GetComponent<Animator>();
@@ -93,9 +110,10 @@ namespace Com.Donut.BattleSystem
         {
             for (int x = 0; x < enemyData.Count; x++)
             {
-                listEnemyNameplate[0].Initialize(enemyData[x].fighter);
+                listEnemyNameplate[x].Initialize(enemyData[x].fighter);
                 var enemy = enemyData[x];
-                enemy.FighterGo =  Instantiate(fighterPrefab, listEnemyParent[x], false);
+                var fighterGo = Instantiate(fighterPrefab, listEnemyParent[x], false);
+                enemy.SetFighterGameObject(fighterGo);
                 enemy.FighterGo.transform.localScale = Vector3.one * 0.8f;
                 var image = enemy.FighterGo.GetComponent<Image>();
                 image.sprite = enemy.fighter.Sprite;

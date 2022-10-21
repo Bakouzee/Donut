@@ -8,7 +8,12 @@ public class FighterData
         fighter = fg;
         ID = id;
     }
-    public Fighter fighter { get;}
-    public GameObject FighterGo;
+    public Fighter fighter { get; }
+    public GameObject FighterGo { get; private set; }
     public readonly byte ID;
+
+    public void SetFighterGameObject(GameObject go)
+    {
+        FighterGo = go;
+    }
 }
