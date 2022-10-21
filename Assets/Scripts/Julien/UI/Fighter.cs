@@ -5,8 +5,8 @@ using UnityEngine;
 
 namespace Com.Donut.BattleSystem
 {
-    [CreateAssetMenu]
-    public class Fighter : ScriptableObject
+    [Serializable]
+    public class Fighter
     {
         [SerializeField] private string _name;
         [SerializeField] private string _level;

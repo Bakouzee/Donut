@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e0bee0f7ea1ae498429aa5ed76a067, type: 3}
+  m_Name: AllFighters
+  m_EditorClassIdentifier: 
+  fighters:
+  - _name: Goomba
+    _level: 1
+    _sprite: {fileID: -553502068, guid: 10fe712d33573e84b900566d69c99f33, type: 3}
+    _animatorController: {fileID: 9100000, guid: 0f4f7788e2b8c5b4cbf203ec7e95737c,
+      type: 2}
+    _currentHealth: 20
+    _totalHealth: 20
+    _minDamage: 1
+    _maxDamage: 2
+    _power: 1
+    _healing: 0
+    abilities:
+    - {fileID: 11400000, guid: 966d9332fb497f445b9144a473a8deb4, type: 2}
+  - _name: Canon
+    _level: 2
+    _sprite: {fileID: 1150049590, guid: 265cb7e9d22f0e84e877c96193041b99, type: 3}
+    _animatorController: {fileID: 0}
+    _currentHealth: 50
+    _totalHealth: 50
+    _minDamage: 5
+    _maxDamage: 10
+    _power: 3
+    _healing: 1
+    abilities: []
+  - _name: Goomboss
+    _level: 5
+    _sprite: {fileID: 2119826752, guid: 10fe712d33573e84b900566d69c99f33, type: 3}
+    _animatorController: {fileID: 9100000, guid: 0f4f7788e2b8c5b4cbf203ec7e95737c,
+      type: 2}
+    _currentHealth: 60
+    _totalHealth: 60
+    _minDamage: 5
+    _maxDamage: 15
+    _power: 5
+    _healing: 5
+    abilities:
+    - {fileID: 11400000, guid: 966d9332fb497f445b9144a473a8deb4, type: 2}

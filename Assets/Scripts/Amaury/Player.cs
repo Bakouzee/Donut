@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using DG.Tweening;
 
 public class Player : Character  {
 
@@ -24,6 +25,9 @@ public class Player : Character  {
 
     private Vector3 direction;
     private Vector3 lastVelocity;
+
+    [SerializeField] private GameObject abilityImg;
+    [SerializeField] private GameObject playerImg;
 
     public override void Awake() {
         base.Awake();
@@ -91,8 +95,34 @@ public class Player : Character  {
             SwitchAnimState("WC_Run");
             isTransformed = !isTransformed;
             if(isTransformed == true)
+            {
                 direction = Vector3.zero;
+                abilityImg.SetActive(true);
+                abilityImg.transform.DOMoveY(abilityImg.transform.position.y - 15f, 0.5f).SetEase(Ease.InElastic).SetEase(HideImg);
+                playerImg.transform.DOMoveY(abilityImg.transform.position.y + 15f, 0.5f).SetEase(Ease.InElastic);
+            }
+            else
+            {
+                playerImg.SetActive(true);
+                playerImg.transform.DOMoveY(abilityImg.transform.position.y - 15f, 0.5f).SetEase(Ease.InElastic).SetEase(HideImg);
+                abilityImg.transform.DOMoveY(abilityImg.transform.position.y + 15f, 0.5f).SetEase(Ease.InElastic);
+            }
         }
+    }
+
+    private float HideImg(float time, float duration, float overshootOrAmplitude, float period)
+    {
+        if (time <= 0) {
+            if (isTransformed)
+            {
+                abilityImg.SetActive(false);
+            }
+            else
+            {
+                playerImg.SetActive(false);
+            }
+        }
+        return 0; 
     }
 
     public void OnThrow(InputAction.CallbackContext e) {

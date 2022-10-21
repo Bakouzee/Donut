@@ -1,22 +1,14 @@
+using Com.Donut.BattleSystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 
 [CustomEditor(typeof(DebugMenuBattlePhase))]
 public class DebugMenuBattlePhase : EditorWindow
-{
-    private DebugMenuBattlePhase myObject = null; 
-
-    [SerializeField] private struct Enemy
-    {
-        public Sprite spr;
-        public string name;
-    }
-
-    [SerializeField] private List<Enemy> enemies = new List<Enemy>();
+{ 
+    private static int numberEnemiesCreated = 0;
 
     [MenuItem("Tools/Debug Menu/Battle Phase")]
     static void InitDebugMenu()
@@ -28,14 +20,21 @@ public class DebugMenuBattlePhase : EditorWindow
     }
 
     private void OnGUI()
-    {
+    { 
+        bool save = GUILayout.Button(new GUIContent("SAVE"));
         bool add = GUILayout.Button(new GUIContent("ADD"));
 
         if (add)
         {
-            GUILayout.BeginHorizontal();
-           // EditorGUILayout.ObjectField()
-            GUILayout.EndHorizontal();
+            AllFighters newEnemy = CreateInstance<AllFighters>();
+            newFighter.Name = GUILayout.TextField(newFighter.Name);
+            newEnemy.fighters.Add() = 
+            AssetDatabase.CreateAsset(newEnemy, "Assets/Enemies/Enemy" + ++numberEnemiesCreated + ".asset");
+        }
+
+        if (save)
+        {
+            AssetDatabase.SaveAssets();
         }
     }
 }
