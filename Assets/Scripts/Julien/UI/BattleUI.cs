@@ -18,6 +18,7 @@ namespace Com.Donut.BattleSystem
         [SerializeField] private Nameplate playerNameplate1;
         [SerializeField] private List<NameplateBoss> listEnemyNameplate = new List<NameplateBoss>();
         [SerializeField] private ActionController actionController;
+        [SerializeField] private InputsUI inputsUI;
         [SerializeField] private FlashEffect flashEffect;
         [SerializeField] private Text dialogText;
         [SerializeField] private GameObject pauseScreen;
@@ -29,34 +30,29 @@ namespace Com.Donut.BattleSystem
         private Animator _animPlayer1;
         private List<Animator> _listAnimatorEnemies = new List<Animator>();
 
-        [Header("DisplayInput_UI")]
-        [SerializeField] private Image input0;
-        [SerializeField] private Image input1;
-        [SerializeField] private Animator animInput0;
-        [SerializeField] private Animator animInput1;
-
 
         public void Initialize(BattleSystem battleSystem, FighterData fighterData0, FighterData fighterData1, List<FighterData> enemyData, Sprite arenaSprite)
         {
             _battleSystem = battleSystem;
             
-            fighterData0.fighter.ResetFighter(); //Reset scriptable object to default value
-            fighterData1.fighter.ResetFighter();
+            fighterData0.Fighter.ResetFighter(); //Reset scriptable object to default value
+            fighterData1.Fighter.ResetFighter();
 
             for (int x = 0; x < enemyData.Count; x++)
             {
-                enemyData[x].fighter.ResetFighter();
+                enemyData[x].Fighter.ResetFighter();
             }
             
             InitializePlayer(fighterData0, fighterData1);
             InitializeEnemy(enemyData);
             InitializeBattleField(arenaSprite);
-            InitializeUI();
+            InitializeInputsUI(battleSystem);
+            InitializeEnemyNameplate();
             
-            actionController.InitializeActionUI(fighterData0.fighter.Abilities, fighterData1.fighter.Abilities, _battleSystem);
+            actionController.InitializeActionUI(fighterData0.Fighter.Abilities, fighterData1.Fighter.Abilities, _battleSystem);
         }
 
-        private void InitializeUI()
+        private void InitializeEnemyNameplate()
         {
             switch (_battleSystem.ListEnemiesData.Count)
             {
@@ -68,6 +64,11 @@ namespace Com.Donut.BattleSystem
                     listEnemyNameplate[2].gameObject.SetActive(false);
                     break;
             }
+        }
+
+        private void InitializeInputsUI(BattleSystem battleSystem)
+        { 
+            inputsUI.InitializeInputsUI(battleSystem);
         }
 
         private void InitializePlayer(FighterData fighterData0, FighterData fighterData1)
@@ -90,18 +91,18 @@ namespace Com.Donut.BattleSystem
                 var fighterGo =Instantiate(fighterPrefab, playerParent0, false);
                 fighterData.SetFighterGameObject(fighterGo);
                 var image = fighterData.FighterGo.GetComponent<Image>();
-                image.sprite = fighterData.fighter.Sprite;
+                image.sprite = fighterData.Fighter.Sprite;
                 _animPlayer0 = image.GetComponent<Animator>();
-                _animPlayer0.runtimeAnimatorController = fighterData.fighter.AnimatorController;
+                _animPlayer0.runtimeAnimatorController = fighterData.Fighter.AnimatorController;
             }
             else
             {   
                 var fighterGo = Instantiate(fighterPrefab, playerParent1, false);
                 fighterData.SetFighterGameObject(fighterGo);
                 var image = fighterData.FighterGo.GetComponent<Image>();
-                image.sprite = fighterData.fighter.Sprite;
+                image.sprite = fighterData.Fighter.Sprite;
                 _animPlayer1 = image.GetComponent<Animator>();
-                _animPlayer1.runtimeAnimatorController = fighterData.fighter.AnimatorController;
+                _animPlayer1.runtimeAnimatorController = fighterData.Fighter.AnimatorController;
             }
 
         }
@@ -110,15 +111,15 @@ namespace Com.Donut.BattleSystem
         {
             for (int x = 0; x < enemyData.Count; x++)
             {
-                listEnemyNameplate[x].Initialize(enemyData[x].fighter);
+                listEnemyNameplate[x].Initialize(enemyData[x].Fighter);
                 var enemy = enemyData[x];
                 var fighterGo = Instantiate(fighterPrefab, listEnemyParent[x], false);
                 enemy.SetFighterGameObject(fighterGo);
                 enemy.FighterGo.transform.localScale = Vector3.one * 0.8f;
                 var image = enemy.FighterGo.GetComponent<Image>();
-                image.sprite = enemy.fighter.Sprite;
+                image.sprite = enemy.Fighter.Sprite;
                 _listAnimatorEnemies.Add(image.GetComponent<Animator>());
-                _listAnimatorEnemies[x].runtimeAnimatorController = enemy.fighter.AnimatorController;
+                _listAnimatorEnemies[x].runtimeAnimatorController = enemy.Fighter.AnimatorController;
             }
             
             _battleSystem.playerTargetTransform = _battleSystem.ListEnemiesData[0].FighterGo.transform;
@@ -150,12 +151,14 @@ namespace Com.Donut.BattleSystem
             actionController.SetActiveAbility_UI(fighterData, result);
         }
 
-        public void SetActivePlayerInput(FighterData fighterData, bool result)
+        public void SetActiveInputOnPlayer(FighterData fighterData, bool result)
         {
-            if(fighterData == _battleSystem.ListPlayersData[0])
-                input0.gameObject.SetActive(result);
-            else
-                input1.gameObject.SetActive(result);
+            inputsUI.SetActiveInputOnPlayer(fighterData, result);
+        }
+
+        public void SetActiveInputOnEnemy(FighterData fighterData, bool result)
+        {
+            inputsUI.SetActiveInputOnEnemy(fighterData, result);
         }
 
         public Abilities ShiftAction(FighterData fighterData)

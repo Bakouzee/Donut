@@ -12,9 +12,9 @@ namespace Com.Donut.BattleSystem
 
         public void Initialize(FighterData fighterData)
         {
-            _fighter = fighterData.fighter;
+            _fighter = fighterData.Fighter;
             life.text = _fighter.CurrentHealth.ToString();
-            power.text = fighterData.fighter.Power.ToString();
+            power.text = fighterData.Fighter.Power.ToString();
         }
 
         public void UpdateNameplate()

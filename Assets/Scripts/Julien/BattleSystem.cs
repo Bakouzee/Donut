@@ -17,7 +17,7 @@ namespace Com.Donut.BattleSystem
         public Transform playerTargetTransform;
         public Transform enemyTargetTransform;
         public BattleUI Interface => ui;
-
+        
         public readonly List<FighterData> ListPlayersData = new List<FighterData>();
         public readonly List<FighterData> ListEnemiesData = new List<FighterData>();
         
@@ -59,10 +59,22 @@ namespace Com.Donut.BattleSystem
                 StartCoroutine(State.UseInput_B());
         }
 
-        public void OnUseInput_Arrow()
+        public void OnUseInput_rightArrow()
         {
             if(CanUseInput)
-                StartCoroutine(State.UseInput_Arrow());
+                StartCoroutine(State.UseInput_rightArrow());
+        }
+        
+        public void OnUseInput_upArrow()
+        {
+            if(CanUseInput)
+                StartCoroutine(State.UseInput_upArrow());
+        }
+        
+        public void OnUseInput_downArrow()
+        {
+            if(CanUseInput)
+                StartCoroutine(State.UseInput_downArrow());
         }
 
         public void HitEffect()

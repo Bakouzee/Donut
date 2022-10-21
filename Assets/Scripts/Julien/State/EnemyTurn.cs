@@ -20,9 +20,9 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator AnimationEnded()
         {
-            _targetData.fighter.Damage(_currentAbility.damage);
+            _targetData.Fighter.Damage(_currentAbility.damage);
             BattleSystem.Interface.UpdateUI();
-            if (_targetData.fighter.IsDead)
+            if (_targetData.Fighter.IsDead)
             {
                 if (CheckIfBothPlayersAreDead())
                 {
@@ -38,7 +38,7 @@ namespace Com.Donut.BattleSystem
             }
             else
             {
-                Debug.Log(_targetData.fighter.name  + " is alive with" + _targetData.fighter.CurrentHealth);
+                Debug.Log(_targetData.Fighter.name  + " is alive with" + _targetData.Fighter.CurrentHealth);
                 yield return new WaitForSeconds(1);
                 BattleSystem.SetState(new PlayerTurn(BattleSystem));
             }
@@ -81,7 +81,7 @@ namespace Com.Donut.BattleSystem
 
         private bool CheckIfBothPlayersAreDead()
         {
-            return !BattleSystem.ListPlayersData[0].fighter.IsDead && !BattleSystem.ListPlayersData[1].fighter.IsDead;
+            return !BattleSystem.ListPlayersData[0].Fighter.IsDead && !BattleSystem.ListPlayersData[1].Fighter.IsDead;
         }
         
         

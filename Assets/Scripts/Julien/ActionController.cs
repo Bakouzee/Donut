@@ -58,8 +58,6 @@ public class ActionController : MonoBehaviour
 
     public void SetActiveAbility_UI(FighterData fighterData, bool result)
     {
-        BattleSystem.CanUseInput = result;
-
         if (fighterData == _battleSystem.ListPlayersData[0])
         {
             foreach (Transform child in abilityParentPlayer0)
@@ -128,15 +126,15 @@ public class ActionController : MonoBehaviour
 
     public void ResetAnimator()
     {
-        _animPlayer0.runtimeAnimatorController = _battleSystem.ListPlayersData[0].fighter.AnimatorController;
-        _animPlayer1.runtimeAnimatorController = _battleSystem.ListPlayersData[1].fighter.AnimatorController;
+        _animPlayer0.runtimeAnimatorController = _battleSystem.ListPlayersData[0].Fighter.AnimatorController;
+        _animPlayer1.runtimeAnimatorController = _battleSystem.ListPlayersData[1].Fighter.AnimatorController;
     }
 
     public Abilities LaunchEnemyAbility(FighterData fighterData)
     {
-        int rand = Random.Range(0, fighterData.fighter.Abilities.Count);
-        var triggerName = fighterData.fighter.Abilities[rand].attackName;
+        int rand = Random.Range(0, fighterData.Fighter.Abilities.Count);
+        var triggerName = fighterData.Fighter.Abilities[rand].attackName;
         _battleSystem.Interface.SetAnimTrigger(fighterData, triggerName);
-        return fighterData.fighter.Abilities[rand];
+        return fighterData.Fighter.Abilities[rand];
     }
 }

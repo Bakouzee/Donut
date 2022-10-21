@@ -462,7 +462,7 @@ RectTransform:
   m_Children:
   - {fileID: 959245714}
   m_Father: {fileID: 1656392813}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -583,6 +583,59 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &215955684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 215955685}
+  - component: {fileID: 215955686}
+  m_Layer: 0
+  m_Name: Inputs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &215955685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215955684}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4129637, y: 3.0479937, z: -3.9142578}
+  m_LocalScale: {x: 0.41666663, y: 0.41666663, z: 0.41666663}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1656392813}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &215955686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215955684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 922e7723dba70324db59c963f8f372e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input0: {fileID: 394659161}
+  input1: {fileID: 1677573713}
+  listPlayerInputsOnEnemy:
+  - input0: {fileID: 1406803646}
+    input1: {fileID: 893170758}
+  - input0: {fileID: 673681473}
+    input1: {fileID: 1157257444}
+  - input0: {fileID: 1604793587}
+    input1: {fileID: 1698629412}
 --- !u!1 &274630224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,7 +1801,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70.00012, y: -44.999985}
+  m_AnchoredPosition: {x: -30, y: 30}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &673681475
@@ -2851,7 +2904,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70.00012, y: -44.999985}
+  m_AnchoredPosition: {x: -30, y: 30}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1157257446
@@ -3545,7 +3598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70.00012, y: 105}
+  m_AnchoredPosition: {x: -30, y: 30}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1604793589
@@ -3684,6 +3737,8 @@ MonoBehaviour:
   playerParent1: {fileID: 1167677385}
   listEnemyParent:
   - {fileID: 1641560630}
+  - {fileID: 873681237}
+  - {fileID: 2147152922}
   playerNameplate0: {fileID: 1791576489}
   playerNameplate1: {fileID: 3507341781270061138}
   listEnemyNameplate:
@@ -3691,15 +3746,12 @@ MonoBehaviour:
   - {fileID: 879927540}
   - {fileID: 629182962}
   actionController: {fileID: 2104285846}
+  inputsUI: {fileID: 215955686}
   flashEffect: {fileID: 123794608}
   dialogText: {fileID: 0}
   pauseScreen: {fileID: 197077741}
   winScreen: {fileID: 1945757055}
   looseScreen: {fileID: 1820434274}
-  input0: {fileID: 394659163}
-  input1: {fileID: 1677573715}
-  animInput0: {fileID: 394659165}
-  animInput1: {fileID: 1677573717}
 --- !u!114 &1656392810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3782,6 +3834,7 @@ RectTransform:
   - {fileID: 30723184}
   - {fileID: 2104285845}
   - {fileID: 123794609}
+  - {fileID: 215955685}
   - {fileID: 1820434275}
   - {fileID: 1945757056}
   - {fileID: 197077742}
@@ -3927,7 +3980,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70.00012, y: 105}
+  m_AnchoredPosition: {x: -30, y: 30}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1698629414
@@ -4555,7 +4608,7 @@ RectTransform:
   m_Children:
   - {fileID: 792802265}
   m_Father: {fileID: 1656392813}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4766,7 +4819,7 @@ RectTransform:
   m_Children:
   - {fileID: 356493025}
   m_Father: {fileID: 1656392813}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4980,6 +5033,8 @@ MonoBehaviour:
   player0: {fileID: 11400000, guid: 4f7f21c9567d2ad4e96611fbacbdd464, type: 2}
   player1: {fileID: 11400000, guid: 0cf74ced79ad3c3459575d883fc68d95, type: 2}
   listEnemyFighters:
+  - {fileID: 11400000, guid: 40ecd8aa74ee7cc44b7bfdd49ac417a7, type: 2}
+  - {fileID: 11400000, guid: 40ecd8aa74ee7cc44b7bfdd49ac417a7, type: 2}
   - {fileID: 11400000, guid: 40ecd8aa74ee7cc44b7bfdd49ac417a7, type: 2}
   playerTargetTransform: {fileID: 0}
   enemyTargetTransform: {fileID: 0}
