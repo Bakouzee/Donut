@@ -12,6 +12,7 @@ public class EnemyPatrol : MonoBehaviour
     public float speedRun = 9;
 
     public Animator WaningAnim;
+    public Animator anim;
 
     //les angle pour la vue et la taille de la vision
     public float viewRadius = 10;
@@ -24,6 +25,7 @@ public class EnemyPatrol : MonoBehaviour
     public int edgeIteration = 4;
     public float edgeDistance = 0.5f;
     public GameObject playerInGame;
+    public GameObject imgWarning;
 
     //different endroit ou l'ai va aller
     public Transform[] waypoints;
@@ -47,7 +49,7 @@ public class EnemyPatrol : MonoBehaviour
     void Start()
     {
         //initialisation des variable
-      
+        anim = GetComponent<Animator>();
         m_PlayerPosition = Vector3.zero;
         m_IsPatrol = true;
         m_CaughtPlayer = false;
@@ -63,6 +65,7 @@ public class EnemyPatrol : MonoBehaviour
         navMeshAgent.isStopped = false;
         navMeshAgent.speed = speedWalk;
         navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
+       
 
 
 
@@ -78,11 +81,14 @@ public class EnemyPatrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        
         EnviromentView();
 
         if (!m_IsPatrol && canSee == true)
         {
             Chasing();
+           
             //ChaseEnemySound.Play();
 
         }
@@ -106,9 +112,11 @@ public class EnemyPatrol : MonoBehaviour
             //canSee = true;
             Move(speedRun);
             navMeshAgent.SetDestination(m_PlayerPosition);
-            //CrieEnemySound.Play();
-
-
+           // WaningAnim.SetTrigger("seePlayer");
+            imgWarning.SetActive(true);
+            //CrieEnemySound.Play();*
+            Vector3 temp = Vector3.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, speedWalk);
+            changeAnim(temp - transform.position);
         }
 
         //s'il est pas pres du joueur il peut re partir en patrouille
@@ -117,6 +125,7 @@ public class EnemyPatrol : MonoBehaviour
             if (m_WaitTime <= 0 && !m_CaughtPlayer && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) > 6f)
             {
                 //navMeshAgent.SetDestination(playerLastPosition);
+                WaningAnim.SetBool("canActiveWarning",true);
                 m_IsPatrol = true;
                 m_PlayerNear = false;
                 Move(speedWalk);
@@ -124,13 +133,16 @@ public class EnemyPatrol : MonoBehaviour
                 m_WaitTime = startWaitTime;
                 navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
                 canSee = false;
+              
+                StartCoroutine(waitToAnim());
+                
 
             }
             else
             {
                 if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 2.5f)
                 {
-                    WaningAnim.SetBool("canSee", true);
+                  //  WaningAnim.SetBool("canSee", true);
                     Stop();
                     m_WaitTime -= Time.deltaTime;
                 }
@@ -144,7 +156,7 @@ public class EnemyPatrol : MonoBehaviour
             //si l'ennemie est proche du joueru il va vers sa position
             if (m_TimeToRotate <= 0)
             {
-               
+                
                 Move(speedWalk);
                // LookingPlayer(playerLastPosition);
             }
@@ -152,6 +164,7 @@ public class EnemyPatrol : MonoBehaviour
             {
                 Stop();
                 m_TimeToRotate -= Time.deltaTime;
+                
             }
         }
         else
@@ -160,7 +173,9 @@ public class EnemyPatrol : MonoBehaviour
             m_PlayerNear = false;
             playerLastPosition = Vector3.zero;
             navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
-           
+            Vector3 temp = Vector3.MoveTowards(transform.position, waypoints[m_CurrentWaypointIndex].position, speedWalk);
+            changeAnim(temp - transform.position);
+
             if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
             {
                 
@@ -192,7 +207,7 @@ public class EnemyPatrol : MonoBehaviour
     public void NextPoint()
     {
         //ajouté 1 a l'index de waypoint pour qu'il aille au point suivant
-     
+        anim.SetBool("wakeUp", true);
         m_CurrentWaypointIndex = (m_CurrentWaypointIndex + 1) % waypoints.Length;
         navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
 
@@ -307,5 +322,48 @@ public class EnemyPatrol : MonoBehaviour
         navMeshAgent.isStopped = false;
         navMeshAgent.speed = speed;
 
+    }
+
+    IEnumerator waitToAnim()
+    {
+        yield return new WaitForSeconds(1f);
+        imgWarning.SetActive(false);
+    }
+
+    private void SetAnimFloat(Vector2 setVector)
+    {
+
+        anim.SetFloat("moveX", setVector.x);
+        anim.SetFloat("moveY", setVector.y);
+    }
+    public void changeAnim(Vector2 direction)
+    {
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+        {
+
+            if (direction.x > 0)
+            {
+                
+                SetAnimFloat(Vector2.right);
+            }
+            else if (direction.x < 0)
+            {
+               
+                SetAnimFloat(Vector2.left);
+            }
+        }
+        else if (Mathf.Abs(direction.x) < Mathf.Abs(direction.y))
+        {
+            if (direction.y > 0)
+            {
+               
+                SetAnimFloat(Vector2.up);
+            }
+            else if (direction.y < 0)
+            {
+          
+                SetAnimFloat(Vector2.down);
+            }
+        }
     }
 }
