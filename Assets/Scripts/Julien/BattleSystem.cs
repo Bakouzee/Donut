@@ -11,6 +11,9 @@ namespace Com.Donut.BattleSystem
         [SerializeField] private Fighter player0;
         [SerializeField] private Fighter player1;
         [SerializeField] private List<Fighter> listEnemyFighters = new List<Fighter>();
+        [SerializeField] private Player player;
+        public Player Player => player;
+
 
         [HideInInspector] public static FighterData CurrentFighterData;
         [HideInInspector] public static bool CanUseInput = false;

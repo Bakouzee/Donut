@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 using UnityEngine.InputSystem;
 using DG.Tweening;
 
@@ -156,12 +157,24 @@ public class Player : Character  {
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D col) {
+    private void OnCollisionEnter2D(Collision2D col) 
+    {
         if (col.gameObject.CompareTag("Destructible") && isTransformed)
         {
-            Destroy(col.gameObject);
+            if(col.gameObject.TryGetComponent(out VisualEffect vfx))
+            {
+                StartCoroutine(VFX(vfx));
+            }
         }
         Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
         direction = reflectVec;
+    }
+
+    private IEnumerator VFX(VisualEffect vfxToPlay)
+    {
+        vfxToPlay.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        vfxToPlay.Play();
+        yield return new WaitForSeconds(vfxToPlay.GetFloat("Lifetime"));
+        Destroy(vfxToPlay.gameObject);
     }
 }

@@ -51,6 +51,6 @@ public class GameManager : MonoBehaviour
 
     private void RestoreControls()
     {
-        battleSystem.P.playerInput.SwitchCurrentActionMap("Player");
+        battleSystem.Player.playerInput.SwitchCurrentActionMap("Player");
     }
 }
