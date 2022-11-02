@@ -98,6 +98,7 @@ public class Player : Character  {
         if (e.performed) {
             SwitchAnimState("WC_Run");
             isTransformed = !isTransformed;
+            //UI Gamefeel
             if(isTransformed == true)
             {
                 direction = Vector3.zero;
@@ -116,7 +117,7 @@ public class Player : Character  {
 
     private float HideImg(float time, float duration, float overshootOrAmplitude, float period)
     {
-        if (time <= 0) {
+        if (time >= 0.5f) {
             if (isTransformed)
             {
                 abilityImg.SetActive(false);
@@ -169,6 +170,12 @@ public class Player : Character  {
                 StartCoroutine(VFX(vfx));
             }
         }
+
+        if (col.gameObject.CompareTag("Enemy"))
+        {
+            battleSystem.SetState(new Init(battleSystem));
+        }
+
         Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
         direction = reflectVec;
     }
@@ -176,6 +183,7 @@ public class Player : Character  {
     private IEnumerator VFX(VisualEffect vfxToPlay)
     {
         vfxToPlay.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        vfxToPlay.gameObject.GetComponent<Collider2D>().enabled = false;
         vfxToPlay.Play();
         yield return new WaitForSeconds(vfxToPlay.GetFloat("Lifetime"));
         Destroy(vfxToPlay.gameObject);

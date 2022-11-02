@@ -27,26 +27,25 @@ public class GameManager : MonoBehaviour
     public LayerMask Everything { get { return everything; } private set { everything = value; } }
     #endregion
 
-    public void OnChangePhase(InputAction.CallbackContext ctx)
+    public void OnChangePhase()
     {
-        if (ctx.performed)
+        if (isBattle)
         {
-            if (isBattle)
-            {
-                Everything = Camera.main.cullingMask;
-                Camera.main.cullingMask = LayersToKeep;
+            Everything = Camera.main.cullingMask;
+            Camera.main.cullingMask = LayersToKeep;
 
-                battleSystem.SetState(new Init(battleSystem));
-                Debug.Log("BattleState");
-            } else
-            {
-                battleSystem.Interface.gameObject.SetActive(false);
-                Camera.main.cullingMask = Everything;
-                RestoreControls();
-                Debug.Log("ExplorationState");
-            }
-            isBattle = !isBattle;
+            battleSystem.SetState(new Init(battleSystem));
+            Debug.Log("BattleState");
         }
+        else
+        {
+            battleSystem.Interface.gameObject.SetActive(false);
+            Camera.main.cullingMask = Everything;
+            RestoreControls();
+            Debug.Log("ExplorationState");
+        }
+        isBattle = !isBattle;
+
     }
 
     private void RestoreControls()

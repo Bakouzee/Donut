@@ -11,9 +11,14 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator Start()
         {
+            StopPlayerControls();
             BattleSystem.InitializeBattle();
             BattleSystem.SetState(new Intro(BattleSystem));
             yield break;
+        }
+        private void StopPlayerControls()
+        {
+            BattleSystem.Player.playerInput.SwitchCurrentActionMap("BattlePhase");
         }
     }
 }
