@@ -24,9 +24,27 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "UseInput_Arrow",
+                    "name": "UseInput_rightArrow",
                     "type": "Button",
                     "id": "a2041f39-1b60-4a73-8e23-775eeb2e1f98",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "UseInput_downArrow",
+                    "type": "Button",
+                    "id": "df0b78ca-6a06-423f-81d4-7832599e1272",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "UseInput_upArrow",
+                    "type": "Button",
+                    "id": "25340ce6-76d3-425d-b3df-2d4447a2be01",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -63,7 +81,29 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "UseInput_Arrow",
+                    "action": "UseInput_rightArrow",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6fadc451-2700-43a5-b533-bc80f65ba043",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UseInput_downArrow",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "44f5b0c6-90ff-4103-b19f-49a1108b2468",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UseInput_upArrow",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,6 +1,5 @@
-﻿﻿using System;
- using UnityEditor.Animations;
- using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Com.Donut.BattleSystem
@@ -14,66 +13,116 @@ namespace Com.Donut.BattleSystem
         [SerializeField] private GameObject fighterPrefab;
         [SerializeField] private Transform playerParent0;
         [SerializeField] private Transform playerParent1;
-        [SerializeField] private Transform enemyParent;
+        [SerializeField] private List<Transform> listEnemyParent = new List<Transform>();
         [SerializeField] private Nameplate playerNameplate0;
         [SerializeField] private Nameplate playerNameplate1;
-        [SerializeField] private NameplateBoss enemyNameplate0;
+        [SerializeField] private List<NameplateBoss> listEnemyNameplate = new List<NameplateBoss>();
         [SerializeField] private ActionController actionController;
+        [SerializeField] private InputsUI inputsUI;
+        [SerializeField] private FlashEffect flashEffect;
         [SerializeField] private Text dialogText;
         [SerializeField] private GameObject pauseScreen;
+        [SerializeField] private GameObject winScreen;
+        [SerializeField] private GameObject looseScreen;
         
         //To have ref of players animator
         private Animator _animPlayer0;
         private Animator _animPlayer1;
-        
-        [Header("DisplayInput_UI")]
-        [SerializeField] private Image input0;
-        [SerializeField] private Image input1;
-        [SerializeField] private Animator animInput0;
-        [SerializeField] private Animator animInput1;
+        private List<Animator> _listAnimatorEnemies = new List<Animator>();
 
-        private LayerMask everything;
-        public LayerMask Everything { get { return everything; } private set { everything = value; } }
 
-        public void Initialize(BattleSystem battleSystem, Fighter player0, Fighter player1, Fighter enemy, Sprite sprite)
+        public void Initialize(BattleSystem battleSystem, FighterData fighterData0, FighterData fighterData1, List<FighterData> enemyData, Sprite arenaSprite)
         {
-            gameObject.SetActive(true);
             _battleSystem = battleSystem;
-            Everything = Camera.main.cullingMask;
-            Camera.main.cullingMask = _battleSystem.LayersToKeep;
-            InitializePlayer(player0, player1);
-            InitializeEnemy(enemy);
-            InitializeBattleField(sprite);
             
-            actionController.InitializeActionUI(player0.Abilities, player1.Abilities, _battleSystem);
-        }
-        
-        private void InitializePlayer(Fighter fighter0, Fighter fighter1)
-        {
-            playerNameplate0.Initialize(fighter0);
-            playerNameplate1.Initialize(fighter1);
+            fighterData0.Fighter.ResetFighter(); //Reset scriptable object to default value
+            fighterData1.Fighter.ResetFighter();
 
-            var go0 = Instantiate(fighterPrefab, playerParent0, false);
-            var image0 = go0.GetComponent<Image>();
-            image0.sprite = fighter0.Sprite;
-            _animPlayer0 = image0.GetComponent<Animator>();
-            _animPlayer0.runtimeAnimatorController = fighter0.AnimatorController;
+            for (int x = 0; x < enemyData.Count; x++)
+            {
+                enemyData[x].Fighter.ResetFighter();
+            }
             
-            var go1 = Instantiate(fighterPrefab, playerParent1, false);
-            var image1 = go1.GetComponent<Image>();
-            image1.sprite = fighter1.Sprite;
-            _animPlayer1 = image1.GetComponent<Animator>();
-            _animPlayer1.runtimeAnimatorController = fighter1.AnimatorController;
+            InitializePlayer(fighterData0, fighterData1);
+            InitializeEnemy(enemyData);
+            InitializeBattleField(arenaSprite);
+            InitializeInputsUI(battleSystem);
+            InitializeEnemyNameplate();
+            
+            actionController.InitializeActionUI(fighterData0.Fighter.Abilities, fighterData1.Fighter.Abilities, _battleSystem);
         }
-        
-        private void InitializeEnemy(Fighter fighter)
+
+        private void InitializeEnemyNameplate()
         {
-            enemyNameplate0.Initialize(fighter);
-                
-            var go = Instantiate(fighterPrefab, enemyParent, false);
-            go.transform.localScale = Vector3.one * 0.8f;
-            var image = go.GetComponent<Image>();
-            image.sprite = fighter.Sprite;
+            switch (_battleSystem.ListEnemiesData.Count)
+            {
+                case 1:
+                    listEnemyNameplate[1].gameObject.SetActive(false);
+                    listEnemyNameplate[2].gameObject.SetActive(false);
+                    break;
+                case 2:
+                    listEnemyNameplate[2].gameObject.SetActive(false);
+                    break;
+            }
+        }
+
+        private void InitializeInputsUI(BattleSystem battleSystem)
+        { 
+            inputsUI.InitializeInputsUI(battleSystem);
+        }
+
+        private void InitializePlayer(FighterData fighterData0, FighterData fighterData1)
+        {
+            playerNameplate0.Initialize(fighterData0);
+            playerNameplate1.Initialize(fighterData1);
+
+            var player0 = _battleSystem.ListPlayersData[0];
+            var player1 = _battleSystem.ListPlayersData[1];
+            InitPlayer(player0);
+            InitPlayer(player1);
+
+            actionController.InitializeAnimator(_animPlayer0, _animPlayer1);
+        }
+
+        private void InitPlayer(FighterData fighterData)
+        {
+            if (fighterData.ID == 0)
+            {   
+                var fighterGo =Instantiate(fighterPrefab, playerParent0, false);
+                fighterData.SetFighterGameObject(fighterGo);
+                var image = fighterData.FighterGo.GetComponent<Image>();
+                image.sprite = fighterData.Fighter.Sprite;
+                _animPlayer0 = image.GetComponent<Animator>();
+                _animPlayer0.runtimeAnimatorController = fighterData.Fighter.AnimatorController;
+            }
+            else
+            {   
+                var fighterGo = Instantiate(fighterPrefab, playerParent1, false);
+                fighterData.SetFighterGameObject(fighterGo);
+                var image = fighterData.FighterGo.GetComponent<Image>();
+                image.sprite = fighterData.Fighter.Sprite;
+                _animPlayer1 = image.GetComponent<Animator>();
+                _animPlayer1.runtimeAnimatorController = fighterData.Fighter.AnimatorController;
+            }
+
+        }
+
+        private void InitializeEnemy(List<FighterData> enemyData)
+        {
+            for (int x = 0; x < enemyData.Count; x++)
+            {
+                listEnemyNameplate[x].Initialize(enemyData[x].Fighter);
+                var enemy = enemyData[x];
+                var fighterGo = Instantiate(fighterPrefab, listEnemyParent[x], false);
+                enemy.SetFighterGameObject(fighterGo);
+                enemy.FighterGo.transform.localScale = Vector3.one * 0.8f;
+                var image = enemy.FighterGo.GetComponent<Image>();
+                image.sprite = enemy.Fighter.Sprite;
+                _listAnimatorEnemies.Add(image.GetComponent<Animator>());
+                _listAnimatorEnemies[x].runtimeAnimatorController = enemy.Fighter.AnimatorController;
+            }
+            
+            _battleSystem.playerTargetTransform = _battleSystem.ListEnemiesData[0].FighterGo.transform;
         }
 
         private void InitializeBattleField(Sprite sprite)
@@ -97,46 +146,71 @@ namespace Com.Donut.BattleSystem
             pauseScreen.SetActive(true);
         }
         
+        public void SetActiveAbility(FighterData fighterData, bool result)
+        {
+            actionController.SetActiveAbility_UI(fighterData, result);
+        }
+
+        public void SetActiveInputOnPlayer(FighterData fighterData, bool result)
+        {
+            inputsUI.SetActiveInputOnPlayer(fighterData, result);
+        }
+
+        public void SetActiveInputOnEnemy(FighterData fighterData, bool result)
+        {
+            inputsUI.SetActiveInputOnEnemy(fighterData, result);
+        }
+
+        public Abilities ShiftAction(FighterData fighterData)
+        {
+            return actionController.UpdateCurrentAbility(fighterData);
+        }
+
+        public void SetAnimTrigger(FighterData fighterData, string triggerName)
+        {
+            if (fighterData == _battleSystem.ListPlayersData[0])
+                _animPlayer0.SetTrigger(triggerName);
+            else if (fighterData == _battleSystem.ListPlayersData[1])
+                _animPlayer1.SetTrigger(triggerName);
+            else
+                _listAnimatorEnemies[fighterData.ID].SetTrigger(triggerName);
+        }
+    
+
+        public void LaunchAbility(FighterData fighterData)
+        {
+            actionController.LaunchAbility(fighterData);
+        }
+        
+        public Abilities LaunchEnemyAbility(FighterData fighterData)
+        {
+            return actionController.LaunchEnemyAbility(fighterData);
+        }
+
+        public void ResetAnimator()
+        {
+            actionController.ResetAnimator();
+        }
+
+        public void LaunchFlashEffect(FighterData fighterData, Color color)
+        {
+            flashEffect.StartFlashEffect(fighterData.FighterGo, color);
+        }
+        public void ShowWinMenu()
+        {
+            winScreen.SetActive(true);
+            //Maybe put anim rendered with another cam
+        }
+
+        public void ShowLooseMenu()
+        {
+            looseScreen.SetActive(true);
+            //Maybe put anim rendered with another cam
+        }
+        
         public void HidePauseMenu()
         {
             pauseScreen.SetActive(false);
-        }
-        public void SetActiveAbility(Fighter fighter, bool result)
-        {
-            actionController.SetActiveAbility_UI(fighter, result);
-            
-        }
-
-        public void SetActivePlayerInput(Fighter fighter, bool result)
-        {
-            if(fighter == _battleSystem.Player0)
-                input0.gameObject.SetActive(result);
-            else
-                input1.gameObject.SetActive(result);
-        }
-
-        public void ShiftAction(Fighter fighter)
-        {
-            actionController.UpdateCurrentAbility(fighter);
-        }
-
-        public void SetAnimTrigger(Fighter fighter, string triggerName)
-        {
-            if(fighter == _battleSystem.Player0)
-                _animPlayer0.SetTrigger(triggerName);
-            else
-                _animPlayer1.SetTrigger(triggerName);
-        }
-
-        public void LaunchAbility(Fighter fighter)
-        {
-            actionController.LaunchAbility(fighter);
-        }
-
-        public void HideBattleScene()
-        {
-            Camera.main.cullingMask = Everything;
-            gameObject.SetActive(false);
         }
     }
 }

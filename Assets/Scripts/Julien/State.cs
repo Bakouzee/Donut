@@ -1,12 +1,14 @@
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace Com.Donut.BattleSystem
 {
     public abstract class State
     {
-        protected BattleSystem BattleSystem;
+        protected readonly BattleSystem BattleSystem;
 
-        public State(BattleSystem battleSystem)
+        protected State(BattleSystem battleSystem)
         {
             BattleSystem = battleSystem;
         }
@@ -25,7 +27,27 @@ namespace Com.Donut.BattleSystem
             yield break;
         }
         
-        public virtual IEnumerator UseInput_Arrow() 
+        public virtual IEnumerator UseInput_rightArrow() 
+        {
+            yield break;
+        }
+        
+        public virtual IEnumerator UseInput_upArrow() 
+        {
+            yield break;
+        }
+        
+        public virtual IEnumerator UseInput_downArrow() 
+        {
+            yield break;
+        }
+
+        public virtual IEnumerator HitEffect()
+        {
+            yield break;
+        }
+
+        public virtual IEnumerator AnimationEnded()
         {
             yield break;
         }

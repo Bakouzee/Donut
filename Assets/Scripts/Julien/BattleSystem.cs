@@ -1,4 +1,4 @@
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,53 +7,88 @@ namespace Com.Donut.BattleSystem
     public class BattleSystem : StateMachine
     {
         [SerializeField] private BattleUI ui;
-        [SerializeField] private Sprite sprite;
+        [SerializeField] private Sprite arenaSprite;
         [SerializeField] private Fighter player0;
         [SerializeField] private Fighter player1;
-        [SerializeField] private Fighter enemy;
-        [SerializeField] private Player p;
-        [SerializeField] private LayerMask layersToKeep;
+        [SerializeField] private List<Fighter> listEnemyFighters = new List<Fighter>();
+        [SerializeField] private Player player;
+        public Player Player => player;
 
-        [HideInInspector] public static Fighter FighterTurn;
+
+        [HideInInspector] public static FighterData CurrentFighterData;
         [HideInInspector] public static bool CanUseInput = false;
-
-        public Fighter Player0 => player0;
-        public Fighter Player1 => player1;
-        public Fighter Enemy => enemy;
-        public Player P => p;
+        public Transform playerTargetTransform;
+        public Transform enemyTargetTransform;
         public BattleUI Interface => ui;
-        public Sprite Sprite => sprite;
-        public LayerMask LayersToKeep => layersToKeep;
-
-
+        
+        public readonly List<FighterData> ListPlayersData = new List<FighterData>();
+        public readonly List<FighterData> ListEnemiesData = new List<FighterData>();
+        
         private void Start()
         {
-            //SetState(new Exploration(this));
+            SetState((new Init(this)));
         }
-
+        
         public void InitializeBattle()
         {
-            Interface.Initialize(this,player0, player1, enemy, sprite);
-            FighterTurn = player0;
+            ListPlayersData.Add(new FighterData(player0, 0));
+            ListPlayersData.Add(new FighterData(player1, 1));
+            AddEnemiesToList();
+            Interface.Initialize(this, ListPlayersData[0], ListPlayersData[1], ListEnemiesData, arenaSprite);
+            CurrentFighterData = ListPlayersData[0];
         }
-        
-        
-        public void OnUseInput_A(InputAction.CallbackContext ctx)
+
+        private void AddEnemiesToList()
         {
-            if(CanUseInput && ctx.performed)
+            for (int x = 0; x < listEnemyFighters.Count; x++)
+            {
+                ListEnemiesData.Add(new FighterData(listEnemyFighters[x], (byte)x));
+            }
+            
+            if(listEnemyFighters.Count > 3)
+                Debug.LogError("More than 3 enemies --- Impossible");
+        }
+
+        #region Inputs
+        public void OnUseInput_A()
+        {
+            if(CanUseInput)
                 StartCoroutine(State.UseInput_A());
         }
 
-        public void OnUseInput_B(InputAction.CallbackContext ctx)
+        public void OnUseInput_B()
         {
-            if(CanUseInput && ctx.performed)
+            if(CanUseInput)
                 StartCoroutine(State.UseInput_B());
         }
 
-        public void OnUseInput_Arrow(InputAction.CallbackContext ctx)
+        public void OnUseInput_rightArrow()
         {
-            if(CanUseInput && ctx.performed)
-                StartCoroutine(State.UseInput_Arrow());
+            if(CanUseInput)
+                StartCoroutine(State.UseInput_rightArrow());
         }
+        
+        public void OnUseInput_upArrow()
+        {
+            if(CanUseInput)
+                StartCoroutine(State.UseInput_upArrow());
+        }
+        
+        public void OnUseInput_downArrow()
+        {
+            if(CanUseInput)
+                StartCoroutine(State.UseInput_downArrow());
+        }
+
+        public void HitEffect()
+        {
+            StartCoroutine(State.HitEffect());
+        }
+
+        public void Animation_End()
+        {
+            StartCoroutine(State.AnimationEnded());
+        }
+        #endregion Inputs
     }
 }

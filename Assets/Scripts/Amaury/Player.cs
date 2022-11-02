@@ -3,7 +3,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 using UnityEngine.InputSystem;
+using DG.Tweening;
 
 public class Player : Character  {
 
@@ -24,6 +26,9 @@ public class Player : Character  {
 
     private Vector3 direction;
     private Vector3 lastVelocity;
+
+    [SerializeField] private GameObject abilityImg;
+    [SerializeField] private GameObject playerImg;
 
     public override void Awake() {
         base.Awake();
@@ -93,8 +98,35 @@ public class Player : Character  {
         if (e.performed) {
             SwitchAnimState("WC_Run");
             isTransformed = !isTransformed;
-            direction = Vector3.zero;
+            if(isTransformed == true)
+            {
+                direction = Vector3.zero;
+                abilityImg.SetActive(true);
+                abilityImg.transform.DOMoveY(abilityImg.transform.position.y - 15f, 0.5f).SetEase(Ease.InElastic).SetEase(HideImg);
+                playerImg.transform.DOMoveY(abilityImg.transform.position.y + 15f, 0.5f).SetEase(Ease.InElastic);
+            }
+            else
+            {
+                playerImg.SetActive(true);
+                playerImg.transform.DOMoveY(abilityImg.transform.position.y - 15f, 0.5f).SetEase(Ease.InElastic).SetEase(HideImg);
+                abilityImg.transform.DOMoveY(abilityImg.transform.position.y + 15f, 0.5f).SetEase(Ease.InElastic);
+            }
         }
+    }
+
+    private float HideImg(float time, float duration, float overshootOrAmplitude, float period)
+    {
+        if (time <= 0) {
+            if (isTransformed)
+            {
+                abilityImg.SetActive(false);
+            }
+            else
+            {
+                playerImg.SetActive(false);
+            }
+        }
+        return 0; 
     }
 
     public void OnThrow(InputAction.CallbackContext e) {
@@ -116,7 +148,7 @@ public class Player : Character  {
     {
         if (ctx.performed)
         {
-            battleSystem.SetState(new Exploration(battleSystem));
+            //battleSystem.SetState(new Exploration(battleSystem));
         }
     }
 
@@ -128,13 +160,25 @@ public class Player : Character  {
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D col) {
-        if (isTransformed) {
-            Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
-            direction = reflectVec;
+    private void OnCollisionEnter2D(Collision2D col) 
+    {
+        if (col.gameObject.CompareTag("Destructible") && isTransformed)
+        {
+            if(col.gameObject.TryGetComponent(out VisualEffect vfx))
+            {
+                StartCoroutine(VFX(vfx));
+            }
         }
+        Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
+        direction = reflectVec;
+    }
 
-        
+    private IEnumerator VFX(VisualEffect vfxToPlay)
+    {
+        vfxToPlay.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        vfxToPlay.Play();
+        yield return new WaitForSeconds(vfxToPlay.GetFloat("Lifetime"));
+        Destroy(vfxToPlay.gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D col) {

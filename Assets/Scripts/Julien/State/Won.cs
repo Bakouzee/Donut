@@ -11,10 +11,8 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator Start()
         {
-            // For now
-            BattleSystem.SetState(new Exploration(BattleSystem));
+            BattleSystem.Interface.ShowWinMenu();
             yield break;
         }
-
     }
 }

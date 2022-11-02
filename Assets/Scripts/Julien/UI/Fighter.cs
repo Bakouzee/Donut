@@ -2,12 +2,11 @@ using System;
 using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Com.Donut.BattleSystem
 {
-    [CreateAssetMenu]
-    public class Fighter : ScriptableObject
+    [Serializable]
+    public class Fighter
     {
         [SerializeField] private string _name;
         [SerializeField] private string _level;
@@ -19,6 +18,7 @@ namespace Com.Donut.BattleSystem
         [SerializeField] private int _maxDamage;
         [SerializeField] private int _power;
         [SerializeField] private int _healing;
+        private bool _isDead;
         
         [SerializeField] private List<Abilities> abilities = new List<Abilities>();
 
@@ -32,13 +32,16 @@ namespace Com.Donut.BattleSystem
         public int MaxDamage => _maxDamage; 
         public int Power => _power;
         public int Healing => _healing;
-
+        public bool IsDead => _isDead; 
         public List<Abilities> Abilities => abilities;
 
-        public bool Damage(int amount)
+        public void Damage(int amount)
         {
             _currentHealth = Math.Max(0, _currentHealth - amount);
-            return _currentHealth == 0;
+            if (_currentHealth == 0)
+            {
+                _isDead = true;
+            }
         }
 
         public void Heal(int amount)
@@ -49,6 +52,12 @@ namespace Com.Donut.BattleSystem
         private void OnValidate()
         {
             _currentHealth = Math.Min(_currentHealth, _totalHealth);
+        }
+
+        public void ResetFighter()
+        {
+            _currentHealth = _totalHealth;
+            _isDead = false;
         }
     }
 }

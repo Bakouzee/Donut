@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using UnityEngine;
 
 namespace Com.Donut.BattleSystem
 {
@@ -12,15 +11,9 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator Start()
         {
-            StopPlayerControls();
             BattleSystem.InitializeBattle();
             BattleSystem.SetState(new Intro(BattleSystem));
             yield break;
-        }
-
-        private void StopPlayerControls()
-        {
-            BattleSystem.P.playerInput.SwitchCurrentActionMap("BattlePhase");
         }
     }
 }
