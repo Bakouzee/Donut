@@ -22,6 +22,7 @@ namespace Com.Donut.BattleSystem
         {
             _targetData.Fighter.Damage(_currentAbility.damage);
             BattleSystem.Interface.UpdateUI();
+
             if (_targetData.Fighter.IsDead)
             {
                 if (CheckIfBothPlayersAreDead())
