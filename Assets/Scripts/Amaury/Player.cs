@@ -133,5 +133,32 @@ public class Player : Character  {
             Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
             direction = reflectVec;
         }
+
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D col) {
+        if (col.gameObject.TryGetComponent<ShakeBehaviour>(out ShakeBehaviour shakeBehaviour)) {
+            if (shakeBehaviour.shakeType == ShakeBehaviour.ShakeObjectType.TREE && isTransformed) {
+                shakeBehaviour.canShake = true;
+                shakeBehaviour.Shake(0.5f);
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D col) {
+        if (col.gameObject.TryGetComponent<ShakeBehaviour>(out ShakeBehaviour shakeBehaviour)) {
+            if (shakeBehaviour.shakeType == ShakeBehaviour.ShakeObjectType.BUSH) {
+                shakeBehaviour.canShake = true;
+                shakeBehaviour.Shake(0.5f);
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col) {
+        if (col.gameObject.TryGetComponent<ShakeBehaviour>(out ShakeBehaviour shakeBehaviour)) {
+            shakeBehaviour.canShake = false;
+        }
+
     }
 }
