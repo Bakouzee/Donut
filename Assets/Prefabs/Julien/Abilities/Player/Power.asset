@@ -16,3 +16,6 @@ MonoBehaviour:
   attackName: Power
   iconSprite: {fileID: 2024770750, guid: 385e44a01c85a8b43b2fab330a309126, type: 3}
   attackDesc: Use your power
+  damage: 0
+  _animatorController: {fileID: 0}
+  hitColor: {r: 1, g: 1, b: 1, a: 1}

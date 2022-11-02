@@ -23,9 +23,9 @@ MonoBehaviour:
   _power: 200
   _healing: 5
   abilities:
-  - {fileID: 11400000, guid: 295939e832b6ae141958f0ebfbabe8d5, type: 2}
-  - {fileID: 11400000, guid: 9f058e3fd2782cc4084599b8b6d4a43d, type: 2}
   - {fileID: 11400000, guid: 8dbbcba61f177a446a7aa08e90402603, type: 2}
   - {fileID: 11400000, guid: 1c6ae56dc1772b544b26ce4b4cd66635, type: 2}
   - {fileID: 11400000, guid: e01fccc877a5ed049b621df316d4584b, type: 2}
   - {fileID: 11400000, guid: c4dc9c074b899614eb7a6071c3391784, type: 2}
+  - {fileID: 11400000, guid: 295939e832b6ae141958f0ebfbabe8d5, type: 2}
+  - {fileID: 11400000, guid: 9f058e3fd2782cc4084599b8b6d4a43d, type: 2}

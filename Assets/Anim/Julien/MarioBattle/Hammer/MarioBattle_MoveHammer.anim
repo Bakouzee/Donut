@@ -140,7 +140,7 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: Move
-    data: 
+    data: MarioBattle_AttackHammerAnim
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

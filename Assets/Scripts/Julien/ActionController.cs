@@ -56,11 +56,9 @@ public class ActionController : MonoBehaviour
         _animPlayer1 = anim1;
     }
 
-    public void SetActiveAbility_UI(Fighter fighter, bool result)
+    public void SetActiveAbility_UI(FighterData fighterData, bool result)
     {
-        BattleSystem.CanUseInput = result;
-
-        if (fighter == _battleSystem.Player0)
+        if (fighterData == _battleSystem.ListPlayersData[0])
         {
             foreach (Transform child in abilityParentPlayer0)
             {
@@ -76,9 +74,9 @@ public class ActionController : MonoBehaviour
         }
     }
 
-    public Abilities UpdateCurrentAbility(Fighter fighter)
+    public Abilities UpdateCurrentAbility(FighterData fighterData)
     {
-        if (fighter == _battleSystem.Player0)
+        if (fighterData == _battleSystem.ListPlayersData[0])
         {
             if (listAbilitiesPlayer0.Count <= 1) Debug.LogError("Error actioncontroller");
 
@@ -110,33 +108,33 @@ public class ActionController : MonoBehaviour
         }
     }
 
-    public void LaunchAbility(Fighter fighter)
+    public void LaunchAbility(FighterData fighterData)
     {
-        if (fighter == _battleSystem.Player0)
+        if (fighterData == _battleSystem.ListPlayersData[0])
         {
             _animPlayer0.runtimeAnimatorController = _abilityIndexPlayer0._animatorController;
             var triggerName = _abilityIndexPlayer0.attackName;
-            _battleSystem.Interface.SetAnimTrigger(fighter, triggerName);
+            _battleSystem.Interface.SetAnimTrigger(fighterData, triggerName);
         }
-        else if (fighter == _battleSystem.Player1)
+        else if (fighterData == _battleSystem.ListPlayersData[1])
         {
             _animPlayer1.runtimeAnimatorController = _abilityIndexPlayer1._animatorController;
             var triggerName = _abilityIndexPlayer1.attackName;
-            _battleSystem.Interface.SetAnimTrigger(fighter, triggerName);
+            _battleSystem.Interface.SetAnimTrigger(fighterData, triggerName);
         }
     }
 
     public void ResetAnimator()
     {
-        _animPlayer0.runtimeAnimatorController = _battleSystem.Player0.AnimatorController;
-        _animPlayer1.runtimeAnimatorController = _battleSystem.Player1.AnimatorController;
+        _animPlayer0.runtimeAnimatorController = _battleSystem.ListPlayersData[0].Fighter.AnimatorController;
+        _animPlayer1.runtimeAnimatorController = _battleSystem.ListPlayersData[1].Fighter.AnimatorController;
     }
 
-    public Abilities LaunchEnemyAbility(Fighter fighter)
+    public Abilities LaunchEnemyAbility(FighterData fighterData)
     {
-        int rand = Random.Range(0, fighter.Abilities.Count);
-        var triggerName = fighter.Abilities[rand].attackName;
-        _battleSystem.Interface.SetAnimTrigger(fighter, triggerName);
-        return fighter.Abilities[rand];
+        int rand = Random.Range(0, fighterData.Fighter.Abilities.Count);
+        var triggerName = fighterData.Fighter.Abilities[rand].attackName;
+        _battleSystem.Interface.SetAnimTrigger(fighterData, triggerName);
+        return fighterData.Fighter.Abilities[rand];
     }
 }

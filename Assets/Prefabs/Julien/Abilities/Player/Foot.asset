@@ -16,3 +16,6 @@ MonoBehaviour:
   attackName: Foot
   iconSprite: {fileID: -83949001, guid: 385e44a01c85a8b43b2fab330a309126, type: 3}
   attackDesc: Crush enemies with your foot
+  damage: 0
+  _animatorController: {fileID: 0}
+  hitColor: {r: 1, g: 1, b: 1, a: 1}

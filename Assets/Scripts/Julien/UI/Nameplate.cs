@@ -10,11 +10,11 @@ namespace Com.Donut.BattleSystem
 
         private Fighter _fighter;
 
-        public void Initialize(Fighter fighter)
+        public void Initialize(FighterData fighterData)
         {
-            _fighter = fighter;
-            life.text = fighter.ToString();
-            power.text = fighter.Power.ToString();
+            _fighter = fighterData.Fighter;
+            life.text = _fighter.CurrentHealth.ToString();
+            power.text = fighterData.Fighter.Power.ToString();
         }
 
         public void UpdateNameplate()

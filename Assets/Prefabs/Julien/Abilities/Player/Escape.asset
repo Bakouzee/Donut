@@ -16,3 +16,6 @@ MonoBehaviour:
   attackName: Espace
   iconSprite: {fileID: -1296334664, guid: 385e44a01c85a8b43b2fab330a309126, type: 3}
   attackDesc: Run away
+  damage: 0
+  _animatorController: {fileID: 0}
+  hitColor: {r: 1, g: 1, b: 1, a: 1}

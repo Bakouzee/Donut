@@ -43,14 +43,7 @@ public class DebugMenuBattlePhase : EditorWindow
     private void OnGUI()
     {
         scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
-
-        bool add = GUILayout.Button(new GUIContent("ADD")); 
-
-        if (add)
-        {
-            enemies.Add(new AllFighters());
-        }
-
+        
         for(int i = 0; i < enemies.Count; i++)
         {
             enemies[i].Name = EditorGUILayout.TextField("Name", enemies[i].Name);
@@ -67,8 +60,16 @@ public class DebugMenuBattlePhase : EditorWindow
             enemiesToDelete[i] = EditorGUILayout.Toggle("Delete ?", enemiesToDelete[i]);
         }
 
+        GUILayout.BeginHorizontal();
+        bool add = GUILayout.Button(new GUIContent("ADD")); 
         bool save = GUILayout.Button(new GUIContent("SAVE"));
         bool clear = GUILayout.Button(new GUIContent("CLEAR"));
+        GUILayout.EndHorizontal();
+
+        if (add)
+        {
+            enemies.Add(new AllFighters());
+        }
 
         if (save)
         {

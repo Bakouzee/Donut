@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 namespace Com.Donut.BattleSystem
@@ -11,7 +13,6 @@ namespace Com.Donut.BattleSystem
         //Move forward
         private bool _startMoving = false;
         private float _offsetX = 50f;
-
         private Vector3 _startInit;
         private float _cooldownMoveDuration;
         private float _currentCooldown;
@@ -32,104 +33,132 @@ namespace Com.Donut.BattleSystem
             _battleSystem.Animation_End();
         }
 
-        public void Move()
+        public void LaunchHitEffect()
         {
-            CheckObjectToMove();
-            _startInit = transform.position;
-            var animator = gameObject.GetComponent<Animator>();
-            var currentClipInfo = animator.GetCurrentAnimatorClipInfo(0);
-            var currentClipLength = currentClipInfo[0].clip.length; //Access the current length of the clip
-            _cooldownMoveDuration = currentClipLength;
-            _startMoving = true;
+            _battleSystem.HitEffect();
         }
 
-        private void CheckObjectToMove()
+        public void Move(string animationName)
         {
-            if (gameObject == _battleSystem.enemy1Go)
+            CheckIfEnemy();
+            _cooldownMoveDuration = FindAnim(animationName);
+            
+            _startInit = transform.position;
+            _startMoving = true;
+        }
+        
+        public void MoveBack(string animationName)
+        {
+            _cooldownMoveDurationBackward = FindAnim(animationName);
+            _startInitBackward = transform.position;
+            _startMovingBackward = true;
+        }
+
+        private float FindAnim(string animationName)
+        {
+            var animator = gameObject.GetComponent<Animator>();
+            foreach (AnimationClip clip in animator.runtimeAnimatorController.animationClips)
+            {
+                if (clip.name == animationName)
+                {
+                    Debug.Log("name: " + clip.name + "length: " + clip.length);
+                    return clip.length;
+                }
+            }
+
+            Debug.LogError("Anim clip not found --- Script ABILITY EVENT");
+            return 0f;
+        }
+
+        private void CheckIfEnemy()
+        {
+            if (_battleSystem.ListEnemiesData.Any(p => p.FighterGo == gameObject))
             {
                 _isAnEnemy = true;
             }
         }
 
-        public void MoveBack()
-        {
-            _startInitBackward = transform.position;
-            var animator = gameObject.GetComponent<Animator>();
-            var currentClipInfo = animator.GetCurrentAnimatorClipInfo(0);
-            var currentClipLength = currentClipInfo[0].clip.length; //Access the current length of the clip
-            _cooldownMoveDurationBackward = currentClipLength;
-            _startMovingBackward = true;
-        }
+
 
         private void Update()
         {
-            if (_startMoving && !_isAnEnemy)
+            if (_startMoving)
             {
-                if (_currentCooldown <= _cooldownMoveDuration)
+                if (!_isAnEnemy)
                 {
-                    _currentCooldown += Time.deltaTime;
-                    transform.position = Vector3.Lerp(_startInit,
-                        new Vector3(_battleSystem.playerTargetTransform.position.x - _offsetX,
-                            _battleSystem.playerTargetTransform.position.y, 0),
-                        _currentCooldown / _cooldownMoveDuration);
+                    if (_currentCooldown <= _cooldownMoveDuration)
+                    {
+                        _currentCooldown += Time.deltaTime;
+                        var position = _battleSystem.playerTargetTransform.position;
+                        MoveForward(_startInit, new Vector3(position.x - _offsetX, position.y, 0));
 
+                    }
+                    else
+                        EndOfForwardMove(new Vector3(_battleSystem.playerTargetTransform.position.x - _offsetX, _battleSystem.playerTargetTransform.position.y, 0));
                 }
                 else
                 {
-                    transform.position = new Vector3(_battleSystem.playerTargetTransform.position.x - _offsetX, 
-                        _battleSystem.playerTargetTransform.position.y, 0);
-                    _startMoving = false;
-                }
-            }
-            else if (_startMoving && _isAnEnemy)
-            {
-                if (_currentCooldown <= _cooldownMoveDuration)
-                {
-                    _currentCooldown += Time.deltaTime;
-                    transform.position = Vector3.Lerp(_startInit,
-                        new Vector3(_battleSystem.enemyTargetTransform.position.x - _offsetX,
-                            _battleSystem.playerTargetTransform.position.y, 0),
-                        _currentCooldown / _cooldownMoveDuration);
+                    if (_currentCooldown <= _cooldownMoveDuration)
+                    {
+                        _currentCooldown += Time.deltaTime;
+                        var position = _battleSystem.enemyTargetTransform.position;
+                        MoveForward(_startInit, new Vector3(position.x + _offsetX, position.y, 0));
 
+                    }
+                    else
+                        EndOfForwardMove(new Vector3(_battleSystem.playerTargetTransform.position.x - _offsetX, _battleSystem.playerTargetTransform.position.y, 0));
                 }
-                else
-                {
-                    transform.position = new Vector3(_battleSystem.enemyTargetTransform.position.x - _offsetX, 
-                        _battleSystem.playerTargetTransform.position.y, 0);
-                    _startMoving = false;
-                }
+
             }
 
-            else if (_startMovingBackward && !_isAnEnemy)
+            else if (_startMovingBackward)
             {
-                if (_currentCooldownBackward <= _cooldownMoveDurationBackward)
+                if (!_isAnEnemy)
                 {
-                    _currentCooldownBackward += Time.deltaTime;
-                    transform.position = Vector3.Lerp(_startInitBackward, _startInit,
-                        _currentCooldownBackward / _cooldownMoveDurationBackward);
+                    if (_currentCooldownBackward <= _cooldownMoveDurationBackward)
+                    {
+                        _currentCooldownBackward += Time.deltaTime;
+                        MoveBackward(_startInitBackward, _startInit);
+                    }
+                    else
+                        EndOfBackwardMove();
                 }
                 else
                 {
-                    transform.position = new Vector3(_startInit.x, _startInit.y, 0);
-                    _startMovingBackward = false;
-                }
-            }
-            
-            else if (_startMovingBackward && _isAnEnemy)
-            {
-                if (_currentCooldownBackward <= _cooldownMoveDurationBackward)
-                {
-                    _currentCooldownBackward += Time.deltaTime;
-                    transform.position = Vector3.Lerp(_startInitBackward, _startInit,
-                        _currentCooldownBackward / _cooldownMoveDurationBackward);
-                }
-                else
-                {
-                    transform.position = new Vector3(_startInit.x, _startInit.y, 0);
-                    _startMovingBackward = false;
+                    if (_currentCooldownBackward <= _cooldownMoveDurationBackward)
+                    {
+                        _currentCooldownBackward += Time.deltaTime;
+                        MoveBackward(_startInitBackward, _startInit);
+                    }
+                    else
+                        EndOfBackwardMove();
                 }
             }
         }
+
+        private void MoveForward(Vector3 initPos, Vector3 finalPos)
+        {
+            transform.position = Vector3.Lerp(initPos, finalPos,_currentCooldown / _cooldownMoveDuration);
+        }
+
+        private void MoveBackward(Vector3 initPos, Vector3 finalPos)
+        {
+            transform.position = Vector3.Lerp(initPos, finalPos, _currentCooldownBackward / _cooldownMoveDurationBackward);
+        }
+
+        private void EndOfForwardMove(Vector3 finalPos)
+        {
+            transform.position = finalPos;
+            _startMoving = false;
+            _currentCooldown = 0;
+        }
+        private void EndOfBackwardMove()
+        {
+            transform.position = new Vector3(_startInit.x, _startInit.y, 0);
+            _startMovingBackward = false;
+            _currentCooldownBackward = 0;
+        }
+        
     }
 }
 

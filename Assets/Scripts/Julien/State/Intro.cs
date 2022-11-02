@@ -14,7 +14,6 @@ namespace Com.Donut.BattleSystem
             //Launch all anim or let time for anim
 
             yield return new WaitForSeconds(2f);
-
             BattleSystem.SetState(new PlayerTurn(BattleSystem));
         }
     }

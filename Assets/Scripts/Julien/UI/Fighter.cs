@@ -32,9 +32,7 @@ namespace Com.Donut.BattleSystem
         public int MaxDamage => _maxDamage; 
         public int Power => _power;
         public int Healing => _healing;
-        public bool IsDead => _isDead;
-        
-
+        public bool IsDead => _isDead; 
         public List<Abilities> Abilities => abilities;
 
         public void Damage(int amount)
@@ -54,6 +52,12 @@ namespace Com.Donut.BattleSystem
         private void OnValidate()
         {
             _currentHealth = Math.Min(_currentHealth, _totalHealth);
+        }
+
+        public void ResetFighter()
+        {
+            _currentHealth = _totalHealth;
+            _isDead = false;
         }
     }
 }
