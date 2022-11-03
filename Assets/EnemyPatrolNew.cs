@@ -1,10 +1,11 @@
+using Com.Donut.BattleSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyPatrolNew : enemyAi
 {
-
+    public Fighter data;
     public Transform[] path;
     public int currentPoint;
     public Transform currentGoal;

@@ -18,12 +18,12 @@ public class GameManager : MonoBehaviour
     [Header("Battle State")]
     public bool isBattle;
     [SerializeField] private BattleSystem battleSystem;
-    [SerializeField] private LayerMask layersToKeep;
 
     #region Getter/Setter
+    [SerializeField] private LayerMask layersToKeep;
     public LayerMask LayersToKeep => layersToKeep;
 
-    private LayerMask everything;
+    [SerializeField] private LayerMask everything;
     public LayerMask Everything { get { return everything; } private set { everything = value; } }
     #endregion
 
@@ -31,10 +31,10 @@ public class GameManager : MonoBehaviour
     {
         if (isBattle)
         {
+            battleSystem.Interface.gameObject.SetActive(true);
             Everything = Camera.main.cullingMask;
             Camera.main.cullingMask = LayersToKeep;
-
-            battleSystem.SetState(new Init(battleSystem));
+            isBattle = false;
             Debug.Log("BattleState");
         }
         else
@@ -42,9 +42,9 @@ public class GameManager : MonoBehaviour
             battleSystem.Interface.gameObject.SetActive(false);
             Camera.main.cullingMask = Everything;
             RestoreControls();
+            isBattle = true;
             Debug.Log("ExplorationState");
         }
-        isBattle = !isBattle;
 
     }
 

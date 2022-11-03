@@ -10,7 +10,7 @@ using UnityEngine;
 public class DebugMenuBattlePhase : EditorWindow
 { 
     //private static int numberEnemiesCreated = 0;
-    private static List<AllFighters> enemies = new List<AllFighters>();
+    private static List<Fighter> enemies = new List<Fighter>();
     private static List<bool> enemiesToDelete = new List<bool>();
     private Vector2 scrollPos = Vector2.zero;
     private static bool isShown;
@@ -92,7 +92,7 @@ public class DebugMenuBattlePhase : EditorWindow
 
         if (add)
         {
-            enemies.Add(new AllFighters());
+            enemies.Add(new Fighter());
             isEnemyStatsShown.Add(false);
         }
 
@@ -102,16 +102,17 @@ public class DebugMenuBattlePhase : EditorWindow
             {
                 try
                 {
-                    if(!AssetDatabase.IsForeignAsset(enemies[i]))
+                    if(!AssetDatabase.Contains(enemies[i].GetInstanceID()))
                     {
                         AssetDatabase.CreateAsset(enemies[i], "Assets/Enemies/" + enemies[i].Name + ".asset");
+                        AssetDatabase.SaveAssets();
                     }
                     else
                     {
+                        AssetDatabase.SaveAssets();
                         //AssetDatabase.RenameAsset("Assets/Enemies/" + enemies[i].name + ".asset", enemies[i].Name + ".asset");
                         AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(enemies[i].GetInstanceID()), enemies[i].Name);
                     }
-                    AssetDatabase.SaveAssets();
                 }
                 catch
                 {

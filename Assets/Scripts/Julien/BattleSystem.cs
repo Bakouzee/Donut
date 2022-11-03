@@ -10,7 +10,7 @@ namespace Com.Donut.BattleSystem
         [SerializeField] private Sprite arenaSprite;
         [SerializeField] private Fighter player0;
         [SerializeField] private Fighter player1;
-        [SerializeField] private List<Fighter> listEnemyFighters = new List<Fighter>();
+        public List<Fighter> listEnemyFighters = new List<Fighter>();
         [SerializeField] private Player player;
         public Player Player => player;
 
@@ -26,7 +26,7 @@ namespace Com.Donut.BattleSystem
         
         private void Start()
         {
-            SetState((new Init(this)));
+           // SetState((new Init(this)));
         }
         
         public void InitializeBattle()

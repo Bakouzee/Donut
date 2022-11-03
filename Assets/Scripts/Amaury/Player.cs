@@ -173,6 +173,8 @@ public class Player : Character  {
 
         if (col.gameObject.CompareTag("Enemy"))
         {
+            battleSystem.listEnemyFighters.Add(col.gameObject.GetComponent<EnemyPatrolNew>().data);
+            Destroy(col.gameObject);
             battleSystem.SetState(new Init(battleSystem));
         }
 
