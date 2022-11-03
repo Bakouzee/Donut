@@ -9,10 +9,12 @@ using UnityEngine;
 //[CustomEditor(typeof(DebugMenuBattlePhase))]
 public class DebugMenuBattlePhase : EditorWindow
 { 
-    private static int numberEnemiesCreated = 0;
+    //private static int numberEnemiesCreated = 0;
     private static List<AllFighters> enemies = new List<AllFighters>();
     private static List<bool> enemiesToDelete = new List<bool>();
     private Vector2 scrollPos = Vector2.zero;
+    private static bool isShown;
+    private static List<bool> isEnemyStatsShown = new List<bool>();
 
     [MenuItem("Tools/Debug Menu/Battle Phase")]
     static void InitDebugMenu()
@@ -36,6 +38,7 @@ public class DebugMenuBattlePhase : EditorWindow
                 enemies[i].Healing = EditorGUILayout.IntField("Healing", enemies[i].Healing);
                 enemiesToDelete.Add(false);
                 enemiesToDelete[i] = EditorGUILayout.Toggle("Delete ?", enemiesToDelete[i]);
+                isEnemyStatsShown.Add(new bool());
             }
         }
     }
@@ -44,49 +47,87 @@ public class DebugMenuBattlePhase : EditorWindow
     {
         scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
         
-        for(int i = 0; i < enemies.Count; i++)
+        isShown = EditorGUILayout.Foldout(isShown, "Enemies");
+
+        if (isShown)
         {
-            enemies[i].Name = EditorGUILayout.TextField("Name", enemies[i].Name);
-            enemies[i].Level = EditorGUILayout.TextField("Level", enemies[i].Level);
-            enemies[i].Sprite = EditorGUILayout.ObjectField("Sprite", enemies[i].Sprite, typeof(Sprite), true) as Sprite;
-            enemies[i].AnimatorController = EditorGUILayout.ObjectField("Animator Controller", enemies[i].AnimatorController, typeof(AnimatorController), true) as AnimatorController;
-            enemies[i].TotalHealth = EditorGUILayout.IntField("Total Health", enemies[i].TotalHealth);
-            enemies[i].CurrentHealth = EditorGUILayout.IntField("Current Health", enemies[i].CurrentHealth);
-            enemies[i].MinDamage = EditorGUILayout.IntField("Min Damage", enemies[i].MinDamage);
-            enemies[i].MaxDamage = EditorGUILayout.IntField("Max Damage", enemies[i].MaxDamage);
-            enemies[i].Power = EditorGUILayout.IntField("Power", enemies[i].Power);
-            enemies[i].Healing = EditorGUILayout.IntField("Healing", enemies[i].Healing);
-            enemiesToDelete.Add(false);
-            enemiesToDelete[i] = EditorGUILayout.Toggle("Delete ?", enemiesToDelete[i]);
+            for(int i = 0; i < enemies.Count; i++)
+            {
+                if(isEnemyStatsShown.Count > 0)
+                {
+                    if(enemies[i].Name == "")
+                    {
+                        isEnemyStatsShown[i] = EditorGUILayout.Foldout(isEnemyStatsShown[i], "New Enemy");
+                    }
+                    else
+                    {
+                        isEnemyStatsShown[i] = EditorGUILayout.Foldout(isEnemyStatsShown[i], enemies[i].Name);
+                    }
+                }
+
+                if (isEnemyStatsShown[i])
+                {
+                    enemies[i].Name = EditorGUILayout.TextField("Name", enemies[i].Name);
+                    enemies[i].Level = EditorGUILayout.TextField("Level", enemies[i].Level);
+                    enemies[i].Sprite = EditorGUILayout.ObjectField("Sprite", enemies[i].Sprite, typeof(Sprite), true) as Sprite;
+                    enemies[i].AnimatorController = EditorGUILayout.ObjectField("Animator Controller", enemies[i].AnimatorController, typeof(AnimatorController), true) as AnimatorController;
+                    enemies[i].TotalHealth = EditorGUILayout.IntField("Total Health", enemies[i].TotalHealth);
+                    enemies[i].CurrentHealth = EditorGUILayout.IntField("Current Health", enemies[i].CurrentHealth);
+                    enemies[i].MinDamage = EditorGUILayout.IntField("Min Damage", enemies[i].MinDamage);
+                    enemies[i].MaxDamage = EditorGUILayout.IntField("Max Damage", enemies[i].MaxDamage);
+                    enemies[i].Power = EditorGUILayout.IntField("Power", enemies[i].Power);
+                    enemies[i].Healing = EditorGUILayout.IntField("Healing", enemies[i].Healing);
+                    enemiesToDelete.Add(false);
+                    enemiesToDelete[i] = EditorGUILayout.Toggle("Delete ?", enemiesToDelete[i]);
+                    GUILayout.Space(30);
+                }
+            }
         }
 
         GUILayout.BeginHorizontal();
         bool add = GUILayout.Button(new GUIContent("ADD")); 
         bool save = GUILayout.Button(new GUIContent("SAVE"));
-        bool clear = GUILayout.Button(new GUIContent("CLEAR"));
+        bool delete = GUILayout.Button(new GUIContent("DELETE"));
         GUILayout.EndHorizontal();
 
         if (add)
         {
             enemies.Add(new AllFighters());
+            isEnemyStatsShown.Add(false);
         }
 
         if (save)
         {
             for (int i = 0; i < enemies.Count; i++)
             {
-                AssetDatabase.CreateAsset(enemies[i], "Assets/Enemies/Enemy" + ++numberEnemiesCreated + ".asset");
+                try
+                {
+                    if(!AssetDatabase.IsForeignAsset(enemies[i]))
+                    {
+                        AssetDatabase.CreateAsset(enemies[i], "Assets/Enemies/" + enemies[i].Name + ".asset");
+                    }
+                    else
+                    {
+                        //AssetDatabase.RenameAsset("Assets/Enemies/" + enemies[i].name + ".asset", enemies[i].Name + ".asset");
+                        AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(enemies[i].GetInstanceID()), enemies[i].Name);
+                    }
+                    AssetDatabase.SaveAssets();
+                }
+                catch
+                {
+                    throw new Exception("To create a new enemy, you must write a Name to your new enemy !");
+                }
+                Debug.Log("Enemy successfully added !");
             }
-            AssetDatabase.SaveAssets();
         }
 
-        if (clear)
+        if (delete)
         {
             for (int i = 0; i < enemiesToDelete.Count; i++)
             {
                 if (enemiesToDelete[i] == true)
                 {
-                    AssetDatabase.DeleteAsset("Assets/Enemies/Enemy" + (i + 1) + ".asset");
+                    AssetDatabase.DeleteAsset("Assets/Enemies/" + enemies[i].Name + ".asset");
                     enemiesToDelete.RemoveAt(i);
                     enemies.RemoveAt(i);
                 }
