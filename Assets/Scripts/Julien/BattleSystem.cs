@@ -33,6 +33,7 @@ namespace Com.Donut.BattleSystem
             AddEnemiesToList();
             Interface.Initialize(this, ListPlayersData[0], ListPlayersData[1], ListEnemiesData, arenaSprite);
             CurrentFighterData = ListPlayersData[0];
+            GetComponent<CheatManager>().Initialize(this);
         }
 
         private void AddEnemiesToList()

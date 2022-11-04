@@ -118,7 +118,11 @@ namespace Com.Donut.BattleSystem
             var enemy = _currentTargetData;
             Debug.Log(enemy.Fighter.CurrentHealth);
             var playerAbility = BattleSystem.CurrentFighterData.CurrentAbility;
-            enemy.Fighter.Damage(playerAbility.damage);
+
+            if(BattleSystem.CurrentFighterData.Fighter.CanOneShot)
+                enemy.Fighter.Damage(int.MaxValue);
+            else
+                enemy.Fighter.Damage(playerAbility.damage);
 
             UpdateFighterTurn();
 

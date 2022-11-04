@@ -16,10 +16,10 @@ MonoBehaviour:
   _level: 1
   _sprite: {fileID: -553502068, guid: 10fe712d33573e84b900566d69c99f33, type: 3}
   _animatorController: {fileID: 9100000, guid: 0f4f7788e2b8c5b4cbf203ec7e95737c, type: 2}
-  _currentHealth: 1
+  _currentHealth: 0
   _totalHealth: 100
-  _minDamage: 20
-  _maxDamage: 40
+  _currentDamage: 0
+  _baseDamage: 20
   _power: 500
   _healing: 10
   abilities:
