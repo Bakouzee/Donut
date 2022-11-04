@@ -2,6 +2,7 @@ using Com.Donut.BattleSystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -46,7 +47,13 @@ public class DebugMenuBattlePhase : EditorWindow
     private void OnGUI()
     {
         scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
-        
+
+        GUILayout.BeginHorizontal();
+        bool add = GUILayout.Button(new GUIContent("ADD"));
+        bool save = GUILayout.Button(new GUIContent("SAVE"));
+        bool delete = GUILayout.Button(new GUIContent("DELETE"));
+        GUILayout.EndHorizontal();
+
         isShown = EditorGUILayout.Foldout(isShown, "Enemies");
 
         if (isShown)
@@ -84,12 +91,6 @@ public class DebugMenuBattlePhase : EditorWindow
             }
         }
 
-        GUILayout.BeginHorizontal();
-        bool add = GUILayout.Button(new GUIContent("ADD")); 
-        bool save = GUILayout.Button(new GUIContent("SAVE"));
-        bool delete = GUILayout.Button(new GUIContent("DELETE"));
-        GUILayout.EndHorizontal();
-
         if (add)
         {
             enemies.Add(new Fighter());
@@ -106,19 +107,49 @@ public class DebugMenuBattlePhase : EditorWindow
                     {
                         AssetDatabase.CreateAsset(enemies[i], "Assets/Enemies/" + enemies[i].Name + ".asset");
                         AssetDatabase.SaveAssets();
+                        Debug.Log("Enemy successfully added !");
                     }
                     else
                     {
-                        AssetDatabase.SaveAssets();
-                        //AssetDatabase.RenameAsset("Assets/Enemies/" + enemies[i].name + ".asset", enemies[i].Name + ".asset");
+                        int j = 0;
+                        foreach (string GUIDName in AssetDatabase.FindAssets(enemies[i].Name, new[] { "Assets/Enemies" }))
+                        {
+                            string pathName = AssetDatabase.GUIDToAssetPath(GUIDName);
+                            string[] tabName = pathName.Split('/');
+                            string[] realName = tabName[2].Split('.');
+
+                            foreach (Fighter enemy in enemies)
+                            {
+                                if (enemy.Name == realName[0])
+                                {
+                                    j++;
+                                    if (j > 1)
+                                    {
+                                        throw new Exception("To rename an enemy, you must write a different Name to an already existing enemy !");
+                                    }
+                                }
+                            }
+                        }
+                        AssetDatabase.Refresh();
                         AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(enemies[i].GetInstanceID()), enemies[i].Name);
+                        /*if (AssetDatabase.MoveAssetToTrash(AssetDatabase.GetAssetPath(enemies[i].GetInstanceID())))
+                        {
+                            Debug.Log("success");
+                            AssetDatabase.CreateAsset(enemies[i], "Assets/Enemies/" + enemies[i].Name + ".asset");
+                        }
+                        else
+                        {
+                            Debug.Log("nope");
+                        }*/
+                        AssetDatabase.SaveAssets();
+
+                        Debug.Log("Enemy successfully renamed !");
                     }
                 }
                 catch
                 {
                     throw new Exception("To create a new enemy, you must write a Name to your new enemy !");
                 }
-                Debug.Log("Enemy successfully added !");
             }
         }
 
