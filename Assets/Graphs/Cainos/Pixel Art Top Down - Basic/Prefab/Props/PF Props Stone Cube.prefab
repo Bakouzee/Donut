@@ -96,7 +96,6 @@ GameObject:
   - component: {fileID: 2577585254963922478}
   - component: {fileID: 2577585254963922479}
   - component: {fileID: 2577585254963922476}
-  - component: {fileID: 4395220030077279056}
   m_Layer: 20
   m_Name: PF Props Stone Cube
   m_TagString: Untagged
@@ -219,22 +218,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!251 &4395220030077279056
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2577585254963922480}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RotationalOffset: 0
-  m_UseOneWay: 1
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 1
