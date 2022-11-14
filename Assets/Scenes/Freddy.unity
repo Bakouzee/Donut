@@ -2269,7 +2269,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.9000244, y: 38.200012}
+  m_AnchoredPosition: {x: 0.9000244, y: 38}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &992472669
@@ -2345,7 +2345,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 38.2}
+  m_AnchoredPosition: {x: -5, y: 38.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1159548688
@@ -2633,6 +2633,11 @@ PrefabInstance:
       objectReference: {fileID: 992472667}
     - target: {fileID: 7781719693136930270, guid: 0d137fe33eb8cac48a4f783022b983e4,
         type: 3}
+      propertyPath: textInput
+      value: 
+      objectReference: {fileID: 1289869679}
+    - target: {fileID: 7781719693136930270, guid: 0d137fe33eb8cac48a4f783022b983e4,
+        type: 3}
       propertyPath: abilityImg
       value: 
       objectReference: {fileID: 1159548686}
@@ -2720,8 +2725,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278947071
-  m_fontColor: {r: 1, g: 0.54804593, b: 0.042452812, a: 1}
+    rgba: 4278881535
+  m_fontColor: {r: 1, g: 0.55, b: 0.04, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
