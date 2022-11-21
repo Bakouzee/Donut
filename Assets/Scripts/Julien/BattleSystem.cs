@@ -17,8 +17,8 @@ namespace Com.Donut.BattleSystem
 
         [HideInInspector] public static FighterData CurrentFighterData;
         [HideInInspector] public static bool CanUseInput = false;
-        public Transform playerTargetTransform;
-        public Transform enemyTargetTransform;
+        [HideInInspector] public Transform playerTargetTransform;
+        [HideInInspector] public Transform enemyTargetTransform;
         public BattleUI Interface => ui;
         
         public readonly List<FighterData> ListPlayersData = new List<FighterData>();
@@ -36,6 +36,7 @@ namespace Com.Donut.BattleSystem
             AddEnemiesToList();
             Interface.Initialize(this, ListPlayersData[0], ListPlayersData[1], ListEnemiesData, arenaSprite);
             CurrentFighterData = ListPlayersData[0];
+            GetComponent<CheatManager>().Initialize(this);
         }
 
         private void AddEnemiesToList()
@@ -47,6 +48,18 @@ namespace Com.Donut.BattleSystem
             
             if(listEnemyFighters.Count > 3)
                 Debug.LogError("More than 3 enemies --- Impossible");
+        }
+
+        //[ContextMenu("ResetBattleSystem")]
+        public void ResetBattleSystem()
+        {
+            Destroy(ListPlayersData[0].FighterGo.gameObject);
+            Destroy(ListPlayersData[1].FighterGo.gameObject);
+
+            foreach(FighterData enemy in ListEnemiesData)
+            {
+                Destroy(enemy.FighterGo.gameObject);
+            }
         }
 
         #region Inputs

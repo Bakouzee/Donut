@@ -18,8 +18,8 @@ MonoBehaviour:
   _animatorController: {fileID: 9100000, guid: a0ba724080d61ee4ca484c8266e2eec3, type: 2}
   _currentHealth: 200
   _totalHealth: 200
-  _minDamage: 5
-  _maxDamage: 20
+  _currentDamage: 0
+  _baseDamage: 20
   _power: 200
   _healing: 5
   abilities:

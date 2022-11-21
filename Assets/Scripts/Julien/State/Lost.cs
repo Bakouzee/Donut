@@ -13,6 +13,7 @@ namespace Com.Donut.BattleSystem
         {
             //BattleSystem.Interface.SetDialogText("You were defeated.");
             BattleSystem.Interface.ShowLooseMenu();
+            BattleSystem.ResetBattleSystem();
             yield break;
         }
     }
