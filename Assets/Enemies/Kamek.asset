@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b21781f22e8f3d43b8dd1c27fce39ff, type: 3}
-  m_Name: qfef
+  m_Name: Kamek
   m_EditorClassIdentifier: 
-  _name: qfef
+  _name: Kamek
   _level: 
   _sprite: {fileID: 0}
   _animatorController: {fileID: 0}
