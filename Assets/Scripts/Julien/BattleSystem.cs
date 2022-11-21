@@ -14,8 +14,8 @@ namespace Com.Donut.BattleSystem
 
         [HideInInspector] public static FighterData CurrentFighterData;
         [HideInInspector] public static bool CanUseInput = false;
-        public Transform playerTargetTransform;
-        public Transform enemyTargetTransform;
+        [HideInInspector] public Transform playerTargetTransform;
+        [HideInInspector] public Transform enemyTargetTransform;
         public BattleUI Interface => ui;
         
         public readonly List<FighterData> ListPlayersData = new List<FighterData>();

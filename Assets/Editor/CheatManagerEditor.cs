@@ -8,33 +8,22 @@ namespace Com.Donut.BattleSystem
     [CustomEditor(typeof(CheatManager))]
     public class CheatManagerEditor : Editor
     {
+        public bool godModeBool;
         public override void OnInspectorGUI()
         {
             DrawDefaultInspector();
 
             CheatManager manager = (CheatManager)target;
 
-            GUIStyle style = new GUIStyle()
-            {
-                alignment = TextAnchor.MiddleCenter,
-                fontStyle = FontStyle.Bold,
+            
 
-                normal = new GUIStyleState()
-                {
-                    background = Texture2D.whiteTexture
-                },
-
-                active = new GUIStyleState()
-                {
-                    background = Texture2D.blackTexture
-                }
-            };
             GUILayout.BeginHorizontal("box");
 
             if (GUILayout.Button("GodMode"))
             {
                 manager.AddSetGodMode();
             }
+            //godModeBool = GUI.Toggle(new Rect(10, 10, 100, 30), godModeBool , "A Toggle text");
 
             if (GUILayout.Button("Invincibility"))
             {

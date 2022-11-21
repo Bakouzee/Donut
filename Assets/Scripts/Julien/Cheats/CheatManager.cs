@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
@@ -7,7 +8,7 @@ namespace Com.Donut.BattleSystem
 {
     public class CheatManager : MonoBehaviour
     {
-        public BattleSystem _battleSystem { get; private set; }
+        private BattleSystem _battleSystem;
 
         public void Initialize(BattleSystem battleSystem)
         {
@@ -23,7 +24,7 @@ namespace Com.Donut.BattleSystem
             All,
         }
 
-        [SerializeField, Tooltip("Fighter that take cheat")] private CheatReceiver _cheatReceiverState;
+        [SerializeField, Tooltip("Fighter that receive cheat")] private CheatReceiver _cheatReceiverState;
 
         //Use delegate to store functions
         delegate void MyDelegate(List<FighterData> _listFighterData);
@@ -40,7 +41,9 @@ namespace Com.Donut.BattleSystem
             switch(_cheatReceiverState)
             {
                 case CheatReceiver.Player1:
-                    listFighterData.Add(_battleSystem.ListPlayersData[0]);
+                    if(_battleSystem != null)
+                        listFighterData.Add(_battleSystem.ListPlayersData[0]);
+                    Debug.Log(_battleSystem);
                     break;
                 case CheatReceiver.Player2:
                     listFighterData.Add(_battleSystem.ListPlayersData[1]);

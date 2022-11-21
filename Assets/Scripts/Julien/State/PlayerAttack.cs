@@ -179,6 +179,8 @@ namespace Com.Donut.BattleSystem
                 if(enemy.Fighter.IsDead)
                     numberEnemyDead++;
             }
+            
+            Debug.Log("number dead : " + numberEnemyDead);
 
             if (numberEnemyDead == BattleSystem.ListEnemiesData.Count)
                 return true;

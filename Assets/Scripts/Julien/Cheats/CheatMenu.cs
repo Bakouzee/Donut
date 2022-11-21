@@ -7,7 +7,7 @@ namespace Com.Donut.BattleSystem
 {
     public class CheatMenu : CheatManager
     {
-        [SerializeField] private GameObject _cheatMenu;
+        /*[SerializeField] private GameObject _cheatMenu;
         [SerializeField] private GameObject _openCheatMenu;
 
         public void OpenCheatMenu()
@@ -82,6 +82,6 @@ namespace Com.Donut.BattleSystem
             {   
                 fighterData.Fighter.SetOneShotEnemies(result);
             }
-        }
+        }*/
     }
 }
