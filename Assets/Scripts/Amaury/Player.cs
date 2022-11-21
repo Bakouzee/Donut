@@ -171,18 +171,18 @@ public class Player : Character  {
             {
                 StartCoroutine(VFX(vfx));
             }
-        }
-
-        if (col.gameObject.CompareTag("Enemy"))
+        }else if (col.gameObject.CompareTag("Enemy"))
         {
             direction = Vector3.zero;
             battleSystem.listEnemyFighters.Add(col.gameObject.GetComponent<EnemyPatrolNew>().data);
             Destroy(col.gameObject);
             battleSystem.SetState(new Init(battleSystem));
         }
-
-        Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
-        direction = reflectVec;
+        else
+        {
+            Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
+            direction = reflectVec;
+        }
     }
 
     private IEnumerator VFX(VisualEffect vfxToPlay)

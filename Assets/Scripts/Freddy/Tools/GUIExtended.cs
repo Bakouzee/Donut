@@ -28,6 +28,11 @@ public class GUIExtended
         {
             EditorSceneManager.OpenScene("Assets/Scenes/Julien.unity");
         }
+
+        if (GUILayout.Button(new GUIContent("Build", "Build Game")))
+        {
+
+        }
     }
 
     private static void OnRightToolbarGUI()
