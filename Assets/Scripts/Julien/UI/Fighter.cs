@@ -31,8 +31,6 @@ namespace Com.Donut.BattleSystem
         public AnimatorController AnimatorController { get { return _animatorController; } set { _animatorController = value; } }
         public int TotalHealth { get { return _totalHealth; } set { _totalHealth = value; } }
         public int CurrentHealth { get { return _currentHealth; } set { _currentHealth = value; } }
-        public int MinDamage { get { return _minDamage; } set { _minDamage = value; } }
-        public int MaxDamage { get { return _maxDamage; } set { _maxDamage = value; } }
         public int Power { get { return _power; } set { _power = value; } }
         public int Healing { get { return _healing; } set { _healing = value; } }
         public bool IsDead { get { return _isDead; } set { _isDead = value; } }
