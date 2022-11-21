@@ -24,18 +24,20 @@ namespace Com.Donut.BattleSystem
 
         [SerializeField] private List<Abilities> abilities = new List<Abilities>();
 
-        public string Name => _name;
-        public string Level => _level;
-        public Sprite Sprite => _sprite;
-        public AnimatorController AnimatorController => _animatorController;
-        public int CurrentHealth => _currentHealth;
-        //public int CurrentDamage => _currentDamage;
-        public int Power => _power;
-        public int Healing => _healing;
-        public bool IsDead => _isDead;
+        public List<Abilities> Abilities { get { return abilities; } set { abilities = value; } }
+        public string Name { get { return _name; } set { _name = value; } }
+        public string Level { get { return _level; } set { _level = value; } }
+        public Sprite Sprite { get { return _sprite; } set { _sprite = value; } }
+        public AnimatorController AnimatorController { get { return _animatorController; } set { _animatorController = value; } }
+        public int TotalHealth { get { return _totalHealth; } set { _totalHealth = value; } }
+        public int CurrentHealth { get { return _currentHealth; } set { _currentHealth = value; } }
+        public int MinDamage { get { return _minDamage; } set { _minDamage = value; } }
+        public int MaxDamage { get { return _maxDamage; } set { _maxDamage = value; } }
+        public int Power { get { return _power; } set { _power = value; } }
+        public int Healing { get { return _healing; } set { _healing = value; } }
+        public bool IsDead { get { return _isDead; } set { _isDead = value; } }
         public bool IsInvincible => _isInvincible;
         public bool CanOneShot => _canOneShot;
-        public List<Abilities> Abilities => abilities;
 
         public void Damage(int amount)
         {

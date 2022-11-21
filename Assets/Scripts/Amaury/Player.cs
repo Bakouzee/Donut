@@ -3,7 +3,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 using UnityEngine.InputSystem;
+using DG.Tweening;
+using TMPro;
 
 public class Player : Character  {
 
@@ -25,6 +28,11 @@ public class Player : Character  {
     private Vector3 direction;
     private Vector3 lastVelocity;
 
+    [Header("UI Transformation GameFeel")]
+    [SerializeField] private GameObject abilityImg;
+    [SerializeField] private GameObject playerImg;
+    [SerializeField] private TextMeshProUGUI textInput;
+
     public override void Awake() {
         base.Awake();
         
@@ -33,6 +41,7 @@ public class Player : Character  {
 
         initialSpeed = speed;
     }
+
 
     public override void Update() {
         base.Update();
@@ -44,6 +53,9 @@ public class Player : Character  {
     }
     
     protected override void Move() {
+        if (MinimapController.instance.isInMap)
+            return;
+        
         if (!hasCarapace)
         {
             if (movement == Vector2.zero)
@@ -64,11 +76,11 @@ public class Player : Character  {
         }
 
         rb.velocity = movement * speed;
-        
-        if (isTransformed)
+
+        if (isTransformed) {
             rb.velocity = direction * speed;
-        
-        
+        }
+
         spriteRenderer.flipX = movement.x < 0 && movement.y == 0;
         lastVelocity = rb.velocity;
     }
@@ -88,10 +100,43 @@ public class Player : Character  {
 
     public void OnTransformation(InputAction.CallbackContext e) {
         if (e.performed) {
+            textInput.color = new Color(0.65f, 0.4f, 0, 1);
             SwitchAnimState("WC_Run");
             isTransformed = !isTransformed;
-
+            //UI Gamefeel
+            if(isTransformed == true)
+            {
+                direction = Vector3.zero;
+                playerImg.SetActive(true);
+                abilityImg.SetActive(false);
+                //abilityImg.transform.DOMoveY(abilityImg.GetComponent<RectTransform>().rect.position.y - 15f, 0.5f).SetEase(Ease.InElastic).SetEase(HideImg);
+                //playerImg.transform.DOMoveY(playerImg.GetComponent<RectTransform>().rect.position.y + 15f, 0.5f).SetEase(Ease.InElastic);
+            }
+            else
+            {
+                abilityImg.SetActive(true);
+                playerImg.SetActive(false);
+                //playerImg.transform.DOMoveY(playerImg.GetComponent<RectTransform>().rect.position.y - 15f, 0.5f).SetEase(Ease.InElastic).SetEase(HideImg);
+                //abilityImg.transform.DOMoveY(abilityImg.GetComponent<RectTransform>().rect.position.y + 15f, 0.5f).SetEase(Ease.InElastic);
+            }
         }
+        if(e.canceled)
+            textInput.color = new Color(1, 0.55f, 0.04f, 1);
+    }
+
+    private float HideImg(float time, float duration, float overshootOrAmplitude, float period)
+    {
+        if (time >= 0.5f) {
+            if (isTransformed)
+            {
+                abilityImg.SetActive(false);
+            }
+            else
+            {
+                playerImg.SetActive(false);
+            }
+        }
+        return 0; 
     }
 
     public void OnThrow(InputAction.CallbackContext e) {
@@ -109,13 +154,6 @@ public class Player : Character  {
         }
     }
 
-    public void OnSetExplorationPhaseDebug(InputAction.CallbackContext ctx)
-    {
-        if (ctx.performed)
-        {
-            //battleSystem.SetState(new Exploration(battleSystem));
-        }
-    }
 
     public void OnChangedMap(InputAction.CallbackContext ctx)
     {
@@ -125,8 +163,59 @@ public class Player : Character  {
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D col) {
-        Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
-        direction = reflectVec;
+    private void OnCollisionEnter2D(Collision2D col) 
+    {
+        if (col.gameObject.CompareTag("Destructible") && isTransformed)
+        {
+            if(col.gameObject.TryGetComponent(out VisualEffect vfx))
+            {
+                StartCoroutine(VFX(vfx));
+            }
+        }else if (col.gameObject.CompareTag("Enemy"))
+        {
+            direction = Vector3.zero;
+            battleSystem.listEnemyFighters.Add(col.gameObject.GetComponent<EnemyPatrolNew>().data);
+            Destroy(col.gameObject);
+            battleSystem.SetState(new Init(battleSystem));
+        }
+        else
+        {
+            Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
+            direction = reflectVec;
+        }
+    }
+
+    private IEnumerator VFX(VisualEffect vfxToPlay)
+    {
+        vfxToPlay.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        vfxToPlay.gameObject.GetComponent<Collider2D>().enabled = false;
+        vfxToPlay.Play();
+        yield return new WaitForSeconds(vfxToPlay.GetFloat("Lifetime"));
+        Destroy(vfxToPlay.gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D col) {
+        if (col.gameObject.TryGetComponent<ShakeBehaviour>(out ShakeBehaviour shakeBehaviour)) {
+            if (shakeBehaviour.shakeType == ShakeBehaviour.ShakeObjectType.TREE && isTransformed) {
+                shakeBehaviour.canShake = true;
+                shakeBehaviour.Shake(0.5f);
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D col) {
+        if (col.gameObject.TryGetComponent<ShakeBehaviour>(out ShakeBehaviour shakeBehaviour)) {
+            if (shakeBehaviour.shakeType == ShakeBehaviour.ShakeObjectType.BUSH) {
+                shakeBehaviour.canShake = true;
+                shakeBehaviour.Shake(0.5f);
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col) {
+        if (col.gameObject.TryGetComponent<ShakeBehaviour>(out ShakeBehaviour shakeBehaviour)) {
+            shakeBehaviour.canShake = false;
+        }
+
     }
 }

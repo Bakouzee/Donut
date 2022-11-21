@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,6 +35,8 @@ namespace Com.Donut.BattleSystem
 
         public void Initialize(BattleSystem battleSystem, FighterData fighterData0, FighterData fighterData1, List<FighterData> enemyData, Sprite arenaSprite)
         {
+            GameManager.Instance.OnChangePhase();
+
             _battleSystem = battleSystem;
             
             fighterData0.Fighter.ResetFighter(); //Reset scriptable object to default value
@@ -198,19 +202,40 @@ namespace Com.Donut.BattleSystem
         }
         public void ShowWinMenu()
         {
-            winScreen.SetActive(true);
+            StartCoroutine(WaitTilExploAgain(winScreen));
             //Maybe put anim rendered with another cam
         }
 
         public void ShowLooseMenu()
         {
-            looseScreen.SetActive(true);
             //Maybe put anim rendered with another cam
+            StartCoroutine(WaitTilExploAgain(looseScreen));
         }
-        
+
         public void HidePauseMenu()
         {
             pauseScreen.SetActive(false);
+        }
+
+        public void HideWinMenu()
+        {
+            StartCoroutine(WaitTilExploAgain(winScreen));
+
+            //Maybe put anim rendered with another cam
+        }
+        public void HideLooseMenu()
+        {
+            StartCoroutine(WaitTilExploAgain(looseScreen));
+            //Maybe put anim rendered with another cam
+        }
+
+        private IEnumerator WaitTilExploAgain(GameObject screen)
+        {
+            screen.SetActive(true);
+            yield return new WaitForSeconds(2f);
+            screen.SetActive(false);
+            yield return new WaitForSeconds(0.1f);
+            GameManager.Instance.OnChangePhase();
         }
     }
 }

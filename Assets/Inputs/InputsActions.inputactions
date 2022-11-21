@@ -33,9 +33,27 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "DebugBattle",
+                    "name": "DebugPhase",
                     "type": "Button",
                     "id": "b4bb836b-c698-40a5-a52c-e21f76d1795a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Minimap",
+                    "type": "Button",
+                    "id": "9c976f81-b9f0-48a0-a204-a63819dd0095",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PauseMenu",
+                    "type": "Button",
+                    "id": "f37e50bb-53d7-42e0-8b7a-962a4dd6b2d4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -155,6 +173,17 @@
                 },
                 {
                     "name": "",
+                    "id": "c06cb2ff-c25e-4bba-bf57-d2d3ce4dde29",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "5767a38a-fe97-4ff4-837d-9bab0298928c",
                     "path": "<Keyboard>/r",
                     "interactions": "",
@@ -204,7 +233,40 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "DebugBattle",
+                    "action": "DebugPhase",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3d090068-ec4d-4e66-a3ac-1963fbb952b1",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Minimap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ff364600-5162-472d-a5c2-9368a1f57881",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PauseMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a83db449-3dea-431a-b199-092e1dd7d739",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PauseMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -214,24 +276,6 @@
             "name": "BattlePhase",
             "id": "90817b38-2e7a-4e1a-8539-7d69e469ee68",
             "actions": [
-                {
-                    "name": "DebugLog",
-                    "type": "Button",
-                    "id": "959a39f4-749e-4bff-90d0-f8ffb40dc0f8",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "DebugExploState",
-                    "type": "Button",
-                    "id": "b7018f86-7cdf-421b-a802-2c013b28fcd9",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
                 {
                     "name": "UseInput_A",
                     "type": "Button",
@@ -258,31 +302,18 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "DebugPhase",
+                    "type": "Button",
+                    "id": "4d2d5339-b90b-4207-988c-87bc8704915c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "b6ed92cd-6a82-4540-ae06-9a90018db0c1",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DebugLog",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "00823442-c912-4682-b757-c18ef6c18b4e",
-                    "path": "<Keyboard>/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DebugExploState",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "6c6eb517-38b2-498d-a34d-7e48be22e17f",
@@ -346,6 +377,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "UseInput_Arrow",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c58dc1cb-86f2-4a0a-92a9-7f7a649ba9e7",
+                    "path": "<Keyboard>/u",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DebugPhase",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

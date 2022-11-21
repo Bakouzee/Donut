@@ -130,7 +130,7 @@ namespace Com.Donut.BattleSystem
             {
                 Debug.Log("Enemy Dead");
                 BattleSystem.Interface.SetAnimTrigger(enemy, "Dead");
-                BattleSystem.SetState(new Won(BattleSystem));
+                //BattleSystem.SetState(new Won(BattleSystem));
             }
             else
             {

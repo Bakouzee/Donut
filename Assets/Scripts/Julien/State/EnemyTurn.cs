@@ -39,7 +39,7 @@ namespace Com.Donut.BattleSystem
             }
             else
             {
-                Debug.Log(_targetData.Fighter.name  + " is alive with" + _targetData.Fighter.CurrentHealth);
+                Debug.Log(_targetData.Fighter.Name  + " is alive with" + _targetData.Fighter.CurrentHealth);
                 yield return new WaitForSeconds(1);
                 BattleSystem.SetState(new PlayerTurn(BattleSystem));
             }
