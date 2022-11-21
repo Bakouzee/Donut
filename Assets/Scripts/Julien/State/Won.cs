@@ -12,6 +12,7 @@ namespace Com.Donut.BattleSystem
         public override IEnumerator Start()
         {
             BattleSystem.Interface.ShowWinMenu();
+            BattleSystem.ResetBattleSystem();
             yield break;
         }
 
