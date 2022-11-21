@@ -26,7 +26,7 @@ namespace Com.Donut.BattleSystem
         
         private void Start()
         {
-           // SetState((new Init(this)));
+           //SetState((new Init(this)));
         }
         
         public void InitializeBattle()
@@ -60,6 +60,8 @@ namespace Com.Donut.BattleSystem
             {
                 Destroy(enemy.FighterGo.gameObject);
             }
+            listEnemyFighters.Clear();
+            ListEnemiesData.Clear();
         }
 
         #region Inputs

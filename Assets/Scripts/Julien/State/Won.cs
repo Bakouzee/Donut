@@ -13,6 +13,7 @@ namespace Com.Donut.BattleSystem
         {
             BattleSystem.Interface.ShowWinMenu();
             BattleSystem.ResetBattleSystem();
+            
             yield break;
         }
 
