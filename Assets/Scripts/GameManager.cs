@@ -16,6 +16,9 @@ public class GameManager : SingletonBase<GameManager>
 
     [SerializeField] private LayerMask everything;
     public LayerMask Everything { get { return everything; } private set { everything = value; } }
+
+    private bool isPaused;
+    public bool IsPaused { get { return isPaused; } private set { isPaused = value; } }
     #endregion
 
     public void OnChangePhase()
@@ -42,5 +45,23 @@ public class GameManager : SingletonBase<GameManager>
     private void RestoreControls()
     {
         battleSystem.Player.playerInput.SwitchCurrentActionMap("Player");
+    }
+
+    public void OnPause(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            IsPaused = !isPaused;
+            if (IsPaused)
+            {
+                Time.timeScale = 0;
+                AudioManager.Instance.audioMenu.SetActive(true);
+            }
+            else
+            {
+                Time.timeScale = 1;
+                AudioManager.Instance.audioMenu.SetActive(false);
+            }
+        }
     }
 }
