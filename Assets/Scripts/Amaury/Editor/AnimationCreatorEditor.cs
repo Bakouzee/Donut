@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.Rendering;
 
 [CustomEditor(typeof(AnimationCreator))]
 public class AnimationCreatorEditor : Editor {
@@ -10,7 +11,7 @@ public class AnimationCreatorEditor : Editor {
     private AnimationCreator animCreator;
     private SerializedObject animClass;
 
-    private SerializedProperty animName,animPath,texture,isLooping,timeBetweenSprite;
+    private SerializedProperty animName,animPath,texture,isLooping,timeBetweenSprite,targetPlayer;
 
     private void OnEnable() {
         animCreator = (AnimationCreator)this.target;
@@ -21,6 +22,7 @@ public class AnimationCreatorEditor : Editor {
         texture = animClass.FindProperty("texture");
         isLooping = animClass.FindProperty("isLooping");
         timeBetweenSprite = animClass.FindProperty("timeBetweenSprite");
+        targetPlayer = animClass.FindProperty("target");
     }
 
     public override void OnInspectorGUI() {
@@ -31,6 +33,7 @@ public class AnimationCreatorEditor : Editor {
         EditorGUILayout.LabelField("File Params", EditorStyles.boldLabel);
         EditorGUILayout.PropertyField(animName);
         EditorGUILayout.PropertyField(animPath);
+        EditorGUILayout.PropertyField(targetPlayer);
         EditorGUILayout.Space(30);
         
         EditorGUILayout.LabelField("Anim Params", EditorStyles.boldLabel);
@@ -44,8 +47,12 @@ public class AnimationCreatorEditor : Editor {
         if (GUILayout.Button("Generate Animations")) {
             AnimationClip clip = new AnimationClip();
 
+            
+            
             Sprite[] sprites = Resources.LoadAll<Sprite>(animCreator.texture.name);
             ObjectReferenceKeyframe[] objFrames = new ObjectReferenceKeyframe[sprites.Length];
+            
+            Debug.Log("size " + sprites.Length);
 
             for (int i = 0; i < sprites.Length; i++) {
                 objFrames[i].time = animCreator.timeBetweenSprite / 60f * i;
@@ -55,9 +62,11 @@ public class AnimationCreatorEditor : Editor {
             if (animCreator.isLooping) { // Not working
                 clip.wrapMode = WrapMode.Loop;
             }
-            
-            
-            AnimationUtility.SetObjectReferenceCurve(clip,EditorCurveBinding.DiscreteCurve("",typeof(SpriteRenderer),"Sprite"), objFrames);
+
+            Debug.Log("enter");
+            animCreator.target.GetComponent<SpriteRenderer>().sprite.GetType();
+
+            AnimationUtility.SetObjectReferenceCurve(clip,EditorCurveBinding.DiscreteCurve("",null,"Sprite"), objFrames);
             AssetDatabase.CreateAsset(clip,"Assets/" + animCreator.animPath + "/" + animCreator.animName + ".anim");
         }
         
