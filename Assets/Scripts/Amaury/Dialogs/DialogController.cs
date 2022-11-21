@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-public class DialogController : MonoBehaviour {
-
-    public List<Dialog> dialogs;
+public class DialogController : SingletonBase<DialogController> {
 
     public Image authorSprite;
     public Text authorName;
@@ -18,12 +16,16 @@ public class DialogController : MonoBehaviour {
     private int actualPage;
     private bool isDisplayingText;
 
+    public bool isInDialog;
+
     public void StartDialog(Dialog targetDialog) {
 
+        authorSprite.transform.parent.gameObject.SetActive(true);
         authorSprite.sprite = targetDialog.authorSprite;
         authorName.text = targetDialog.author;
         currentDialog = targetDialog;
         actualPage = 0;
+        isInDialog = true;
         
         StartCoroutine(DisplayText(targetDialog, actualPage));
     }
@@ -41,15 +43,21 @@ public class DialogController : MonoBehaviour {
     }
 
     public void OnInteract(InputAction.CallbackContext e) {
-        if (e.started && !isDisplayingText) {
+        if (e.started && !isDisplayingText && currentDialog != null) {
             if (currentDialog.pages.Count == 1  || actualPage >= currentDialog.pages.Count - 1) {
                 authorSprite.transform.parent.gameObject.SetActive(false);
                 currentDialog = null;
+                StartCoroutine(Wait());
             }
             else {
                 actualPage++;
                 StartCoroutine(DisplayText(currentDialog,actualPage));
             }
         }
+    }
+
+    private IEnumerator Wait() {
+        yield return new WaitForEndOfFrame();
+        isInDialog = false;
     }
 }

@@ -1065,6 +1065,7 @@ GameObject:
   - component: {fileID: 187567863}
   - component: {fileID: 187567862}
   - component: {fileID: 187567865}
+  - component: {fileID: 187567866}
   m_Layer: 7
   m_Name: DrToadley
   m_TagString: Untagged
@@ -1173,7 +1174,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.016062744, y: 0.009637669}
+  m_Offset: {x: 0.010767899, y: -0.027426109}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1184,8 +1185,21 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.23326103, y: 0.42434815}
+  m_Size: {x: 0.15066157, y: 0.15113488}
   m_EdgeRadius: 0
+--- !u!114 &187567866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187567861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6e27dbdf11462418ea37eb5bd6a2ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogToStart: {fileID: 11400000, guid: 274ff082e9ae4fe4e86e7713d09ef5bb, type: 2}
 --- !u!1 &210839386 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2055102311959635369, guid: 9e7797bb065982d4497d030f065d6e2f,
@@ -11782,7 +11796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1777607187
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32986,12 +33000,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1d00ee31464bb4aa0060ce3ca1f90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogs:
-  - {fileID: 11400000, guid: 274ff082e9ae4fe4e86e7713d09ef5bb, type: 2}
   authorSprite: {fileID: 1864209154}
   authorName: {fileID: 2046913593}
   dialogContent: {fileID: 1450398171}
   speed: 0.03
+  isInDialog: 0
 --- !u!1001 &2127454869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33370,8 +33383,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 187567866}
+        m_TargetAssemblyTypeName: DialogSpawner, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: fd29ef17-dcd8-4967-bdf8-ef22ba74169c
     m_ActionName: Player/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f37e50bb-53d7-42e0-8b7a-962a4dd6b2d4
+    m_ActionName: Player/PauseMenu
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -33461,7 +33490,7 @@ GameObject:
   - component: {fileID: 7781719693493738284}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
