@@ -75,6 +75,7 @@ namespace Com.Donut.BattleSystem
 
         public void SetOneShotEnemies(bool result)
         {
+            Debug.Log(result);
             _canOneShot = result;
         }
 

@@ -15,7 +15,7 @@ namespace Com.Donut.BattleSystem
             _battleSystem = battleSystem;
         }
         
-        private enum CheatReceiver
+        public enum CheatReceiver
         {
             Player1,
             Player2,
@@ -24,7 +24,7 @@ namespace Com.Donut.BattleSystem
             All,
         }
 
-        [SerializeField, Tooltip("Fighter that receive cheat")] private CheatReceiver _cheatReceiverState;
+        [Tooltip("Fighter that receive cheat")] public CheatReceiver cheatReceiverState;
 
         //Use delegate to store functions
         delegate void MyDelegate(List<FighterData> _listFighterData);
@@ -32,13 +32,12 @@ namespace Com.Donut.BattleSystem
 
         public void ApplyCheats()
         {
-            myDelegate(FindReceiver());
         }
 
-        private List<FighterData> FindReceiver()
+        public List<FighterData> FindReceiver()
         {
             var listFighterData = new List<FighterData>();
-            switch(_cheatReceiverState)
+            switch(cheatReceiverState)
             {
                 case CheatReceiver.Player1:
                     if(_battleSystem != null)
@@ -66,7 +65,12 @@ namespace Com.Donut.BattleSystem
         public void AddResetHealth() { myDelegate += ResetHealth; }
 
         public void AddSetInvincible() { myDelegate += SetInvincible; }
-        public void AddCanOneShot() { myDelegate += CanOneShot; }    
+        public void AddCanOneShot() { 
+            myDelegate = CanOneShot;
+
+            if(myDelegate != null)
+                myDelegate.Invoke(FindReceiver());
+        }    
         public void AddSetGodMode() { myDelegate += SetInvincible; myDelegate += CanOneShot; myDelegate += ResetHealth; }
 
         #region FunctionsCheat
@@ -90,7 +94,7 @@ namespace Com.Donut.BattleSystem
         {
             foreach (FighterData fighterData in _listFighterData)
             {
-                fighterData.Fighter.SetOneShotEnemies(transform);
+                fighterData.Fighter.SetOneShotEnemies(!fighterData.Fighter.CanOneShot);
             }
         }
         #endregion FunctionsCheat

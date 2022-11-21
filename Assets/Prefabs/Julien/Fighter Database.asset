@@ -10,6 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82efe64c6c6f45347a343d7ed6894a68, type: 3}
-  m_Name: New Fighter Database
+  m_Name: Fighter Database
   m_EditorClassIdentifier: 
-  fighterList: []
+  fighterList:
+  - {fileID: 11400000, guid: 40ecd8aa74ee7cc44b7bfdd49ac417a7, type: 2}
+  - {fileID: 11400000, guid: 40ecd8aa74ee7cc44b7bfdd49ac417a7, type: 2}
+  - {fileID: 11400000, guid: 40ecd8aa74ee7cc44b7bfdd49ac417a7, type: 2}
