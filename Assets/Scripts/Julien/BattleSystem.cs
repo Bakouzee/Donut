@@ -62,6 +62,7 @@ namespace Com.Donut.BattleSystem
             }
             listEnemyFighters.Clear();
             ListEnemiesData.Clear();
+            Interface.ClearAnimatorListEnemies();
         }
 
         #region Inputs
