@@ -130,19 +130,12 @@ public class DebugMenuBattlePhase : EditorWindow
                                 }
                             }
                         }
-                        AssetDatabase.Refresh();
-                        AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(enemies[i].GetInstanceID()), enemies[i].Name);
-                        /*if (AssetDatabase.MoveAssetToTrash(AssetDatabase.GetAssetPath(enemies[i].GetInstanceID())))
-                        {
-                            Debug.Log("success");
-                            AssetDatabase.CreateAsset(enemies[i], "Assets/Enemies/" + enemies[i].Name + ".asset");
-                        }
-                        else
-                        {
-                            Debug.Log("nope");
-                        }*/
                         AssetDatabase.SaveAssets();
+                        string nameToSave = enemies[i].Name;
 
+                        AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(enemies[i].GetInstanceID()), enemies[i].Name);
+
+                        enemies[i].Name = nameToSave;
                         Debug.Log("Enemy successfully renamed !");
                     }
                 }
