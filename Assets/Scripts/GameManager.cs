@@ -4,17 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class GameManager : MonoBehaviour
+public class GameManager : SingletonBase<GameManager>
 {
-    #region Instance
-    public static GameManager Instance { get; private set; }
-
-    private void Awake()
-    {
-        Instance = this;
-    }
-    #endregion
-
     [Header("Battle State")]
     public bool isBattle;
     [SerializeField] private BattleSystem battleSystem;
