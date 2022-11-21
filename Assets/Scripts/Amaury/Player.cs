@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.VFX;
 using UnityEngine.InputSystem;
 using DG.Tweening;
+using TMPro;
 
 public class Player : Character  {
 
@@ -27,8 +28,10 @@ public class Player : Character  {
     private Vector3 direction;
     private Vector3 lastVelocity;
 
+    [Header("UI Transformation GameFeel")]
     [SerializeField] private GameObject abilityImg;
     [SerializeField] private GameObject playerImg;
+    [SerializeField] private TextMeshProUGUI textInput;
 
     public override void Awake() {
         base.Awake();
@@ -38,6 +41,7 @@ public class Player : Character  {
 
         initialSpeed = speed;
     }
+
 
     public override void Update() {
         base.Update();
@@ -96,27 +100,33 @@ public class Player : Character  {
 
     public void OnTransformation(InputAction.CallbackContext e) {
         if (e.performed) {
+            textInput.color = new Color(0.65f, 0.4f, 0, 1);
             SwitchAnimState("WC_Run");
             isTransformed = !isTransformed;
+            //UI Gamefeel
             if(isTransformed == true)
             {
                 direction = Vector3.zero;
-                abilityImg.SetActive(true);
-                abilityImg.transform.DOMoveY(abilityImg.transform.position.y - 15f, 0.5f).SetEase(Ease.InElastic).SetEase(HideImg);
-                playerImg.transform.DOMoveY(abilityImg.transform.position.y + 15f, 0.5f).SetEase(Ease.InElastic);
+                playerImg.SetActive(true);
+                abilityImg.SetActive(false);
+                //abilityImg.transform.DOMoveY(abilityImg.GetComponent<RectTransform>().rect.position.y - 15f, 0.5f).SetEase(Ease.InElastic).SetEase(HideImg);
+                //playerImg.transform.DOMoveY(playerImg.GetComponent<RectTransform>().rect.position.y + 15f, 0.5f).SetEase(Ease.InElastic);
             }
             else
             {
-                playerImg.SetActive(true);
-                playerImg.transform.DOMoveY(abilityImg.transform.position.y - 15f, 0.5f).SetEase(Ease.InElastic).SetEase(HideImg);
-                abilityImg.transform.DOMoveY(abilityImg.transform.position.y + 15f, 0.5f).SetEase(Ease.InElastic);
+                abilityImg.SetActive(true);
+                playerImg.SetActive(false);
+                //playerImg.transform.DOMoveY(playerImg.GetComponent<RectTransform>().rect.position.y - 15f, 0.5f).SetEase(Ease.InElastic).SetEase(HideImg);
+                //abilityImg.transform.DOMoveY(abilityImg.GetComponent<RectTransform>().rect.position.y + 15f, 0.5f).SetEase(Ease.InElastic);
             }
         }
+        if(e.canceled)
+            textInput.color = new Color(1, 0.55f, 0.04f, 1);
     }
 
     private float HideImg(float time, float duration, float overshootOrAmplitude, float period)
     {
-        if (time <= 0) {
+        if (time >= 0.5f) {
             if (isTransformed)
             {
                 abilityImg.SetActive(false);
@@ -144,13 +154,6 @@ public class Player : Character  {
         }
     }
 
-    public void OnSetExplorationPhaseDebug(InputAction.CallbackContext ctx)
-    {
-        if (ctx.performed)
-        {
-            //battleSystem.SetState(new Exploration(battleSystem));
-        }
-    }
 
     public void OnChangedMap(InputAction.CallbackContext ctx)
     {
@@ -169,6 +172,15 @@ public class Player : Character  {
                 StartCoroutine(VFX(vfx));
             }
         }
+
+        if (col.gameObject.CompareTag("Enemy"))
+        {
+            direction = Vector3.zero;
+            battleSystem.listEnemyFighters.Add(col.gameObject.GetComponent<EnemyPatrolNew>().data);
+            Destroy(col.gameObject);
+            battleSystem.SetState(new Init(battleSystem));
+        }
+
         Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
         direction = reflectVec;
     }
@@ -176,6 +188,7 @@ public class Player : Character  {
     private IEnumerator VFX(VisualEffect vfxToPlay)
     {
         vfxToPlay.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        vfxToPlay.gameObject.GetComponent<Collider2D>().enabled = false;
         vfxToPlay.Play();
         yield return new WaitForSeconds(vfxToPlay.GetFloat("Lifetime"));
         Destroy(vfxToPlay.gameObject);
