@@ -47,6 +47,18 @@ namespace Com.Donut.BattleSystem
                 Debug.LogError("More than 3 enemies --- Impossible");
         }
 
+        //[ContextMenu("ResetBattleSystem")]
+        public void ResetBattleSystem()
+        {
+            Destroy(ListPlayersData[0].FighterGo.gameObject);
+            Destroy(ListPlayersData[1].FighterGo.gameObject);
+
+            foreach(FighterData enemy in ListEnemiesData)
+            {
+                Destroy(enemy.FighterGo.gameObject);
+            }
+        }
+
         #region Inputs
         public void OnUseInput_A()
         {
