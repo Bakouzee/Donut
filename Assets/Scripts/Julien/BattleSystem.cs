@@ -12,6 +12,8 @@ namespace Com.Donut.BattleSystem
         [SerializeField] private FighterDatabase fighterDatabase;
         [SerializeField, Range(1, 3)] private int numberOfEnemy;
         [SerializeField] private Player player;
+
+        public bool onlyBattlePhaseScene;
         public Player Player => player;
 
 
@@ -26,10 +28,10 @@ namespace Com.Donut.BattleSystem
 
         private CheatManager _cheatManager;
         
-        //[ContextMenu("StartBattle")]
-        public void StartBattle()
+        public void Start()
         {
-           //SetState((new Init(this))); //Start set in the player collision
+            if(onlyBattlePhaseScene)
+                SetState((new Init(this))); //Start set in the player collision
         }
         
         public void InitializeBattle()
