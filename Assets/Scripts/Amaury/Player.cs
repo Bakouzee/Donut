@@ -7,9 +7,11 @@ using UnityEngine.VFX;
 using UnityEngine.InputSystem;
 using DG.Tweening;
 using TMPro;
+using Cinemachine;
 
 public class Player : Character  {
 
+    [SerializeField] private CinemachineImpulseSource impulseSource;
     [SerializeField] private GameObject powFx;
     [SerializeField] private Tween tweenPow;
     [SerializeField] private BattleSystem battleSystem;
@@ -188,6 +190,7 @@ public class Player : Character  {
         }
         if (isTransformed)
         {
+            impulseSource.GenerateImpulse();
             powFx.transform.position = col.GetContact(0).point;
             StartCoroutine(PowEffect());
         }
@@ -201,10 +204,11 @@ public class Player : Character  {
         powFx.SetActive(true);
         powFx.GetComponent<SpriteRenderer>().color = Color.white;
         powFx.transform.localScale = Vector3.zero;
-        tweenPow = powFx.transform.DOScale(0.07f, 0.2f);
+        tweenPow = powFx.transform.DOScale(0.2f, 0.2f);
         yield return new WaitForSeconds(0.2f);
         tweenPow = powFx.GetComponent<SpriteRenderer>().DOFade(0, 0.5f);
-        yield return new WaitForSeconds(0.5f);
+        powFx.transform.GetChild(0).GetComponent<VisualEffect>().Play();
+        yield return new WaitForSeconds(powFx.transform.GetChild(0).GetComponent<VisualEffect>().GetFloat("Lifetime"));
         powFx.SetActive(false);
     }
 
