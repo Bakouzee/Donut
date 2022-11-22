@@ -174,7 +174,7 @@ public class Player : Character  {
         }else if (col.gameObject.CompareTag("Enemy"))
         {
             direction = Vector3.zero;
-            battleSystem.listEnemyFighters.Add(col.gameObject.GetComponent<EnemyPatrolNew>().data);
+            //battleSystem.listEnemyFighters.Add(col.gameObject.GetComponent<EnemyPatrolNew>().data);
             Destroy(col.gameObject);
             battleSystem.GetComponent<CheatManager>().IsInBattle = true;
             battleSystem.SetState(new Init(battleSystem));

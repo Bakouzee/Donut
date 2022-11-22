@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82efe64c6c6f45347a343d7ed6894a68, type: 3}
+  m_Name: Fighter Database
+  m_EditorClassIdentifier: 
+  PlayersList:
+  - _name: Mario
+    _level: 1
+    _sprite: {fileID: 0}
+    _animatorController: {fileID: 9100000, guid: a0ba724080d61ee4ca484c8266e2eec3,
+      type: 2}
+    _currentHealth: 200
+    _totalHealth: 200
+    _power: 200
+    _healing: 5
+    abilities:
+    - {fileID: 11400000, guid: 8dbbcba61f177a446a7aa08e90402603, type: 2}
+    - {fileID: 11400000, guid: 1c6ae56dc1772b544b26ce4b4cd66635, type: 2}
+    - {fileID: 11400000, guid: e01fccc877a5ed049b621df316d4584b, type: 2}
+    - {fileID: 11400000, guid: c4dc9c074b899614eb7a6071c3391784, type: 2}
+    - {fileID: 11400000, guid: 295939e832b6ae141958f0ebfbabe8d5, type: 2}
+    - {fileID: 11400000, guid: 9f058e3fd2782cc4084599b8b6d4a43d, type: 2}
+  - _name: Luigi
+    _level: 1
+    _sprite: {fileID: 0}
+    _animatorController: {fileID: 9100000, guid: 11d65ba466862b6448bffaa0dcfc4d4d,
+      type: 2}
+    _currentHealth: 200
+    _totalHealth: 200
+    _power: 200
+    _healing: 5
+    abilities:
+    - {fileID: 11400000, guid: 8dbbcba61f177a446a7aa08e90402603, type: 2}
+    - {fileID: 11400000, guid: 1c6ae56dc1772b544b26ce4b4cd66635, type: 2}
+    - {fileID: 11400000, guid: e01fccc877a5ed049b621df316d4584b, type: 2}
+    - {fileID: 11400000, guid: c4dc9c074b899614eb7a6071c3391784, type: 2}
+    - {fileID: 11400000, guid: 295939e832b6ae141958f0ebfbabe8d5, type: 2}
+    - {fileID: 11400000, guid: 9f058e3fd2782cc4084599b8b6d4a43d, type: 2}
+  EnemiesList:
+  - _name: Goomba
+    _level: 1
+    _sprite: {fileID: 0}
+    _animatorController: {fileID: 9100000, guid: 0f4f7788e2b8c5b4cbf203ec7e95737c,
+      type: 2}
+    _currentHealth: 100
+    _totalHealth: 100
+    _power: 500
+    _healing: 10
+    abilities:
+    - {fileID: 11400000, guid: 966d9332fb497f445b9144a473a8deb4, type: 2}

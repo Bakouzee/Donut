@@ -9,10 +9,11 @@ namespace Com.Donut.BattleSystem
     {
         [SerializeField] private BattleUI ui;
         [SerializeField] private Sprite arenaSprite;
-        [SerializeField] private Fighter player0;
-        [SerializeField] private Fighter player1;
-        public List<Fighter> listEnemyFighters = new List<Fighter>();
+        [SerializeField] private FighterDatabase fighterDatabase;
+        [SerializeField, Range(1, 3)] private int numberOfEnemy;
         [SerializeField] private Player player;
+
+        public bool onlyBattlePhaseScene;
         public Player Player => player;
 
 
@@ -27,16 +28,16 @@ namespace Com.Donut.BattleSystem
 
         private CheatManager _cheatManager;
         
-        //[ContextMenu("StartBattle")]
-        public void StartBattle()
+        public void Start()
         {
-           //SetState((new Init(this))); //Start set in the player collision
+            if(onlyBattlePhaseScene)
+                SetState((new Init(this))); //Start set in the player collision
         }
         
         public void InitializeBattle()
         {
-            ListPlayersData.Add(new FighterData(player0, 0));
-            ListPlayersData.Add(new FighterData(player1, 1));
+            ListPlayersData.Add(new FighterData(fighterDatabase.PlayersList[0], 0));
+            ListPlayersData.Add(new FighterData(fighterDatabase.PlayersList[1], 1));
             AddEnemiesToList();
             Interface.Initialize(this, ListPlayersData[0], ListPlayersData[1], ListEnemiesData, arenaSprite);
             CurrentFighterData = ListPlayersData[0];
@@ -46,13 +47,11 @@ namespace Com.Donut.BattleSystem
 
         private void AddEnemiesToList()
         {
-            for (int x = 0; x < listEnemyFighters.Count; x++)
+            for (int x = 0; x < numberOfEnemy; x++)
             {
-                ListEnemiesData.Add(new FighterData(listEnemyFighters[x], (byte)x));
+                ListEnemiesData.Add(new FighterData(fighterDatabase.EnemiesList[0], (byte)x)); //Un seul enemy pour le moment
             }
             
-            if(listEnemyFighters.Count > 3)
-                Debug.LogError("More than 3 enemies --- Impossible");
         }
 
         //[ContextMenu("ResetBattleSystem")]
@@ -65,7 +64,6 @@ namespace Com.Donut.BattleSystem
             {
                 Destroy(enemy.FighterGo.gameObject);
             }
-            listEnemyFighters.Clear();
             ListEnemiesData.Clear();
             Interface.ClearAnimatorListEnemies();
             
