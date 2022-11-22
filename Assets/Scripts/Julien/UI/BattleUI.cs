@@ -144,7 +144,10 @@ namespace Com.Donut.BattleSystem
         {
             dialogText.text = text;
         }*/
-
+        public void ClearAnimatorListEnemies()
+        {
+            _listAnimatorEnemies.Clear();
+        }
         public void ShowPauseMenu()
         {
             pauseScreen.SetActive(true);

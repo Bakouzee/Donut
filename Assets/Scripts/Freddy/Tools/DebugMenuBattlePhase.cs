@@ -11,6 +11,7 @@ using UnityEngine;
 public class DebugMenuBattlePhase : EditorWindow
 { 
     //private static int numberEnemiesCreated = 0;
+    /*
     private static List<Fighter> enemies = new List<Fighter>();
     private static List<bool> enemiesToDelete = new List<bool>();
     private Vector2 scrollPos = Vector2.zero;
@@ -33,8 +34,6 @@ public class DebugMenuBattlePhase : EditorWindow
                 enemies[i].AnimatorController = EditorGUILayout.ObjectField("Animator Controller", enemies[i].AnimatorController, typeof(AnimatorController), true) as AnimatorController;
                 enemies[i].TotalHealth = EditorGUILayout.IntField("Total Health", enemies[i].TotalHealth);
                 enemies[i].CurrentHealth = EditorGUILayout.IntField("Current Health", enemies[i].CurrentHealth);
-                enemies[i].MinDamage = EditorGUILayout.IntField("Min Damage", enemies[i].MinDamage);
-                enemies[i].MaxDamage = EditorGUILayout.IntField("Max Damage", enemies[i].MaxDamage);
                 enemies[i].Power = EditorGUILayout.IntField("Power", enemies[i].Power);
                 enemies[i].Healing = EditorGUILayout.IntField("Healing", enemies[i].Healing);
                 enemiesToDelete.Add(false);
@@ -80,8 +79,6 @@ public class DebugMenuBattlePhase : EditorWindow
                     enemies[i].AnimatorController = EditorGUILayout.ObjectField("Animator Controller", enemies[i].AnimatorController, typeof(AnimatorController), true) as AnimatorController;
                     enemies[i].TotalHealth = EditorGUILayout.IntField("Total Health", enemies[i].TotalHealth);
                     enemies[i].CurrentHealth = EditorGUILayout.IntField("Current Health", enemies[i].CurrentHealth);
-                    enemies[i].MinDamage = EditorGUILayout.IntField("Min Damage", enemies[i].MinDamage);
-                    enemies[i].MaxDamage = EditorGUILayout.IntField("Max Damage", enemies[i].MaxDamage);
                     enemies[i].Power = EditorGUILayout.IntField("Power", enemies[i].Power);
                     enemies[i].Healing = EditorGUILayout.IntField("Healing", enemies[i].Healing);
                     enemiesToDelete.Add(false);
@@ -97,7 +94,7 @@ public class DebugMenuBattlePhase : EditorWindow
             isEnemyStatsShown.Add(false);
         }
 
-        if (save)
+       /* if (save)
         {
             for (int i = 0; i < enemies.Count; i++)
             {
@@ -159,5 +156,6 @@ public class DebugMenuBattlePhase : EditorWindow
             }
         }
         EditorGUILayout.EndScrollView();
-    }
+    }*/
+    
 }
