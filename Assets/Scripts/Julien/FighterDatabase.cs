@@ -8,7 +8,11 @@ namespace Com.Donut.BattleSystem
     [CreateAssetMenu]
     public class FighterDatabase : ScriptableObject
     {
-        public List<Fighter> fighterList;
+        [NonReorderable] //Fix bug list in inspector
+        public List<Fighter> PlayersList;
+        
+        [NonReorderable]
+        public List<Fighter> EnemiesList;
     }
 
 }

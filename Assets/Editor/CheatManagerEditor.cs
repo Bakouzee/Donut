@@ -10,9 +10,11 @@ namespace Com.Donut.BattleSystem
     {
         CheatManager source;
 
-        public bool godModeBool;
-
         private bool _canOnShot;
+        private bool _isInvincible;
+        private bool _canResetHeath;
+        private bool _isGodMod;
+        
         private int _lastID;
 
         private void OnEnable()
@@ -24,24 +26,26 @@ namespace Com.Donut.BattleSystem
 
         private void RefreshToggle()
         {
+            if (!source.IsInitialized) return;
+            
             _canOnShot = source.FindReceiver().Exists(x => x.Fighter.CanOneShot);
+            _isInvincible = source.FindReceiver().Exists(x => x.Fighter.IsInvincible);
+            _canResetHeath = source.FindReceiver().Exists(x => x.Fighter.IsFullHealth);
+            _isGodMod = source.FindReceiver().Exists(x => x.Fighter.CanOneShot && x.Fighter.IsInvincible && x.Fighter.IsFullHealth);
             _lastID = (int)source.cheatReceiverState;
         }
         private void ApplyAction(System.Action act)
         {
             act.Invoke();
-            //source.ApplyCheats();
             RefreshToggle();
         }
         public override void OnInspectorGUI()
         {
-            //DrawDefaultInspector();
-
             source = (CheatManager)target;
 
-            if (!Application.isPlaying)
+            if (!Application.isPlaying || !source.IsInBattle)
             {
-                EditorGUILayout.HelpBox("Enable on runtime only", MessageType.Warning);
+                EditorGUILayout.HelpBox("Enable on runtime and in the Battle only", MessageType.Warning);
                 return;
             }
 
@@ -52,12 +56,13 @@ namespace Com.Donut.BattleSystem
 
             GUILayout.BeginHorizontal("box");
 
+            GUI.color = _isGodMod ? Color.green : Color.red;
             if (GUILayout.Button("GodMode"))
             {
-                source.AddSetGodMode();
+                ApplyAction(() => source.AddSetGodMode());
             }
-            //godModeBool = GUI.Toggle(new Rect(10, 10, 100, 30), godModeBool , "A Toggle text");
-
+            
+            GUI.color = _isInvincible ? Color.green : Color.red;
             if (GUILayout.Button("Invincibility"))
             {
                 ApplyAction(() => source.AddSetInvincible());
@@ -72,19 +77,15 @@ namespace Com.Donut.BattleSystem
             {
                 ApplyAction(() => source.AddCanOneShot());
             }
-            GUI.color = Color.white;
-
+            
+            GUI.color = _canResetHeath ? Color.green : Color.red;
             if (GUILayout.Button("ResetHealth"))
             {
-                ApplyAction(() => source.AddResetHealth());
+                ApplyAction(() => source.AddSetFullHealth());
             }
 
             GUILayout.EndHorizontal();
-
-            if (GUILayout.Button("Apply Cheats"))
-            {
-                source.ApplyCheats();
-            }
+            
         }
     }
 }

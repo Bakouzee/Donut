@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,10 +24,13 @@ namespace Com.Donut.BattleSystem
         
         public readonly List<FighterData> ListPlayersData = new List<FighterData>();
         public readonly List<FighterData> ListEnemiesData = new List<FighterData>();
+
+        private CheatManager _cheatManager;
         
-        private void Start()
+        //[ContextMenu("StartBattle")]
+        public void StartBattle()
         {
-           //SetState((new Init(this)));
+           //SetState((new Init(this))); //Start set in the player collision
         }
         
         public void InitializeBattle()
@@ -36,7 +40,8 @@ namespace Com.Donut.BattleSystem
             AddEnemiesToList();
             Interface.Initialize(this, ListPlayersData[0], ListPlayersData[1], ListEnemiesData, arenaSprite);
             CurrentFighterData = ListPlayersData[0];
-            GetComponent<CheatManager>().Initialize(this);
+            _cheatManager = GetComponent<CheatManager>();
+            _cheatManager.Initialize(this);
         }
 
         private void AddEnemiesToList()
@@ -63,6 +68,9 @@ namespace Com.Donut.BattleSystem
             listEnemyFighters.Clear();
             ListEnemiesData.Clear();
             Interface.ClearAnimatorListEnemies();
+            
+            _cheatManager.IsInBattle = false;
+            _cheatManager.IsInitialized = false;
         }
 
         #region Inputs
@@ -106,5 +114,35 @@ namespace Com.Donut.BattleSystem
             StartCoroutine(State.AnimationEnded());
         }
         #endregion Inputs
+
+        #region DebugCheats
+
+        [ContextMenu("DebugCheatPlayer1")]
+        public void DebugCheatPlayer1()
+        {
+            Debug.Log("P0 Invincible : " + ListPlayersData[0].Fighter.IsInvincible);
+            Debug.Log("P0 CanOneShot : " + ListPlayersData[0].Fighter.CanOneShot);
+            Debug.Log("P0 FullHealth : " + ListPlayersData[0].Fighter.IsFullHealth);
+        }
+        
+        [ContextMenu("DebugCheatPlayer2")]
+        public void DebugCheatPlayer2()
+        {
+            Debug.Log("P1 Invincible : " + ListPlayersData[1].Fighter.IsInvincible);
+            Debug.Log("P1 CanOneShot : " + ListPlayersData[1].Fighter.CanOneShot);
+            Debug.Log("P1 FullHealth : " + ListPlayersData[1].Fighter.IsFullHealth);
+        }
+        
+        [ContextMenu("DebugCheatEnemies")]
+        public void DebugCheatEnemies()
+        {
+
+            Debug.Log("All Enemies Invincible : " + ListEnemiesData.All(x => x.Fighter.IsInvincible));
+            Debug.Log("All Enemies CanOneShot : " + ListEnemiesData.All(x => x.Fighter.CanOneShot));
+            Debug.Log("All Enemies FullHealth : " + ListEnemiesData.All(x => x.Fighter.IsFullHealth));
+        }
+        
+
+        #endregion
     }
 }

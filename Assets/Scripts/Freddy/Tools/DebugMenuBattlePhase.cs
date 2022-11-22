@@ -11,6 +11,7 @@ using UnityEngine;
 public class DebugMenuBattlePhase : EditorWindow
 { 
     //private static int numberEnemiesCreated = 0;
+    /*
     private static List<Fighter> enemies = new List<Fighter>();
     private static List<bool> enemiesToDelete = new List<bool>();
     private Vector2 scrollPos = Vector2.zero;
@@ -93,7 +94,7 @@ public class DebugMenuBattlePhase : EditorWindow
             isEnemyStatsShown.Add(false);
         }
 
-        if (save)
+       /* if (save)
         {
             for (int i = 0; i < enemies.Count; i++)
             {
@@ -155,5 +156,6 @@ public class DebugMenuBattlePhase : EditorWindow
             }
         }
         EditorGUILayout.EndScrollView();
-    }
+    }*/
+    
 }

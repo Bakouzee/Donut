@@ -12,7 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82efe64c6c6f45347a343d7ed6894a68, type: 3}
   m_Name: Fighter Database
   m_EditorClassIdentifier: 
-  fighterList:
-  - {fileID: 11400000, guid: 40ecd8aa74ee7cc44b7bfdd49ac417a7, type: 2}
-  - {fileID: 11400000, guid: 40ecd8aa74ee7cc44b7bfdd49ac417a7, type: 2}
-  - {fileID: 11400000, guid: 40ecd8aa74ee7cc44b7bfdd49ac417a7, type: 2}
+  PlayersList:
+  - _name: 
+    _level: 
+    _sprite: {fileID: 0}
+    _animatorController: {fileID: 0}
+    _currentHealth: 0
+    _totalHealth: 0
+    _power: 0
+    _healing: 0
+    abilities: []
+  - _name: 
+    _level: 
+    _sprite: {fileID: 0}
+    _animatorController: {fileID: 0}
+    _currentHealth: 0
+    _totalHealth: 0
+    _power: 0
+    _healing: 0
+    abilities: []
+  EnemiesList: []
