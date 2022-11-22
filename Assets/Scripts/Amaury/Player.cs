@@ -10,6 +10,8 @@ using TMPro;
 
 public class Player : Character  {
 
+    [SerializeField] private GameObject powFx;
+    [SerializeField] private Tween tweenPow;
     [SerializeField] private BattleSystem battleSystem;
     public Vector2 movement;
     private Rigidbody2D rb;
@@ -40,6 +42,7 @@ public class Player : Character  {
         followers = new List<IFollowable>();
 
         initialSpeed = speed;
+        powFx.SetActive(false);
     }
 
 
@@ -183,6 +186,26 @@ public class Player : Character  {
             Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
             direction = reflectVec;
         }
+        if (isTransformed)
+        {
+            powFx.transform.position = col.GetContact(0).point;
+            StartCoroutine(PowEffect());
+        }
+    }
+
+    private IEnumerator PowEffect()
+    {
+        if(tweenPow != null && tweenPow.IsPlaying())
+            tweenPow.Kill();
+
+        powFx.SetActive(true);
+        powFx.GetComponent<SpriteRenderer>().color = Color.white;
+        powFx.transform.localScale = Vector3.zero;
+        tweenPow = powFx.transform.DOScale(0.07f, 0.2f);
+        yield return new WaitForSeconds(0.2f);
+        tweenPow = powFx.GetComponent<SpriteRenderer>().DOFade(0, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        powFx.SetActive(false);
     }
 
     private IEnumerator VFX(VisualEffect vfxToPlay)
