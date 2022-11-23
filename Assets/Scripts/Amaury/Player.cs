@@ -58,8 +58,8 @@ public class Player : Character  {
     }
     
     protected override void Move() {
-        if (MinimapController.instance.isInMap)
-            return;
+      //  if (MinimapController.instance.isInMap)
+        //    return;
         
         if (!hasCarapace)
         {
