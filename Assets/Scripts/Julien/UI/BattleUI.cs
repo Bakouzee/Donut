@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 namespace Com.Donut.BattleSystem
 {
@@ -32,6 +33,8 @@ namespace Com.Donut.BattleSystem
         private Animator _animPlayer1;
         private List<Animator> _listAnimatorEnemies = new List<Animator>();
 
+        public Ease nameplateEase;
+
 
         public void Initialize(BattleSystem battleSystem, FighterData fighterData0, FighterData fighterData1, List<FighterData> enemyData, Sprite arenaSprite)
         {
@@ -59,14 +62,28 @@ namespace Com.Donut.BattleSystem
 
         private void InitializeEnemyNameplate()
         {
+            List<RectTransform> listEnemyNameplateRect = new List<RectTransform>();
+
             switch (_battleSystem.ListEnemiesData.Count)
             {
+                
                 case 1:
+                    listEnemyNameplateRect.Add(listEnemyNameplate[0].gameObject.GetComponent<RectTransform>());
+                    StartCoroutine(NamePlateBoss(listEnemyNameplateRect));
                     listEnemyNameplate[1].gameObject.SetActive(false);
                     listEnemyNameplate[2].gameObject.SetActive(false);
                     break;
                 case 2:
+                    listEnemyNameplateRect.Add(listEnemyNameplate[0].gameObject.GetComponent<RectTransform>());
+                    listEnemyNameplateRect.Add(listEnemyNameplate[1].gameObject.GetComponent<RectTransform>());
+                    StartCoroutine(NamePlateBoss(listEnemyNameplateRect));
                     listEnemyNameplate[2].gameObject.SetActive(false);
+                    break;
+                case 3:
+                    listEnemyNameplateRect.Add(listEnemyNameplate[0].gameObject.GetComponent<RectTransform>());
+                    listEnemyNameplateRect.Add(listEnemyNameplate[1].gameObject.GetComponent<RectTransform>());
+                    listEnemyNameplateRect.Add(listEnemyNameplate[2].gameObject.GetComponent<RectTransform>());
+                    StartCoroutine(NamePlateBoss(listEnemyNameplateRect));
                     break;
             }
         }
@@ -240,6 +257,21 @@ namespace Com.Donut.BattleSystem
             screen.SetActive(false);
             yield return new WaitForSeconds(0.1f);
             GameManager.Instance.OnChangePhase();
+        }
+
+        private IEnumerator NamePlateBoss(List<RectTransform> listEnemyNameplate)
+        {
+            foreach(RectTransform rect in listEnemyNameplate)
+            {
+                rect.DOAnchorPos(new Vector2(0, -60), 2f).SetEase(nameplateEase);
+            }
+
+            yield return new WaitForSeconds(3f);
+
+            foreach (RectTransform rect in listEnemyNameplate)
+            {
+                rect.DOAnchorPos(new Vector2(400, -60), 2f);
+            }
         }
     }
 }
