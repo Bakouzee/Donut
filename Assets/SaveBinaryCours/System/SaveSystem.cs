@@ -6,6 +6,22 @@ using UnityEngine;
 
 public static class SaveSystem
 {
+    public static void InitSaveData()
+    {
+        string path = Application.persistentDataPath + "/Game.save";
+        
+        if (File.Exists(path))
+            return;
+
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        formatter.Serialize(stream, new SaveData());
+        stream.Close();
+
+        Debug.Log("Init save successful");
+    }
+
     #region GAME
     public static void SaveGameData(string name)
     {

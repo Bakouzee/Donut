@@ -1,11 +1,14 @@
-﻿/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour {
+public class SaveController : MonoBehaviour
+{
+    private void Awake()
+    {
+        SaveSystem.InitSaveData();
+    }
 
     public string NameInput { get; set; }
     public Text txtGameName;
@@ -21,4 +24,3 @@ public class GameManager : MonoBehaviour {
         txtGameName.text = gameData.gameName;
     }
 }
-*/

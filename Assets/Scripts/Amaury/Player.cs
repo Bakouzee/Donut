@@ -7,9 +7,13 @@ using UnityEngine.VFX;
 using UnityEngine.InputSystem;
 using DG.Tweening;
 using TMPro;
+using Cinemachine;
 
 public class Player : Character  {
 
+    [SerializeField] private CinemachineImpulseSource impulseSource;
+    [SerializeField] private GameObject powFx;
+    [SerializeField] private Tween tweenPow;
     [SerializeField] private BattleSystem battleSystem;
     public Vector2 movement;
     private Rigidbody2D rb;
@@ -34,6 +38,8 @@ public class Player : Character  {
     [SerializeField] private TextMeshProUGUI textInput;
 
     public bool hasKey;
+    private GameObject newVFX;
+
     public override void Awake() {
         base.Awake();
         
@@ -41,6 +47,7 @@ public class Player : Character  {
         followers = new List<IFollowable>();
 
         initialSpeed = speed;
+        powFx.GetComponent<SpriteRenderer>().enabled = false;
     }
 
 
@@ -185,6 +192,49 @@ public class Player : Character  {
             Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
             direction = reflectVec;
         }
+        if (isTransformed)
+        {
+            impulseSource.GenerateImpulse();
+            powFx.transform.position = col.GetContact(0).point;
+            StartCoroutine(PowEffect());
+        }
+    }
+
+    private IEnumerator PowEffect()
+    {
+        if(tweenPow != null && tweenPow.IsPlaying())
+            tweenPow.Kill();
+
+        powFx.GetComponent<SpriteRenderer>().enabled = true;
+        powFx.GetComponent<SpriteRenderer>().color = Color.white;
+        powFx.transform.localScale = Vector3.zero;
+        tweenPow = powFx.transform.DOScale(0.2f, 0.2f);
+        yield return new WaitForSeconds(0.2f);
+        tweenPow = powFx.GetComponent<SpriteRenderer>().DOFade(0, 0.5f);
+
+
+        if (powFx.transform.GetChild(0).GetComponent<VisualEffect>().aliveParticleCount > 0)
+        {
+            newVFX = Instantiate(powFx.transform.GetChild(0).gameObject);
+            newVFX.transform.parent = powFx.transform;
+            newVFX.GetComponent<VisualEffect>().Play();
+        }
+        else
+        {
+            powFx.transform.GetChild(0).GetComponent<VisualEffect>().Play();
+        }
+
+        yield return new WaitForSeconds(powFx.transform.GetChild(0).GetComponent<VisualEffect>().GetFloat("Lifetime"));
+
+        if (newVFX != null && newVFX.GetComponent<VisualEffect>().aliveParticleCount > 0)
+        {
+            Destroy(newVFX);    
+        }
+        else if(powFx.transform.GetChild(0).GetComponent<VisualEffect>().aliveParticleCount > 0)
+        {
+            powFx.transform.GetChild(0).GetComponent<VisualEffect>().Stop();
+        }
+        powFx.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     private IEnumerator VFX(VisualEffect vfxToPlay)

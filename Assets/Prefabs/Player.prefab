@@ -107,53 +107,9 @@ MonoBehaviour:
     m_ActionId: 35b59a71-0f96-4f3a-a235-70ba7f556715
     m_ActionName: Player/Throw[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7781719693136930270}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: OnSetBattlePhaseDebug
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: b4bb836b-c698-40a5-a52c-e21f76d1795a
     m_ActionName: Player/DebugState[/Keyboard/u]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7781719693136930270}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: OnChangedMap
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 959a39f4-749e-4bff-90d0-f8ffb40dc0f8
-    m_ActionName: BattlePhase/DebugLog[/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7781719693136930270}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: OnSetExplorationPhaseDebug
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: b7018f86-7cdf-421b-a802-2c013b28fcd9
-    m_ActionName: BattlePhase/DebugExploState[/Keyboard/y]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -202,6 +158,42 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d519d0c2-afe8-44f3-9264-23de75c04474
     m_ActionName: BattlePhase/UseInput_Arrow[/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: OnChangePhase
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4d2d5339-b90b-4207-988c-87bc8704915c
+    m_ActionName: BattlePhase/DebugPhase[/Keyboard/u]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9c976f81-b9f0-48a0-a204-a63819dd0095
+    m_ActionName: Player/Minimap[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f37e50bb-53d7-42e0-8b7a-962a4dd6b2d4
+    m_ActionName: Player/PauseMenu[/Keyboard/p,/XInputControllerWindows/start]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -220,10 +212,11 @@ GameObject:
   - component: {fileID: 7781719693136930270}
   - component: {fileID: 7781719693136930256}
   - component: {fileID: 7781719693136930263}
-  - component: {fileID: 7781719693136930262}
+  - component: {fileID: 1636926441}
+  - component: {fileID: 1182800472}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -285,10 +278,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1000
-  m_Sprite: {fileID: -202430324, guid: 4891f7960f1871346961d3ba99c0c548, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 561452819, guid: 5b9eca88b71c7984f81f74038eb8565e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.45, y: 0.56}
@@ -312,6 +305,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   currentState: 
   name: M
+  impulseSource: {fileID: 1636926441}
+  powFx: {fileID: 0}
   battleSystem: {fileID: 0}
   movement: {x: 0, y: 0}
   speed: 5
@@ -321,6 +316,7 @@ MonoBehaviour:
   playerInput: {fileID: 7781719692143225483}
   abilityImg: {fileID: 0}
   playerImg: {fileID: 0}
+  textInput: {fileID: 0}
 --- !u!95 &7781719693136930256
 Animator:
   serializedVersion: 4
@@ -362,8 +358,68 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &7781719693136930262
-BoxCollider2D:
+--- !u!114 &1636926441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7781719693136930271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd438dd108a0f284aa931a2da434f1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 2
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  m_IgnoreTag: 
+  m_UseImpactDirection: 1
+  m_ScaleImpactWithMass: 0
+  m_ScaleImpactWithSpeed: 0
+--- !u!70 &1182800472
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -376,18 +432,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 0.45, y: 0.56}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
-  m_EdgeRadius: 0
+  m_Direction: 0
 --- !u!1001 &426292843
 PrefabInstance:
   m_ObjectHideFlags: 0

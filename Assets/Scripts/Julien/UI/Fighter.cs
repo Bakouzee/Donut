@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
 namespace Com.Donut.BattleSystem
@@ -11,7 +10,7 @@ namespace Com.Donut.BattleSystem
         [SerializeField] private string _name;
         [SerializeField] private string _level;
         [SerializeField] private Sprite _sprite;
-        [SerializeField] private AnimatorController _animatorController;
+        [SerializeField] private RuntimeAnimatorController _animatorController;
         [SerializeField] private int _currentHealth;
         [SerializeField] private int _totalHealth;
         //[SerializeField] private int _currentDamage;
@@ -29,7 +28,7 @@ namespace Com.Donut.BattleSystem
         public string Name => _name;
         public string Level => _level;
         public Sprite Sprite => _sprite;
-        public AnimatorController AnimatorController => _animatorController;
+        public RuntimeAnimatorController AnimatorController => _animatorController;
         public int TotalHealth => _totalHealth;
         public int CurrentHealth => _currentHealth;
         public int Power => _power;
