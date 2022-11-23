@@ -6210,6 +6210,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6491209582151590914, guid: 83e2f5267c4c58b45aa1286ae34bedcb,
         type: 3}
+      propertyPath: numberOfEnemy
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491209582151590914, guid: 83e2f5267c4c58b45aa1286ae34bedcb,
+        type: 3}
+      propertyPath: fighterDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 2dddbb9f54aeedc4bb44f8addb846381,
+        type: 2}
+    - target: {fileID: 6491209582151590914, guid: 83e2f5267c4c58b45aa1286ae34bedcb,
+        type: 3}
+      propertyPath: onlyBattlePhaseScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491209582151590914, guid: 83e2f5267c4c58b45aa1286ae34bedcb,
+        type: 3}
       propertyPath: listEnemyFighters.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -6306,6 +6322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4540feccca417b241a7536caf0dc57d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsInBattle: 0
+  IsInitialized: 0
   cheatReceiverState: 0
 --- !u!114 &6652195027205378234
 MonoBehaviour:
