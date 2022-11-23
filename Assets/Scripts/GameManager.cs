@@ -23,6 +23,11 @@ public class GameManager : SingletonBase<GameManager>
     public bool IsPaused { get { return isPaused; } private set { isPaused = value; } }
     #endregion
 
+    protected override void Awake()
+    {
+        StartCoroutine(DialogueSystem.DlData());
+    }
+
     public void OnChangePhase()
     {
         if (isBattle)

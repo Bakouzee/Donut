@@ -76,7 +76,7 @@ public static class SaveGameSystem
         {
             Debug.LogWarning("Save file not found in " + path);
             ResetGameData();
-            return LoadGameData();
+            return LoadGameData(player);
         }
     }
 
