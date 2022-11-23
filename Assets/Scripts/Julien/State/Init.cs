@@ -11,7 +11,8 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator Start()
         {
-            StopPlayerControls();
+            if(!BattleSystem.onlyBattlePhaseScene)
+                StopPlayerControls();
             BattleSystem.InitializeBattle();
             BattleSystem.SetState(new Intro(BattleSystem));
             yield break;

@@ -2497,6 +2497,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 808825611}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &824089811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6491209582151590912, guid: 83e2f5267c4c58b45aa1286ae34bedcb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1965998824}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &835687284
 GameObject:
   m_ObjectHideFlags: 0
@@ -3487,6 +3493,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ActionEvents.Array.data[9].m_ActionName
       value: Player/PauseMenu[/Keyboard/p,/XInputControllerWindows/start]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7781719692143225483, guid: 0d137fe33eb8cac48a4f783022b983e4,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7781719692143225483, guid: 0d137fe33eb8cac48a4f783022b983e4,
         type: 3}
@@ -5082,12 +5093,27 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1965998824}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 824089811}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c501d7b143fcd4428ddb553a3a01e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1595750452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824089811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4540feccca417b241a7536caf0dc57d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsInBattle: 0
+  IsInitialized: 0
+  cheatReceiverState: 0
 --- !u!1 &1597548187
 GameObject:
   m_ObjectHideFlags: 0
@@ -5234,7 +5260,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1597548187}
   m_LocalRotation: {x: 1e-45, y: 1e-45, z: 0, w: 1}
-  m_LocalPosition: {x: 4.9508457, y: 4.18997, z: -10}
+  m_LocalPosition: {x: 4.9441605, y: 4.18997, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16723,6 +16749,17 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 484764333}
+    - target: {fileID: 6491209582151590914, guid: 83e2f5267c4c58b45aa1286ae34bedcb,
+        type: 3}
+      propertyPath: numberOfEnemy
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491209582151590914, guid: 83e2f5267c4c58b45aa1286ae34bedcb,
+        type: 3}
+      propertyPath: fighterDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 2dddbb9f54aeedc4bb44f8addb846381,
+        type: 2}
     - target: {fileID: 6491209582151590914, guid: 83e2f5267c4c58b45aa1286ae34bedcb,
         type: 3}
       propertyPath: listEnemyFighters.Array.size

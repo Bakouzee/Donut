@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,10 +9,11 @@ namespace Com.Donut.BattleSystem
     {
         [SerializeField] private BattleUI ui;
         [SerializeField] private Sprite arenaSprite;
-        [SerializeField] private Fighter player0;
-        [SerializeField] private Fighter player1;
-        public List<Fighter> listEnemyFighters = new List<Fighter>();
+        [SerializeField] private FighterDatabase fighterDatabase;
+        [SerializeField, Range(1, 3)] private int numberOfEnemy;
         [SerializeField] private Player player;
+
+        public bool onlyBattlePhaseScene;
         public Player Player => player;
 
 
@@ -23,31 +25,33 @@ namespace Com.Donut.BattleSystem
         
         public readonly List<FighterData> ListPlayersData = new List<FighterData>();
         public readonly List<FighterData> ListEnemiesData = new List<FighterData>();
+
+        private CheatManager _cheatManager;
         
-        private void Start()
+        public void Start()
         {
-           // SetState((new Init(this)));
+            if(onlyBattlePhaseScene)
+                SetState((new Init(this))); //Start set in the player collision
         }
         
         public void InitializeBattle()
         {
-            ListPlayersData.Add(new FighterData(player0, 0));
-            ListPlayersData.Add(new FighterData(player1, 1));
+            ListPlayersData.Add(new FighterData(fighterDatabase.PlayersList[0], 0));
+            ListPlayersData.Add(new FighterData(fighterDatabase.PlayersList[1], 1));
             AddEnemiesToList();
             Interface.Initialize(this, ListPlayersData[0], ListPlayersData[1], ListEnemiesData, arenaSprite);
             CurrentFighterData = ListPlayersData[0];
-            GetComponent<CheatManager>().Initialize(this);
+            _cheatManager = GetComponent<CheatManager>();
+            _cheatManager.Initialize(this);
         }
 
         private void AddEnemiesToList()
         {
-            for (int x = 0; x < listEnemyFighters.Count; x++)
+            for (int x = 0; x < numberOfEnemy; x++)
             {
-                ListEnemiesData.Add(new FighterData(listEnemyFighters[x], (byte)x));
+                ListEnemiesData.Add(new FighterData(fighterDatabase.EnemiesList[0], (byte)x)); //Un seul enemy pour le moment
             }
             
-            if(listEnemyFighters.Count > 3)
-                Debug.LogError("More than 3 enemies --- Impossible");
         }
 
         //[ContextMenu("ResetBattleSystem")]
@@ -60,6 +64,11 @@ namespace Com.Donut.BattleSystem
             {
                 Destroy(enemy.FighterGo.gameObject);
             }
+            ListEnemiesData.Clear();
+            Interface.ClearAnimatorListEnemies();
+            
+            _cheatManager.IsInBattle = false;
+            _cheatManager.IsInitialized = false;
         }
 
         #region Inputs
@@ -103,5 +112,35 @@ namespace Com.Donut.BattleSystem
             StartCoroutine(State.AnimationEnded());
         }
         #endregion Inputs
+
+        #region DebugCheats
+
+        [ContextMenu("DebugCheatPlayer1")]
+        public void DebugCheatPlayer1()
+        {
+            Debug.Log("P0 Invincible : " + ListPlayersData[0].Fighter.IsInvincible);
+            Debug.Log("P0 CanOneShot : " + ListPlayersData[0].Fighter.CanOneShot);
+            Debug.Log("P0 FullHealth : " + ListPlayersData[0].Fighter.IsFullHealth);
+        }
+        
+        [ContextMenu("DebugCheatPlayer2")]
+        public void DebugCheatPlayer2()
+        {
+            Debug.Log("P1 Invincible : " + ListPlayersData[1].Fighter.IsInvincible);
+            Debug.Log("P1 CanOneShot : " + ListPlayersData[1].Fighter.CanOneShot);
+            Debug.Log("P1 FullHealth : " + ListPlayersData[1].Fighter.IsFullHealth);
+        }
+        
+        [ContextMenu("DebugCheatEnemies")]
+        public void DebugCheatEnemies()
+        {
+
+            Debug.Log("All Enemies Invincible : " + ListEnemiesData.All(x => x.Fighter.IsInvincible));
+            Debug.Log("All Enemies CanOneShot : " + ListEnemiesData.All(x => x.Fighter.CanOneShot));
+            Debug.Log("All Enemies FullHealth : " + ListEnemiesData.All(x => x.Fighter.IsFullHealth));
+        }
+        
+
+        #endregion
     }
 }

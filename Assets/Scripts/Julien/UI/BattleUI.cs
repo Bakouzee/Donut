@@ -35,7 +35,8 @@ namespace Com.Donut.BattleSystem
 
         public void Initialize(BattleSystem battleSystem, FighterData fighterData0, FighterData fighterData1, List<FighterData> enemyData, Sprite arenaSprite)
         {
-            GameManager.Instance.OnChangePhase();
+            if(!battleSystem.onlyBattlePhaseScene)
+                GameManager.Instance.OnChangePhase();
 
             _battleSystem = battleSystem;
             
@@ -144,7 +145,10 @@ namespace Com.Donut.BattleSystem
         {
             dialogText.text = text;
         }*/
-
+        public void ClearAnimatorListEnemies()
+        {
+            _listAnimatorEnemies.Clear();
+        }
         public void ShowPauseMenu()
         {
             pauseScreen.SetActive(true);

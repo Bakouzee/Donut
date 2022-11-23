@@ -10,18 +10,19 @@ namespace Com.Donut.BattleSystem
     {
         private BattleSystem _battleSystem;
 
+        public bool IsInBattle;
+        public bool IsInitialized;
         public void Initialize(BattleSystem battleSystem)
         {
             _battleSystem = battleSystem;
+            IsInitialized = true;
         }
         
         public enum CheatReceiver
         {
             Player1,
             Player2,
-            AllPlayers,
             AllEnemies,
-            All,
         }
 
         [Tooltip("Fighter that receive cheat")] public CheatReceiver cheatReceiverState;
@@ -30,55 +31,60 @@ namespace Com.Donut.BattleSystem
         delegate void MyDelegate(List<FighterData> _listFighterData);
         MyDelegate myDelegate;
 
-        public void ApplyCheats()
-        {
-        }
-
         public List<FighterData> FindReceiver()
         {
             var listFighterData = new List<FighterData>();
             switch(cheatReceiverState)
             {
                 case CheatReceiver.Player1:
-                    if(_battleSystem != null)
-                        listFighterData.Add(_battleSystem.ListPlayersData[0]);
-                    Debug.Log(_battleSystem);
+                    listFighterData.Add(_battleSystem.ListPlayersData[0]);
                     break;
                 case CheatReceiver.Player2:
                     listFighterData.Add(_battleSystem.ListPlayersData[1]);
                     break;
-                case CheatReceiver.AllPlayers:
-                    listFighterData = _battleSystem.ListPlayersData;
-                    break;
                 case CheatReceiver.AllEnemies:
                     listFighterData = _battleSystem.ListEnemiesData;
-                    break;
-                case CheatReceiver.All:
-                    listFighterData = _battleSystem.ListEnemiesData;
-                    listFighterData.AddRange(_battleSystem.ListPlayersData);
                     break;
             }
 
             return listFighterData;
         }
 
-        public void AddResetHealth() { myDelegate += ResetHealth; }
-
-        public void AddSetInvincible() { myDelegate += SetInvincible; }
-        public void AddCanOneShot() { 
-            myDelegate = CanOneShot;
-
+        public void AddSetFullHealth()
+        {
+            myDelegate = SetFullHealth;
             if(myDelegate != null)
                 myDelegate.Invoke(FindReceiver());
-        }    
-        public void AddSetGodMode() { myDelegate += SetInvincible; myDelegate += CanOneShot; myDelegate += ResetHealth; }
+        }
+
+        public void AddSetInvincible() 
+        {
+            myDelegate = SetInvincible;
+            if(myDelegate != null)
+                myDelegate.Invoke(FindReceiver());
+            
+        }
+        public void AddCanOneShot() { 
+            myDelegate = CanOneShot;
+            if(myDelegate != null)
+                myDelegate.Invoke(FindReceiver());
+        }
+
+        public void AddSetGodMode()
+        {
+            myDelegate = SetInvincible; 
+            myDelegate += CanOneShot; 
+            myDelegate += SetFullHealth;
+            if(myDelegate != null)
+                myDelegate.Invoke(FindReceiver());
+        }
 
         #region FunctionsCheat
-        private void ResetHealth(List<FighterData> _listFighterData)
+        private void SetFullHealth(List<FighterData> _listFighterData)
         {
             foreach (FighterData fighterData in _listFighterData)
             {
-                fighterData.Fighter.ResetHealth();
+                fighterData.Fighter.ResetHealth(!fighterData.Fighter.IsFullHealth);
             }
         }
 
@@ -86,7 +92,7 @@ namespace Com.Donut.BattleSystem
         {
             foreach (FighterData fighterData in _listFighterData)
             {
-                fighterData.Fighter.SetInvincible(true);
+                fighterData.Fighter.SetInvincible(!fighterData.Fighter.IsInvincible);
             }
         }
 
