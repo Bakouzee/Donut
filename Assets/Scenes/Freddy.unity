@@ -793,6 +793,52 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 249998177}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &261916870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 261916872}
+  - component: {fileID: 261916873}
+  m_Layer: 0
+  m_Name: EnemyCreator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &261916872
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261916870}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.154589, y: -0.16505536, z: -0.03691613}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &261916873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261916870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 718852cd16141a944a406d866a9dff94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  database: {fileID: 11400000, guid: 2dddbb9f54aeedc4bb44f8addb846381, type: 2}
+  EnemiesToAdd: []
 --- !u!1 &297375314
 GameObject:
   m_ObjectHideFlags: 0
@@ -2834,8 +2880,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -105541197
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 50dce0fd51cbd4e47a418f8fc62f4eb5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3401,9 +3447,9 @@ VFXRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -105541197
+  m_SortingLayer: 3
+  m_SortingOrder: 1
 --- !u!2083052967 &993720240
 VisualEffect:
   m_ObjectHideFlags: 0
@@ -3413,8 +3459,8 @@ VisualEffect:
   m_GameObject: {fileID: 993720237}
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: fd90ee54f91a0f442bb8e4e1feb85482, type: 3}
-  m_InitialEventName: OnPlay
-  m_InitialEventNameOverriden: 0
+  m_InitialEventName: 
+  m_InitialEventNameOverriden: 1
   m_StartSeed: 0
   m_ResetSeedOnPlay: 1
   m_ResourceVersion: 1
@@ -3424,7 +3470,7 @@ VisualEffect:
       - m_Value: 5
         m_Name: SpeedStones
         m_Overridden: 1
-      - m_Value: 3
+      - m_Value: 1.2
         m_Name: Lifetime
         m_Overridden: 1
     m_Vector2f:
@@ -5511,7 +5557,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1597548187}
   m_LocalRotation: {x: 1e-45, y: 1e-45, z: 0, w: 1}
-  m_LocalPosition: {x: 4.9441605, y: 4.18997, z: -10}
+  m_LocalPosition: {x: 4.9508457, y: 4.18997, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

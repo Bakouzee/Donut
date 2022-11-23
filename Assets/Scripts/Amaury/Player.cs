@@ -37,6 +37,8 @@ public class Player : Character  {
     [SerializeField] private GameObject playerImg;
     [SerializeField] private TextMeshProUGUI textInput;
 
+    private GameObject newVFX;
+
     public override void Awake() {
         base.Awake();
         
@@ -44,7 +46,7 @@ public class Player : Character  {
         followers = new List<IFollowable>();
 
         initialSpeed = speed;
-        powFx.SetActive(false);
+        powFx.GetComponent<SpriteRenderer>().enabled = false;
     }
 
 
@@ -202,15 +204,36 @@ public class Player : Character  {
         if(tweenPow != null && tweenPow.IsPlaying())
             tweenPow.Kill();
 
-        powFx.SetActive(true);
+        powFx.GetComponent<SpriteRenderer>().enabled = true;
         powFx.GetComponent<SpriteRenderer>().color = Color.white;
         powFx.transform.localScale = Vector3.zero;
         tweenPow = powFx.transform.DOScale(0.2f, 0.2f);
         yield return new WaitForSeconds(0.2f);
         tweenPow = powFx.GetComponent<SpriteRenderer>().DOFade(0, 0.5f);
-        powFx.transform.GetChild(0).GetComponent<VisualEffect>().Play();
+
+
+        if (powFx.transform.GetChild(0).GetComponent<VisualEffect>().aliveParticleCount > 0)
+        {
+            newVFX = Instantiate(powFx.transform.GetChild(0).gameObject);
+            newVFX.transform.parent = powFx.transform;
+            newVFX.GetComponent<VisualEffect>().Play();
+        }
+        else
+        {
+            powFx.transform.GetChild(0).GetComponent<VisualEffect>().Play();
+        }
+
         yield return new WaitForSeconds(powFx.transform.GetChild(0).GetComponent<VisualEffect>().GetFloat("Lifetime"));
-        powFx.SetActive(false);
+
+        if (newVFX != null && newVFX.GetComponent<VisualEffect>().aliveParticleCount > 0)
+        {
+            Destroy(newVFX);    
+        }
+        else if(powFx.transform.GetChild(0).GetComponent<VisualEffect>().aliveParticleCount > 0)
+        {
+            powFx.transform.GetChild(0).GetComponent<VisualEffect>().Stop();
+        }
+        powFx.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     private IEnumerator VFX(VisualEffect vfxToPlay)
