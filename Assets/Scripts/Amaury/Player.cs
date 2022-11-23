@@ -33,6 +33,7 @@ public class Player : Character  {
     [SerializeField] private GameObject playerImg;
     [SerializeField] private TextMeshProUGUI textInput;
 
+    public bool hasKey;
     public override void Awake() {
         base.Awake();
         
