@@ -36,7 +36,11 @@ namespace Com.Donut.BattleSystem
             if(ui != null)
                 ui.gameObject.SetActive(false);
         }
-        
+
+        public void StartBattlePhaseCinematic()
+        {
+            SetState((new Init(this)));
+        }
         public void InitializeBattle()
         {
             ListPlayersData.Add(new FighterData(fighterDatabase.PlayersList[0], 0));
