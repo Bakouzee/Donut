@@ -12,7 +12,7 @@ namespace Com.Donut.BattleSystem
         public override IEnumerator Start()
         {
             //BattleSystem.Interface.SetDialogText("You were defeated.");
-            BattleSystem.Interface.ShowLooseMenu();
+            BattleSystem.BattleUI.ShowLooseMenu();
             BattleSystem.ResetBattleSystem();
             yield break;
         }

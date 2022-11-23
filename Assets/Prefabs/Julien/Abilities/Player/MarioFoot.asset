@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 630b3ff6543b2d142b3abcdfe9f1bd71, type: 3}
-  m_Name: Foot
+  m_Name: MarioFoot
   m_EditorClassIdentifier: 
   attackId: 2
   attackName: Foot
   iconSprite: {fileID: -83949001, guid: 385e44a01c85a8b43b2fab330a309126, type: 3}
   attackDesc: Crush enemies with your foot
-  damage: 0
-  _animatorController: {fileID: 0}
+  actionType: 0
+  amount: 20
+  _animatorController: {fileID: 9100000, guid: 912b6bdad5b8bb44484df9c4ac72bc20, type: 2}
   hitColor: {r: 1, g: 1, b: 1, a: 1}

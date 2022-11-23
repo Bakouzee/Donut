@@ -22,7 +22,7 @@ namespace Com.Donut.BattleSystem
             if (_numberEnemyAlive > 1)               //Check si il y a plus d'un enemi en vie
             {
                 _currentTargetData = BattleSystem.ListEnemiesData[1];
-                BattleSystem.Interface.SetActiveInputOnEnemy(_currentTargetData, true);
+                BattleSystem.BattleUI.SetActiveInputOnEnemy(_currentTargetData, true);
                 BattleSystem.playerTargetTransform = _currentTargetData.FighterGo.transform;
                 _previousTargetData = _currentTargetData;
             }
@@ -42,7 +42,7 @@ namespace Com.Donut.BattleSystem
             if (CheckPlayer(0) && !_currentTargetData.Fighter.IsDead)
             {
                 Attack();
-                BattleSystem.Interface.SetActiveInputOnEnemy(_currentTargetData, false);
+                BattleSystem.BattleUI.SetActiveInputOnEnemy(_currentTargetData, false);
                 BattleSystem.CanUseInput = false;
             }
             else if (CheckPlayer(0) && _currentTargetData.Fighter.IsDead)
@@ -60,7 +60,7 @@ namespace Com.Donut.BattleSystem
             if (CheckPlayer(1) && !_currentTargetData.Fighter.IsDead)
             {
                 Attack();
-                BattleSystem.Interface.SetActiveInputOnEnemy(_currentTargetData, false);
+                BattleSystem.BattleUI.SetActiveInputOnEnemy(_currentTargetData, false);
                 BattleSystem.CanUseInput = false;
             }
             else if (CheckPlayer(1) && _currentTargetData.Fighter.IsDead)
@@ -114,22 +114,25 @@ namespace Com.Donut.BattleSystem
         {
             Debug.Log("AnimationEnded");
             
-            BattleSystem.Interface.ResetAnimator();
+            BattleSystem.BattleUI.ResetAnimator();
             var enemy = _currentTargetData;
+            BattleSystem.CurrentEnemyData = enemy;
             Debug.Log(enemy.Fighter.CurrentHealth);
             var playerAbility = BattleSystem.CurrentFighterData.CurrentAbility;
 
-            if(BattleSystem.CurrentFighterData.Fighter.CanOneShot)
+            if(BattleSystem.CurrentFighterData.Fighter.CanOneShot && playerAbility.actionType == Abilities.ActionType.Damage)
                 enemy.Fighter.Damage(int.MaxValue);
+            else if(playerAbility.actionType == Abilities.ActionType.Damage)
+                enemy.Fighter.Damage(playerAbility.amount);
             else
-                enemy.Fighter.Damage(playerAbility.damage);
+                BattleSystem.CurrentFighterData.Fighter.Heal(playerAbility.amount); //Anim Heal
 
             UpdateFighterTurn();
 
             if (enemy.Fighter.IsDead)
             {
                 Debug.Log("Enemy Dead");
-                BattleSystem.Interface.SetAnimTrigger(enemy, "Dead");
+                BattleSystem.BattleUI.SetAnimTrigger(enemy, "Dead");
                 //BattleSystem.SetState(new Won(BattleSystem));
             }
             else
@@ -147,13 +150,13 @@ namespace Com.Donut.BattleSystem
         
         public override IEnumerator HitEffect()
         {
-            BattleSystem.Interface.LaunchFlashEffect(_currentTargetData, BattleSystem.CurrentFighterData.CurrentAbility.hitColor); //1st enemy for the moment, after we will implement target enemy state
+            BattleSystem.BattleUI.LaunchFlashEffect(_currentTargetData, BattleSystem.CurrentFighterData.CurrentAbility.hitColor); //1st enemy for the moment, after we will implement target enemy state
             yield break;
         }
         
         private void Attack()
         {
-            BattleSystem.Interface.LaunchAbility(BattleSystem.CurrentFighterData);
+            BattleSystem.BattleUI.LaunchAbility(BattleSystem.CurrentFighterData);
         }
 
         private void UpdateFighterTurn() //If both player are alive, change fighter turn, else let same fighter
@@ -200,9 +203,9 @@ namespace Com.Donut.BattleSystem
 
         private void TargetEnemy(byte index)
         {
-            BattleSystem.Interface.SetActiveInputOnEnemy(_previousTargetData, false);
+            BattleSystem.BattleUI.SetActiveInputOnEnemy(_previousTargetData, false);
             _currentTargetData = BattleSystem.ListEnemiesData[index];
-            BattleSystem.Interface.SetActiveInputOnEnemy(_currentTargetData, true);
+            BattleSystem.BattleUI.SetActiveInputOnEnemy(_currentTargetData, true);
             BattleSystem.playerTargetTransform = _currentTargetData.FighterGo.transform;
             _previousTargetData = _currentTargetData;
             

@@ -17,6 +17,14 @@ namespace Com.Donut.BattleSystem
         //Move Backward
         private Vector3 _startInitBackward;
         private float _cooldownMoveDurationBackward;
+        
+        //Jump
+        private Vector3 _startInitJump;
+        private float _cooldownJumpDuration;
+        
+        //JumpBackward
+        private Vector3 _startInitJumpBackward;
+        private float _cooldownJumpBackwardDuration;
 
         private void Awake()
         {
@@ -54,8 +62,36 @@ namespace Com.Donut.BattleSystem
         public void MoveBack(string animationName)
         {
             _cooldownMoveDurationBackward = FindAnim(animationName);
-
+            
             transform.DOMove(CheckIfEnemy() ? _startInitBackward : _startInit, _cooldownMoveDurationBackward);
+        }
+
+        public void Jump(string animationName)
+        {
+            _cooldownJumpDuration = FindAnim(animationName);
+            
+            if (CheckIfEnemy())
+            {
+                _startInitJumpBackward = transform.position;
+                var position = _battleSystem.enemyTargetTransform.position;
+                StartCoroutine(JumpAnim(position, _cooldownJumpDuration));
+
+            }
+            else
+            {
+                _startInitJump = transform.position;
+                var position = _battleSystem.playerTargetTransform.position;
+                StartCoroutine(JumpAnim(position, _cooldownJumpDuration));
+            }
+        }
+
+        public void JumpBack(string animationName)
+        {
+            _cooldownJumpBackwardDuration = FindAnim(animationName);
+
+            StartCoroutine(CheckIfEnemy()
+                ? JumpAnim(_startInitJumpBackward, _cooldownJumpBackwardDuration)
+                : JumpAnim(_startInitJump, _cooldownJumpBackwardDuration));
         }
 
         private float FindAnim(string animationName)
@@ -75,6 +111,14 @@ namespace Com.Donut.BattleSystem
         private bool CheckIfEnemy()
         {
             return _battleSystem.ListEnemiesData.Any(p => p.FighterGo == gameObject);
+        }
+
+        private IEnumerator JumpAnim(Vector3 position, float duration)
+        {
+            transform.DOMoveX(position.x + _offsetX, duration);
+            transform.DOMoveY(position.y + 100, duration/2);
+            yield return new WaitForSeconds(duration/2);
+            transform.DOMoveY(position.y, duration/2);
         }
     }
 }

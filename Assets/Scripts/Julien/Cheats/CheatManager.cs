@@ -9,13 +9,16 @@ namespace Com.Donut.BattleSystem
     public class CheatManager : MonoBehaviour
     {
         private BattleSystem _battleSystem;
-
-        public bool IsInBattle;
-        public bool IsInitialized;
+        public bool IsInitialized { get; private set; }
         public void Initialize(BattleSystem battleSystem)
         {
             _battleSystem = battleSystem;
             IsInitialized = true;
+        }
+
+        public void ResetInitialization()
+        {
+            IsInitialized = false;
         }
         
         public enum CheatReceiver

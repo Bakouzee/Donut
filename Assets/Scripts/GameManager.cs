@@ -25,7 +25,7 @@ public class GameManager : SingletonBase<GameManager>
     {
         if (isBattle)
         {
-            battleSystem.Interface.gameObject.SetActive(true);
+            battleSystem.BattleUI.gameObject.SetActive(true);
             Everything = Camera.main.cullingMask;
             Camera.main.cullingMask = LayersToKeep;
             isBattle = false;
@@ -33,7 +33,7 @@ public class GameManager : SingletonBase<GameManager>
         }
         else
         {
-            battleSystem.Interface.gameObject.SetActive(false);
+            battleSystem.BattleUI.gameObject.SetActive(false);
             Camera.main.cullingMask = Everything;
             RestoreControls();
             isBattle = true;
