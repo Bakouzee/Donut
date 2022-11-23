@@ -32,6 +32,9 @@ namespace Com.Donut.BattleSystem
         {
             if(onlyBattlePhaseScene)
                 SetState((new Init(this))); //Start set in the player collision
+
+            if(ui != null)
+                ui.gameObject.SetActive(false);
         }
         
         public void InitializeBattle()
