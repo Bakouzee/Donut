@@ -12425,6 +12425,86 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859191561}
   m_CullTransparentMesh: 1
+--- !u!1 &1860313431
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1860313434}
+  - component: {fileID: 1860313433}
+  - component: {fileID: 1860313432}
+  m_Layer: 0
+  m_Name: TestAnim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &1860313432
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860313431}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 05b3b2baef2da8c44adc61d2dd25c804, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1860313433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860313431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a3f03e05c3a41340b23696aab45b027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animName: M_W_Backeeee
+  animPath: Animations/
+  texture: {fileID: 2800000, guid: 16eb1cdf1310d4048a880d51b484d554, type: 3}
+  animator: {fileID: 0}
+  isLooping: 0
+  timeBetweenSprite: 5
+  target: {fileID: 7781719693493738280}
+  animControllerName: MyController
+  animControllerPath: Animations/
+  motions:
+  - {fileID: 7400000, guid: 0e5a8b8c8329fd34e9e4797ee5bb644a, type: 2}
+  - {fileID: 7400000, guid: 8f6d887a1eb585740b1007b1077cdfdf, type: 2}
+  m_params:
+  - motion: {fileID: 0}
+    transition: {fileID: 0}
+--- !u!4 &1860313434
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860313431}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.9927013, y: 6.0518565, z: 0.05348795}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1864209152
 GameObject:
   m_ObjectHideFlags: 0
@@ -33487,7 +33567,6 @@ GameObject:
   - component: {fileID: 7781719693493738279}
   - component: {fileID: 7781719693493738272}
   - component: {fileID: 7781719693493738273}
-  - component: {fileID: 7781719693493738284}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -33593,22 +33672,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7781719693493738284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7781719693493738280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a3f03e05c3a41340b23696aab45b027, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animName: M_W_Backeeee
-  animPath: Animations/
-  texture: {fileID: 2800000, guid: 16eb1cdf1310d4048a880d51b484d554, type: 3}
-  animator: {fileID: 0}
-  isLooping: 0
-  timeBetweenSprite: 5
-  target: {fileID: 7781719693493738280}
