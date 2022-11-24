@@ -21,6 +21,7 @@ namespace Com.Donut.BattleSystem
         public override IEnumerator Start()
         {
             _fighterAbility = BattleSystem.CurrentFighterData.CurrentAbility;
+            
             _listEnemyAliveIndex = CheckEnemyAlive();
 
             if (_listEnemyAliveIndex.Count > 1 && _fighterAbility.actionType == Abilities.ActionType.Damage)               //Check si il y a plus d'un enemi en vie
@@ -95,8 +96,7 @@ namespace Com.Donut.BattleSystem
                     BattleSystem.CurrentFighterData.Fighter.Heal(_fighterAbility.amount); //Anim Heal
                     break;
                 case Abilities.ActionType.Escape:
-                    Debug.LogError("Escape");
-                    //Escape transition
+                    BattleSystem.SetState(new Escape(BattleSystem));
                     break;
             }
 

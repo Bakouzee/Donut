@@ -212,7 +212,7 @@ namespace Com.Donut.BattleSystem
 
         public Abilities LaunchEnemyAbility(FighterData fighterData)
         {
-            return actionController.LaunchEnemyAbility(fighterData);
+             return actionController.LaunchEnemyAbility(fighterData);
         }
 
         public void ResetAnimator()
@@ -274,6 +274,13 @@ namespace Com.Donut.BattleSystem
         {
             playerNameplate0.gameObject.GetComponent<RectTransform>().DOAnchorPos(new Vector2(90, 0), 2f).SetEase(nameplateEase);
             playerNameplate1.gameObject.GetComponent<RectTransform>().DOAnchorPos(new Vector2(0, 0), 2f).SetEase(nameplateEase);
+        }
+
+        public void FadeEscape()
+        {
+            //Add fade here
+            _battleSystem.ResetBattleSystem(); //maybe use waittilExplo 
+            throw new NotImplementedException();
         }
     }
 }
