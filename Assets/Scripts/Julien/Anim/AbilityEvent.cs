@@ -122,10 +122,6 @@ namespace Com.Donut.BattleSystem
 
         private IEnumerator JumpAnim(Vector3 position, float duration)
         {
-            /*_rectTransform.transform.DOMoveX(position.x, duration);
-            _rectTransform.transform.DOMoveY(position.y + 2, duration/2);
-            yield return new WaitForSeconds(duration/2);
-            _rectTransform.transform.DOMoveY(position.y, duration/2);*/
             _rectTransform.transform.DOJump(position, JumpForce, 1, duration);
             yield break;
         }
