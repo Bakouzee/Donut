@@ -21,6 +21,5 @@ public class switchScene : MonoBehaviour
         fadeSystem.SetTrigger("fadeIn");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(sceneName);
-
     }
 }

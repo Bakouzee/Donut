@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalLD.unity
     guid: cacea5e387e18c34d9aca7ad3363105b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GrotteLD.unity
     guid: f728de0c99357434f991fc1a365bfbce
   m_configObjects:

@@ -13,6 +13,8 @@ public class FollowerEntity : Character,IFollowable {
     public bool lastFollow { get; set; }
 
     private NavMeshAgent agent;
+    private Vector3 directionVec;
+    
     public void Start() {
         target = FindObjectOfType<Player>();
 
@@ -21,11 +23,13 @@ public class FollowerEntity : Character,IFollowable {
 
         isFollowing = true;
 
-        range = 2;
+        range = 0.5f;
 
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        agent.speed = ((Player)target).speed;
+        agent.acceleration = ((Player)target).speed;
     }
 
     public override void Update() {
@@ -56,10 +60,12 @@ public class FollowerEntity : Character,IFollowable {
 
             Vector3 pMove = player.movement;
 
-            Vector3 direction = pMove.x > 0 && pMove.y == 0 ? transform.right :
-                pMove.x < 0 && pMove.y == 0 ? transform.right * -1 : pMove.x == 0 && pMove.y > 0 ? transform.up : transform.up * -1;
-            
-            agent.SetDestination(target.transform.position - direction * range);
+            if (player.isMooving)
+                directionVec = pMove.x > 0 && pMove.y == 0 ? transform.right : pMove.x < 0 && pMove.y == 0 ? transform.right * -1 : pMove.x == 0 && pMove.y > 0 ? transform.up : transform.up * -1;
+
+            agent.SetDestination(target.transform.position - directionVec * range);
+
+            agent.velocity = agent.desiredVelocity;
                 
             if(player.movement != Vector2.zero)
                 SwitchAnimState(target.currentState);

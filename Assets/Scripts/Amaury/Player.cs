@@ -25,6 +25,8 @@ public class Player : Character  {
 
     public bool hasCarapace;
     public bool isTransformed;
+    public bool isMooving;
+    public bool hasKey;
 
     public GameObject arrow;
     [SerializeField] public PlayerInput playerInput;
@@ -106,29 +108,32 @@ public class Player : Character  {
     }
 
     public void OnTransformation(InputAction.CallbackContext e) {
-        if (e.performed) {
-            textInput.color = new Color(0.65f, 0.4f, 0, 1);
-            SwitchAnimState("WC_Run");
-            isTransformed = !isTransformed;
-            //UI Gamefeel
-            if(isTransformed == true)
-            {
-                direction = Vector3.zero;
-                playerImg.SetActive(true);
-                abilityImg.SetActive(false);
-                //abilityImg.transform.DOMoveY(abilityImg.GetComponent<RectTransform>().rect.position.y - 15f, 0.5f).SetEase(Ease.InElastic).SetEase(HideImg);
-                //playerImg.transform.DOMoveY(playerImg.GetComponent<RectTransform>().rect.position.y + 15f, 0.5f).SetEase(Ease.InElastic);
+        if (hasCarapace)
+        {
+            if (e.performed) {
+                textInput.color = new Color(0.65f, 0.4f, 0, 1);
+                SwitchAnimState("WC_Run");
+                isTransformed = !isTransformed;
+                //UI Gamefeel
+                if(isTransformed == true)
+                {
+                    direction = Vector3.zero;
+                    playerImg.SetActive(true);
+                    abilityImg.SetActive(false);
+                    //abilityImg.transform.DOMoveY(abilityImg.GetComponent<RectTransform>().rect.position.y - 15f, 0.5f).SetEase(Ease.InElastic).SetEase(HideImg);
+                    //playerImg.transform.DOMoveY(playerImg.GetComponent<RectTransform>().rect.position.y + 15f, 0.5f).SetEase(Ease.InElastic);
+                }
+                else
+                {
+                    abilityImg.SetActive(true);
+                    playerImg.SetActive(false);
+                    //playerImg.transform.DOMoveY(playerImg.GetComponent<RectTransform>().rect.position.y - 15f, 0.5f).SetEase(Ease.InElastic).SetEase(HideImg);
+                    //abilityImg.transform.DOMoveY(abilityImg.GetComponent<RectTransform>().rect.position.y + 15f, 0.5f).SetEase(Ease.InElastic);
+                }
             }
-            else
-            {
-                abilityImg.SetActive(true);
-                playerImg.SetActive(false);
-                //playerImg.transform.DOMoveY(playerImg.GetComponent<RectTransform>().rect.position.y - 15f, 0.5f).SetEase(Ease.InElastic).SetEase(HideImg);
-                //abilityImg.transform.DOMoveY(abilityImg.GetComponent<RectTransform>().rect.position.y + 15f, 0.5f).SetEase(Ease.InElastic);
-            }
+            if(e.canceled)
+                textInput.color = new Color(1, 0.55f, 0.04f, 1);
         }
-        if(e.canceled)
-            textInput.color = new Color(1, 0.55f, 0.04f, 1);
     }
 
     private float HideImg(float time, float duration, float overshootOrAmplitude, float period)
@@ -190,7 +195,7 @@ public class Player : Character  {
             Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
             direction = reflectVec;
         }
-        if (isTransformed)
+        if (isTransformed && !col.gameObject.CompareTag("Destructible") && !col.gameObject.CompareTag("Enemy"))
         {
             impulseSource.GenerateImpulse();
             powFx.transform.position = col.GetContact(0).point;
@@ -210,8 +215,9 @@ public class Player : Character  {
         yield return new WaitForSeconds(0.2f);
         tweenPow = powFx.GetComponent<SpriteRenderer>().DOFade(0, 0.5f);
 
+        //powFx.GetComponent<SpriteRenderer>().enabled = false;
 
-        if (powFx.transform.GetChild(0).GetComponent<VisualEffect>().aliveParticleCount > 0)
+        /*if (powFx.transform.GetChild(0).GetComponent<VisualEffect>().aliveParticleCount > 0)
         {
             newVFX = Instantiate(powFx.transform.GetChild(0).gameObject);
             newVFX.transform.parent = powFx.transform;
@@ -220,19 +226,18 @@ public class Player : Character  {
         else
         {
             powFx.transform.GetChild(0).GetComponent<VisualEffect>().Play();
-        }
+        }*/
 
-        yield return new WaitForSeconds(powFx.transform.GetChild(0).GetComponent<VisualEffect>().GetFloat("Lifetime"));
+        //yield return new WaitForSeconds(powFx.transform.GetChild(0).GetComponent<VisualEffect>().GetFloat("Lifetime"));
 
-        if (newVFX != null && newVFX.GetComponent<VisualEffect>().aliveParticleCount > 0)
+        /*if (newVFX != null && newVFX.GetComponent<VisualEffect>().aliveParticleCount > 0)
         {
             Destroy(newVFX);    
         }
         else if(powFx.transform.GetChild(0).GetComponent<VisualEffect>().aliveParticleCount > 0)
         {
             powFx.transform.GetChild(0).GetComponent<VisualEffect>().Stop();
-        }
-        powFx.GetComponent<SpriteRenderer>().enabled = false;
+        }*/
     }
 
     private IEnumerator VFX(VisualEffect vfxToPlay)

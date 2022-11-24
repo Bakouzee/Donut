@@ -42,9 +42,11 @@ namespace Com.Donut.BattleSystem
  
         }
 
-        public void StartBattlePhaseCinematic()
+        public void StartBattlePhaseCinematic(GameObject firstEnemy)
         {
             SetState((new Init(this)));
+            Destroy(firstEnemy);
+            player.hasCarapace = true;
         }
         public void InitializeBattle()
         {

@@ -19,7 +19,7 @@ public abstract class Character : MonoBehaviour
 
     public string name;
     
-    protected static string[] IDLES = new string[] {"I_Front", "I_Right" };
+    protected static string[] IDLES = new string[] {"I_Front", "I_Back","I_Side","I_Left" };
     protected static string[] WALKS = new string[] { "W_Front","W_Back","W_Side" }; 
     protected static string[] WALKS_CARAPACE = new string[] { "WC_Front","WC_Back","WC_Side" };
 
@@ -27,6 +27,8 @@ public abstract class Character : MonoBehaviour
     public virtual void Awake() {
         animController = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        currentState = "I_Front";
     }
 
     public virtual void Update() {
@@ -54,11 +56,10 @@ public abstract class Character : MonoBehaviour
     }
 
     protected void SwitchAnimState(string newState) {
-        if (currentState == newState) return;
+        if (currentState == newState || newState == null) return;
 
-        //Debug.Log("animName  " + (name + "_" + newState)); 
+
         animController.Play(name + "_" +  newState);
-
         currentState = newState.Replace(name,"");
     }
 }
