@@ -110,17 +110,19 @@ public class ActionController : MonoBehaviour
 
     public void LaunchAbility(FighterData fighterData)
     {
+        if (fighterData.CurrentAbility.actionType == Abilities.ActionType.Escape)
+        {
+            SetCurrentAbilityToEscape();
+            return;
+        }
+
         if (fighterData == _battleSystem.ListPlayersData[0])
         {
-            _animPlayer0.runtimeAnimatorController = _abilityIndexPlayer0._animatorController;
-            var triggerName = _abilityIndexPlayer0.attackName;
-            _battleSystem.BattleUI.SetAnimTrigger(fighterData, triggerName);
+            LaunchAbiltiyPlayer0(fighterData);
         }
         else if (fighterData == _battleSystem.ListPlayersData[1])
         {
-            _animPlayer1.runtimeAnimatorController = _abilityIndexPlayer1._animatorController;
-            var triggerName = _abilityIndexPlayer1.attackName;
-            _battleSystem.BattleUI.SetAnimTrigger(fighterData, triggerName);
+            LaunchAbiltiyPlayer1(fighterData);
         }
     }
 
@@ -130,11 +132,51 @@ public class ActionController : MonoBehaviour
         _animPlayer1.runtimeAnimatorController = _battleSystem.ListPlayersData[1].Fighter.AnimatorController;
     }
 
+    private void SetCurrentAbilityToEscape()
+    {
+        var abilityPlayer0 = ScriptableObject.CreateInstance<Abilities>();
+        
+        foreach (Abilities abilities in _battleSystem.ListPlayersData[0].Fighter.Abilities)
+        {
+            if (abilities.actionType != Abilities.ActionType.Escape) continue;
+            abilityPlayer0 = abilities;
+            Debug.Log("Player0 :" + abilities.name);
+        }
+        _battleSystem.ListPlayersData[0].SetFighterCurrentAbility(abilityPlayer0);
+        
+        var abilityPlayer1 = ScriptableObject.CreateInstance<Abilities>();
+        
+        foreach (Abilities abilities in _battleSystem.ListPlayersData[1].Fighter.Abilities)
+        {
+            if (abilities.actionType != Abilities.ActionType.Escape) continue;
+            abilityPlayer1 = abilities;
+            Debug.Log("Player1 :" + abilities.name);
+        }
+        _battleSystem.ListPlayersData[1].SetFighterCurrentAbility(abilityPlayer1);
+        
+        LaunchAbiltiyPlayer0(_battleSystem.ListPlayersData[0]);
+        LaunchAbiltiyPlayer1(_battleSystem.ListPlayersData[1]);
+    }
+
     public Abilities LaunchEnemyAbility(FighterData fighterData)
     {
         int rand = Random.Range(0, fighterData.Fighter.Abilities.Count);
         var triggerName = fighterData.Fighter.Abilities[rand].attackName;
         _battleSystem.BattleUI.SetAnimTrigger(fighterData, triggerName);
         return fighterData.Fighter.Abilities[rand];
+    }
+
+    private void LaunchAbiltiyPlayer0(FighterData fighterData)
+    {
+        _animPlayer0.runtimeAnimatorController = _abilityIndexPlayer0._animatorController;
+        var triggerName = _abilityIndexPlayer0.attackName;
+        _battleSystem.BattleUI.SetAnimTrigger(fighterData, triggerName);
+    }
+    
+    private void LaunchAbiltiyPlayer1(FighterData fighterData)
+    {
+        _animPlayer1.runtimeAnimatorController = _abilityIndexPlayer1._animatorController;
+        var triggerName = _abilityIndexPlayer1.attackName;
+        _battleSystem.BattleUI.SetAnimTrigger(fighterData, triggerName);
     }
 }

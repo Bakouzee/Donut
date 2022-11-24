@@ -11,6 +11,8 @@ namespace Com.Donut.BattleSystem
         private FighterData _currentTargetData;
         private FighterData _previousTargetData;
 
+        private Abilities _fighterAbility;
+
         private List<int> _listEnemyAliveIndex = new List<int>();
         public PlayerAttack(BattleSystem battleSystem) : base(battleSystem)
         {
@@ -18,13 +20,13 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator Start()
         {
+            _fighterAbility = BattleSystem.CurrentFighterData.CurrentAbility;
+            
             _listEnemyAliveIndex = CheckEnemyAlive();
 
-            if (_listEnemyAliveIndex.Count > 1)               //Check si il y a plus d'un enemi en vie
+            if (_listEnemyAliveIndex.Count > 1 && _fighterAbility.actionType == Abilities.ActionType.Damage)               //Check si il y a plus d'un enemi en vie
             {
                 _currentTargetData = _listEnemyAliveIndex.Contains(1) ? BattleSystem.ListEnemiesData[1] : BattleSystem.ListEnemiesData[0];
-                Debug.Log(_currentTargetData.FighterGo.name);
-                
                 BattleSystem.BattleUI.SetActiveInputOnEnemy(_currentTargetData, true);
                 BattleSystem.playerTargetTransform = _currentTargetData.FighterGo.GetComponent<RectTransform>();
                 _previousTargetData = _currentTargetData;
@@ -32,7 +34,6 @@ namespace Com.Donut.BattleSystem
             else                                      //Tester si un seul enemy est en vie 
             {
                 BattleSystem.CanUseInput = false;
-
                 _currentTargetData = BattleSystem.ListEnemiesData[_listEnemyAliveIndex[0]];
                 BattleSystem.playerTargetTransform = _currentTargetData.FighterGo.GetComponent<RectTransform>();
                 Attack();
@@ -42,83 +43,60 @@ namespace Com.Donut.BattleSystem
         }
         public override IEnumerator UseInput_A()
         {
-            if (CheckPlayer(0) && !_currentTargetData.Fighter.IsDead)
-            {
-                Attack();
-                BattleSystem.BattleUI.SetActiveInputOnEnemy(_currentTargetData, false);
-                BattleSystem.CanUseInput = false;
-            }
-            else if (CheckPlayer(0) && _currentTargetData.Fighter.IsDead)
-            {
-                Debug.Log("Cant attack dead enemies");
-            }
-                
-            
-            yield break;
+            if (!CheckPlayer(0) || _currentTargetData.Fighter.IsDead) yield break;
+            Attack();
+            BattleSystem.BattleUI.SetActiveInputOnEnemy(_currentTargetData, false);
+            BattleSystem.CanUseInput = false;
         }
 
 
         public override IEnumerator UseInput_B()
         {
-            if (CheckPlayer(1) && !_currentTargetData.Fighter.IsDead)
-            {
-                Attack();
-                BattleSystem.BattleUI.SetActiveInputOnEnemy(_currentTargetData, false);
-                BattleSystem.CanUseInput = false;
-            }
-            else if (CheckPlayer(1) && _currentTargetData.Fighter.IsDead)
-            {
-                Debug.Log("Cant attack dead enemies");
-            }
-
-            yield break;
+            if (!CheckPlayer(1) || _currentTargetData.Fighter.IsDead) yield break;
+            Attack();
+            BattleSystem.BattleUI.SetActiveInputOnEnemy(_currentTargetData, false);
+            BattleSystem.CanUseInput = false;
         }
 
         public override IEnumerator UseInput_upArrow()
         {
-            if (_listEnemyAliveIndex.Count <= 1) yield break;
+            if (_listEnemyAliveIndex.Count <= 1 || _fighterAbility.actionType != Abilities.ActionType.Damage) yield break;
             
             if (_currentTargetData == BattleSystem.ListEnemiesData[2] && !BattleSystem.ListEnemiesData[0].Fighter.IsDead)
                 TargetEnemy(0);
             else if (_currentTargetData == BattleSystem.ListEnemiesData[0] && !BattleSystem.ListEnemiesData[1].Fighter.IsDead)
                 TargetEnemy(1);
-            
-            yield break;
         }
         
         public override IEnumerator UseInput_downArrow()
         {
-            if (_listEnemyAliveIndex.Count <= 1) yield break;
+            if (_listEnemyAliveIndex.Count <= 1 || _fighterAbility.actionType != Abilities.ActionType.Damage) yield break;
             
             if (_currentTargetData == BattleSystem.ListEnemiesData[1] && !BattleSystem.ListEnemiesData[0].Fighter.IsDead)
                 TargetEnemy(0);
 
             else if (_currentTargetData == BattleSystem.ListEnemiesData[0] && !BattleSystem.ListEnemiesData[2].Fighter.IsDead)
                  TargetEnemy(2);
-
-            yield break;
         }
         
         public override IEnumerator AnimationEnded()
         {
-            Debug.Log("AnimationEnded");
-            
             BattleSystem.BattleUI.ResetAnimator();
             var enemy = _currentTargetData;
             BattleSystem.CurrentEnemyData = enemy;
-            Debug.Log(enemy.FighterGo.name);
-            var playerAbility = BattleSystem.CurrentFighterData.CurrentAbility;
 
-            switch (BattleSystem.CurrentFighterData.Fighter.CanOneShot)
+            switch (_fighterAbility.actionType)  
             {
-                case true when playerAbility.actionType == Abilities.ActionType.Damage:
-                    enemy.Fighter.Damage(int.MaxValue);
+                case Abilities.ActionType.Damage:
+                    enemy.Fighter.Damage(BattleSystem.CurrentFighterData.Fighter.CanOneShot
+                        ? int.MaxValue
+                        : _fighterAbility.amount);
                     break;
-                case false when playerAbility.actionType == Abilities.ActionType.Damage:
-                    enemy.Fighter.Damage(playerAbility.amount);
+                case Abilities.ActionType.Heal:
+                    BattleSystem.CurrentFighterData.Fighter.Heal(_fighterAbility.amount); //Anim Heal
                     break;
-                default:
-                    BattleSystem.CurrentFighterData.Fighter.Heal(playerAbility.amount); //Anim Heal
+                case Abilities.ActionType.Escape:
+                    BattleSystem.SetState(new Escape(BattleSystem));
                     break;
             }
 
@@ -203,7 +181,6 @@ namespace Com.Donut.BattleSystem
             BattleSystem.BattleUI.SetActiveInputOnEnemy(_currentTargetData, true);
             BattleSystem.playerTargetTransform = _currentTargetData.FighterGo.GetComponent<RectTransform>();
             _previousTargetData = _currentTargetData;
-            
         }
 
     }

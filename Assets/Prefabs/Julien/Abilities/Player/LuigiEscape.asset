@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 630b3ff6543b2d142b3abcdfe9f1bd71, type: 3}
-  m_Name: Escape
+  m_Name: LuigiEscape
   m_EditorClassIdentifier: 
   attackId: 3
-  attackName: Espace
+  attackName: Escape
   iconSprite: {fileID: -1296334664, guid: 385e44a01c85a8b43b2fab330a309126, type: 3}
   attackDesc: Run away
-  damage: 0
-  _animatorController: {fileID: 0}
+  actionType: 2
+  amount: 0
+  _animatorController: {fileID: 9100000, guid: f3311239f4a7b6247a0018088f25435c, type: 2}
   hitColor: {r: 1, g: 1, b: 1, a: 1}

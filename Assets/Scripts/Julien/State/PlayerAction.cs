@@ -16,7 +16,6 @@ namespace Com.Donut.BattleSystem
         }
         public override IEnumerator UseInput_A()
         {
-            Debug.Log("Press A");
             if (CheckPlayer(0))
             {
                 DisableInputOnPlayer();
@@ -30,7 +29,6 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator UseInput_B()
         {
-            Debug.Log("Press B");
             if (CheckPlayer(1))
             {
                 DisableInputOnPlayer();
@@ -48,8 +46,6 @@ namespace Com.Donut.BattleSystem
             yield break;
         }
         
-
-        
         private void DisableInputOnPlayer()
         {
             BattleSystem.BattleUI.SetActiveInputOnPlayer(BattleSystem.CurrentFighterData, false);
@@ -57,9 +53,7 @@ namespace Com.Donut.BattleSystem
 
         private bool CheckPlayer(byte id)
         {
-            if (BattleSystem.CurrentFighterData.ID == id)
-                return true;
-            return false;
+            return BattleSystem.CurrentFighterData.ID == id;
         }
         
         private void ChooseAttack()
