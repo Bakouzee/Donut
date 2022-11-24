@@ -23,7 +23,13 @@ public static class DialogueSystem
             yield return webRequest.SendWebRequest();
             Debug.Log("Success");
             Debug.Log("Data :" + webRequest.downloadHandler.text);
-            System.IO.File.Create("Assets/Dialogue/" + webRequest.downloadHandler);
+            string path = Application.persistentDataPath + "/Dialogues/" + webRequest.downloadHandler;
+            if(!Directory.Exists(Application.persistentDataPath + "/Dialogues"))
+                Directory.CreateDirectory(Application.persistentDataPath + "/Dialogues");
+
+            System.IO.File.Create(path);
+            string results = webRequest.downloadHandler.text;
+            Debug.Log(results);
         }
     }
 }
