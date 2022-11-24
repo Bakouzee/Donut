@@ -12,6 +12,8 @@ namespace Com.Donut.BattleSystem
         public override IEnumerator Start()
         {
             //Launch all anim or let time for anim
+            BattleSystem.BattleUI.EnemyNameplateAnim();
+            BattleSystem.BattleUI.NamePlatePlayersAnim();
 
             yield return new WaitForSeconds(2f);
             BattleSystem.SetState(new PlayerTurn(BattleSystem));
