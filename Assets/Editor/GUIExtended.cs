@@ -2,15 +2,15 @@ using UnityEditor;
 using UnityEditor.Build.Reporting;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityToolbarExtender;
+//using UnityToolbarExtender;
 
 [InitializeOnLoad]
 public class GUIExtended
 {
     static GUIExtended()
     {
-        ToolbarExtender.LeftToolbarGUI.Add(OnLeftToolbarGUI);
-        ToolbarExtender.RightToolbarGUI.Add(OnRightToolbarGUI);
+       // ToolbarExtender.LeftToolbarGUI.Add(OnLeftToolbarGUI);
+       // ToolbarExtender.RightToolbarGUI.Add(OnRightToolbarGUI);
     }
 
     private static void OnLeftToolbarGUI()

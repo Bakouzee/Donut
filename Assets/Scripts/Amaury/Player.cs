@@ -121,7 +121,7 @@ public class Player : Character  {
 
     public void OnTransformation(InputAction.CallbackContext e) {
         if (e.performed) {
-            textInput.color = new Color(0.65f, 0.4f, 0, 1);
+            textInput.color = new Color(0.65f, 0.4f, 0, 1); 
             SwitchAnimState("WC_Run");
             isTransformed = !isTransformed;
             //UI Gamefeel
@@ -204,7 +204,7 @@ public class Player : Character  {
             Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
             direction = reflectVec;
         }
-        if (isTransformed && !col.gameObject.CompareTag("Destructible") && !col.gameObject.CompareTag("Enemy"))
+        if (isTransformed)
         {
             impulseSource.GenerateImpulse();
             powFx.transform.position = col.GetContact(0).point;
