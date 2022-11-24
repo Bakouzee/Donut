@@ -121,7 +121,7 @@ public class Player : Character  {
 
     public void OnTransformation(InputAction.CallbackContext e) {
         if (e.performed) {
-            textInput.color = new Color(0.65f, 0.4f, 0, 1);
+            textInput.color = new Color(0.65f, 0.4f, 0, 1); 
             SwitchAnimState("WC_Run");
             isTransformed = !isTransformed;
             //UI Gamefeel
@@ -197,7 +197,6 @@ public class Player : Character  {
             direction = Vector3.zero;
             //battleSystem.listEnemyFighters.Add(col.gameObject.GetComponent<EnemyPatrolNew>().data);
             Destroy(col.gameObject);
-            battleSystem.GetComponent<CheatManager>().IsInBattle = true;
             battleSystem.SetState(new Init(battleSystem));
         }
         else

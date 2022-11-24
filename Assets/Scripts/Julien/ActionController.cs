@@ -114,13 +114,13 @@ public class ActionController : MonoBehaviour
         {
             _animPlayer0.runtimeAnimatorController = _abilityIndexPlayer0._animatorController;
             var triggerName = _abilityIndexPlayer0.attackName;
-            _battleSystem.Interface.SetAnimTrigger(fighterData, triggerName);
+            _battleSystem.BattleUI.SetAnimTrigger(fighterData, triggerName);
         }
         else if (fighterData == _battleSystem.ListPlayersData[1])
         {
             _animPlayer1.runtimeAnimatorController = _abilityIndexPlayer1._animatorController;
             var triggerName = _abilityIndexPlayer1.attackName;
-            _battleSystem.Interface.SetAnimTrigger(fighterData, triggerName);
+            _battleSystem.BattleUI.SetAnimTrigger(fighterData, triggerName);
         }
     }
 
@@ -134,7 +134,7 @@ public class ActionController : MonoBehaviour
     {
         int rand = Random.Range(0, fighterData.Fighter.Abilities.Count);
         var triggerName = fighterData.Fighter.Abilities[rand].attackName;
-        _battleSystem.Interface.SetAnimTrigger(fighterData, triggerName);
+        _battleSystem.BattleUI.SetAnimTrigger(fighterData, triggerName);
         return fighterData.Fighter.Abilities[rand];
     }
 }

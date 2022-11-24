@@ -44,7 +44,7 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator UseInput_rightArrow()
         {
-            BattleSystem.CurrentFighterData.SetFighterCurrentAbility(BattleSystem.Interface.ShiftAction(BattleSystem.CurrentFighterData));
+            BattleSystem.CurrentFighterData.SetFighterCurrentAbility(BattleSystem.BattleUI.ShiftAction(BattleSystem.CurrentFighterData));
             yield break;
         }
         
@@ -52,7 +52,7 @@ namespace Com.Donut.BattleSystem
         
         private void DisableInputOnPlayer()
         {
-            BattleSystem.Interface.SetActiveInputOnPlayer(BattleSystem.CurrentFighterData, false);
+            BattleSystem.BattleUI.SetActiveInputOnPlayer(BattleSystem.CurrentFighterData, false);
         }
 
         private bool CheckPlayer(byte id)
@@ -64,8 +64,8 @@ namespace Com.Donut.BattleSystem
         
         private void ChooseAttack()
         {
-            BattleSystem.Interface.SetAnimTrigger(BattleSystem.CurrentFighterData, "ChooseAbility");
-            BattleSystem.Interface.SetActiveAbility(BattleSystem.CurrentFighterData, false);
+            BattleSystem.BattleUI.SetAnimTrigger(BattleSystem.CurrentFighterData, "ChooseAbility");
+            BattleSystem.BattleUI.SetActiveAbility(BattleSystem.CurrentFighterData, false);
         }
     }
 }

@@ -13,15 +13,17 @@ namespace Com.Donut.BattleSystem
         [SerializeField, Range(1, 3)] private int numberOfEnemy;
         [SerializeField] private Player player;
 
-        public bool onlyBattlePhaseScene;
+        [SerializeField] private bool onlyBattlePhaseScene;
+        public bool OnlyBattlePhaseScene => onlyBattlePhaseScene;
         public Player Player => player;
 
 
         [HideInInspector] public static FighterData CurrentFighterData;
+        [HideInInspector] public static FighterData CurrentEnemyData;
         [HideInInspector] public static bool CanUseInput = false;
-        [HideInInspector] public Transform playerTargetTransform;
-        [HideInInspector] public Transform enemyTargetTransform;
-        public BattleUI Interface => ui;
+        [HideInInspector] public RectTransform playerTargetTransform;
+        [HideInInspector] public RectTransform enemyTargetTransform;
+        public BattleUI BattleUI => ui;
         
         public readonly List<FighterData> ListPlayersData = new List<FighterData>();
         public readonly List<FighterData> ListEnemiesData = new List<FighterData>();
@@ -32,9 +34,12 @@ namespace Com.Donut.BattleSystem
         {
             if(onlyBattlePhaseScene)
                 SetState((new Init(this))); //Start set in the player collision
-
-            if(ui != null)
-                ui.gameObject.SetActive(false);
+            else
+            {
+                if(ui != null)
+                    ui.gameObject.SetActive(false);
+            }
+ 
         }
 
         public void StartBattlePhaseCinematic()
@@ -46,7 +51,7 @@ namespace Com.Donut.BattleSystem
             ListPlayersData.Add(new FighterData(fighterDatabase.PlayersList[0], 0));
             ListPlayersData.Add(new FighterData(fighterDatabase.PlayersList[1], 1));
             AddEnemiesToList();
-            Interface.Initialize(this, ListPlayersData[0], ListPlayersData[1], ListEnemiesData, arenaSprite);
+            BattleUI.Initialize(this, ListPlayersData[0], ListPlayersData[1], ListEnemiesData, arenaSprite);
             CurrentFighterData = ListPlayersData[0];
             _cheatManager = GetComponent<CheatManager>();
             _cheatManager.Initialize(this);
@@ -56,12 +61,11 @@ namespace Com.Donut.BattleSystem
         {
             for (int x = 0; x < numberOfEnemy; x++)
             {
-                ListEnemiesData.Add(new FighterData(fighterDatabase.EnemiesList[0], (byte)x)); //Un seul enemy pour le moment
+                var enemy = fighterDatabase.EnemiesList[0].Clone();
+                ListEnemiesData.Add(new FighterData(enemy as Fighter, (byte)x));
             }
-            
         }
-
-        //[ContextMenu("ResetBattleSystem")]
+        
         public void ResetBattleSystem()
         {
             Destroy(ListPlayersData[0].FighterGo.gameObject);
@@ -71,11 +75,10 @@ namespace Com.Donut.BattleSystem
             {
                 Destroy(enemy.FighterGo.gameObject);
             }
-            ListEnemiesData.Clear();
-            Interface.ClearAnimatorListEnemies();
             
-            _cheatManager.IsInBattle = false;
-            _cheatManager.IsInitialized = false;
+            ListEnemiesData.Clear();
+            BattleUI.ClearAnimatorListEnemies();
+            _cheatManager.ResetInitialization();
         }
 
         #region Inputs
@@ -149,5 +152,20 @@ namespace Com.Donut.BattleSystem
         
 
         #endregion
+        
+        [ContextMenu("DebugEnnemies")]
+        public void DebugEnnemies()
+        {
+            foreach (FighterData enemyData in ListEnemiesData)
+            {
+                Debug.Log(enemyData.FighterGo.name + " " + enemyData.Fighter.IsDead + " " + "Hp " + enemyData.Fighter.CurrentHealth);
+            }
+        }
+
+        [ContextMenu("DamageEnemy0")]
+        public void DamageEnemy0()
+        {
+            ListEnemiesData[0].Fighter.Damage(10);
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using static SaveGameData;
 
 public static class SaveGameSystem
 {
@@ -48,7 +49,7 @@ public static class SaveGameSystem
         Debug.Log("Save game successful");
     }
 
-    public static SaveGameData.GameData LoadGameData()
+    public static SaveGameData.GameData LoadGameData(Fighter player)
     {
         string path = Application.persistentDataPath + "/Game.save";
 
@@ -62,6 +63,7 @@ public static class SaveGameSystem
             aM.SetFloat("MasterVolume", data.MyGameData.masterVolume);
             aM.SetFloat("MusicVolume", data.MyGameData.musicVolume);
             aM.SetFloat("SFXVolume", data.MyGameData.sfxVolume);
+            player.CurrentHealth = data.MyGameData.Player.life;
 
             RestoreValueSliders(data.MyGameData.masterVolume, data.MyGameData.musicVolume, data.MyGameData.sfxVolume);
             stream.Close();
@@ -74,7 +76,7 @@ public static class SaveGameSystem
         {
             Debug.LogWarning("Save file not found in " + path);
             ResetGameData();
-            return LoadGameData();
+            return LoadGameData(player);
         }
     }
 

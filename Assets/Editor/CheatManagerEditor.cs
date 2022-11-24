@@ -43,7 +43,7 @@ namespace Com.Donut.BattleSystem
         {
             source = (CheatManager)target;
 
-            if (!Application.isPlaying || !source.IsInBattle)
+            if (!Application.isPlaying || !source.IsInitialized)
             {
                 EditorGUILayout.HelpBox("Enable on runtime and in the Battle only", MessageType.Warning);
                 return;

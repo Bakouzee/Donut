@@ -58,6 +58,7 @@ public abstract class Character : MonoBehaviour
     protected void SwitchAnimState(string newState) {
         if (currentState == newState || newState == null) return;
 
+
         animController.Play(name + "_" +  newState);
         currentState = newState.Replace(name,"");
     }
