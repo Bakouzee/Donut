@@ -60,6 +60,8 @@ public class AnimationCreatorEditor : Editor {
             Sprite[] sprites = Resources.LoadAll<Sprite>(animCreator.texture.name);
             ObjectReferenceKeyframe[] objFrames = new ObjectReferenceKeyframe[sprites.Length];
            
+            Debug.Log("length " + sprites.Length);
+            
             for (int i = 0; i < sprites.Length; i++) {
                 objFrames[i].time = animCreator.timeBetweenSprite / 60f * i;
                 objFrames[i].value = sprites[i];
@@ -68,9 +70,6 @@ public class AnimationCreatorEditor : Editor {
             if (animCreator.isLooping) { // Not working
                 clip.wrapMode = WrapMode.Loop;
             }
-            
-            
-            animCreator.target.GetComponent<SpriteRenderer>().sprite.GetType();
 
             AnimationUtility.SetObjectReferenceCurve(clip,EditorCurveBinding.DiscreteCurve("",typeof(SpriteRenderer),"m_Sprite"), objFrames);
             AssetDatabase.CreateAsset(clip,"Assets/" + animCreator.animPath + "/" + animCreator.animName + ".anim");

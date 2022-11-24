@@ -21,6 +21,8 @@ public class Player : Character  {
     private float initialSpeed;
     public List<IFollowable> followers;
 
+    public bool isMooving;
+
     private int lastFollowersSize = -1;
 
     public bool hasCarapace;
@@ -40,6 +42,8 @@ public class Player : Character  {
     public bool hasKey;
     private GameObject newVFX;
 
+    private string anim_idle_id;
+
     public override void Awake() {
         base.Awake();
         
@@ -53,10 +57,7 @@ public class Player : Character  {
 
     public override void Update() {
         base.Update();
-
-        //  if(lastFollowersSize != followers.Count)
-        //    ManageFollowers(followers.Count > lastFollowersSize); // To Modify : probably doesn't work with follower remove
-
+        
         lastFollowersSize = followers.Count;
     }
     
@@ -64,10 +65,14 @@ public class Player : Character  {
       //  if (MinimapController.instance.isInMap)
         //    return;
         
+        
         if (!hasCarapace)
         {
             if (movement == Vector2.zero)
+            {
                 SwitchAnimState(IDLES[0]);
+                Debug.Log("lastVel " + lastVelocity);
+            }
             else {
                 string anim_id = movement.x != 0 && movement.y == 0 ? WALKS[2] : movement.y > 0 && movement.x == 0 ? WALKS[1] : WALKS[0];
                 SwitchAnimState(anim_id);
@@ -75,8 +80,12 @@ public class Player : Character  {
         }
         else if(!isTransformed)
         {
-            if (movement == Vector2.zero)
-                SwitchAnimState(IDLES[0]);
+            if (movement == Vector2.zero) {
+                if (lastVelocity != Vector3.zero) 
+                    anim_idle_id = lastVelocity.x > 0 && lastVelocity.y == 0 ? IDLES[2] : lastVelocity.x < 0 && lastVelocity.y == 0 ? IDLES[3] : lastVelocity.y > 0 && lastVelocity.x == 0 ? IDLES[1] : IDLES[0];
+
+                SwitchAnimState(anim_idle_id);
+            }
             else {
                 string anim_id = movement.x != 0 && movement.y == 0 ? WALKS_CARAPACE[2] : movement.y > 0 && movement.x == 0 ? WALKS_CARAPACE[1] : WALKS_CARAPACE[0];
                 SwitchAnimState(anim_id);
@@ -85,11 +94,11 @@ public class Player : Character  {
 
         rb.velocity = movement * speed;
 
-        if (isTransformed) {
+        if (isTransformed) 
             rb.velocity = direction * speed;
-        }
+        
 
-        spriteRenderer.flipX = movement.x < 0 && movement.y == 0;
+        spriteRenderer.flipX = movement.x < 0 && movement.y == 0 ;
         lastVelocity = rb.velocity;
     }
 
@@ -104,6 +113,8 @@ public class Player : Character  {
             movement = e.ReadValue<Vector2>();
         if(e.canceled)
             movement = Vector2.zero;
+
+        isMooving = movement != Vector2.zero;
     }
 
     public void OnTransformation(InputAction.CallbackContext e) {
