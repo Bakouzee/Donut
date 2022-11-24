@@ -25,13 +25,15 @@ public class DialogController : SingletonBase<DialogController> {
         authorName.text = targetDialog.author;
         currentDialog = targetDialog;
         actualPage = 0;
-        isInDialog = true;
+        
+        Debug.Log("start my dialog");
         
         StartCoroutine(DisplayText(targetDialog, actualPage));
     }
 
     private IEnumerator DisplayText(Dialog targetDialog,int page) {
 
+        isInDialog = true;
         for (int i = 0; i < targetDialog.pages[page].Length; i++) {
             yield return new WaitForSeconds(speed);
             isDisplayingText = true;
@@ -43,8 +45,10 @@ public class DialogController : SingletonBase<DialogController> {
     }
 
     public void OnInteract(InputAction.CallbackContext e) {
-        if (e.started && !isDisplayingText && currentDialog != null) {
+        if (e.started && !isDisplayingText && isInDialog && currentDialog != null) {
             if (currentDialog.pages.Count == 1  || actualPage >= currentDialog.pages.Count - 1) {
+                
+                Debug.Log("enter stop dialog");
                 authorSprite.transform.parent.gameObject.SetActive(false);
                 currentDialog = null;
                 StartCoroutine(Wait());

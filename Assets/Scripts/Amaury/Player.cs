@@ -125,7 +125,7 @@ public class Player : Character  {
             SwitchAnimState("WC_Run");
             isTransformed = !isTransformed;
             //UI Gamefeel
-            if(isTransformed == true)
+            if(isTransformed)
             {
                 direction = Vector3.zero;
                 playerImg.SetActive(true);
