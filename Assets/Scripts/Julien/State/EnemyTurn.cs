@@ -20,8 +20,17 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator AnimationEnded()
         {
-            _targetData.Fighter.Damage(_currentAbility.damage);
-            BattleSystem.Interface.UpdateUI();
+            switch (_currentAbility.actionType)
+            {
+                case Abilities.ActionType.Damage:
+                    _targetData.Fighter.Damage(_currentAbility.amount);
+                    break;
+                case Abilities.ActionType.Heal:
+                    BattleSystem.CurrentEnemyData.Fighter.Heal(_currentAbility.amount);
+                    break;
+            }
+            
+            BattleSystem.BattleUI.UpdateUI();
 
             if (_targetData.Fighter.IsDead)
             {
@@ -47,7 +56,7 @@ namespace Com.Donut.BattleSystem
         
         public override IEnumerator HitEffect()
         {
-            BattleSystem.Interface.LaunchFlashEffect(_targetData, _currentAbility.hitColor);
+            BattleSystem.BattleUI.LaunchFlashEffect(_targetData, _currentAbility.hitColor);
             yield break;
         }
         
@@ -60,24 +69,24 @@ namespace Com.Donut.BattleSystem
                 if (rand == 0)
                 {
                     _targetData = BattleSystem.ListPlayersData[0];
-                    BattleSystem.enemyTargetTransform = BattleSystem.ListPlayersData[0].FighterGo.transform;
+                    BattleSystem.enemyTargetTransform = BattleSystem.ListPlayersData[0].FighterGo.GetComponent<RectTransform>();
                 }
                 else
                 {
                     _targetData = BattleSystem.ListPlayersData[1];
-                    BattleSystem.enemyTargetTransform = BattleSystem.ListPlayersData[1].FighterGo.transform;
+                    BattleSystem.enemyTargetTransform = BattleSystem.ListPlayersData[1].FighterGo.GetComponent<RectTransform>();
                 }
             }
             else
             {
                 _targetData = BattleSystem.CurrentFighterData;
 
-                BattleSystem.enemyTargetTransform = BattleSystem.CurrentFighterData == BattleSystem.ListPlayersData[0] ? BattleSystem.ListPlayersData[0].FighterGo.transform : BattleSystem.ListPlayersData[1].FighterGo.transform;
+                BattleSystem.enemyTargetTransform = BattleSystem.CurrentFighterData == BattleSystem.ListPlayersData[0] ? BattleSystem.ListPlayersData[0].FighterGo.GetComponent<RectTransform>() : BattleSystem.ListPlayersData[1].FighterGo.GetComponent<RectTransform>();
             }
                 
 
-            _currentAbility = BattleSystem.Interface.LaunchEnemyAbility(BattleSystem.ListEnemiesData[0]); //Update to random enemy if multiple enemy
-            BattleSystem.Interface.LaunchAbility(BattleSystem.ListEnemiesData[0]); //Random attack of enemy
+            _currentAbility = BattleSystem.BattleUI.LaunchEnemyAbility(BattleSystem.ListEnemiesData[0]); //Update to random enemy if multiple enemy
+            BattleSystem.BattleUI.LaunchAbility(BattleSystem.ListEnemiesData[0]); //Random attack of enemy
         }
 
         private bool CheckIfBothPlayersAreDead()

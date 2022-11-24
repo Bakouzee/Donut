@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 630b3ff6543b2d142b3abcdfe9f1bd71, type: 3}
-  m_Name: Foot
+  m_Name: MarioHeal
   m_EditorClassIdentifier: 
-  attackId: 2
-  attackName: Foot
-  iconSprite: {fileID: -83949001, guid: 385e44a01c85a8b43b2fab330a309126, type: 3}
-  attackDesc: Crush enemies with your foot
-  damage: 0
-  _animatorController: {fileID: 0}
+  attackId: 6
+  attackName: Heal
+  iconSprite: {fileID: -1503908025, guid: 22efb21bc7d5ed441aa7a47aaec60286, type: 3}
+  attackDesc: Heal yourself
+  actionType: 1
+  amount: 20
+  _animatorController: {fileID: 9100000, guid: e9460a317209bc54194d284d1c4e1282, type: 2}
   hitColor: {r: 1, g: 1, b: 1, a: 1}

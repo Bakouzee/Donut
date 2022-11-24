@@ -23,11 +23,17 @@ public class GameManager : SingletonBase<GameManager>
     public bool IsPaused { get { return isPaused; } private set { isPaused = value; } }
     #endregion
 
+    protected override void Awake()
+    {
+        base.Awake();
+        DialogueSystem.ShowDataPath();
+    }
+
     public void OnChangePhase()
     {
         if (isBattle)
         {
-            battleSystem.Interface.gameObject.SetActive(true);
+            battleSystem.BattleUI.gameObject.SetActive(true);
             Everything = Camera.main.cullingMask;
             Camera.main.cullingMask = LayersToKeep;
             isBattle = false;
@@ -35,7 +41,7 @@ public class GameManager : SingletonBase<GameManager>
         }
         else
         {
-            battleSystem.Interface.gameObject.SetActive(false);
+            battleSystem.BattleUI.gameObject.SetActive(false);
             Camera.main.cullingMask = Everything;
             RestoreControls();
             isBattle = true;

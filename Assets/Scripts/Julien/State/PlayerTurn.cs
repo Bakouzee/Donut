@@ -10,8 +10,8 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator Start()
         {
-            BattleSystem.Interface.SetActiveAbility(BattleSystem.CurrentFighterData, true);
-            BattleSystem.Interface.SetActiveInputOnPlayer(BattleSystem.CurrentFighterData, true);
+            BattleSystem.BattleUI.SetActiveAbility(BattleSystem.CurrentFighterData, true);
+            BattleSystem.BattleUI.SetActiveInputOnPlayer(BattleSystem.CurrentFighterData, true);
             BattleSystem.CanUseInput = true;
 
             BattleSystem.SetState(new PlayerAction(BattleSystem));

@@ -20,6 +20,6 @@ public class SaveGameController : MonoBehaviour
 
     public void OnLoad()
     {
-        SaveGameData.GameData gameData = SaveGameSystem.LoadGameData();
+        SaveGameData.GameData gameData = SaveGameSystem.LoadGameData(player.PlayersList[0]);
     }
 }
