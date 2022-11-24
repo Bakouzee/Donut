@@ -4227,7 +4227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2852670192177853241
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4348,13 +4348,12 @@ MonoBehaviour:
   playerNameplate0: {fileID: 9223367969676811624}
   playerNameplate1: {fileID: 1673699315528064774}
   listEnemyNameplate:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1198266125327882892}
+  - {fileID: 6364223177878103199}
+  - {fileID: 920935981513348209}
   actionController: {fileID: 2852670191837210050}
   inputsUI: {fileID: 2852670190473086898}
   flashEffect: {fileID: 2852670190662011876}
-  dialogText: {fileID: 0}
   pauseScreen: {fileID: 2852670190450021817}
   winScreen: {fileID: 2852670191930202667}
   looseScreen: {fileID: 2852670192077512758}

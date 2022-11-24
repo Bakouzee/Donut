@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6491209582151590915}
   - component: {fileID: 6491209582151590914}
   - component: {fileID: 6491209582151590917}
+  - component: {fileID: 1573126350}
   m_Layer: 0
   m_Name: BattleSystem
   m_TagString: Untagged
@@ -47,12 +48,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 0}
   arenaSprite: {fileID: 21300000, guid: 62e0be862ee8cce4896d230bf52743b0, type: 3}
-  player0: {fileID: 11400000, guid: 4f7f21c9567d2ad4e96611fbacbdd464, type: 2}
-  player1: {fileID: 11400000, guid: 0cf74ced79ad3c3459575d883fc68d95, type: 2}
-  listEnemyFighters:
-  - {fileID: 11400000, guid: 40ecd8aa74ee7cc44b7bfdd49ac417a7, type: 2}
-  - {fileID: 11400000, guid: 40ecd8aa74ee7cc44b7bfdd49ac417a7, type: 2}
-  - {fileID: 11400000, guid: 40ecd8aa74ee7cc44b7bfdd49ac417a7, type: 2}
+  fighterDatabase: {fileID: 11400000, guid: 2dddbb9f54aeedc4bb44f8addb846381, type: 2}
+  numberOfEnemy: 3
+  player: {fileID: 0}
+  onlyBattlePhaseScene: 0
   playerTargetTransform: {fileID: 0}
   enemyTargetTransform: {fileID: 0}
 --- !u!114 &6491209582151590917
@@ -118,3 +117,16 @@ MonoBehaviour:
   m_DefaultActionMap: BattleSystem
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1573126350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6491209582151590912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4540feccca417b241a7536caf0dc57d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cheatReceiverState: 0
