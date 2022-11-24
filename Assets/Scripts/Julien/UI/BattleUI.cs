@@ -194,6 +194,9 @@ namespace Com.Donut.BattleSystem
 
         public void SetAnimTrigger(FighterData fighterData, string triggerName)
         {
+            //if()
+                
+                
             if (fighterData == _battleSystem.ListPlayersData[0])
                 _animPlayer0.SetTrigger(triggerName);
             else if (fighterData == _battleSystem.ListPlayersData[1])
