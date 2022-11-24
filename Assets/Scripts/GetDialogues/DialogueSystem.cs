@@ -1,35 +1,44 @@
 using UnityEngine;
 using System.IO;
-using UnityEngine.Networking;
-using static System.Net.WebRequestMethods;
 using System.Collections;
-using UnityEditor;
+using System.Collections.Generic;
 
 public static class DialogueSystem
 {
-    private const string sheetID = "1ACsLJEZe0o00_fdj_82lnPHPp2oDGH9wiXPoadmvffg";
-    private const string link = "https://docs.google.com/spreadsheets/d/" + sheetID + "/export?format=csv";
+    private static string language = "Français";
 
-    internal static IEnumerator DlData()
+    public static void ShowDataPath()
     {
-        Debug.Log("in DLDATA");
+        string dialoguePath = Application.dataPath + "/Dialogues/dialogues.csv";
+        string[] data = File.ReadAllLines(dialoguePath);
 
-        yield return new WaitForEndOfFrame();
-        Debug.Log("after DLDATA");
+        List<string[]> lines = new List<string[]>(); // <- rows
 
-        using (UnityWebRequest webRequest = UnityWebRequest.Get(link))
+        for(int i = 0; i < data.Length; i++)
         {
-            Debug.Log("in using");
-            yield return webRequest.SendWebRequest();
-            Debug.Log("Success");
-            Debug.Log("Data :" + webRequest.downloadHandler.text);
-            string path = Application.persistentDataPath + "/Dialogues/" + webRequest.downloadHandler;
-            if(!Directory.Exists(Application.persistentDataPath + "/Dialogues"))
-                Directory.CreateDirectory(Application.persistentDataPath + "/Dialogues");
+            lines.Add(data[i].Split(',')); // <- columns
+        }
 
-            System.IO.File.Create(path);
-            string results = webRequest.downloadHandler.text;
-            Debug.Log(results);
+        if (language == "Français")
+        {
+            //Volume
+            Debug.Log(lines[1][1]);
+
+            //General
+            Debug.Log(lines[2][1]);
+
+            //Musique
+            Debug.Log(lines[3][1]);
+
+            //Effets
+            Debug.Log(lines[4][1]);
+        } else if(language == "English")
+        {
+            Debug.Log(lines[1][2]);
+        }
+        else if(language == "Español")
+        {
+            Debug.Log(lines[1][3]);
         }
     }
 }

@@ -26,7 +26,7 @@ public class GameManager : SingletonBase<GameManager>
     protected override void Awake()
     {
         base.Awake();
-        StartCoroutine(DialogueSystem.DlData());
+        DialogueSystem.ShowDataPath();
     }
 
     public void OnChangePhase()
