@@ -5,12 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Julien.unity
     guid: 6c46a34eaf7a2604383d3bf1235cba36
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Freddy.unity
     guid: 7ac613ee583f3664dbfb7981f862748a
+  - enabled: 1
+    path: Assets/Scenes/FinalLD.unity
+    guid: cacea5e387e18c34d9aca7ad3363105b
+  - enabled: 0
+    path: Assets/Scenes/GrotteLD.unity
+    guid: f728de0c99357434f991fc1a365bfbce
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 270f493463e0249449a416483f7889f9,
       type: 2}

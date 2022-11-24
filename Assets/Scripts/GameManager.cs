@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class GameManager : SingletonBase<GameManager>
 {
+    [SerializeField] private SaveGameController saveController;
+
     [Header("Battle State")]
     public bool isBattle;
     [SerializeField] private BattleSystem battleSystem;
@@ -20,6 +22,12 @@ public class GameManager : SingletonBase<GameManager>
     private bool isPaused;
     public bool IsPaused { get { return isPaused; } private set { isPaused = value; } }
     #endregion
+
+    protected override void Awake()
+    {
+        base.Awake();
+        StartCoroutine(DialogueSystem.DlData());
+    }
 
     public void OnChangePhase()
     {
@@ -63,5 +71,26 @@ public class GameManager : SingletonBase<GameManager>
                 AudioManager.Instance.audioMenu.SetActive(false);
             }
         }
+    }
+
+    public void OnSave(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+            SaveGame();
+    }
+
+    public void OnLoad(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+            LoadGame();
+    }
+
+    public void SaveGame()
+    {
+        saveController.OnSave();
+    }
+    public void LoadGame()
+    {
+        saveController.OnLoad();
     }
 }

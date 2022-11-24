@@ -32,10 +32,17 @@ namespace Com.Donut.BattleSystem
         
         public void Start()
         {
-            if(OnlyBattlePhaseScene)
-                SetState((new Init(this))); //Start if the scene only contain battle
+            if(onlyBattlePhaseScene)
+                SetState((new Init(this))); //Start set in the player collision
+
+            if(ui != null)
+                ui.gameObject.SetActive(false);
         }
-        
+
+        public void StartBattlePhaseCinematic()
+        {
+            SetState((new Init(this)));
+        }
         public void InitializeBattle()
         {
             ListPlayersData.Add(new FighterData(fighterDatabase.PlayersList[0], 0));

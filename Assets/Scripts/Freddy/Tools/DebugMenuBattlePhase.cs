@@ -1,4 +1,4 @@
-using Com.Donut.BattleSystem;
+/*using Com.Donut.BattleSystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,9 +9,9 @@ using UnityEngine;
 
 //[CustomEditor(typeof(DebugMenuBattlePhase))]
 public class DebugMenuBattlePhase : EditorWindow
-{ 
+{
     //private static int numberEnemiesCreated = 0;
-    /*
+
     private static List<Fighter> enemies = new List<Fighter>();
     private static List<bool> enemiesToDelete = new List<bool>();
     private Vector2 scrollPos = Vector2.zero;
@@ -24,7 +24,7 @@ public class DebugMenuBattlePhase : EditorWindow
         DebugMenuBattlePhase window = GetWindow<DebugMenuBattlePhase>();
         window.titleContent = new GUIContent("Debug Menu : Battle Phase");
         window.Show();
-        if(enemies.Count > 0)
+        if (enemies.Count > 0)
         {
             for (int i = 0; i < enemies.Count; i++)
             {
@@ -57,11 +57,11 @@ public class DebugMenuBattlePhase : EditorWindow
 
         if (isShown)
         {
-            for(int i = 0; i < enemies.Count; i++)
+            for (int i = 0; i < enemies.Count; i++)
             {
-                if(isEnemyStatsShown.Count > 0)
+                if (isEnemyStatsShown.Count > 0)
                 {
-                    if(enemies[i].Name == "")
+                    if (enemies[i].Name == "")
                     {
                         isEnemyStatsShown[i] = EditorGUILayout.Foldout(isEnemyStatsShown[i], "New Enemy");
                     }
@@ -94,7 +94,7 @@ public class DebugMenuBattlePhase : EditorWindow
             isEnemyStatsShown.Add(false);
         }
 
-       /* if (save)
+        if (save)
         {
             for (int i = 0; i < enemies.Count; i++)
             {
@@ -156,6 +156,7 @@ public class DebugMenuBattlePhase : EditorWindow
             }
         }
         EditorGUILayout.EndScrollView();
-    }*/
+    }
     
 }
+*/

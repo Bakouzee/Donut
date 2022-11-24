@@ -49,3 +49,6 @@ MonoBehaviour:
   layersToKeep:
     serializedVersion: 2
     m_Bits: 33
+  everything:
+    serializedVersion: 2
+    m_Bits: 2147483647

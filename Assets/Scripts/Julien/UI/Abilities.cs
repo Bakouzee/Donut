@@ -1,4 +1,3 @@
-using UnityEditor.Animations;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -15,6 +14,6 @@ public class Abilities : ScriptableObject
     public string attackDesc;
     public ActionType actionType;
     public int amount;
-    public AnimatorController _animatorController;
+    public RuntimeAnimatorController _animatorController;
     public Color hitColor;
 }

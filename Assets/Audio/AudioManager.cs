@@ -6,6 +6,7 @@ using UnityEngine;
 public class AudioManager : SingletonBase<AudioManager>
 {
     private AudioSource audioSource;
+    public AudioSource AudioSource => audioSource;
     public GameObject audioMenu;
 
     private void Start()

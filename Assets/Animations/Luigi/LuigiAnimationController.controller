@@ -20,7 +20,7 @@ AnimatorStateMachine:
     m_Position: {x: 340, y: 330, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3267656385379662487}
-    m_Position: {x: 375, y: 395, z: 0}
+    m_Position: {x: 340, y: 390, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -38,7 +38,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: L_W_Front
+  m_Name: L_WC_Front
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -64,7 +64,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: L_W_Back
+  m_Name: L_WC_Back
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -112,7 +112,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: L_W_Side
+  m_Name: L_WC_Side
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
