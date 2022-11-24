@@ -25,6 +25,8 @@ public class Player : Character  {
 
     public bool hasCarapace;
     public bool isTransformed;
+    public bool isMooving;
+    public bool hasKey;
 
     public GameObject arrow;
     [SerializeField] public PlayerInput playerInput;
