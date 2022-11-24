@@ -106,29 +106,32 @@ public class Player : Character  {
     }
 
     public void OnTransformation(InputAction.CallbackContext e) {
-        if (e.performed) {
-            textInput.color = new Color(0.65f, 0.4f, 0, 1);
-            SwitchAnimState("WC_Run");
-            isTransformed = !isTransformed;
-            //UI Gamefeel
-            if(isTransformed == true)
-            {
-                direction = Vector3.zero;
-                playerImg.SetActive(true);
-                abilityImg.SetActive(false);
-                //abilityImg.transform.DOMoveY(abilityImg.GetComponent<RectTransform>().rect.position.y - 15f, 0.5f).SetEase(Ease.InElastic).SetEase(HideImg);
-                //playerImg.transform.DOMoveY(playerImg.GetComponent<RectTransform>().rect.position.y + 15f, 0.5f).SetEase(Ease.InElastic);
+        if (hasCarapace)
+        {
+            if (e.performed) {
+                textInput.color = new Color(0.65f, 0.4f, 0, 1);
+                SwitchAnimState("WC_Run");
+                isTransformed = !isTransformed;
+                //UI Gamefeel
+                if(isTransformed == true)
+                {
+                    direction = Vector3.zero;
+                    playerImg.SetActive(true);
+                    abilityImg.SetActive(false);
+                    //abilityImg.transform.DOMoveY(abilityImg.GetComponent<RectTransform>().rect.position.y - 15f, 0.5f).SetEase(Ease.InElastic).SetEase(HideImg);
+                    //playerImg.transform.DOMoveY(playerImg.GetComponent<RectTransform>().rect.position.y + 15f, 0.5f).SetEase(Ease.InElastic);
+                }
+                else
+                {
+                    abilityImg.SetActive(true);
+                    playerImg.SetActive(false);
+                    //playerImg.transform.DOMoveY(playerImg.GetComponent<RectTransform>().rect.position.y - 15f, 0.5f).SetEase(Ease.InElastic).SetEase(HideImg);
+                    //abilityImg.transform.DOMoveY(abilityImg.GetComponent<RectTransform>().rect.position.y + 15f, 0.5f).SetEase(Ease.InElastic);
+                }
             }
-            else
-            {
-                abilityImg.SetActive(true);
-                playerImg.SetActive(false);
-                //playerImg.transform.DOMoveY(playerImg.GetComponent<RectTransform>().rect.position.y - 15f, 0.5f).SetEase(Ease.InElastic).SetEase(HideImg);
-                //abilityImg.transform.DOMoveY(abilityImg.GetComponent<RectTransform>().rect.position.y + 15f, 0.5f).SetEase(Ease.InElastic);
-            }
+            if(e.canceled)
+                textInput.color = new Color(1, 0.55f, 0.04f, 1);
         }
-        if(e.canceled)
-            textInput.color = new Color(1, 0.55f, 0.04f, 1);
     }
 
     private float HideImg(float time, float duration, float overshootOrAmplitude, float period)
