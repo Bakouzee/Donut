@@ -354,7 +354,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &52671041
 Transform:
   m_ObjectHideFlags: 0
@@ -1861,6 +1861,7 @@ MonoBehaviour:
   powFx: {fileID: 0}
   battleSystem: {fileID: 0}
   movement: {x: 0, y: 0}
+  rb: {fileID: 0}
   speed: 5
   isMooving: 0
   hasCarapace: 1
@@ -2778,7 +2779,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2025269107
 Transform:
   m_ObjectHideFlags: 0

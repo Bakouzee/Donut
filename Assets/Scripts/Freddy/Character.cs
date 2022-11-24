@@ -27,6 +27,8 @@ public abstract class Character : MonoBehaviour
     public virtual void Awake() {
         animController = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        currentState = "I_Front";
     }
 
     public virtual void Update() {
@@ -54,7 +56,7 @@ public abstract class Character : MonoBehaviour
     }
 
     protected void SwitchAnimState(string newState) {
-        if (currentState == newState) return;
+        if (currentState == newState || newState == null) return;
 
         animController.Play(name + "_" +  newState);
         currentState = newState.Replace(name,"");

@@ -16,7 +16,9 @@ public class Player : Character  {
     [SerializeField] private Tween tweenPow;
     [SerializeField] private BattleSystem battleSystem;
     public Vector2 movement;
-    private Rigidbody2D rb;
+    
+    [HideInInspector]
+    public Rigidbody2D rb;
     public float speed;
     private float initialSpeed;
     public List<IFollowable> followers;

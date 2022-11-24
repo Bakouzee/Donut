@@ -64,6 +64,8 @@ public class FollowerEntity : Character,IFollowable {
                 directionVec = pMove.x > 0 && pMove.y == 0 ? transform.right : pMove.x < 0 && pMove.y == 0 ? transform.right * -1 : pMove.x == 0 && pMove.y > 0 ? transform.up : transform.up * -1;
 
             agent.SetDestination(target.transform.position - directionVec * range);
+
+            agent.velocity = agent.desiredVelocity;
                 
             if(player.movement != Vector2.zero)
                 SwitchAnimState(target.currentState);
