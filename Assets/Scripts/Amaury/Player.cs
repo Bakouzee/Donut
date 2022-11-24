@@ -224,8 +224,9 @@ public class Player : Character  {
         yield return new WaitForSeconds(0.2f);
         tweenPow = powFx.GetComponent<SpriteRenderer>().DOFade(0, 0.5f);
 
+        //powFx.GetComponent<SpriteRenderer>().enabled = false;
 
-        if (powFx.transform.GetChild(0).GetComponent<VisualEffect>().aliveParticleCount > 0)
+        /*if (powFx.transform.GetChild(0).GetComponent<VisualEffect>().aliveParticleCount > 0)
         {
             newVFX = Instantiate(powFx.transform.GetChild(0).gameObject);
             newVFX.transform.parent = powFx.transform;
@@ -234,19 +235,18 @@ public class Player : Character  {
         else
         {
             powFx.transform.GetChild(0).GetComponent<VisualEffect>().Play();
-        }
+        }*/
 
-        yield return new WaitForSeconds(powFx.transform.GetChild(0).GetComponent<VisualEffect>().GetFloat("Lifetime"));
+        //yield return new WaitForSeconds(powFx.transform.GetChild(0).GetComponent<VisualEffect>().GetFloat("Lifetime"));
 
-        if (newVFX != null && newVFX.GetComponent<VisualEffect>().aliveParticleCount > 0)
+        /*if (newVFX != null && newVFX.GetComponent<VisualEffect>().aliveParticleCount > 0)
         {
             Destroy(newVFX);    
         }
         else if(powFx.transform.GetChild(0).GetComponent<VisualEffect>().aliveParticleCount > 0)
         {
             powFx.transform.GetChild(0).GetComponent<VisualEffect>().Stop();
-        }
-        powFx.GetComponent<SpriteRenderer>().enabled = false;
+        }*/
     }
 
     private IEnumerator VFX(VisualEffect vfxToPlay)
