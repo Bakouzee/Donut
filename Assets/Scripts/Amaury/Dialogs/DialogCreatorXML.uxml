@@ -1,0 +1,38 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:ListView focusable="true" name="dialog-list" style="height: 600px; width: 17%; border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); background-color: rgb(38, 38, 38);" />
+    <ui:VisualElement name="Main" style="position: absolute; width: 455px; height: 213px; top: 3%; left: 452px; border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
+        <ui:VisualElement name="Title" style="position: absolute; left: 0; top: 0; width: 100%; height: 10%; background-color: rgb(29, 29, 29);">
+            <ui:Label text="General" display-tooltip-when-elided="true" name="General" style="left: 0; top: 2%; justify-content: center; align-items: center; -unity-text-align: upper-center; font-size: 16px; -unity-font-style: bold; height: 19px; width: 455px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Field01" style="top: 31px; width: 100%; height: 24px;">
+            <ui:TextField picking-mode="Ignore" label="Dialog Name " value="dialogName" text="My Dialog" name="DialogName" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Field02" style="top: 31px; width: 100%; height: 24px;">
+            <ui:TextField picking-mode="Ignore" label="Author Name " value="authorName" text="My Name" name="AuthorName" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Field06" style="top: 31px; width: 100%; height: 24px;" />
+        <ui:VisualElement name="Field03" style="top: 31px; width: 100%; height: 24px;">
+            <ui:TextField picking-mode="Ignore" label="Content" text="each page separate by ; " name="Content" value="content" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Field08" style="top: 31px; width: 100%; height: 24px;">
+            <ui:Slider picking-mode="Ignore" label="Slider" value="0.5" high-value="1" name="Speed" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Field04" style="top: 31px; width: 100%; height: 24px;">
+            <ui:DropdownField label="Startup" index="-1" choices="None , LOL" name="Startup" focusable="false" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Field05" style="top: 31px; width: 100%; height: 24px;">
+            <ui:Toggle label="Repeatable" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Field07" style="top: 31px; width: 100%; height: 24px;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="OtherCharacters" style="position: absolute; width: 455px; height: 152px; top: 41%; left: 452px; border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
+        <ui:VisualElement name="Title" style="position: absolute; left: 0; top: 0; width: 100%; height: 21px; background-color: rgb(29, 29, 29);">
+            <ui:Label text="Other Characters" display-tooltip-when-elided="true" name="OtherChar" style="left: 0; top: 2%; justify-content: center; align-items: center; -unity-text-align: upper-center; font-size: 16px; -unity-font-style: bold; height: 19px; width: 455px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="DialogBackground" style="background-image: resource(&apos;dialogBackground&apos;); width: 467px; height: 89px; position: relative; left: 449px; bottom: 87px;">
+        <ui:Label text="Label" display-tooltip-when-elided="true" style="left: 15px; top: 15px; color: rgb(255, 255, 255); height: 47px; width: 429px;" />
+    </ui:VisualElement>
+    <ui:Button text="Save" display-tooltip-when-elided="true" name="Save" style="height: -24px; width: 89px; left: 806px; top: -67px;" />
+    <ui:Button text="Add Dialog" display-tooltip-when-elided="true" name="Add" style="top: -101px; width: 153px;" />
+</ui:UXML>

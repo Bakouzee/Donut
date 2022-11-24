@@ -37,6 +37,7 @@ public class Player : Character  {
     [SerializeField] private GameObject playerImg;
     [SerializeField] private TextMeshProUGUI textInput;
 
+    public bool hasKey;
     private GameObject newVFX;
 
     public override void Awake() {

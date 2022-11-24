@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a640288639fc4d64fafe771e7ca56f45, type: 3}
+  m_Name: DoorNotOpened
+  m_EditorClassIdentifier: 
+  name: DoorBlocked
+  author: System
+  authorSprite: {fileID: 0}
+  isRepeatable: 0
+  pages:
+  - "Vous ne pouvez pas ouvrir la porte sans la cl\xE9 "
+  otherCharacters: []

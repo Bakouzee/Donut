@@ -51,6 +51,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "fd29ef17-dcd8-4967-bdf8-ef22ba74169c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "PauseMenu",
                     "type": "Button",
                     "id": "f37e50bb-53d7-42e0-8b7a-962a4dd6b2d4",
@@ -268,23 +277,23 @@
                 },
                 {
                     "name": "",
-                    "id": "ff364600-5162-472d-a5c2-9368a1f57881",
-                    "path": "<Keyboard>/p",
+                    "id": "3739a8fd-f2aa-4bb3-a632-faba8d894665",
+                    "path": "<Keyboard>/numpad2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PauseMenu",
+                    "action": "Minimap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "a83db449-3dea-431a-b199-092e1dd7d739",
-                    "path": "<Gamepad>/start",
+                    "id": "256656a5-edca-4888-b5fe-0dea0b14a984",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PauseMenu",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
