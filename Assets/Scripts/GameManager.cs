@@ -3,6 +3,7 @@ using Com.Donut.BattleSystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Playables;
@@ -15,6 +16,18 @@ public class GameManager : SingletonBase<GameManager>
     [SerializeField] private Animator doorCinematic;
     [SerializeField] private Player player;
     [SerializeField] private CinemachineVirtualCamera camPlayer;
+    [SerializeField] private List<TextMeshProUGUI> textsLoc = new List<TextMeshProUGUI>();
+   
+    public enum Language
+    {
+        Français,
+        English,
+        Español
+    }
+    
+    [SerializeField] private Language language;
+
+
 
     [Header("Battle State")]
     public bool isBattle;
@@ -34,7 +47,9 @@ public class GameManager : SingletonBase<GameManager>
     protected override void Awake()
     {
         base.Awake();
-        DialogueSystem.ShowDataPath();
+        DontDestroyOnLoad(saveController);
+        DialogueSystem.textsToChanged.AddRange(textsLoc);
+        DialogueSystem.ChangeLanguage(language);
     }
 
     private void Start()

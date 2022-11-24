@@ -190,8 +190,9 @@ public class Player : Character  {
             Destroy(col.gameObject);
             battleSystem.SetState(new Init(battleSystem));
         }
-        else
+        else if(isTransformed)
         {
+            AudioManager.Instance.ShellHitRock();
             Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
             direction = reflectVec;
         }
