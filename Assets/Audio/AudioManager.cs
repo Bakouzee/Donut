@@ -30,11 +30,25 @@ public class AudioManager : SingletonBase<AudioManager>
     {
         sfxAudioSource.PlayOneShot(sfxAudioClips[0]);
     }
-   /* public IEnumerator Footstep()
+
+    public void ShellSpin()
     {
-        sfxAudioSource.PlayOneShot(sfxAudioClips[1]);
-        yield return new WaitForSeconds(sfxAudioClips[1].length);
-    }*/
+        sfxAudioSource.loop = true;
+        sfxAudioSource.clip = sfxAudioClips[2];
+        sfxAudioSource.Play();
+    }
+
+    public void StopShellSpin()
+    {
+        sfxAudioSource.loop = false;
+        sfxAudioSource.Stop();
+        sfxAudioSource.clip = null;
+    }
+    /* public IEnumerator Footstep()
+     {
+         sfxAudioSource.PlayOneShot(sfxAudioClips[1]);
+         yield return new WaitForSeconds(sfxAudioClips[1].length);
+     }*/
 
     #region Change Volume via Slider
     public void OnVolumeMasterChanged(float newVolume)
