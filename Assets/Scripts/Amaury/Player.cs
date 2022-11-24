@@ -190,7 +190,7 @@ public class Player : Character  {
             Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
             direction = reflectVec;
         }
-        if (isTransformed)
+        if (isTransformed && !col.gameObject.CompareTag("Destructible") && !col.gameObject.CompareTag("Enemy"))
         {
             impulseSource.GenerateImpulse();
             powFx.transform.position = col.GetContact(0).point;

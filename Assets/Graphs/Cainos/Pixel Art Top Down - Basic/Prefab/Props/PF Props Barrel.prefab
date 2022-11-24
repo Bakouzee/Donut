@@ -211,7 +211,7 @@ VFXRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 23
 --- !u!114 &2717594191150217756
 MonoBehaviour:
   m_ObjectHideFlags: 0
