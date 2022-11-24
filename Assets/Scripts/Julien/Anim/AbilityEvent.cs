@@ -2,15 +2,17 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 using DG.Tweening;
+using UnityEditor;
 
 namespace Com.Donut.BattleSystem
 {
     public class AbilityEvent : MonoBehaviour
     {
         private BattleSystem _battleSystem;
+        private RectTransform _rectTransform;
 
         //Move forward
-        private float _offsetX = 50f;
+        private const float OffsetX = 0.4f;
         private Vector3 _startInit;
         private float _cooldownMoveDuration;
 
@@ -19,6 +21,7 @@ namespace Com.Donut.BattleSystem
         private float _cooldownMoveDurationBackward;
         
         //Jump
+        private const float JumpForce = 2;
         private Vector3 _startInitJump;
         private float _cooldownJumpDuration;
         
@@ -29,6 +32,7 @@ namespace Com.Donut.BattleSystem
         private void Awake()
         {
             _battleSystem = FindObjectOfType<BattleSystem>();
+            _rectTransform = GetComponent<RectTransform>();
         }
 
         public void EndOfAnim()
@@ -47,15 +51,15 @@ namespace Com.Donut.BattleSystem
 
             if (CheckIfEnemy())
             {
-                _startInitBackward = transform.position;
-                var position = _battleSystem.enemyTargetTransform.position;
-                transform.DOMove(new Vector3(position.x + _offsetX, position.y, 0), _cooldownMoveDuration);
+                _startInitBackward = _rectTransform.position;
+                var position = _battleSystem.enemyTargetTransform.transform.position;
+                _rectTransform.transform.DOMove(position, _cooldownMoveDuration);
             }
             else
             {
-                _startInit = transform.position;
-                var position = _battleSystem.playerTargetTransform.position;
-                transform.DOMove(new Vector3(position.x - _offsetX, position.y, 0), _cooldownMoveDuration);
+                _startInit = _rectTransform.transform.position;
+                var position = _battleSystem.playerTargetTransform.transform.position;
+                _rectTransform.transform.DOMove(new Vector3(position.x - OffsetX, position.y, 0), _cooldownMoveDuration);
             }
         }
 
@@ -63,7 +67,10 @@ namespace Com.Donut.BattleSystem
         {
             _cooldownMoveDurationBackward = FindAnim(animationName);
             
-            transform.DOMove(CheckIfEnemy() ? _startInitBackward : _startInit, _cooldownMoveDurationBackward);
+            _rectTransform.transform.DOMove(
+                CheckIfEnemy()
+                    ? _startInitBackward
+                    : _startInit, _cooldownMoveDuration);
         }
 
         public void Jump(string animationName)
@@ -115,10 +122,12 @@ namespace Com.Donut.BattleSystem
 
         private IEnumerator JumpAnim(Vector3 position, float duration)
         {
-            transform.DOMoveX(position.x + _offsetX, duration);
-            transform.DOMoveY(position.y + 100, duration/2);
+            /*_rectTransform.transform.DOMoveX(position.x, duration);
+            _rectTransform.transform.DOMoveY(position.y + 2, duration/2);
             yield return new WaitForSeconds(duration/2);
-            transform.DOMoveY(position.y, duration/2);
+            _rectTransform.transform.DOMoveY(position.y, duration/2);*/
+            _rectTransform.transform.DOJump(position, JumpForce, 1, duration);
+            yield break;
         }
     }
 }

@@ -6,25 +6,25 @@ using UnityEngine;
 namespace Com.Donut.BattleSystem
 {
     [System.Serializable]
-    public class Fighter
+    public class Fighter : ICloneable
     {
+        [Header("Fighter variables")]
         [SerializeField] private string _name;
         [SerializeField] private string _level;
         [SerializeField] private Sprite _sprite;
         [SerializeField] private AnimatorController _animatorController;
         [SerializeField] private int _currentHealth;
         [SerializeField] private int _totalHealth;
-        //[SerializeField] private int _currentDamage;
-        //[SerializeField] private int _baseDamage;
         [SerializeField] private int _power;
-        [SerializeField] private int _healing;
         [SerializeField] private List<Abilities> abilities = new List<Abilities>();
+
+        //Cheats
         private bool _isInvincible;
         private bool _canOneShot;
         private bool _isDead;
         private bool _isFullHealth;
-
-
+        
+        //Getter
         public List<Abilities> Abilities => abilities;
         public string Name => _name;
         public string Level => _level;
@@ -33,7 +33,6 @@ namespace Com.Donut.BattleSystem
         public int TotalHealth => _totalHealth;
         public int CurrentHealth => _currentHealth;
         public int Power => _power;
-        public int Healing => _healing;
         public bool IsDead => _isDead;
         public bool IsInvincible => _isInvincible;
         public bool CanOneShot => _canOneShot;
@@ -86,6 +85,11 @@ namespace Com.Donut.BattleSystem
                 _currentHealth = _totalHealth;
     
             _isFullHealth = result;
+        }
+        
+        public object Clone()
+        {
+            return this.MemberwiseClone(); //create a shallow-copy of the object
         }
 
         #endregion Cheats

@@ -69,19 +69,19 @@ namespace Com.Donut.BattleSystem
                 if (rand == 0)
                 {
                     _targetData = BattleSystem.ListPlayersData[0];
-                    BattleSystem.enemyTargetTransform = BattleSystem.ListPlayersData[0].FighterGo.transform;
+                    BattleSystem.enemyTargetTransform = BattleSystem.ListPlayersData[0].FighterGo.GetComponent<RectTransform>();
                 }
                 else
                 {
                     _targetData = BattleSystem.ListPlayersData[1];
-                    BattleSystem.enemyTargetTransform = BattleSystem.ListPlayersData[1].FighterGo.transform;
+                    BattleSystem.enemyTargetTransform = BattleSystem.ListPlayersData[1].FighterGo.GetComponent<RectTransform>();
                 }
             }
             else
             {
                 _targetData = BattleSystem.CurrentFighterData;
 
-                BattleSystem.enemyTargetTransform = BattleSystem.CurrentFighterData == BattleSystem.ListPlayersData[0] ? BattleSystem.ListPlayersData[0].FighterGo.transform : BattleSystem.ListPlayersData[1].FighterGo.transform;
+                BattleSystem.enemyTargetTransform = BattleSystem.CurrentFighterData == BattleSystem.ListPlayersData[0] ? BattleSystem.ListPlayersData[0].FighterGo.GetComponent<RectTransform>() : BattleSystem.ListPlayersData[1].FighterGo.GetComponent<RectTransform>();
             }
                 
 

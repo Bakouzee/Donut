@@ -18,16 +18,15 @@ MonoBehaviour:
     _sprite: {fileID: 0}
     _animatorController: {fileID: 9100000, guid: a0ba724080d61ee4ca484c8266e2eec3,
       type: 2}
-    _currentHealth: 180
+    _currentHealth: 200
     _totalHealth: 200
     _power: 200
-    _healing: 5
     abilities:
     - {fileID: 11400000, guid: 9f058e3fd2782cc4084599b8b6d4a43d, type: 2}
     - {fileID: 11400000, guid: 8dbbcba61f177a446a7aa08e90402603, type: 2}
     - {fileID: 11400000, guid: 1c6ae56dc1772b544b26ce4b4cd66635, type: 2}
     - {fileID: 11400000, guid: e01fccc877a5ed049b621df316d4584b, type: 2}
-    - {fileID: 11400000, guid: c4dc9c074b899614eb7a6071c3391784, type: 2}
+    - {fileID: 11400000, guid: 80debcb23d5db4946a7f12fcadb7aa48, type: 2}
     - {fileID: 11400000, guid: 295939e832b6ae141958f0ebfbabe8d5, type: 2}
   - _name: Luigi
     _level: 1
@@ -37,14 +36,13 @@ MonoBehaviour:
     _currentHealth: 200
     _totalHealth: 200
     _power: 200
-    _healing: 5
     abilities:
+    - {fileID: 11400000, guid: fa00ed5e82788e943ad340343fca9a03, type: 2}
+    - {fileID: 11400000, guid: 295939e832b6ae141958f0ebfbabe8d5, type: 2}
     - {fileID: 11400000, guid: 0f78b06a4a42a9243b9071d5e4c5ebf8, type: 2}
     - {fileID: 11400000, guid: 8dbbcba61f177a446a7aa08e90402603, type: 2}
     - {fileID: 11400000, guid: 1c6ae56dc1772b544b26ce4b4cd66635, type: 2}
     - {fileID: 11400000, guid: e01fccc877a5ed049b621df316d4584b, type: 2}
-    - {fileID: 11400000, guid: c4dc9c074b899614eb7a6071c3391784, type: 2}
-    - {fileID: 11400000, guid: 295939e832b6ae141958f0ebfbabe8d5, type: 2}
   EnemiesList:
   - _name: Goomba
     _level: 1
@@ -54,6 +52,5 @@ MonoBehaviour:
     _currentHealth: 80
     _totalHealth: 100
     _power: 500
-    _healing: 10
     abilities:
     - {fileID: 11400000, guid: 966d9332fb497f445b9144a473a8deb4, type: 2}

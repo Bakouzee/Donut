@@ -21,8 +21,8 @@ namespace Com.Donut.BattleSystem
         [HideInInspector] public static FighterData CurrentFighterData;
         [HideInInspector] public static FighterData CurrentEnemyData;
         [HideInInspector] public static bool CanUseInput = false;
-        [HideInInspector] public Transform playerTargetTransform;
-        [HideInInspector] public Transform enemyTargetTransform;
+        [HideInInspector] public RectTransform playerTargetTransform;
+        [HideInInspector] public RectTransform enemyTargetTransform;
         public BattleUI BattleUI => ui;
         
         public readonly List<FighterData> ListPlayersData = new List<FighterData>();
@@ -51,7 +51,8 @@ namespace Com.Donut.BattleSystem
         {
             for (int x = 0; x < numberOfEnemy; x++)
             {
-                ListEnemiesData.Add(new FighterData(fighterDatabase.EnemiesList[0], (byte)x)); //Un seul enemy pour le moment
+                var enemy = fighterDatabase.EnemiesList[0].Clone();
+                ListEnemiesData.Add(new FighterData(enemy as Fighter, (byte)x));
             }
         }
         
@@ -141,5 +142,20 @@ namespace Com.Donut.BattleSystem
         
 
         #endregion
+        
+        [ContextMenu("DebugEnnemies")]
+        public void DebugEnnemies()
+        {
+            foreach (FighterData enemyData in ListEnemiesData)
+            {
+                Debug.Log(enemyData.FighterGo.name + " " + enemyData.Fighter.IsDead + " " + "Hp " + enemyData.Fighter.CurrentHealth);
+            }
+        }
+
+        [ContextMenu("DamageEnemy0")]
+        public void DamageEnemy0()
+        {
+            ListEnemiesData[0].Fighter.Damage(10);
+        }
     }
 }

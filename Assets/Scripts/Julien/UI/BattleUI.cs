@@ -112,6 +112,7 @@ namespace Com.Donut.BattleSystem
             if (fighterData.ID == 0)
             {
                 var fighterGo = Instantiate(fighterPrefab, playerParent0, false);
+                fighterGo.name = "Player 0";
                 fighterData.SetFighterGameObject(fighterGo);
                 var image = fighterData.FighterGo.GetComponent<Image>();
                 image.sprite = fighterData.Fighter.Sprite;
@@ -121,6 +122,7 @@ namespace Com.Donut.BattleSystem
             else
             {
                 var fighterGo = Instantiate(fighterPrefab, playerParent1, false);
+                fighterGo.name = "Player 1";
                 fighterData.SetFighterGameObject(fighterGo);
                 var image = fighterData.FighterGo.GetComponent<Image>();
                 image.sprite = fighterData.Fighter.Sprite;
@@ -137,6 +139,7 @@ namespace Com.Donut.BattleSystem
                 listEnemyNameplate[x].Initialize(enemyData[x].Fighter);
                 var enemy = enemyData[x];
                 var fighterGo = Instantiate(fighterPrefab, listEnemyParent[x], false);
+                fighterGo.name = "Enemy " + x.ToString();
                 enemy.SetFighterGameObject(fighterGo);
                 enemy.FighterGo.transform.localScale = Vector3.one * 0.8f;
                 var image = enemy.FighterGo.GetComponent<Image>();
@@ -145,7 +148,7 @@ namespace Com.Donut.BattleSystem
                 _listAnimatorEnemies[x].runtimeAnimatorController = enemy.Fighter.AnimatorController;
             }
 
-            _battleSystem.playerTargetTransform = _battleSystem.ListEnemiesData[0].FighterGo.transform;
+            _battleSystem.playerTargetTransform = _battleSystem.ListEnemiesData[0].FighterGo.GetComponent<RectTransform>();
         }
 
         private void InitializeBattleField(Sprite sprite)
@@ -227,26 +230,13 @@ namespace Com.Donut.BattleSystem
 
         public void ShowLooseMenu()
         {
-            //Maybe put anim rendered with another cam
             StartCoroutine(WaitTilExploAgain(looseScreen));
+            //Maybe put anim rendered with another cam
         }
 
         public void HidePauseMenu()
         {
             pauseScreen.SetActive(false);
-        }
-
-        public void HideWinMenu()
-        {
-            StartCoroutine(WaitTilExploAgain(winScreen));
-
-            //Maybe put anim rendered with another cam
-        }
-
-        public void HideLooseMenu()
-        {
-            StartCoroutine(WaitTilExploAgain(looseScreen));
-            //Maybe put anim rendered with another cam
         }
 
         private IEnumerator WaitTilExploAgain(GameObject screen)
@@ -255,7 +245,11 @@ namespace Com.Donut.BattleSystem
             yield return new WaitForSeconds(2f);
             screen.SetActive(false);
             yield return new WaitForSeconds(0.1f);
+            if (_battleSystem.OnlyBattlePhaseScene) yield break;
+            
             GameManager.Instance.OnChangePhase();
+            _battleSystem.ResetBattleSystem();
+
         }
 
         private IEnumerator NamePlateBossAnim(List<RectTransform> listEnemyNameplate)
