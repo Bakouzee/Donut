@@ -647,6 +647,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2852670192177853240, guid: d9c96167a6ac5494ab5deaf0db96c6fc,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2852670192177853241, guid: d9c96167a6ac5494ab5deaf0db96c6fc,
         type: 3}
       propertyPath: m_Pivot.x
@@ -14832,6 +14837,11 @@ PrefabInstance:
       objectReference: {fileID: 1624883820}
     - target: {fileID: 7781719693136930270, guid: 0d137fe33eb8cac48a4f783022b983e4,
         type: 3}
+      propertyPath: exploUI
+      value: 
+      objectReference: {fileID: 1100673413}
+    - target: {fileID: 7781719693136930270, guid: 0d137fe33eb8cac48a4f783022b983e4,
+        type: 3}
       propertyPath: playerImg
       value: 
       objectReference: {fileID: 1190094240}
@@ -14867,6 +14877,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d137fe33eb8cac48a4f783022b983e4, type: 3}
+--- !u!1 &1100673413 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1428004138019968522, guid: c6b593a2b5607494992782f12506668b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1190094239}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1147818944
 GameObject:
   m_ObjectHideFlags: 0

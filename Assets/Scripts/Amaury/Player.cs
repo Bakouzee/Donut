@@ -35,6 +35,8 @@ public class Player : Character  {
     private Vector3 lastVelocity;
 
     [Header("UI Transformation GameFeel")]
+    [SerializeField] private GameObject exploUI;
+    public GameObject ExploUI => exploUI;
     [SerializeField] private GameObject abilityImg;
     [SerializeField] private GameObject playerImg;
     [SerializeField] private TextMeshProUGUI textInput;
@@ -46,6 +48,9 @@ public class Player : Character  {
         
         rb = GetComponent<Rigidbody2D>();
         followers = new List<IFollowable>();
+
+        exploUI.SetActive(false);
+        playerImg.SetActive(false);
 
         initialSpeed = speed;
         powFx.GetComponent<SpriteRenderer>().enabled = false;
