@@ -27,7 +27,7 @@ public class GameManager : SingletonBase<GameManager>
     
     [SerializeField] private Language language;
 
-
+    
 
     [Header("Battle State")]
     public bool isBattle;
