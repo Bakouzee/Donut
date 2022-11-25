@@ -12,7 +12,6 @@ public class switchScene : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-
             StartCoroutine(loadNextScene());
         }
     }
