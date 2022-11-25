@@ -35,7 +35,7 @@ namespace Com.Donut.BattleSystem
 
             if (myObject.EnemiesToAdd.Count <= 0)
             {
-                infos = "Add at least an enemy!";
+                infos = "Add at least One enemy!";
             }
 
             if (GUILayout.Button("Add to the database"))
