@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,12 @@ public class Door : MonoBehaviour {
     private GameObject collideObj;
 
     public Dialog notOpened;
-    
+
+    private void Start()
+    {
+        DontDestroyOnLoad(transform.gameObject);
+    }
+
     private void OnCollisionEnter2D(Collision2D col) {
         if (col.gameObject.CompareTag("Player")) {
             isCollide = true;
