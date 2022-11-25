@@ -7,6 +7,7 @@ TagManager:
   - Destructible
   - Enemy
   - MenuUI
+  - ShellToTake
   layers:
   - Default
   - TransparentFX

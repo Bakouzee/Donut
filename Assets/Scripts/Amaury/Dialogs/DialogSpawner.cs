@@ -12,7 +12,7 @@ public class DialogSpawner : MonoBehaviour {
 
     private void Update()
     {
-        Debug.Log("collide " + isCollide);
+        //Debug.Log("collide " + isCollide);
     }
 
     private void OnCollisionEnter2D(Collision2D col) {

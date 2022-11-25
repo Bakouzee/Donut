@@ -275,6 +275,7 @@ namespace Com.Donut.BattleSystem
         public void FadeEscape()
         {
             //Add fade here
+            GameManager.Instance.tutoText.transform.parent.gameObject.SetActive(true);
             GameManager.Instance.OnChangePhase();
             _battleSystem.ResetBattleSystem(); //maybe use waittilExplo 
             Debug.Log("Ok");

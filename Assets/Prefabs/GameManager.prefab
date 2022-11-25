@@ -47,6 +47,16 @@ MonoBehaviour:
   saveController: {fileID: 0}
   doorCinematic: {fileID: 0}
   player: {fileID: 0}
+  minimap: {fileID: 0}
+  camPlayer: {fileID: 0}
+  textsLoc:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  language: 0
+  shellDroped: Look ! He dropped something !
+  shellInput: Press "R" to transform and "Space" to launch yourself !
   isBattle: 1
   battleSystem: {fileID: 0}
   layersToKeep:

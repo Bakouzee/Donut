@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using TMPro;
 using UnityEngine.InputSystem;
 using UnityEngine.Playables;
 using UnityEngine.Rendering;
@@ -15,6 +16,7 @@ public class GameManager : SingletonBase<GameManager>
     [SerializeField] private SaveGameController saveController;
     [SerializeField] private Animator doorCinematic;
     [SerializeField] private Player player;
+    [SerializeField] private GameObject minimap;
     [SerializeField] private CinemachineVirtualCamera camPlayer;
     [SerializeField] private List<TextMeshProUGUI> textsLoc = new List<TextMeshProUGUI>();
    
@@ -27,7 +29,10 @@ public class GameManager : SingletonBase<GameManager>
     
     [SerializeField] private Language language;
 
-    
+    [Header("Tuto")]
+    public TextMeshProUGUI tutoText;
+    public string shellDroped;
+    public string shellInput;
 
     [Header("Battle State")]
     public bool isBattle;
@@ -47,6 +52,13 @@ public class GameManager : SingletonBase<GameManager>
     protected override void Awake()
     {
         base.Awake();
+
+        if (tutoText != null)
+        {
+            tutoText.transform.parent.gameObject.SetActive(false);
+            tutoText.text = shellDroped;
+        }
+
         DontDestroyOnLoad(saveController.gameObject);
         DialogueSystem.textsToChanged.AddRange(textsLoc);
         DialogueSystem.ChangeLanguage(language);
@@ -74,24 +86,28 @@ public class GameManager : SingletonBase<GameManager>
     {
         if (isBattle)
         {
+            minimap.SetActive(false);
             battleSystem.BattleUI.gameObject.SetActive(true);
             Everything = Camera.main.cullingMask;
             Camera.main.cullingMask = LayersToKeep;
             isBattle = false;
-            Debug.Log("BattleState");
             
-            AudioManager.Instance.MainAudioSource.enabled = false;
+            AudioManager.Instance.MusicAudioSource.enabled = false;
         }
         else
         {
+            if (player.shellToTake != null)
+            {
+                player.shellToTake.SetActive(true);
+                tutoText.transform.parent.gameObject.SetActive(true);
+            }
+            minimap.SetActive(true);
             battleSystem.BattleUI.gameObject.SetActive(false);
             Camera.main.cullingMask = Everything;
             RestoreControls();
             isBattle = true;
-            Debug.Log("ExplorationState");
             
-            
-            AudioManager.Instance.MainAudioSource.enabled = true;
+            AudioManager.Instance.MusicAudioSource.enabled = true;
         }
 
     }
