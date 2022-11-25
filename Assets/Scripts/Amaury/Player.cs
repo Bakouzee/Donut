@@ -44,7 +44,9 @@ public class Player : Character  {
 
     public override void Awake() {
         base.Awake();
-        
+
+        DontDestroyOnLoad(gameObject);
+
         rb = GetComponent<Rigidbody2D>();
         followers = new List<IFollowable>();
 
@@ -97,7 +99,8 @@ public class Player : Character  {
         }
         else
         {
-            smokeFollowShell.Stop();
+            if(smokeFollowShell != null)
+                smokeFollowShell.Stop();
         }
 
         spriteRenderer.flipX = movement.x < 0 && movement.y == 0;
