@@ -10,6 +10,7 @@ public class Door : MonoBehaviour {
     private GameObject collideObj;
 
     public Dialog notOpened;
+    [SerializeField] private GameObject endMenu;
 
     private void Start()
     {
@@ -37,6 +38,8 @@ public class Door : MonoBehaviour {
                 DialogController.Instance.StartDialog(notOpened);
             else
             {
+                collideObj.GetComponent<Player>().playerInput.DeactivateInput();
+                //endMenu.SetActive(true);
                 transform.gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 transform.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
             }
