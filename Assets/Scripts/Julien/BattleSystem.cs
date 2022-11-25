@@ -33,7 +33,7 @@ namespace Com.Donut.BattleSystem
         public void Start()
         {
             if(onlyBattlePhaseScene)
-                SetState((new Init(this))); //Start set in the player collision
+                SetState(new Init(this)); //Start set in the player collision
             else
             {
                 if(ui != null)
@@ -44,7 +44,7 @@ namespace Com.Donut.BattleSystem
 
         public void StartBattlePhaseCinematic(GameObject firstEnemy)
         {
-            SetState((new Init(this)));
+            SetState(new Init(this));
             Destroy(firstEnemy);
             player.hasCarapace = true;
             player.ExploUI.SetActive(true);

@@ -10,7 +10,7 @@ public class InputsUI : MonoBehaviour
     [SerializeField] private GameObject input0;
     [SerializeField] private GameObject input1;
 
-    [SerializeField] private List<Inputs> listPlayerInputsOnEnemy = new List<Inputs>();
+    [SerializeField, NonReorderable] private List<Inputs> listPlayerInputsOnEnemy = new List<Inputs>();
 
     private BattleSystem _battleSystem;
 
@@ -19,6 +19,7 @@ public class InputsUI : MonoBehaviour
     {
         public GameObject input0;
         public GameObject input1;
+        public List<GameObject> listInputArrow = new List<GameObject>();
     }
 
     public void InitializeInputsUI(BattleSystem battleSystem)
@@ -36,9 +37,22 @@ public class InputsUI : MonoBehaviour
 
     public void SetActiveInputOnEnemy(FighterData fighterData, bool result)
     {
-        if(BattleSystem.CurrentFighterData == _battleSystem.ListPlayersData[0])
+        if (BattleSystem.CurrentFighterData == _battleSystem.ListPlayersData[0])
+        {
             listPlayerInputsOnEnemy[fighterData.ID].input0.SetActive(result);
+            foreach(GameObject go in listPlayerInputsOnEnemy[fighterData.ID].listInputArrow)
+            {
+                go.SetActive(result);
+            }
+        }
         else
+        {
             listPlayerInputsOnEnemy[fighterData.ID].input1.SetActive(result);
+            foreach(GameObject go in listPlayerInputsOnEnemy[fighterData.ID].listInputArrow)
+            {
+                go.SetActive(result);
+            }
+        }
+           
     }
 }
