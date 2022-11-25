@@ -95,7 +95,8 @@ public class Player : Character  {
         if (isTransformed) {
             rb.velocity = direction * speed;
             //play vfx
-            smokeFollowShell.Play();
+            if (smokeFollowShell != null)
+                smokeFollowShell.Play();
         }
         else
         {
