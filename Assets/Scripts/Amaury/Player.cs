@@ -170,9 +170,13 @@ public class Player : Character  {
     }
 
     public void OnThrow(InputAction.CallbackContext e) {
-        if (e.performed) {
+        if (e.performed && hasCarapace) {
+            if (GameManager.Instance.tutoText != null)
+            {
+                GameManager.Instance.tutoText.transform.parent.gameObject.SetActive(false);
+                GameManager.Instance.tutoText = null;
+            }
             direction = (arrow.transform.position - transform.position).normalized;
-            
         }
     }
 
@@ -278,6 +282,7 @@ public class Player : Character  {
 
         if (col.gameObject.CompareTag("ShellToTake") && !hasCarapace)
         {
+            GameManager.Instance.tutoText.text = GameManager.Instance.shellInput;
             shellToTake.SetActive(true);
             exploUI.SetActive(true);
             hasCarapace = true;
