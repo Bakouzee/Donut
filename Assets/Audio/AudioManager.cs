@@ -10,10 +10,8 @@ public class AudioManager : SingletonBase<AudioManager>
 
     [Header("Source")]
     [SerializeField] private AudioSource mainAudioSource;
-    [SerializeField] private AudioSource musicAudioSource;
     [SerializeField] private AudioSource sfxAudioSource;
     public AudioSource MainAudioSource => mainAudioSource;
-    public AudioSource MusicAudioSource => musicAudioSource;
     public AudioSource SfxAudioSource => sfxAudioSource;
 
     [Header("Clips")]
@@ -22,8 +20,14 @@ public class AudioManager : SingletonBase<AudioManager>
 
     private void Start()
     {
-        //DontDestroyOnLoad(audioMenu);
         audioMenu.SetActive(false);
+    }
+
+    public void ChooseMainMusic(bool exterior) {
+        mainAudioSource.Stop();
+        mainAudioSource.clip = musicAudioClips[exterior ? 0 : 1];
+        Debug.Log("log " + mainAudioSource.clip);
+        mainAudioSource.Play();
     }
 
     public void ShellHitRock()
