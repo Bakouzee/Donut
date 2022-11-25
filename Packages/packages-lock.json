@@ -2,13 +2,9 @@
   "dependencies": {
     "com.marijnzwemmer.unity-toolbar-extender": {
 <<<<<<< HEAD
-      "version": "file:C:/Users/Freddy/Desktop/unity-toolbar-extender-master",
-=======
-<<<<<<< HEAD
       "version": "file:C:/Users/angel/Desktop/unity-toolbar-extender-master",
 =======
       "version": "file:C:/Users/pasca/Downloads/unity-toolbar-extender-master",
->>>>>>> main
 >>>>>>> main
       "depth": 0,
       "source": "local",
