@@ -24,6 +24,7 @@ public class Player : Character  {
 
     private int lastFollowersSize = -1;
 
+    public GameObject shellToTake;
     public bool hasCarapace;
     public bool isTransformed;
     public bool isMooving;
@@ -46,12 +47,13 @@ public class Player : Character  {
         base.Awake();
 
         DontDestroyOnLoad(gameObject);
-
         rb = GetComponent<Rigidbody2D>();
         followers = new List<IFollowable>();
 
         exploUI.SetActive(false);
         playerImg.SetActive(false);
+        if(shellToTake != null)
+            shellToTake.SetActive(false);
 
         initialSpeed = speed;
         powFx.GetComponent<SpriteRenderer>().enabled = false;
@@ -273,6 +275,15 @@ public class Player : Character  {
                 shakeBehaviour.Shake(0.5f);
             }
         }
+
+        if (col.gameObject.CompareTag("ShellToTake") && !hasCarapace)
+        {
+            shellToTake.SetActive(true);
+            exploUI.SetActive(true);
+            hasCarapace = true;
+            Destroy(col.gameObject);
+        }
+
     }
 
     private void OnTriggerStay2D(Collider2D col) {

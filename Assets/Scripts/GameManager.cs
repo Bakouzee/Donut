@@ -15,6 +15,7 @@ public class GameManager : SingletonBase<GameManager>
     [SerializeField] private SaveGameController saveController;
     [SerializeField] private Animator doorCinematic;
     [SerializeField] private Player player;
+    [SerializeField] private GameObject minimap;
     [SerializeField] private CinemachineVirtualCamera camPlayer;
     [SerializeField] private List<TextMeshProUGUI> textsLoc = new List<TextMeshProUGUI>();
    
@@ -26,8 +27,6 @@ public class GameManager : SingletonBase<GameManager>
     }
     
     [SerializeField] private Language language;
-
-
 
     [Header("Battle State")]
     public bool isBattle;
@@ -74,19 +73,21 @@ public class GameManager : SingletonBase<GameManager>
     {
         if (isBattle)
         {
+            minimap.SetActive(false);
             battleSystem.BattleUI.gameObject.SetActive(true);
             Everything = Camera.main.cullingMask;
             Camera.main.cullingMask = LayersToKeep;
             isBattle = false;
-            Debug.Log("BattleState");
         }
         else
         {
+            if (player.shellToTake != null)
+                player.shellToTake.SetActive(true);
+            minimap.SetActive(true);
             battleSystem.BattleUI.gameObject.SetActive(false);
             Camera.main.cullingMask = Everything;
             RestoreControls();
             isBattle = true;
-            Debug.Log("ExplorationState");
         }
 
     }

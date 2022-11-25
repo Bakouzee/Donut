@@ -59,7 +59,7 @@ public abstract class Character : MonoBehaviour
         if (currentState == newState || newState == null) return;
     
         
-        Debug.Log("name " + (name + "_" + newState));
+        //Debug.Log("name " + (name + "_" + newState));
 
         animController.Play(name + "_" +  newState);
         currentState = newState.Replace(name,"");

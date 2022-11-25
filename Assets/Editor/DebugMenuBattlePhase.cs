@@ -100,7 +100,7 @@ public class DebugMenuBattlePhase : EditorWindow
             {
                 try
                 {
-                    if(!AssetDatabase.Contains(enemies[i].GetInstanceID()))
+                    if (!AssetDatabase.Contains(enemies[i].GetInstanceID()))
                     {
                         AssetDatabase.CreateAsset(enemies[i], "Assets/Enemies/" + enemies[i].Name + ".asset");
                         AssetDatabase.SaveAssets();
@@ -157,6 +157,6 @@ public class DebugMenuBattlePhase : EditorWindow
         }
         EditorGUILayout.EndScrollView();
     }
-    
+
 }
 */

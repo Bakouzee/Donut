@@ -17,6 +17,7 @@ public class CinematicController : MonoBehaviour
     {
         if(playableDirector != null && collision.gameObject.CompareTag("Player"))
         {
+            collision.gameObject.GetComponent<Player>().playerInput.DeactivateInput();
             playableDirector.Play();
             playableDirector = null;
         }
