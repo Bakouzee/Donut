@@ -5,7 +5,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using TMPro;
 using UnityEngine.InputSystem;
 using UnityEngine.Playables;
 using UnityEngine.Rendering;
@@ -15,7 +14,7 @@ public class GameManager : SingletonBase<GameManager>
 {
     [SerializeField] private SaveGameController saveController;
     [SerializeField] private Animator doorCinematic;
-    [SerializeField] private Player player;
+    private Player player;
     [SerializeField] private GameObject minimap;
     [SerializeField] private CinemachineVirtualCamera camPlayer;
     [SerializeField] private List<TextMeshProUGUI> textsLoc = new List<TextMeshProUGUI>();
@@ -59,26 +58,20 @@ public class GameManager : SingletonBase<GameManager>
             tutoText.text = shellDroped;
         }
 
+        player = FindObjectOfType<Player>();
+
         DontDestroyOnLoad(saveController.gameObject);
         DialogueSystem.textsToChanged.AddRange(textsLoc);
         DialogueSystem.ChangeLanguage(language);
     }
 
-    private void Start()
+    public IEnumerator PlayDoorCinematic()
     {
-        if (SceneManager.GetActiveScene().name == "GrotteLD")
-        {
-            StartCoroutine(PlayDoorCinematic());
-        }
-    }
-
-    private IEnumerator PlayDoorCinematic()
-    {
-        camPlayer.m_Follow = null;
+        //camPlayer.m_Follow = null;
         player.playerInput.DeactivateInput();
         doorCinematic.SetTrigger("Door");
         yield return new WaitForSeconds(4f);
-        camPlayer.m_Follow = player.transform;
+        //camPlayer.m_Follow = player.transform;
         player.playerInput.ActivateInput();
     }
 
