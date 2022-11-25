@@ -13,6 +13,7 @@ public class Player : Character  {
 
     [SerializeField] private CinemachineImpulseSource impulseSource;
     [SerializeField] private GameObject powFx;
+    [SerializeField] private VisualEffect smokeFollowShell;
     [SerializeField] private Tween tweenPow;
     [SerializeField] private BattleSystem battleSystem;
     public Vector2 movement;
@@ -35,17 +36,22 @@ public class Player : Character  {
     private Vector3 lastVelocity;
 
     [Header("UI Transformation GameFeel")]
+    [SerializeField] private GameObject exploUI;
+    public GameObject ExploUI => exploUI;
     [SerializeField] private GameObject abilityImg;
     [SerializeField] private GameObject playerImg;
     [SerializeField] private TextMeshProUGUI textInput;
 
-    private GameObject newVFX;
-
     public override void Awake() {
         base.Awake();
-        
+
+        DontDestroyOnLoad(gameObject);
+
         rb = GetComponent<Rigidbody2D>();
         followers = new List<IFollowable>();
+
+        exploUI.SetActive(false);
+        playerImg.SetActive(false);
 
         initialSpeed = speed;
         powFx.GetComponent<SpriteRenderer>().enabled = false;
@@ -88,6 +94,14 @@ public class Player : Character  {
 
         if (isTransformed) {
             rb.velocity = direction * speed;
+            //play vfx
+            if (smokeFollowShell != null)
+                smokeFollowShell.Play();
+        }
+        else
+        {
+            if(smokeFollowShell != null)
+                smokeFollowShell.Stop();
         }
 
         spriteRenderer.flipX = movement.x < 0 && movement.y == 0;
@@ -111,6 +125,7 @@ public class Player : Character  {
         if (hasCarapace)
         {
             if (e.performed) {
+                AudioManager.Instance.ShellSpin();
                 textInput.color = new Color(0.65f, 0.4f, 0, 1);
                 SwitchAnimState("WC_Run");
                 isTransformed = !isTransformed;
@@ -125,6 +140,7 @@ public class Player : Character  {
                 }
                 else
                 {
+                    AudioManager.Instance.StopShellSpin();
                     abilityImg.SetActive(true);
                     playerImg.SetActive(false);
                     //playerImg.transform.DOMoveY(playerImg.GetComponent<RectTransform>().rect.position.y - 15f, 0.5f).SetEase(Ease.InElastic).SetEase(HideImg);
@@ -190,8 +206,9 @@ public class Player : Character  {
             Destroy(col.gameObject);
             battleSystem.SetState(new Init(battleSystem));
         }
-        else
+        else if(isTransformed)
         {
+            AudioManager.Instance.ShellHitRock();
             Vector3 reflectVec = Vector3.Reflect(lastVelocity.normalized,col.contacts[0].normal);
             direction = reflectVec;
         }

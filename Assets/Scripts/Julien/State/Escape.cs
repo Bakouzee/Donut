@@ -12,6 +12,9 @@ namespace Com.Donut.BattleSystem
         public override IEnumerator Start()
         {
             //BattleSystem.Interface.SetDialogText("You were defeated.");
+            BattleSystem.BattleUI.fadeEffect.Fader();
+            yield return new WaitForSeconds(BattleSystem.BattleUI.fadeEffect.FadeDuration);
+
             BattleSystem.BattleUI.FadeEscape();
             yield break;
         }

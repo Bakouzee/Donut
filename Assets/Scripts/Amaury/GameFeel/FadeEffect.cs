@@ -8,6 +8,7 @@ public class FadeEffect : MonoBehaviour
 {
     [SerializeField] private Image imageToFade;
     [SerializeField] private float fadeDuration;
+    public float FadeDuration => fadeDuration;
     private bool _isFaded = false;
 
     [ContextMenu("StartFade")]

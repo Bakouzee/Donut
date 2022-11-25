@@ -21,14 +21,15 @@ public class SaveGameData
     public struct GameData
     {
         public string gameName;
+        public string sceneName;
         public PlayerData Player;
         public float masterVolume;
         public float musicVolume;
         public float sfxVolume;
-        public GameData(string name, float masterV, float musicV, float sfxV, PlayerData player)
+        public GameData(string scene, string name, float masterV, float musicV, float sfxV, PlayerData player)
         {
             string newName = string.IsNullOrEmpty(name) ? "New Game Name" : name;
-
+            sceneName = scene;
             gameName = newName;
             masterVolume = masterV;
             musicVolume = musicV;

@@ -11,6 +11,8 @@ namespace Com.Donut.BattleSystem
 
         public override IEnumerator Start()
         {
+            BattleSystem.BattleUI.fadeEffect.Fader();
+            yield return new WaitForSeconds(BattleSystem.BattleUI.fadeEffect.FadeDuration);
             BattleSystem.BattleUI.ShowWinMenu();
             yield break;
         }

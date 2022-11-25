@@ -1,13 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 
 public static class DialogueSystem
 {
-    private static string language = "Français";
+    public static List<TextMeshProUGUI> textsToChanged = new List<TextMeshProUGUI>();
 
-    public static void ShowDataPath()
+    public static void ChangeLanguage(GameManager.Language language)
     {
         string dialoguePath = Application.dataPath + "/Dialogues/dialogues.csv";
         string[] data = File.ReadAllLines(dialoguePath);
@@ -18,27 +20,27 @@ public static class DialogueSystem
         {
             lines.Add(data[i].Split(',')); // <- columns
         }
-
-        if (language == "Français")
+        switch (language)
         {
-            //Volume
-            Debug.Log(lines[1][1]);
-
-            //General
-            Debug.Log(lines[2][1]);
-
-            //Musique
-            Debug.Log(lines[3][1]);
-
-            //Effets
-            Debug.Log(lines[4][1]);
-        } else if(language == "English")
-        {
-            Debug.Log(lines[1][2]);
-        }
-        else if(language == "Español")
-        {
-            Debug.Log(lines[1][3]);
+            case GameManager.Language.Français:
+                for (int i = 0; i < textsToChanged.Count; i++)
+                {
+                    textsToChanged[i].text = lines[i + 1][1];
+                }
+                break;
+            case GameManager.Language.English:
+                for (int i = 0; i < textsToChanged.Count; i++)
+                {
+                    textsToChanged[i].text = lines[i + 1][2];
+                }
+                break;
+            case GameManager.Language.Español:
+                for (int i = 0; i < textsToChanged.Count; i++)
+                {
+                    textsToChanged[i].text = lines[i + 1][3];
+                }
+                break;
+            default: goto case GameManager.Language.English;
         }
     }
 }

@@ -53,7 +53,7 @@ public class DialogCreator : EditorWindow
         lastTime = DateTime.UtcNow;
         
         
-        minSize = new Vector2(612, 636);
+        minSize = new Vector2(638,624);
         maxSize = minSize;
     }
 

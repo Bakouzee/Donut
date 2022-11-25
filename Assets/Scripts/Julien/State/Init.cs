@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using UnityEngine;
 
 namespace Com.Donut.BattleSystem
 {
@@ -13,7 +14,10 @@ namespace Com.Donut.BattleSystem
         {
             if(!BattleSystem.OnlyBattlePhaseScene)
                 StopPlayerControls();
-            
+
+            BattleSystem.BattleUI.fadeEffect.Fader();
+            yield return new WaitForSeconds(BattleSystem.BattleUI.fadeEffect.FadeDuration);
+
             BattleSystem.InitializeBattle();
             BattleSystem.SetState(new Intro(BattleSystem));
             yield break;
