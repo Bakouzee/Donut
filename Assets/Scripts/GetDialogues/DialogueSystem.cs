@@ -22,7 +22,7 @@ public static class DialogueSystem
         }
         switch (language)
         {
-            case GameManager.Language.Français:
+            case GameManager.Language.Francais:
                 for (int i = 0; i < textsToChanged.Count; i++)
                 {
                     textsToChanged[i].text = lines[i + 1][1];
@@ -34,7 +34,7 @@ public static class DialogueSystem
                     textsToChanged[i].text = lines[i + 1][2];
                 }
                 break;
-            case GameManager.Language.Español:
+            case GameManager.Language.Espanol:
                 for (int i = 0; i < textsToChanged.Count; i++)
                 {
                     textsToChanged[i].text = lines[i + 1][3];

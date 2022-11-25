@@ -24,6 +24,14 @@ public class AudioManager : SingletonBase<AudioManager>
     {
         //DontDestroyOnLoad(audioMenu);
         audioMenu.SetActive(false);
+        ChooseMainMusic(true);
+        DontDestroyOnLoad(transform.gameObject);
+    }
+
+    public void ChooseMainMusic(bool exterior) {
+        mainAudioSource.clip = musicAudioClips[exterior ? 0 : 1];
+        Debug.Log("log " + mainAudioSource.clip);
+        mainAudioSource.Play();
     }
 
     public void ShellHitRock()

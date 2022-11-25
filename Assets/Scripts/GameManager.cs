@@ -20,9 +20,9 @@ public class GameManager : SingletonBase<GameManager>
    
     public enum Language
     {
-        Français,
+        Francais,
         English,
-        Español
+        Espanol
     }
     
     [SerializeField] private Language language;
@@ -79,6 +79,8 @@ public class GameManager : SingletonBase<GameManager>
             Camera.main.cullingMask = LayersToKeep;
             isBattle = false;
             Debug.Log("BattleState");
+            
+            AudioManager.Instance.MainAudioSource.enabled = false;
         }
         else
         {
@@ -87,6 +89,9 @@ public class GameManager : SingletonBase<GameManager>
             RestoreControls();
             isBattle = true;
             Debug.Log("ExplorationState");
+            
+            
+            AudioManager.Instance.MainAudioSource.enabled = true;
         }
 
     }
