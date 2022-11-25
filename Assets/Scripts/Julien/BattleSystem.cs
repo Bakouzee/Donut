@@ -33,7 +33,7 @@ namespace Com.Donut.BattleSystem
         public void Start()
         {
             if(onlyBattlePhaseScene)
-                SetState((new Init(this))); //Start set in the player collision
+                SetState(new Init(this)); //Start set in the player collision
             else
             {
                 if(ui != null)
