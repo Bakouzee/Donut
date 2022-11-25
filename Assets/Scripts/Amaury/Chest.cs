@@ -14,6 +14,8 @@ public class Chest : MonoBehaviour {
 
     public Dialog dialogOpened;
     private GameObject collideObj;
+
+    public AudioClip open;
     
     private void OnCollisionEnter2D(Collision2D col) {
         if (col.gameObject.CompareTag("Player")) {
@@ -38,6 +40,9 @@ public class Chest : MonoBehaviour {
             collideObj.GetComponent<Player>().hasKey = true;
             
             DialogController.Instance.StartDialog(dialogOpened);
+
+            AudioManager.Instance.SfxAudioSource.clip = open;
+            AudioManager.Instance.SfxAudioSource.Play();
         }
     }
 }
