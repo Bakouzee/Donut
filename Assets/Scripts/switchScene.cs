@@ -19,6 +19,7 @@ public class switchScene : MonoBehaviour
     {
         fadeSystem.SetTrigger("fadeIn");
         yield return new WaitForSeconds(1f);
+        AudioManager.Instance.ChooseMainMusic(false);
         SceneManager.LoadScene(sceneName);
     }
 }

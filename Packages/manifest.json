@@ -1,6 +1,14 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "com.marijnzwemmer.unity-toolbar-extender": "file:C:/Users/Freddy/Desktop/unity-toolbar-extender-master",
+=======
+<<<<<<< HEAD
+    "com.marijnzwemmer.unity-toolbar-extender": "file:C:/Users/angel/Desktop/unity-toolbar-extender-master",
+=======
+    "com.marijnzwemmer.unity-toolbar-extender": "file:C:/Users/pasca/Downloads/unity-toolbar-extender-master",
+>>>>>>> main
+>>>>>>> main
     "com.unity.cinemachine": "2.8.9",
     "com.unity.collab-proxy": "1.15.16",
     "com.unity.feature.2d": "1.0.0",

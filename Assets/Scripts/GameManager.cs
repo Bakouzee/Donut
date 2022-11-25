@@ -21,13 +21,18 @@ public class GameManager : SingletonBase<GameManager>
    
     public enum Language
     {
-        Français,
+        Francais,
         English,
-        Español
+        Espanol
     }
     
     [SerializeField] private Language language;
 
+<<<<<<< HEAD
+=======
+    
+
+>>>>>>> main
     [Header("Battle State")]
     public bool isBattle;
     [SerializeField] private BattleSystem battleSystem;
@@ -78,6 +83,12 @@ public class GameManager : SingletonBase<GameManager>
             Everything = Camera.main.cullingMask;
             Camera.main.cullingMask = LayersToKeep;
             isBattle = false;
+<<<<<<< HEAD
+=======
+            Debug.Log("BattleState");
+            
+            AudioManager.Instance.MainAudioSource.enabled = false;
+>>>>>>> main
         }
         else
         {
@@ -88,6 +99,13 @@ public class GameManager : SingletonBase<GameManager>
             Camera.main.cullingMask = Everything;
             RestoreControls();
             isBattle = true;
+<<<<<<< HEAD
+=======
+            Debug.Log("ExplorationState");
+            
+            
+            AudioManager.Instance.MainAudioSource.enabled = true;
+>>>>>>> main
         }
 
     }
