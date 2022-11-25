@@ -38,8 +38,7 @@ namespace Com.Donut.BattleSystem
 
 
         public void Initialize(BattleSystem battleSystem, FighterData fighterData0, FighterData fighterData1,
-            List<FighterData> enemyData, Sprite arenaSprite)
-        {
+            List<FighterData> enemyData, Sprite arenaSprite) {
             if (!battleSystem.OnlyBattlePhaseScene)
                 GameManager.Instance.OnChangePhase();
 
