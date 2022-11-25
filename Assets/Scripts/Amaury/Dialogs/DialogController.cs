@@ -17,7 +17,14 @@ public class DialogController : SingletonBase<DialogController> {
     private bool isDisplayingText;
 
     public bool isInDialog;
-
+    
+    private void Start()
+    {
+        DontDestroyOnLoad(transform.gameObject);
+        Debug.Log("value " + authorSprite.transform.parent.gameObject);
+        DontDestroyOnLoad(authorSprite.transform.parent.parent.gameObject);
+    }
+    
     public void StartDialog(Dialog targetDialog) {
 
         authorSprite.transform.parent.gameObject.SetActive(true);
