@@ -338,10 +338,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d21a4b071cd0d43489dad7e0bb6d93a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMenu: {fileID: 0}
   mainAudioSource: {fileID: 7525833802537567604}
   musicAudioSource: {fileID: 2571528512479630273}
   sfxAudioSource: {fileID: 7647259997751765104}
-  audioMenu: {fileID: 0}
   musicAudioClips: []
   sfxAudioClips:
   - {fileID: 8300000, guid: 524505b6101b9d344b5e6335d99077a3, type: 3}
+  - {fileID: 8300000, guid: 9299a1b49d588ab4baa736a49ef74435, type: 3}
+  - {fileID: 8300000, guid: b0748a63c9a7d5245b0bb8cbc90316bb, type: 3}
