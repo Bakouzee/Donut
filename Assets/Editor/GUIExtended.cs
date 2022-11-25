@@ -2,24 +2,28 @@ using UnityEditor;
 using UnityEditor.Build.Reporting;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-//using UnityToolbarExtender;
+using UnityToolbarExtender;
 
 [InitializeOnLoad]
 public class GUIExtended
 {
     static GUIExtended()
     {
-       // ToolbarExtender.LeftToolbarGUI.Add(OnLeftToolbarGUI);
-       // ToolbarExtender.RightToolbarGUI.Add(OnRightToolbarGUI);
+       ToolbarExtender.LeftToolbarGUI.Add(OnLeftToolbarGUI);
+       ToolbarExtender.RightToolbarGUI.Add(OnRightToolbarGUI);
     }
 
     private static void OnLeftToolbarGUI()
     {
         GUILayout.FlexibleSpace();
 
-        if (GUILayout.Button(new GUIContent("LD1", "Start FinalLD Scene")))
+        if (GUILayout.Button(new GUIContent("LDStart", "Start FinalLD Scene")))
         {
             EditorSceneManager.OpenScene("Assets/Scenes/FinalLD.unity");
+        }
+        if (GUILayout.Button(new GUIContent("LDGrotte", "Start GrotteLD Scene")))
+        {
+            EditorSceneManager.OpenScene("Assets/Scenes/GrotteLD.unity");
         }
 
         if (GUILayout.Button(new GUIContent("Freddy", "Start Freddy Scene")))
@@ -35,7 +39,7 @@ public class GUIExtended
         if (GUILayout.Button(new GUIContent("Build", "Build Game")))
         {
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
-            buildPlayerOptions.scenes = new[] { "Assets/Scenes/FinalLD.unity"};
+            buildPlayerOptions.scenes = new[] { "Assets/Scenes/FinalLD.unity", "Assets/Scenes/GrotteLD.unity" };
             buildPlayerOptions.locationPathName = "Builds/GameBuildScript.exe";
             buildPlayerOptions.target = BuildTarget.StandaloneWindows;
             buildPlayerOptions.options = BuildOptions.None;

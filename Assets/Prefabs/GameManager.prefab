@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 317e415c694f8a74187b441e575fba31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveController: {fileID: 0}
+  doorCinematic: {fileID: 0}
+  player: {fileID: 0}
   isBattle: 1
   battleSystem: {fileID: 0}
   layersToKeep:

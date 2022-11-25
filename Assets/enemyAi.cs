@@ -6,6 +6,7 @@ public class enemyAi : Enemy
 {
     public Rigidbody2D rb2D;
     public Transform target;
+    public Transform BasePosTransform;
     public Transform homePos;
     public float chaseRadius;
     public float moveSpeed;
@@ -73,7 +74,15 @@ public class enemyAi : Enemy
         }
         else if (Vector3.Distance(target.position, transform.position) > chaseRadius)
         {
-            anim.SetBool("wakeUp", false);
+            Vector3 temp = Vector3.MoveTowards(transform.position, BasePosTransform.position, moveSpeed * Time.deltaTime);
+            changeAnim(temp - transform.position);
+            rb2D.MovePosition(temp);    
+
+            if(transform.position == BasePosTransform.position)
+            {
+                anim.SetBool("wakeUp", false);
+            }
+          
         }
     }
 

@@ -27,6 +27,7 @@ namespace Com.Donut.BattleSystem
         [SerializeField] private GameObject pauseScreen;
         [SerializeField] private GameObject winScreen;
         [SerializeField] private GameObject looseScreen;
+        public FadeEffect fadeEffect;
 
         //To have ref of players animator
         private Animator _animPlayer0;
@@ -209,7 +210,7 @@ namespace Com.Donut.BattleSystem
 
         public Abilities LaunchEnemyAbility(FighterData fighterData)
         {
-            return actionController.LaunchEnemyAbility(fighterData);
+             return actionController.LaunchEnemyAbility(fighterData);
         }
 
         public void ResetAnimator()
@@ -246,10 +247,9 @@ namespace Com.Donut.BattleSystem
             screen.SetActive(false);
             yield return new WaitForSeconds(0.1f);
             if (_battleSystem.OnlyBattlePhaseScene) yield break;
-            
+
             GameManager.Instance.OnChangePhase();
             _battleSystem.ResetBattleSystem();
-
         }
 
         private IEnumerator NamePlateBossAnim(List<RectTransform> listEnemyNameplate)
@@ -271,6 +271,14 @@ namespace Com.Donut.BattleSystem
         {
             playerNameplate0.gameObject.GetComponent<RectTransform>().DOAnchorPos(new Vector2(90, 0), 2f).SetEase(nameplateEase);
             playerNameplate1.gameObject.GetComponent<RectTransform>().DOAnchorPos(new Vector2(0, 0), 2f).SetEase(nameplateEase);
+        }
+
+        public void FadeEscape()
+        {
+            //Add fade here
+            GameManager.Instance.OnChangePhase();
+            _battleSystem.ResetBattleSystem(); //maybe use waittilExplo 
+            Debug.Log("Ok");
         }
     }
 }

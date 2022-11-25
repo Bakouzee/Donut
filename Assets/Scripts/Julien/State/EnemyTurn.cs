@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Com.Donut.BattleSystem
@@ -83,18 +84,30 @@ namespace Com.Donut.BattleSystem
 
                 BattleSystem.enemyTargetTransform = BattleSystem.CurrentFighterData == BattleSystem.ListPlayersData[0] ? BattleSystem.ListPlayersData[0].FighterGo.GetComponent<RectTransform>() : BattleSystem.ListPlayersData[1].FighterGo.GetComponent<RectTransform>();
             }
-                
-
-            _currentAbility = BattleSystem.BattleUI.LaunchEnemyAbility(BattleSystem.ListEnemiesData[0]); //Update to random enemy if multiple enemy
-            BattleSystem.BattleUI.LaunchAbility(BattleSystem.ListEnemiesData[0]); //Random attack of enemy
+            
+            _currentAbility = BattleSystem.BattleUI.LaunchEnemyAbility(BattleSystem.ListEnemiesData[FindAliveEnemy()]); //Find random alive enemy
         }
 
         private bool CheckIfBothPlayersAreDead()
         {
             return !BattleSystem.ListPlayersData[0].Fighter.IsDead && !BattleSystem.ListPlayersData[1].Fighter.IsDead;
         }
-        
-        
+
+        private int FindAliveEnemy()
+        {
+            var listEnemyAliveIndex = new List<int>();
+            var index = 0;
+            foreach (FighterData enemyData in BattleSystem.ListEnemiesData)
+            {
+                if (!enemyData.Fighter.IsDead)
+                {
+                    listEnemyAliveIndex.Add(index);
+                }
+                index++;
+            }
+
+            return listEnemyAliveIndex[Random.Range(0, listEnemyAliveIndex.Count)];
+        }
 
     }
 }

@@ -610,7 +610,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &197023208
 GameObject:
@@ -1009,7 +1009,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -1420,7 +1420,7 @@ Transform:
   - {fileID: 1580365035}
   - {fileID: 913212763}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &902348768
 GameObject:
@@ -1742,6 +1742,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &983958437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 983958438}
+  m_Layer: 0
+  m_Name: BasePosTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &983958438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983958437}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.31, y: -18.6, z: 0}
+  m_LocalScale: {x: 3.7224, y: 3.7224, z: 3.7224}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1156604647 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4162636219259615298, guid: 3bbeb5b3dcac3da46a2eb533f8591312,
@@ -1861,17 +1892,16 @@ MonoBehaviour:
   powFx: {fileID: 0}
   battleSystem: {fileID: 0}
   movement: {x: 0, y: 0}
-  rb: {fileID: 0}
   speed: 5
-  isMooving: 0
   hasCarapace: 1
   isTransformed: 0
+  isMooving: 0
+  hasKey: 0
   arrow: {fileID: 1156604647}
   playerInput: {fileID: 682594870}
   abilityImg: {fileID: 0}
   playerImg: {fileID: 0}
   textInput: {fileID: 0}
-  hasKey: 0
 --- !u!212 &1187919554
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1943,7 +1973,7 @@ Transform:
   - {fileID: 33823803}
   - {fileID: 902348769}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1194122815
 GameObject:
@@ -2508,7 +2538,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1800695452
 GameObject:
@@ -2728,7 +2758,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1946283457
 GameObject:
@@ -2905,7 +2935,7 @@ PrefabInstance:
     - target: {fileID: 4736480261893936856, guid: 137b7aa3879a9434d933c43a56c4bb1c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4736480261893936856, guid: 137b7aa3879a9434d933c43a56c4bb1c,
         type: 3}
@@ -2986,10 +3016,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: GumboEnemyDodo
       objectReference: {fileID: 0}
+    - target: {fileID: 6316143705748631780, guid: df7407802b8015b46bb684dc3c79f776,
+        type: 3}
+      propertyPath: BasePosTransform
+      value: 
+      objectReference: {fileID: 983958438}
     - target: {fileID: 6316143705748631783, guid: df7407802b8015b46bb684dc3c79f776,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6316143705748631783, guid: df7407802b8015b46bb684dc3c79f776,
         type: 3}

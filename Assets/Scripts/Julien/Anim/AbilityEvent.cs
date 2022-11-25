@@ -1,8 +1,6 @@
-using System.Collections;
 using System.Linq;
 using UnityEngine;
 using DG.Tweening;
-using UnityEditor;
 
 namespace Com.Donut.BattleSystem
 {
@@ -28,6 +26,10 @@ namespace Com.Donut.BattleSystem
         //JumpBackward
         private Vector3 _startInitJumpBackward;
         private float _cooldownJumpBackwardDuration;
+        
+        //Escape
+        private int _valueX = -250;
+        private float _cooldownEscapeDuration;
 
         private void Awake()
         {
@@ -81,14 +83,13 @@ namespace Com.Donut.BattleSystem
             {
                 _startInitJumpBackward = transform.position;
                 var position = _battleSystem.enemyTargetTransform.position;
-                StartCoroutine(JumpAnim(position, _cooldownJumpDuration));
-
+                JumpAnim(position, _cooldownJumpDuration);
             }
             else
             {
                 _startInitJump = transform.position;
                 var position = _battleSystem.playerTargetTransform.position;
-                StartCoroutine(JumpAnim(position, _cooldownJumpDuration));
+                JumpAnim(position, _cooldownJumpDuration);
             }
         }
 
@@ -96,9 +97,14 @@ namespace Com.Donut.BattleSystem
         {
             _cooldownJumpBackwardDuration = FindAnim(animationName);
 
-            StartCoroutine(CheckIfEnemy()
-                ? JumpAnim(_startInitJumpBackward, _cooldownJumpBackwardDuration)
-                : JumpAnim(_startInitJump, _cooldownJumpBackwardDuration));
+            JumpAnim(CheckIfEnemy() ? _startInitJumpBackward : _startInitJump, _cooldownJumpBackwardDuration);
+        }
+
+        public void Escape(string animationName)
+        {
+            _cooldownEscapeDuration = FindAnim(animationName);
+            
+            EscapeAnim(_cooldownEscapeDuration);
         }
 
         private float FindAnim(string animationName)
@@ -120,10 +126,15 @@ namespace Com.Donut.BattleSystem
             return _battleSystem.ListEnemiesData.Any(p => p.FighterGo == gameObject);
         }
 
-        private IEnumerator JumpAnim(Vector3 position, float duration)
+        private void JumpAnim(Vector3 position, float duration)
         {
             _rectTransform.transform.DOJump(position, JumpForce, 1, duration);
-            yield break;
+        }
+
+        private void EscapeAnim(float duration)
+        {
+            var anchoredPosition = _rectTransform.anchoredPosition;
+            _rectTransform.DOAnchorPos(new Vector2(anchoredPosition.x + _valueX, anchoredPosition.y), duration*2);
         }
     }
 }

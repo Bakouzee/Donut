@@ -7,7 +7,9 @@ public class Abilities : ScriptableObject
     {
         Damage,
         Heal,
+        Escape,
     }
+    
     public int attackId;
     public string attackName;
     public Sprite iconSprite;
