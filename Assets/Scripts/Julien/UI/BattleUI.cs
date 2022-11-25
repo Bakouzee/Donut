@@ -194,9 +194,6 @@ namespace Com.Donut.BattleSystem
 
         public void SetAnimTrigger(FighterData fighterData, string triggerName)
         {
-            //if()
-                
-                
             if (fighterData == _battleSystem.ListPlayersData[0])
                 _animPlayer0.SetTrigger(triggerName);
             else if (fighterData == _battleSystem.ListPlayersData[1])
@@ -280,7 +277,7 @@ namespace Com.Donut.BattleSystem
         {
             //Add fade here
             _battleSystem.ResetBattleSystem(); //maybe use waittilExplo 
-            throw new NotImplementedException();
+            Debug.Log("Ok");
         }
     }
 }

@@ -143,6 +143,7 @@ public class ActionController : MonoBehaviour
             Debug.Log("Player0 :" + abilities.name);
         }
         _battleSystem.ListPlayersData[0].SetFighterCurrentAbility(abilityPlayer0);
+        _abilityIndexPlayer0 = _battleSystem.ListPlayersData[0].CurrentAbility;
         
         var abilityPlayer1 = ScriptableObject.CreateInstance<Abilities>();
         
@@ -153,6 +154,7 @@ public class ActionController : MonoBehaviour
             Debug.Log("Player1 :" + abilities.name);
         }
         _battleSystem.ListPlayersData[1].SetFighterCurrentAbility(abilityPlayer1);
+        _abilityIndexPlayer1 = _battleSystem.ListPlayersData[1].CurrentAbility;
         
         LaunchAbiltiyPlayer0(_battleSystem.ListPlayersData[0]);
         LaunchAbiltiyPlayer1(_battleSystem.ListPlayersData[1]);
