@@ -100,7 +100,7 @@ namespace Com.Donut.BattleSystem
                     break;
                 case Abilities.ActionType.Escape:
                     BattleSystem.SetState(new Escape(BattleSystem));
-                    break;
+                    yield break;
             }
 
             UpdateFighterTurn();

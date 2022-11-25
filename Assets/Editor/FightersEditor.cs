@@ -21,14 +21,17 @@ namespace Com.Donut.BattleSystem
         {
             List<int> enemyNumber = new List<int>();
 
-            EditorGUILayout.BeginHorizontal();
-            EditorGUI.ProgressBar(new Rect(new Vector2(15, 15), new Vector2(250, 50)), 2, "Difficulty");
-            EditorGUILayout.EndHorizontal();
-
-            EditorGUILayout.Space(70);
+            for (int i = 0; i < myObject.Database.EnemiesList.Count; i++)
+            {
+                Rect r = EditorGUILayout.BeginVertical();
+                float diff = (float)myObject.Database.EnemiesList[i].Power / 1000;
+                EditorGUI.ProgressBar(r, diff, myObject.Database.EnemiesList[i].Name);
+                GUILayout.Space(20);
+                EditorGUILayout.EndVertical();
+                GUILayout.Space(2);
+            }
 
             base.OnInspectorGUI();
-
 
             if (myObject.EnemiesToAdd.Count <= 0)
             {
@@ -63,12 +66,18 @@ namespace Com.Donut.BattleSystem
                     {
                         infos = "Those enemies ";
                         infos += enemyNumber[i].ToString();
+                        if (i == enemyNumber.Count - 1)
+                        {
+                            infos += " must have a name!";
+                        }
                     } else if(i == enemyNumber.Count - 1)
                     {
                         infos += " and " + enemyNumber[i].ToString() + " must have a name!";
                     }
                 }
             }
+
+            //string EditorGUILayout.TextField()
 
             EditorGUILayout.Space(20);
 
