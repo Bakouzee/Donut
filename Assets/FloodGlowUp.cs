@@ -6,16 +6,9 @@ using UnityEngine.Rendering.Universal;
 using DG.Tweening;
 public class FloodGlowUp : MonoBehaviour
 {
-    float current = 0.0f;
     bool tdedans;
     public Volume  m_Volume;
-    Vignette m_Vignette;
 
-    private void Start()
-    {
-      
-        Debug.Log(m_Volume);
-    }
     private void Update()
     {
         m_Volume.profile.TryGet<Vignette>(out Vignette v);
@@ -44,12 +37,9 @@ public class FloodGlowUp : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         if(collision.CompareTag("Player"))
         {
             tdedans = true;
-
-            float speed = 0.3f;
 
             m_Volume.profile.TryGet<Vignette>(out Vignette v);
             //v.intensity.value = Mathf.Lerp(v.intensity.value, 0.40f,speed);
@@ -64,7 +54,6 @@ public class FloodGlowUp : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        float speed = 0.3f;
         if (collision.CompareTag("Player"))
         {
             tdedans = false;
