@@ -64,6 +64,8 @@ namespace Com.Donut.BattleSystem
             
             if (_currentTargetData == BattleSystem.ListEnemiesData[2] && !BattleSystem.ListEnemiesData[0].Fighter.IsDead)
                 TargetEnemy(0);
+            else if(_currentTargetData == BattleSystem.ListEnemiesData[2] && BattleSystem.ListEnemiesData[0].Fighter.IsDead && !BattleSystem.ListEnemiesData[1].Fighter.IsDead)
+                TargetEnemy(1);
             else if (_currentTargetData == BattleSystem.ListEnemiesData[0] && !BattleSystem.ListEnemiesData[1].Fighter.IsDead)
                 TargetEnemy(1);
         }
@@ -74,7 +76,8 @@ namespace Com.Donut.BattleSystem
             
             if (_currentTargetData == BattleSystem.ListEnemiesData[1] && !BattleSystem.ListEnemiesData[0].Fighter.IsDead)
                 TargetEnemy(0);
-
+            else if (_currentTargetData == BattleSystem.ListEnemiesData[1] && BattleSystem.ListEnemiesData[0].Fighter.IsDead && !BattleSystem.ListEnemiesData[2].Fighter.IsDead)
+                TargetEnemy(2);
             else if (_currentTargetData == BattleSystem.ListEnemiesData[0] && !BattleSystem.ListEnemiesData[2].Fighter.IsDead)
                  TargetEnemy(2);
         }
