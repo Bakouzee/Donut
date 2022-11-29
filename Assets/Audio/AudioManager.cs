@@ -37,6 +37,10 @@ public class AudioManager : SingletonBase<AudioManager>
     {
         sfxAudioSource.PlayOneShot(sfxAudioClips[0]);
     }
+    public void ShellHitBarrel()
+    {
+        sfxAudioSource.PlayOneShot(sfxAudioClips[3]);
+    }
 
     public void ShellSpin()
     {

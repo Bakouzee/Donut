@@ -208,6 +208,7 @@ public class Player : Character  {
         {
             if(col.gameObject.TryGetComponent(out VisualEffect vfx))
             {
+                AudioManager.Instance.ShellHitBarrel();
                 StartCoroutine(VFX(vfx));
             }
         }else if (col.gameObject.CompareTag("Enemy"))
