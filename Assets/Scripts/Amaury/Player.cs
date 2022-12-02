@@ -15,6 +15,7 @@ public class Player : Character  {
     [SerializeField] private GameObject powFx;
     [SerializeField] private VisualEffect smokeFollowShell;
     [SerializeField] private Tween tweenPow;
+    private VisualEffect smokeShellVFX;
     public BattleSystem battleSystem;
     public Vector2 movement;
     private Rigidbody2D rb;
@@ -52,7 +53,9 @@ public class Player : Character  {
 
         exploUI.SetActive(false);
         playerImg.SetActive(false);
-        if(shellToTake != null)
+        smokeShellVFX = GetComponent<VisualEffect>();
+        smokeShellVFX.enabled = false;
+        if (shellToTake != null)
             shellToTake.SetActive(false);
 
         initialSpeed = speed;
@@ -134,6 +137,7 @@ public class Player : Character  {
                 //UI Gamefeel
                 if(isTransformed == true)
                 {
+                    smokeShellVFX.enabled = true;
                     direction = Vector3.zero;
                     playerImg.SetActive(true);
                     abilityImg.SetActive(false);
@@ -142,6 +146,7 @@ public class Player : Character  {
                 }
                 else
                 {
+                    smokeShellVFX.enabled = false;
                     AudioManager.Instance.StopShellSpin();
                     abilityImg.SetActive(true);
                     playerImg.SetActive(false);
@@ -203,6 +208,7 @@ public class Player : Character  {
         {
             if(col.gameObject.TryGetComponent(out VisualEffect vfx))
             {
+                AudioManager.Instance.ShellHitBarrel();
                 StartCoroutine(VFX(vfx));
             }
         }else if (col.gameObject.CompareTag("Enemy"))
