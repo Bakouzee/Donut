@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour {
     private bool isCollide;
@@ -38,10 +39,11 @@ public class Door : MonoBehaviour {
                 DialogController.Instance.StartDialog(notOpened);
             else
             {
-                collideObj.GetComponent<Player>().playerInput.DeactivateInput();
+                //collideObj.GetComponent<Player>().playerInput.DeactivateInput();
                 //endMenu.SetActive(true);
                 transform.gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 transform.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+                SceneManager.LoadScene("CFINISCENE");
             }
         }
     }

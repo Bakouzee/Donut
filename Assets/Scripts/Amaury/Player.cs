@@ -15,7 +15,7 @@ public class Player : Character  {
     [SerializeField] private GameObject powFx;
     [SerializeField] private VisualEffect smokeFollowShell;
     [SerializeField] private Tween tweenPow;
-    [SerializeField] private BattleSystem battleSystem;
+    public BattleSystem battleSystem;
     public Vector2 movement;
     private Rigidbody2D rb;
     public float speed;
@@ -208,7 +208,6 @@ public class Player : Character  {
         }else if (col.gameObject.CompareTag("Enemy"))
         {
             direction = Vector3.zero;
-            //battleSystem.listEnemyFighters.Add(col.gameObject.GetComponent<EnemyPatrolNew>().data);
             Destroy(col.gameObject);
             battleSystem.SetState(new Init(battleSystem));
         }
