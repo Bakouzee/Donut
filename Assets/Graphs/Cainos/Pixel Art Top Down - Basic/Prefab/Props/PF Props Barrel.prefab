@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5890802837618066405}
   - component: {fileID: 4530504435541033072}
   - component: {fileID: 8963188445078046034}
-  - component: {fileID: 2717594191150217756}
   m_Layer: 6
   m_Name: PF Props Barrel
   m_TagString: Destructible
@@ -129,10 +128,10 @@ VisualEffect:
   m_GameObject: {fileID: 2055102311959635369}
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: 6a9e03ea52d194e4090ce52f01962776, type: 3}
-  m_InitialEventName: OnPlay
-  m_InitialEventNameOverriden: 0
+  m_InitialEventName: 
+  m_InitialEventNameOverriden: 1
   m_StartSeed: 0
-  m_ResetSeedOnPlay: 1
+  m_ResetSeedOnPlay: 0
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
@@ -212,18 +211,6 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 23
---- !u!114 &2717594191150217756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2055102311959635369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dd9aee8c068a634d9939bf19bcd9590, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2055102312182832482
 GameObject:
   m_ObjectHideFlags: 0
